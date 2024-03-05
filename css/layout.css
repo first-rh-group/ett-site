@@ -233,6 +233,9 @@ a {
   filter: unset;
   -webkit-filter: unset;
 }
+#menuSuspenso > a {
+  white-space: nowrap; /* Impede que o texto quebre para uma nova linha */
+}
 #menuSuspenso > a::after {
   content: "";
   height: 3px;
