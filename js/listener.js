@@ -28,7 +28,14 @@ function gerarRodape() {
 	});
 	criarElement({
 		"id":false,
-		"textoHtml":"Entre em contato",
+		"textoHtml":"Conheça as nossas soluções!",
+		"selector":true,
+		"parent":document.querySelector("section#podemosAjudar a"),
+		"tag":"button"
+	});
+	criarElement({
+		"id":false,
+		"textoHtml":"Saiba mais sobre nossas vagas!",
 		"selector":true,
 		"parent":document.querySelector("section#podemosAjudar a"),
 		"tag":"button"

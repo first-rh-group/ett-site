@@ -233,9 +233,19 @@ a {
   filter: unset;
   -webkit-filter: unset;
 }
+#menuSuspenso {
+  position: absolute;
+  top: 10px; /* Ajuste conforme necessário */
+  right: 10px; /* Ajuste conforme necessário */
+}
+
 #menuSuspenso > a {
   white-space: nowrap; /* Impede que o texto quebre para uma nova linha */
+  margin-left: -15px; /* Reduzindo a margem entre os itens do menu */
+  display: inline-block; /* Garante que os itens do menu permaneçam em uma linha */
+  position: relative; /* Adicionado para tornar o posicionamento do ::after relativo a este elemento */
 }
+
 #menuSuspenso > a::after {
   content: "";
   height: 3px;
@@ -253,10 +263,13 @@ a {
   -moz-transition: width 650ms;
   -ms-transition: width 650ms;
   -o-transition: width 650ms;
+  left: 0; /* Alinha o início do ::after com o início do texto */
 }
+
 #menuSuspenso > a:hover::after {
   width: 100%;
 }
+
 .header > div:nth-of-type(2) > div {
   display: flex;
   justify-content: space-between;
@@ -282,7 +295,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: gray;
+  color: rgba(107, 14, 14);
 }
 #flag:hover {
   color: black;
@@ -467,15 +480,14 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 4vw;
 }
 #solucoesHumanas > div {
-  text-align: center;
-  min-height: 10vh;
-  line-height: 35px;
-  display: flex;
-  align-items: center;
+   flex: 1; /* Distribui o espaço igualmente entre as divs */
+   margin-top: 70px; /* Adiciona um espaço superior de 10 pixels */
 }
+
 #solucoesHumanas > div:nth-of-type(2) {
   font-weight: bold;
   opacity: 0;
@@ -547,7 +559,7 @@ a {
 #entendaMais > div {
   color: white;
   font-size: clamp(16px, 18px, 2vw);
-  max-width: 335px;
+  max-width: 550px;
 }
 #entendaMais > a > button {
   margin-top: 2vh;
@@ -565,8 +577,8 @@ a {
 }
 .numeroFirstGroup > div:nth-of-type(2) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 5vw;
+  grid-template-columns: repeat(2, 1fr); /* Define duas colunas */
+  gap: 2vw 1vw;
   justify-content: center;
 }
 .numeroFirstGroup > div:nth-of-type(2) > div {
@@ -582,14 +594,8 @@ a {
   align-items: center;
   text-align: center;
   justify-self: center;
-  /* padding: 15px; */
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   border: 4px solid #91191e;
-  /* background-color: red; */
   overflow: hidden;
 }
 .numeroFirstGroup > div:nth-of-type(2) > div > div {
@@ -603,12 +609,7 @@ a {
   font-size: 1.1rem;
   font-size: clamp(14px, 2vw, 1.1rem);
   line-height: 20px;
-  /* background-color: green; */
   line-height: clamp(16px, 1.5vh, 20px);
-}
-.counter-value {
-  font-size: clamp(1.2rem, 8vw, 2rem);
-  color: #91191e;
 }
 .numeroFirstGroup
   > div:nth-of-type(2)
@@ -622,6 +623,11 @@ a {
   > div:first-of-type::after {
   content: "%";
 }
+.counter-value {
+  font-size: clamp(1.2rem, 8vw, 2rem);
+  color: #91191e;
+}
+
 #podemosAjudar,
 #procuraApoio {
   padding: 5vw;
