@@ -1,0 +1,160 @@
+section#geral,
+section#emBreve,
+section#asseguramos {
+  min-height: 35vh;
+  padding: 8vw;
+}
+section#geral {
+  min-height: 50vh;
+  padding: 8vw;
+}
+section#geral {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  color: white;
+  font-size: clamp(16px, 5vw, 18px);
+  background-image: url(/img/candidato_1.webp);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  --larguraShift: 320px;
+}
+section#geral > div {
+  min-height: 80px;
+  width: clamp(30vw, 100%, 290px);
+  color: black;
+  font-size: clamp(18px, 5vw, 22px);
+  line-height: clamp(22px, 4vh, 32px);
+}
+section#emBreve > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  font-size: clamp(16px, 5vw, 17px);
+  font-weight: lighter;
+}
+section#emBreve > div:nth-of-type(1) > div:last-of-type {
+  display: flex;
+  gap: clamp(15px, 10vw, 40px);
+  justify-content: center;
+}
+section#emBreve > div:nth-of-type(1) > div:last-of-type > div {
+  min-height: 40px;
+  font-weight: normal;
+}
+section#emBreve > div:nth-of-type(1) > div:last-of-type > div {
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+section#emBreve > div:nth-of-type(1) > div:last-of-type > div:nth-of-type(1) {
+  background-image: url(../img/facebook_candidato.png);
+}
+section#emBreve > div:nth-of-type(1) > div:last-of-type > div:nth-of-type(2) {
+  background-image: url(../img/linkedin_candidato.png);
+}
+section#consciencia {
+  min-height: 35vh;
+  padding: 10vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: clamp(18px, 5vw, 24px);
+  background-image: url(/img/candidato_2.webp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section#consciencia div {
+  text-align: center;
+}
+section#consciencia > div > div:first-of-type {
+  margin-bottom: 4vh;
+  opacity: 0;
+}
+section#consciencia > div > div:last-of-type {
+  opacity: 0;
+  font-weight: 800;
+}
+section#asseguramos {
+  display: flex;
+  column-gap: 5vw;
+  row-gap: 5vw;
+  align-items: flex-start;
+  justify-content: center;
+}
+section#asseguramos > div {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5px, 10vw, 15px);
+  justify-content: center;
+  align-items: center;
+}
+section#asseguramos > div > div {
+  text-align: center;
+}
+section#asseguramos > div > div:nth-of-type(1) {
+  border-radius: 50%;
+  border: 3px solid brown;
+  color: brown;
+  width: 45px;
+  height: 45px;
+  font-size: clamp(20px, 7vw, 30px);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  justify-content: center;
+}
+section#asseguramos > div > div:nth-of-type(2),
+section#asseguramos > div > div:nth-of-type(3) {
+  color: gray;
+}
+section#asseguramos > div > div:nth-of-type(2) {
+  max-width: 280px;
+  font-size: clamp(18px, 5vw, 20px);
+  line-height: clamp(22px, 5vh, 25px);
+  min-height: 75px;
+}
+section#asseguramos > div > div:nth-of-type(3) {
+  max-width: 300px;
+  font-size: clamp(14px, 5vw, 16px);
+  line-height: clamp(18px, 5vh, 20px);
+}
+@media only screen and (max-width: 650px) {
+  section#geral {
+    background-image: url(/img/candidato_1_mobile.webp);
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #d9d9d9;
+    overflow: hidden;
+    padding: 0;
+    min-height: 350px;
+  }
+  section#geral > div {
+    margin-top: clamp(10px, 5vh, 20px);
+    width: clamp(180px, 80%, 320px);
+    text-align: center;
+    font-size: clamp(18px, 5vw, 24px);
+    line-height: clamp(24px, 8vw, 28px);
+    /* background-color: red; */
+  }
+  #emBreve > div > div {
+    text-align: center;
+  }
+  section#asseguramos {
+    flex-direction: column;
+    align-items: center;
+  }
+  section#asseguramos > div {
+    gap: 10px;
+  }
+  section#asseguramos > div > div:nth-of-type(2) {
+    min-height: unset;
+  }
+}

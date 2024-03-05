@@ -1,0 +1,127 @@
+@media only screen and (max-width: 1440px) {
+  .ett_first {
+    background-position-y: calc(50% + 78px);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .ett_first {
+    background-position-y: calc(50% + 10px);
+  }
+}
+@media only screen and (max-width: 950px) {
+  #pqFirst > div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+  }
+}
+@media only screen and (max-width: 900px) {
+  #container {
+    scroll-snap-type: unset;
+  }
+  .header > div:nth-of-type(2) {
+    display: none;
+  }
+  .header > div:nth-of-type(2) > a {
+    align-self: flex-start;
+    margin-left: 25px;
+  }
+  .header > div:nth-of-type(2) > div {
+    flex-direction: unset;
+    width: 150px;
+  }
+  .header > div:nth-of-type(2) > div > div,
+  .header > div:nth-of-type(2) > div > a > div {
+    min-height: 50px;
+    min-width: 50px;
+  }
+  #rodape > div:nth-of-type(1) {
+    display: grid;
+    gap: 5vw;
+    grid-template-columns: repeat(2, 40vw);
+    grid-template-areas: "info navegue" "matriz resende";
+  }
+  #rodape > div:nth-of-type(1) > div:nth-of-type(1) {
+    grid-area: info;
+  }
+  #rodape > div:nth-of-type(1) > div:nth-of-type(2) {
+    grid-area: matriz;
+  }
+  #rodape > div:nth-of-type(1) > div:nth-of-type(3) {
+    grid-area: resende;
+  }
+  #rodape > div:nth-of-type(1) > div:nth-of-type(4) {
+    grid-area: navegue;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #fechamento {
+    flex-direction: column;
+    gap: 0;
+  }
+  #fechamento > div {
+    text-align: center;
+  }
+  section#shift {
+    align-items: flex-start;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #procuroVagas > div:nth-of-type(2) {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+  }
+  #procuroVagas > div:nth-of-type(2) > div:nth-of-type(2) {
+    display: none;
+  }
+  #podemosAjudar {
+    padding: 8vw;
+  }
+}
+@media only screen and (max-width: 560px) {
+  #pqFirst > div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(2, 110px);
+  }
+}
+@media only screen and (max-width: 500px) {
+  #rodape > div:nth-of-type(1) {
+    flex-direction: column;
+    gap: 5vh;
+    display: flex;
+  }
+}
+@media only screen and (max-width: 425px) {
+}
+@media only screen and (max-width: 375px) {
+  #procuroVagas > div:nth-of-type(2) > div:nth-child(odd) {
+    max-width: 260px;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .header {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .header > div:nth-of-type(3) {
+    width: 40px;
+    min-width: 40px;
+  }
+  .header > div:nth-of-type(3) > div {
+    min-width: 40px;
+  }
+  #pqFirst > div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 110px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #entendaMais {
+    padding: 10vw;
+  }
+}
+@media only screen and (max-height: 570px) {
+}
+
+@media only screen and (max-height: 400px) {
+}
