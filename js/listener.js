@@ -26,20 +26,34 @@ function gerarRodape() {
 		"parent":document.querySelector("section#podemosAjudar > div:last-of-type"),
 		"tag":"a"
 	});
-	criarElement({
-		"id":false,
-		"textoHtml":"Conheça as nossas soluções!",
-		"selector":true,
-		"parent":document.querySelector("section#podemosAjudar a"),
-		"tag":"button"
-	});
-	criarElement({
-		"id":false,
-		"textoHtml":"Saiba mais sobre nossas vagas!",
-		"selector":true,
-		"parent":document.querySelector("section#podemosAjudar a"),
-		"tag":"button"
-	});
+function criarElemento(options) {
+	const element = document.createElement(options.tag);
+	element.textContent = options.textoHtml;
+	options.parent.appendChild(element);
+	if (options.tag === "button") {
+	  element.style.margin = "0 15px";
+	  element.parentNode.style.display = "flex";
+	  element.parentNode.style.justifyContent = "space-between";
+	  element.parentNode.style.display = "grid";
+	  element.parentNode.style.gridTemplateColumns = "repeat(2, 1fr)";
+	  element.parentNode.style.gap = "15px";
+	}
+  }
+  criarElemento({
+	"id": false,
+	"textoHtml": "Conheça as nossas soluções!",
+	"selector": true,
+	"parent": document.querySelector("section#podemosAjudar a"),
+	"tag": "button"
+  });
+  
+  criarElemento({
+	"id": false,
+	"textoHtml": "Saiba mais sobre nossas vagas!",
+	"selector": true,
+	"parent": document.querySelector("section#podemosAjudar a"),
+	"tag": "button"
+  });
 	criarElement({
 		"id":"rodape",
 		"attributes": {
