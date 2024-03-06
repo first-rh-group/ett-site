@@ -1,29 +1,17 @@
-var consciencia1 = document.querySelector("section#consciencia > div > div:first-of-type");
-var consciencia1_find = false;
 document.querySelector("#menuSuspenso > a[candidato]").classList.add('selecionado');
-window.addEventListener('wheel', (evento) => {
-    if(consciencia1_find == false) {
-        var consciencia1Pos = consciencia1.getBoundingClientRect();
-        if(consciencia1Pos.y < (window.innerHeight * 0.85)) {
-            consciencia1_find = true;
-            consciencia1.classList.add('fadeInDown');
-            var consciencia2 = document.querySelector("section#consciencia > div > div:last-of-type");
-            setTimeout(() => {
-                consciencia2.classList.add('fadeInUp');
-            },1000)
-        }
+var threshold = 1
+if (window.innerWidth <= 450) {
+    threshold = 0.2
+} else if (window.innerWidth <= 912) {
+    threshold = 0.5
+}
+const Consciencia = document.querySelector('section#consciencia')
+const observerConsciencia = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting == true) {
+        document.querySelector('section#consciencia > div > div:first-of-type').classList.add('fadeInDown')
+        setTimeout(() => {
+            document.querySelector('section#consciencia > div > div:last-of-type').classList.add('fadeInUp');
+        },1000)
     }
-})
-window.addEventListener('touchmove', (evento) => {
-    if(consciencia1_find == false) {
-        var consciencia1Pos = consciencia1.getBoundingClientRect();
-        if(consciencia1Pos.y < (window.innerHeight * 0.85)) {
-            consciencia1_find = true;
-            consciencia1.classList.add('fadeInDown');
-            var consciencia2 = document.querySelector("section#consciencia > div > div:last-of-type");
-            setTimeout(() => {
-                consciencia2.classList.add('fadeInUp');
-            },1000)
-        }
-    }
-})
+}, {threshold:threshold})
+observerConsciencia.observe(Consciencia)

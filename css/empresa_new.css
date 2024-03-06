@@ -1,0 +1,530 @@
+.displayNone {
+    display: none !important;
+}
+.button-container {
+    grid-area: button !important; 
+    text-align: center;
+    margin-top: 20px;
+}
+.retangular-button {
+    background-color: #CCCCCC;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    margin-top: 20px;
+}
+
+.retangular-button:hover {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
+section.inicial {
+    background-image: url(/img/empresa_1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+section.historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "imagem p1"
+        "imagem p2"
+        "imagem p3"
+        "seta button";
+
+    gap: 2vw;
+    padding: 2vw;
+}
+.historia > div {
+    grid-area: p1;
+    margin-bottom: 20px; /* Adiciona uma margem entre os parágrafos */
+}
+.historia > div:nth-child(2) {
+    display: block;
+}
+section.historia>div:nth-of-type(1) {
+    grid-area: imagem;
+    background-image: url(/img/fusionLogo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+section.historia>div:nth-of-type(2) {
+    grid-area: p1;
+}
+
+section.historia>div:nth-of-type(3) {
+    grid-area: p2;
+}
+
+section.historia>div:nth-of-type(4) {
+    grid-area: p3;
+}
+
+section.historia>div:nth-of-type(n + 2) {
+    padding-top: 0;
+    font-size: clamp(16px, 5vw, 18px);
+    font-weight: 300;
+}
+
+section.historia>div.arrowDown {
+    grid-area: seta;
+    padding: unset;
+    height: 50px;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+section.historia>div.arrowDown>img {
+    cursor: pointer;
+    height: 100%;
+}
+
+section#ettFirst,
+section#shift,
+section#recruit {
+    min-height: 35vh;
+    padding: 5vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    color: white;
+    font-size: clamp(16px, 5vw, 18px);
+}
+
+section#ettFirst>div>div:nth-of-type(1),
+section#shift>div>div:nth-of-type(1),
+section#recruit>div>div:nth-of-type(1) {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+    height: 75px;
+    margin-bottom: 3vh;
+    opacity: 0;
+}
+
+section#ettFirst div>div:nth-of-type(2),
+section#shift div>div:nth-of-type(2),
+section#recruit div>div:nth-of-type(2) {
+    min-height: 80px;
+    width: clamp(30vw, 365px, 100%);
+    margin-bottom: 1.5vh;
+}
+
+section#ettFirst ul,
+section#shift ul,
+section#recruit ul {
+    font-weight: bold;
+    list-style: none;
+}
+
+section#ettFirst ul li,
+section#shift ul li,
+section#recruit ul li {
+    min-height: 30px;
+}
+
+section#ettFirst ul li:before,
+section#shift ul li:before,
+section#recruit ul li:before {
+    content: "";
+    display: inline-block;
+    background-image: url(/img/check.png);
+    height: 17px;
+    width: 25px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: left 4px;
+}
+
+section#ettFirst {
+    background-image: url(/img/empresa_3.webp);
+}
+
+section#ettFirst>div:nth-of-type(1) {
+    width: clamp(30vw, 365px, 100%);
+}
+
+section#ettFirst>div>div:nth-of-type(1) {
+    background-image: url(/img/logo_ett_new.png);
+}
+
+section#shift {
+    background-image: url(/img/empresa_4.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    --larguraShift: 320px;
+}
+
+section#shift>div>div:nth-of-type(1) {
+    background-image: url(/img/logo_shift_new.png);
+    min-width: var(--larguraShift);
+}
+
+section#shift>div>div:nth-of-type(2) {
+    width: var(--larguraShift);
+}
+
+section#recruit {
+    background-image: url(/img/empresa_5.webp);
+}
+
+section#recruit>div>div:nth-of-type(1) {
+    background-image: url(/img/logo_connecting_new.png);
+}
+
+section.empresas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(450px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+}
+
+section.empresas>div {
+    height: clamp(390px, 390px, 390px);
+    background-size: cover;
+    overflow: hidden;
+    padding: 30px 15px;
+}
+
+section.empresas div.logo {
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+section.empresas div[data-ett] {
+    background-image: url(/img/fundo_ett.png);
+}
+
+section.empresas>div>div.conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transform: translateY(280px);
+    -webkit-transform: translateY(280px);
+    -moz-transform: translateY(280px);
+    -ms-transform: translateY(280px);
+    -o-transform: translateY(280px);
+    transition: transform 550ms;
+    -webkit-transition: transform 550ms;
+    -moz-transition: transform 550ms;
+    -ms-transition: transform 550ms;
+    -o-transition: transform 550ms;
+}
+
+section.empresas div.texto {
+    color: white;
+    max-width: 330px;
+}
+
+section.empresas div.itens {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+section.empresas div.itens>span::before {
+    content: '\2713';
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+section.empresas div.button>button {
+    color: white;
+    padding: 7px 14px;
+    letter-spacing: 1.2px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+section.empresas div.button>button:active {
+    transform: translate(1px, 1px);
+    -webkit-transform: translate(1px, 1px);
+    -moz-transform: translate(1px, 1px);
+    -ms-transform: translate(1px, 1px);
+    -o-transform: translate(1px, 1px);
+}
+
+section.empresas .parceiros,
+section.empresas .certificados {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #000000d4;
+    color: whitesmoke;
+    padding: 15px;
+    transition: transform 350ms;
+    -webkit-transition: transform 350ms;
+    -moz-transition: transform 350ms;
+    -ms-transition: transform 350ms;
+    -o-transition: transform 350ms;
+    transform: translateY(40vh);
+    -webkit-transform: translateY(40vh);
+    -moz-transform: translateY(40vh);
+    -ms-transform: translateY(40vh);
+    -o-transform: translateY(40vh);
+}
+
+section.empresas .certificados .file_pdf {
+    background-image: url(https://rio123.io/img/icon-file-pdf.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 50px;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+section.empresas .parceiros div[data-parceiro]>div:nth-of-type(1) {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 50px;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+section.empresas .parceiros div[data-parceiro="leader"]>div:nth-of-type(1) {
+    background-image: url(https://leaderetalent.com.br/images/icon.png);
+}
+
+section.empresas .parceiros div[data-parceiro="rio"]>div:nth-of-type(1) {
+    background-image: url(https://rio123.io/img/logos/new_logo_black.png);
+    background-size: 60px;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+
+section.empresas .certificados>.close,
+section.empresas .parceiros>.close {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    color: white;
+    background: #3c3c3c;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+
+section.empresas .certificados.show,
+section.empresas .parceiros.show {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+}
+
+section.empresas div[data-ett] div.button>button {
+    background-color: #032e6e;
+}
+
+section.empresas div[data-connecting] div.button>button {
+    background-color: #fbb712;
+}
+
+section.empresas>div:hover>div.conteudo {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+}
+
+section.empresas div[data-ett] div.logo {
+    background-image: url(/img/logo_ett_new.png);
+}
+
+section.empresas div[data-shift] {
+    background-image: url(/img/fundo_shift.png);
+}
+
+section.empresas div[data-shift] div.logo {
+    background-image: url(/img/logo_shift_new.png);
+}
+
+section.empresas div[data-connecting] {
+    background-image: url(/img/fundo_connecting.png);
+}
+
+section.empresas div[data-connecting] div.logo {
+    background-image: url(/img/logo_connecting_new.png);
+}
+
+section#valores {
+    background-image: url(/img/empresa_6.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    min-height: 35vh;
+    padding: 8vw;
+    color: white;
+}
+
+section#valores>div:nth-of-type(1) {
+    font-size: clamp(22px, 10vw, 28px);
+    text-align: center;
+    min-height: 55px;
+    margin-bottom: 3vh;
+}
+
+section#valores>div:nth-of-type(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 6vw;
+    row-gap: 3vh;
+    align-items: stretch;
+}
+
+section#valores>div:nth-of-type(2)>div {
+    max-width: 225px;
+    text-align: center;
+    border: 3px solid #193264;
+    padding: 15px;
+    opacity: 0;
+}
+
+section#valores>div:nth-of-type(2)>div>div:first-of-type {
+    font-size: clamp(18px, 10vw, 20px);
+    min-height: 63px;
+    line-height: 25px;
+}
+
+section#valores>div:nth-of-type(2)>div>div:last-of-type {
+    font-size: clamp(13px, 10vw, 15.5px);
+}
+
+section#consultores {
+    min-height: 35vh;
+    padding: 6vw;
+}
+
+section#consultores>div:nth-of-type(1) {
+    font-size: clamp(22px, 10vw, 28px);
+    text-align: center;
+    min-height: 55px;
+    margin-bottom: 3vh;
+}
+
+section#consultores>div:nth-of-type(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 3vw;
+    row-gap: 3vh;
+    align-items: stretch;
+}
+
+section#consultores>div:nth-of-type(2)>div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    --larguraConsultor: 135px;
+    width: var(--larguraConsultor);
+    max-width: var(--larguraConsultor);
+    height: calc(var(--larguraConsultor) * 1.3);
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+section#consultores>div:nth-of-type(2)>div:nth-of-type(1) {
+    background-image: url(/img/consulores_1.png);
+    background-image: url(/img/consulores_1.webp);
+}
+
+section#consultores>div:nth-of-type(2)>div:nth-of-type(2) {
+    background-image: url(/img/consulores_2.png);
+    background-image: url(/img/consulores_2.webp);
+}
+
+section#consultores>div:nth-of-type(2)>div:nth-of-type(3) {
+    background-image: url(/img/consulores_3.png);
+    background-image: url(/img/consulores_3.webp);
+}
+
+section#consultores>div:nth-of-type(2)>div:nth-of-type(4) {
+    background-image: url(/img/consulores_4.png);
+    background-image: url(/img/consulores_4.webp);
+}
+
+section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
+    background-image: url(/img/consulores_5.png);
+    background-image: url(/img/consulores_5.webp);
+}
+
+@media only screen and (max-width: 900px) {
+    section.empresas {
+        display: block;
+    }
+
+    section.empresas>div {
+        height: 445px;
+    }
+
+    section.empresas>div>div.conteudo {
+        transform: translate(0);
+        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0);
+    }
+}
+
+@media only screen and (max-width: 812px) {
+    section.historia {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 6vw;
+    }
+
+    section.historia> :nth-of-type(1) {
+        min-height: 315px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    section.historia {
+        grid-template-areas: "imagem" "p1" "p2" "p3";
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 317px) {
+    section#consultores>div:nth-of-type(2)>div {
+        --larguraConsultor: 60vw;
+    }
+}

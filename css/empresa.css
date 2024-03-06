@@ -154,6 +154,7 @@ section#valores > div:nth-of-type(2) > div {
   text-align: center;
   border: 3px solid #193264;
   padding: 15px;
+  opacity: 0;
 }
 section#valores > div:nth-of-type(2) > div > div:first-of-type {
   font-size: clamp(18px, 10vw, 20px);

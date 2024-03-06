@@ -14,60 +14,48 @@ setTimeout(() => {
 temporizador += 1000;
 setTimeout(() => {
     document.querySelector("#inicial > section.historia > div:nth-child(1) > img:nth-child(4)").classList.add("fadeIn");
-},temporizador);
+}, temporizador);
 
-var logoFirst = document.querySelector('section#ettFirst > div > div:nth-of-type(1)');
-var logoFirstPos = logoFirst.getBoundingClientRect();
-var logoFirstFind = false;
-var logoShift = document.querySelector('section#shift > div > div:nth-of-type(1)');
-var logoShiftFind = false;
-var logoRecruit = document.querySelector('section#recruit > div > div:nth-of-type(1)');
-var logoRecruitFind = false;
+const logoFirst = document.querySelector('section#ettFirst')
+const logoShift = document.querySelector('section#shift')
+const logoRecruit = document.querySelector('section#recruit')
+const observerLogos = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting == true && entry.target.id == 'ettFirst') {
+            document.querySelector('section#ettFirst > div > div:nth-of-type(1)').classList.add('fadeInDown')
+            observerLogos.unobserve(entry.target)
+        }
+        if (entry.isIntersecting == true && entry.target.id == 'shift') {
+            document.querySelector('section#shift > div > div:nth-of-type(1)').classList.add('fadeInDown')
+            observerLogos.unobserve(entry.target)
+        }
+        if (entry.isIntersecting == true && entry.target.id == 'recruit') {
+            document.querySelector('section#recruit > div > div:nth-of-type(1)').classList.add('fadeInDown')
+            observerLogos.unobserve(entry.target)
+        }
+    })
+}, {threshold:0.5})
+observerLogos.observe(logoFirst)
+observerLogos.observe(logoShift)
+observerLogos.observe(logoRecruit)
 
-window.addEventListener('wheel', (evento) => {
-    if(logoFirstFind == false) {
-        var logoFirstPos = logoFirst.getBoundingClientRect();
-        if(logoFirstPos.y < (window.innerHeight * 0.85)) {
-            logoFirstFind = true;
-            logoFirst.classList.add('fadeInDown');
-        }
+var threshold = 1
+if (window.innerWidth <= 450) {
+    threshold = 0.2
+} else if (window.innerWidth <= 912) {
+    threshold = 0.5
+}
+const sectionValores = document.querySelector('section#valores')
+const observersectionValores = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting == true) {
+        document.querySelector('section#valores > div:nth-of-type(2) > div:nth-of-type(1)').classList.add('fadeInUp')
+        setTimeout(() => {
+            document.querySelector('section#valores > div:nth-of-type(2) > div:nth-of-type(3)').classList.add('fadeInUp')
+        },130)
+        setTimeout(() => {
+            document.querySelector('section#valores > div:nth-of-type(2) > div:nth-of-type(2)').classList.add('fadeInUp')
+        }, 250)
+        observersectionValores.unobserve(entries[0].target)
     }
-    if(logoShiftFind == false) {
-        var logoShiftPos = logoShift.getBoundingClientRect();
-        if(logoShiftPos.y < (window.innerHeight * 0.85)) {
-            logoShiftFind = true;
-            logoShift.classList.add('fadeInDown');
-        }
-    }
-    if(logoRecruitFind == false) {
-        var logoRecruitPos = logoRecruit.getBoundingClientRect();
-        if(logoRecruitPos.y < (window.innerHeight * 0.85)) {
-            logoRecruitFind = true;
-            logoRecruit.classList.add('fadeInDown');
-        }
-    }
-})
-
-window.addEventListener('touchmove', (evento) => {
-    if(logoFirstFind == false) {
-        var logoFirstPos = logoFirst.getBoundingClientRect();
-        if(logoFirstPos.y < (window.innerHeight * 0.85)) {
-            logoFirstFind = true;
-            logoFirst.classList.add('fadeInDown');
-        }
-    }
-    if(logoShiftFind == false) {
-        var logoShiftPos = logoShift.getBoundingClientRect();
-        if(logoShiftPos.y < (window.innerHeight * 0.85)) {
-            logoShiftFind = true;
-            logoShift.classList.add('fadeInDown');
-        }
-    }
-    if(logoRecruitFind == false) {
-        var logoRecruitPos = logoRecruit.getBoundingClientRect();
-        if(logoRecruitPos.y < (window.innerHeight * 0.85)) {
-            logoRecruitFind = true;
-            logoRecruit.classList.add('fadeInDown');
-        }
-    }
-})
+}, {threshold:threshold})
+observersectionValores.observe(sectionValores)
