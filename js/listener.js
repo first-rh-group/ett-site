@@ -101,6 +101,9 @@ function gerarRodape() {
 		"parent": document.querySelector("section#podemosAjudar a"),
 		"tag": "button"
 	  });
+	  document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
+		button.style.color = "black";
+	});
 	criarElement({
 		"id": "rodape",
 		"attributes": {
