@@ -1,3 +1,22 @@
+@font-face {
+    font-family: fontProjeto;
+    src: url(/font/codec-pro.regular.ttf) format("truetype");
+    }
+  @font-face {
+    font-family: fontExtraBold;
+    src: url(/font/CodecCold-ExtraBold.ttf) format("truetype");
+    }
+  @font-face {
+    font-family: fontCodecRegular;
+    src: url(/font/codec-pro-light.ttf) format("truetype");
+    }
+:root {
+        --fontProjeto: fontProjeto;
+        --fontExtraBold: fontExtraBold;
+        --fontCodecRegular: fontCodecRegular;
+        --fontSizeDiv: clamp(1.5em, 2vw, 30px);
+        --fontSizeTitulos: clamp(28px, 4.5vw, 32px);
+}
 .displayNone {
     display: none !important;
 }
@@ -10,12 +29,14 @@
     background-color: #CCCCCC;
     color: #000000;
     border: 2px solid #000000;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     display: block;
     margin-top: -40px;
+    font-size: 18px;
+    font-family: var(--fontExtraBold);
 }
 
 .retangular-button:hover {
@@ -23,13 +44,13 @@
     color: #FFFFFF;
 }
 
-section.inicial {
+/* section.inicial {
     background-image: url(/img/empresa_1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
+} */
 
 section.historia {
     display: grid;
@@ -73,6 +94,7 @@ section.historia>div:nth-of-type(4) {
 section.historia>div:nth-of-type(n + 2) {
     padding-top: 0;
     font-size: clamp(16px, 5vw, 18px);
+    font-family: var(--fontCodecRegular);
     font-weight: 300;
 }
 
@@ -205,7 +227,7 @@ section.empresas div.logo {
 }
 
 section.empresas div[data-ett] {
-    background-image: url(/img/fundo_ett.png);
+    background-image: url(/new_img/PÁGINA\ SOLUÇÕES\ ETT.png);
 }
 
 section.empresas>div>div.conteudo {
@@ -227,12 +249,14 @@ section.empresas>div>div.conteudo {
 }
 
 section.empresas div.texto {
-    color: white;
+    color: black;
+    font-family: var(--fontExtraBold);
     max-width: 330px;
 }
 
 section.empresas div.itens {
-    color: white;
+    color: black;
+    font-family: var(--fontExtraBold);
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -246,10 +270,12 @@ section.empresas div.itens>span::before {
 
 section.empresas div.button>button {
     color: white;
-    padding: 7px 14px;
+    padding: 20px 20px;
     letter-spacing: 1.2px;
     font-size: 1.2rem;
     cursor: pointer;
+    background-color: #032e6e;
+    border: 2px solid white;
 }
 
 section.empresas div.button>button:active {
@@ -351,6 +377,11 @@ section.empresas div[data-connecting] div.button>button {
     background-color: #fbb712;
 }
 
+section.empresas div[data-shift] div.button>button {
+    background-color: rgb(145,25,30,255)
+    ;
+}
+
 section.empresas>div:hover>div.conteudo {
     transform: translateY(0px);
     -webkit-transform: translateY(0px);
@@ -360,40 +391,41 @@ section.empresas>div:hover>div.conteudo {
 }
 
 section.empresas div[data-ett] div.logo {
-    background-image: url(/img/logo_ett_new.png);
+    background-image: url(/new_img/ETT\ LOGO\ SEM\ FUNDO.png);
 }
 
 section.empresas div[data-shift] {
-    background-image: url(/img/fundo_shift.png);
+    background-image: url(/new_img/PÁGINA\ SOLUÇÕES\ SHIFT.png);
 }
 
 section.empresas div[data-shift] div.logo {
-    background-image: url(/img/logo_shift_new.png);
+    background-image: url(/new_img/Shift\ LOGO\ SEM\ FUNDO.png);
 }
 
 section.empresas div[data-connecting] {
-    background-image: url(/img/fundo_connecting.png);
+    background-image: url(/new_img/PÁGINA\ SOLUÇÕES\ CONNECTING.png);
 }
 
 section.empresas div[data-connecting] div.logo {
-    background-image: url(/img/logo_connecting_new.png);
+    background-image: url(/new_img/First\ Connecting\ LOGO\ SEM\ FUNDO.png);
 }
 
 section#valores {
-    background-image: url(/img/empresa_6.webp);
+    background-image: url(/new_img/PÁGINA\ O\ GRUPO\ 5.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
     min-height: 35vh;
     padding: 8vw;
     color: white;
+    font-family: var(--fontExtraBold);
 }
 
 section#valores>div:nth-of-type(1) {
     font-size: clamp(22px, 10vw, 28px);
     text-align: center;
     min-height: 55px;
-    margin-bottom: 3vh;
+    margin-bottom: -5vh;
 }
 
 section#valores>div:nth-of-type(2) {
@@ -408,9 +440,10 @@ section#valores>div:nth-of-type(2) {
 section#valores>div:nth-of-type(2)>div {
     max-width: 225px;
     text-align: center;
-    border: 3px solid #193264;
+    border: 3px solid rgb(250,180,43,255);
     padding: 15px;
     opacity: 0;
+    position: relative;
 }
 
 section#valores>div:nth-of-type(2)>div>div:first-of-type {
@@ -422,7 +455,19 @@ section#valores>div:nth-of-type(2)>div>div:first-of-type {
 section#valores>div:nth-of-type(2)>div>div:last-of-type {
     font-size: clamp(13px, 10vw, 15.5px);
 }
+section#valores>div>div>div>.titulo {
+    position: relative;
+}
 
+section#valores>div>div>div>.titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Ajuste a posição vertical conforme necessário */
+    width: 100%; /* Ajuste o tamanho do traço */
+    height: 1px; /* Ajuste a espessura do traço */
+    background-color: #FAB42B; /* Cor do traço */
+}
 section#consultores {
     min-height: 35vh;
     padding: 6vw;
@@ -433,9 +478,11 @@ section#consultores>div:nth-of-type(1) {
     text-align: center;
     min-height: 55px;
     margin-bottom: 3vh;
+    font-family: var(--fontExtraBold);
 }
 
 section#consultores>div:nth-of-type(2) {
+    font-family: var(--fontExtraBold);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -444,10 +491,10 @@ section#consultores>div:nth-of-type(2) {
     align-items: stretch;
 }
 
-section#consultores>div:nth-of-type(2)>div {
+section#consultores > div:nth-of-type(2) > div {
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left top;
+    background-size: cover; /* Ajuste para 'cover' para cobrir o quadrado */
+    background-position: center; /* Centraliza a imagem */
     --larguraConsultor: 135px;
     width: var(--larguraConsultor);
     max-width: var(--larguraConsultor);
@@ -461,30 +508,67 @@ section#consultores>div:nth-of-type(2)>div {
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(1) {
-    background-image: url(/img/consulores_1.png);
-    background-image: url(/img/consulores_1.webp);
+    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO.png);
+    /*background-image: url(/img/consulores_1.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(2) {
-    background-image: url(/img/consulores_2.png);
-    background-image: url(/img/consulores_2.webp);
+    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 2.png);
+    /*background-image: url(/img/consulores_2.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(3) {
-    background-image: url(/img/consulores_3.png);
-    background-image: url(/img/consulores_3.webp);
+    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 3.png);
+    /* background-image: url(/img/consulores_3.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(4) {
-    background-image: url(/img/consulores_4.png);
-    background-image: url(/img/consulores_4.webp);
+    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 4.png);
+    /* background-image: url(/img/consulores_4.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
-    background-image: url(/img/consulores_5.png);
-    background-image: url(/img/consulores_5.webp);
+    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 5.png);
+   /* background-image: url(/img/consulores_5.webp); */
 }
-
+#feedback {
+    background-color: #333; /* Cinza mais forte */
+    color: #ffffff; /* Cor do texto branco */
+    padding: 50px 0;
+}
+.containerBalao {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.baloes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.balao {
+    background-color: #fff;
+    color: #333; /* Cor do texto nos balões */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 60px;
+    max-width: calc(50% - 40px);
+    text-align: left;
+    position: relative;
+    margin-right: 20px;
+    font-family: var(--fontExtraBold);
+}
+.balao::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 15px 0;
+    border-color: #fff transparent transparent;
+}
 @media only screen and (max-width: 900px) {
     section.empresas {
         display: block;

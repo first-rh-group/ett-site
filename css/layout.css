@@ -408,7 +408,7 @@ a {
   padding: 8px 18px;
   text-decoration: none;
   background-color: transparent;
-  color: var(--amareloFirst);
+  /* color: var(--amareloFirst); */
   border: 3px solid var(--amareloFirst);
   font-family: var(--titillium);
   font-weight: bold;
