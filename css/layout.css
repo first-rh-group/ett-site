@@ -10,10 +10,15 @@
   font-family: fontCodecRegular;
   src: url(/font/codec-pro-light.ttf) format("truetype");
   }
+  @font-face {
+    font-family: fontCodecBold;
+    src: url(/font/codec-pro-bold.ttf) format("truetype");
+    }
 :root {
   --fontProjeto: fontProjeto;
   --fontExtraBold: fontExtraBold;
   --fontCodecRegular: fontCodecRegular;
+  --fontCodecBold: fontCodecBold;
   --black: #313131;
   --green: #334644;
   --golden: #feb812;
@@ -78,7 +83,9 @@ a {
   all: unset;
   color: unset;
 }
-
+.main.container > div {
+  margin-bottom: 15px; /* Ajuste o valor conforme necessário */
+}
 section#faq {
   min-height: 40vh;
   padding: 5vw;
@@ -143,7 +150,7 @@ section#faq {
 .header > div:nth-of-type(1) {
   width: 100%;
   align-items: center;
-  background-image: url(/img/logo_principal_800px.png);
+  background-image: url(/new_img/First\ RH\ Group\ LOGO\ SEM\ FUNDO.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 5vw center;
@@ -468,7 +475,9 @@ a {
   gap: 5vw;
 }
 #procuroVagas > div:nth-of-type(2) > div:nth-child(odd) {
-  border: 3px solid var(--amareloFirst);
+  border: 3px solid black; /* Adiciona contorno preto */
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+  background-color: white; /* Fundo branco */
   font-weight: bold;
   font-size: var(--buttonFont);
   padding: 1.5vw;
@@ -476,7 +485,27 @@ a {
   text-align: center;
   cursor: pointer;
   max-width: 275px;
-  opacity: 0;
+  opacity: 1; /* Altera a opacidade para 1 quando a pergunta estiver visível */
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  color: black; /* Texto preto */
+}
+#procuroVagas > div:nth-of-type(2) > div:nth-child(odd):hover {
+  background-color: var(--amareloFirst); /* Fundo amarelo */
+}
+#procuroVagas > div:nth-of-type(2) > div:nth-child(odd) p {
+  margin: 0; /* Removendo margem padrão do parágrafo */
+}
+
+#procuroVagas > div:nth-of-type(2) > div:nth-child(odd) .answer {
+  display: none; /* Escondendo a resposta por padrão */
+}
+
+#procuroVagas > div:nth-of-type(2) > div:nth-child(odd):hover .question {
+  display: none; /* Escondendo a pergunta quando hover */
+}
+
+#procuroVagas > div:nth-of-type(2) > div:nth-child(odd):hover .answer {
+  display: block; /* Exibindo a resposta quando hover */
 }
 #procuroVagas > div:nth-of-type(2) > div:nth-child(odd) a {
   color: var(--azulFirst);
