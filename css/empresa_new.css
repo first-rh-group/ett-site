@@ -227,7 +227,7 @@ section.empresas div.logo {
 }
 
 section.empresas div[data-ett] {
-    background-image: url(/new_img/PÁGINA\ SOLUÇÕES\ ETT.png);
+    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ ETT.png);
 }
 
 section.empresas>div>div.conteudo {
@@ -395,7 +395,7 @@ section.empresas div[data-ett] div.logo {
 }
 
 section.empresas div[data-shift] {
-    background-image: url(/new_img/PÁGINA\ SOLUÇÕES\ SHIFT.png);
+    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ SHIFT.png);
 }
 
 section.empresas div[data-shift] div.logo {
@@ -403,7 +403,7 @@ section.empresas div[data-shift] div.logo {
 }
 
 section.empresas div[data-connecting] {
-    background-image: url(/new_img/PÁGINA\ SOLUÇÕES\ CONNECTING.png);
+    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ CONNECTING.png);
 }
 
 section.empresas div[data-connecting] div.logo {
@@ -411,7 +411,7 @@ section.empresas div[data-connecting] div.logo {
 }
 
 section#valores {
-    background-image: url(/new_img/PÁGINA\ O\ GRUPO\ 5.png);
+    background-image: url(/img_menor/PÁGINA\ O\ GRUPO\ 5.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
@@ -508,27 +508,27 @@ section#consultores > div:nth-of-type(2) > div {
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(1) {
-    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO.png);
+    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO.png);
     /*background-image: url(/img/consulores_1.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(2) {
-    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 2.png);
+    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 2.png);
     /*background-image: url(/img/consulores_2.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(3) {
-    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 3.png);
+    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 3.png);
     /* background-image: url(/img/consulores_3.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(4) {
-    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 4.png);
+    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 4.png);
     /* background-image: url(/img/consulores_4.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
-    background-image: url(/new_img/ÁREAS\ DE\ ATUAÇÃO\ 5.png);
+    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 5.png);
    /* background-image: url(/img/consulores_5.webp); */
 }
 #feedback {

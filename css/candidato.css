@@ -101,7 +101,7 @@ section#consciencia {
   background-position: center;
   color: white;
   font-size: clamp(18px, 5vw, 24px);
-  background-image: url(/new_img/PÁGINA\ OPORTUNIDADES\ 2.png);
+  background-image: url(/img_menor/PÁGINA\ OPORTUNIDADES\ 2.png);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,3 +232,68 @@ section#asseguramos > div > div:nth-of-type(3) {
   border-width: 20px 15px 0;
   border-color: #fff transparent transparent;
 }
+#pqFirst {
+  min-height: 40vh;
+  padding: 5vh;
+}
+#pqFirst > div:nth-of-type(1) {
+  font-family: var(--fontExtraBold);
+  font-size: var(--fontSizeTitulos);
+  margin: 2vh auto 4vh auto;
+  width: max-content;
+  max-width: 100%;
+  text-align: center;
+}
+#pqFirst > div:nth-of-type(2) {
+  display: flex;
+  gap: 4.9vw;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#pqFirst > div:nth-of-type(2) > div {
+  max-width: 180px;
+  min-width: 110px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0;
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(2) {
+  margin-top: -45px; /* Ajusta a margem superior negativa para subir o texto */
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(4) {
+  margin-top: -30px; /* Ajusta a margem superior negativa para subir o texto */
+}
+#pqFirst > div:nth-of-type(2) > div > div:nth-of-type(1) {
+  min-width: 110px;
+  height: 110px;
+  aspect-ratio: 1/1;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 10px;
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) {
+  background-image: url(/new_img/ICON\ 2.png);
+  margin-left: 40px;
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) {
+  background-image: url(/new_img/ICON\ 1.png);
+  margin-left: 40px;
+  margin-top: 45px;
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) {
+  background-image: url(/new_img/ICON\ 6.png);
+  margin-left: 40px;
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) {
+  background-image: url(/new_img/ICON\ 7.png);
+  margin-left: 40px;
+  margin-top: 30px;
+}
+#pqFirst > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) {
+  background-image: url(/new_img/ICON\ 5.png);
+  margin-left: 40px;
+}
+/* #pqFirst > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(1) {
+  background-image: url(/img/icone_6.png);
+} */

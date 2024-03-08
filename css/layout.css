@@ -513,6 +513,7 @@ a {
   font-weight: bold;
   opacity: 0;
 }
+
 #pqFirst {
   min-height: 40vh;
   padding: 5vh;
@@ -554,7 +555,7 @@ a {
   margin-bottom: 10px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) {
-  background-image: url(/new_img/ICON\ 1.png);
+  background-image: url(/new_img//ICON\ 1.png);
   margin-left: 40px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) {
