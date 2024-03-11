@@ -800,7 +800,7 @@ window.addEventListener('load', () => {
 		faqEmpresa.classList.remove('clicado');
 		faqEmpresa.classList.add('clicado');
 	})
-	var atualAno = new Date();
+	/*var atualAno = new Date();
 	var copyRight = document.querySelector('section#fechamento > div:nth-of-type(1');
 	copyRight.innerHTML = 'FIRST RH GROUP &copy; 1997-' + atualAno.getFullYear() + '.';
 	if ((atualAno.getMonth() + 1) < 3 || ((atualAno.getMonth() + 1) == 3) && atualAno.getDate() < 14) {
@@ -812,8 +812,19 @@ window.addEventListener('load', () => {
 		var titulo = document.querySelector('section.main > div:nth-of-type(1)');
 		titulo.innerHTML = 'Há ' + (atualAno - 1997) + ' anos conectando pessoas';
 		var contagem = document.querySelector('div[data-count]');
-		contagem.setAttribute('data-count', (atualAno - 1997));
-	}
+		contagem.setAttribute('data-count', (atualAno - 1997));	
+	} */
+
+	var fundacao = new Date('1997-03-11');
+	var hoje = new Date();
+
+	var anos = hoje.getFullYear() - fundacao.getFullYear();
+		if (hoje.getMonth() < fundacao.getMonth() || (hoje.getMonth() == fundacao.getMonth() && hoje.getDate() < fundacao.getDate())) {
+    	anos--;
+}
+	var titulo = document.querySelector('section.main > div:nth-of-type(1)');
+		titulo.innerHTML = 'Há ' + anos + ' anos conectando pessoas';
+
 	var flagMobile = document.getElementById('flag-mobile');
 	flagMobile.addEventListener('click', () => {
 		if (flagMobile.classList.contains('us-flag')) {

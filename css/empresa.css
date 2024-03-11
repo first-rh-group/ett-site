@@ -1,5 +1,7 @@
-section.inicial {
-  background-image: url(/img/empresa_1.webp);
+  section.inicial {
+  /* background-image: url(/img/empresa_1.webp); */
+  background-image: url(/new_img/PÁGINA\ O\ GRUPO\ 7.png);
+  /* background-image: url(/new_img/PÁGINA\ O\ GRUPO.png); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

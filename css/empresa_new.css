@@ -66,15 +66,16 @@ section.historia {
 }
 .historia > div {
     grid-area: p1;
-    margin-bottom: 20px; /* Adiciona uma margem entre os parágrafos */
+    margin-bottom: 5px; /* Adiciona uma margem entre os parágrafos */
 }
 .historia > div:nth-child(2) {
     display: block;
 }
 section.historia>div:nth-of-type(1) {
+    width: 750px;
     grid-area: imagem;
     background-image: url(/img/fusionLogo.png);
-    background-position: center;
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: contain;
 }

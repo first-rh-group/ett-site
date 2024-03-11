@@ -1,6 +1,6 @@
 @font-face {
   font-family: fontProjeto;
-  src: url(/font/codec-pro.regular.ttf) format("truetype");
+  src: url(/font/CodecPro-Regular.ttf) format("truetype");
   }
 @font-face {
   font-family: fontExtraBold;
@@ -696,11 +696,17 @@ a {
   > div:nth-of-type(2)
   > div:not(div:nth-of-type(1), div:nth-of-type(3))
   > div:first-of-type::before {
-  content: "+";
+  content: "";
 }
 .numeroFirstGroup
   > div:nth-of-type(2)
   > div:is(div:nth-of-type(3))
+  > div:first-of-type::after {
+  content: "%";
+}
+.numeroFirstGroup
+  > div:nth-of-type(2)
+  > div:is(div:nth-of-type(2))
   > div:first-of-type::after {
   content: "%";
 }
@@ -1023,5 +1029,25 @@ a {
   .numeroFirstGroup > div:nth-of-type(2) {
     grid-template-columns: repeat(1, 1fr);
     gap: 5vw; /* Ajuste o espaçamento vertical conforme necessário */
+  }
+}
+@media screen and (min-width: 1920px) {
+  #pqFirst > div:nth-of-type(1) {
+    margin: 2vh auto 4vh auto;
+    width: 100%;
+  }
+
+  #pqFirst > div:nth-of-type(2) {
+    gap: 3vw; /* Reduz a lacuna entre os elementos */
+  }
+
+  #pqFirst > div:nth-of-type(2) > div {
+    max-width: none; /* Remova a largura máxima para que os elementos ocupem toda a largura disponível */
+    min-width: 0; /* Reduza a largura mínima */
+    flex: 1; /* Adicione flex-grow para que todos os elementos ocupem o mesmo espaço */
+  }
+
+  #pqFirst > div:nth-of-type(2) > div:last-of-type {
+    margin-right: 0; /* Remova a margem direita do último elemento */
   }
 }
