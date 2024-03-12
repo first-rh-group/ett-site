@@ -79,7 +79,11 @@ section.historia>div:nth-of-type(1) {
     background-repeat: no-repeat;
     background-size: contain;
 }
-
+@media screen and (max-width: 768px) {
+    section.historia>div:nth-of-type(1) {
+      width: 100%; /* Define a largura da imagem como 50% da largura da tela em dispositivos móveis */
+    }
+  }
 section.historia>div:nth-of-type(2) {
     grid-area: p1;
 }
@@ -228,7 +232,7 @@ section.empresas div.logo {
 }
 
 section.empresas div[data-ett] {
-    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ ETT.png);
+    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ ETT.webp);
 }
 
 section.empresas>div>div.conteudo {
@@ -379,8 +383,8 @@ section.empresas div[data-connecting] div.button>button {
 }
 
 section.empresas div[data-shift] div.button>button {
-    background-color: rgb(145,25,30,255)
-    ;
+    background-color: rgb(145,25,30,255);
+    margin-top: 150px;
 }
 
 section.empresas>div:hover>div.conteudo {
@@ -396,7 +400,7 @@ section.empresas div[data-ett] div.logo {
 }
 
 section.empresas div[data-shift] {
-    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ SHIFT.png);
+    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ SHIFT.webp);
 }
 
 section.empresas div[data-shift] div.logo {
@@ -404,7 +408,7 @@ section.empresas div[data-shift] div.logo {
 }
 
 section.empresas div[data-connecting] {
-    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ CONNECTING.png);
+    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ CONNECTING.webp);
 }
 
 section.empresas div[data-connecting] div.logo {

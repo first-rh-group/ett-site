@@ -1,6 +1,6 @@
   section.inicial {
   /* background-image: url(/img/empresa_1.webp); */
-  background-image: url(/new_img/PÁGINA\ O\ GRUPO\ 7.png);
+  background-image: url(/img_menor/PÁGINA\ O\ GRUPO\ 7.webp);
   /* background-image: url(/new_img/PÁGINA\ O\ GRUPO.png); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -240,6 +240,11 @@ section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
     margin-left: auto;
     margin-right: auto;
     right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.historia > div:nth-of-type(1) img {
+    width: 50%; /* Define a largura da imagem como 50% da largura da tela em dispositivos móveis */
   }
 }
 @media only screen and (max-width: 660px) {

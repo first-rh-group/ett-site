@@ -66,7 +66,7 @@
   left: 12%; /* Alinha o botão no meio horizontalmente */
   transform: translateX(-50%); /* Move o botão para a esquerda metade da sua própria largura */
   padding: 10px 20px; /* Espaçamento interno */
-  background-color: #0056b3;
+  background-color: #193264;
   color: #fff; /* Cor do texto branca */
   border: 2px solid #fff; /* Contorno branco */
   border-radius: 5px; /* Borda arredondada */
@@ -119,7 +119,8 @@
   width: 70%; /* Ajuste a largura do contêiner de texto */
 }
 .imagem-texto p {
-  font-weight: bold; /* Torna o texto em negrito */
+  /*font-weight: bold; Torna o texto em negrito */
+  font-family: var(--fontCodecRegular);
   margin-bottom: 20px; /* Adiciona espaço entre os parágrafos */
 }
 .texto-imagem .terceirizacao-paragraph {
@@ -130,7 +131,7 @@
   margin-left: 20px; /* Adiciona uma margem à esquerda */
 }
 .texto-imagem p {
-  font-weight: bold; /* Torna o texto em negrito */
+  font-family: var(--fontCodecRegular);
   margin-bottom: 10px; /* Adiciona espaço entre os parágrafos */
 }
 
@@ -146,30 +147,147 @@
   font-family: var(--fontProjeto);
   font-size: 19px;
 }
-@media screen and (max-width: 768px) {
+.texto-imagem div button {
+  position: absolute;
+  bottom: -120px;
+  left: 795px;
+  z-index: 1;
+  background-color: #91191e;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: var(--fontExtraBold); /* Fonte do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer;
+}
+.texto-imagem div button:hover {
+  background-color: red;
+}
+#botao-amarelo {
+  position: absolute;
+  bottom: -550px;
+  left: 20px;
+  z-index: 1;
+  background-color: #fab42b;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: var(--fontExtraBold); /* Fonte do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer;
+}
+.imagem-texto p:last-of-type img {
+  float: right;
+  margin-right: 420px;
+  margin-top: -30px;
+}
+/* @media screen and (max-width: 768px) {
   .imagem-texto,
   .texto-imagem {
-    flex-direction: column; /* Altera a direção do flexbox para empilhar em dispositivos móveis */
+    flex-direction: column; /* Altera a direção do flexbox para empilhar em dispositivos móveis
   }
 
   .imagem-texto img,
   .texto-imagem img {
-    width: 100%; /* Define a largura da imagem como 100% para ocupar a largura total do contêiner */
-    max-width: none; /* Remove o limite máximo de largura */
-    margin-right: 0; /* Remove a margem à direita */
-    margin-bottom: 20px; /* Adiciona espaço entre as imagens e o texto */
+    width: 100%; /* Define a largura da imagem como 100% para ocupar a largura total do contêiner
+    max-width: none; /* Remove o limite máximo de largura
+    margin-right: 0; /* Remove a margem à direita
+    margin-bottom: 20px; /* Adiciona espaço entre as imagens e o texto
   }
 
   .imagem-texto div,
   .texto-imagem div {
-    width: 100%; /* Define a largura do contêiner de texto como 100% */
-    margin-left: 0; /* Remove a margem à esquerda */
+    width: 100%; /* Define a largura do contêiner de texto como 100%
+    margin-left: 0; /* Remove a margem à esquerda
   }
 
   .texto-imagem div {
-    margin-top: 20px; /* Adiciona espaço entre as seções de texto e imagem */
+    margin-top: 20px; /* Adiciona espaço entre as seções de texto e imagem
   }
   
+} */
+@media screen and (max-width: 768px) {
+  #botao-especialista {
+      position: relative;
+      bottom: 90px;
+      left: 10px;
+  }
+  #botao-amarelo {
+    position: relative; /* Posiciona o botão fixamente na tela */
+    bottom: 80px; /* Distância da parte inferior da tela */
+    left: 10px; /* Distância da borda esquerda da tela */
+    z-index: 10; /* Garante que o botão esteja sobreposto a outros elementos */
+  }
+  .imagem-texto,
+  .texto-imagem {
+    flex-direction: column;
+  }
+
+  .imagem-texto img,
+  .texto-imagem img {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .imagem-texto div,
+  .texto-imagem div {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .texto-imagem div {
+    margin-top: 20px;
+  }
+  .call-to-action {
+    position: relative; /* Posiciona o botão fixamente na tela */
+    bottom: 90px; /* Distância da parte inferior da tela */
+    left: 160px; /* Distância da borda esquerda da tela */
+    z-index: 1; /* Garante que o botão esteja sobreposto a outros elementos */
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  #logo-rio123 {
+    margin-right: 660px;
+    margin-top: -15px;
+}
+  .call-to-action {
+    position: relative; /* Posiciona o botão fixamente na tela */
+    bottom: 90px; /* Distância da parte inferior da tela */
+    left: 160px; /* Distância da borda esquerda da tela */
+    z-index: 1; /* Garante que o botão esteja sobreposto a outros elementos */
+  }
+  #botao-especialista {
+    position: relative;
+    bottom: 90px;
+    left: 150px;
+}
+#botao-amarelo {
+  position: relative; /* Posiciona o botão fixamente na tela */
+  bottom: 80px; /* Distância da parte inferior da tela */
+  left: 10px; /* Distância da borda esquerda da tela */
+  z-index: 10; /* Garante que o botão esteja sobreposto a outros elementos */
+}
+  .container {
+    max-width: 1920px;
+  }
+
+  .imagem-texto img,
+  .texto-imagem img {
+    max-width: 800px;
+  }
+
+  .text-container {
+    width: 60%;
+  }
 }
 .imagem-texto p strong,
 .texto-imagem p strong {
