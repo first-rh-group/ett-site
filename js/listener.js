@@ -445,7 +445,7 @@ function gerarRodape() {
 		"parent": "rodape",
 		"tag": "div"
 	});
-	criarElement({
+	/* criarElement({
 		"id": false,
 		"textoHtml": "A First RH Group segue todas as diretrizes e medidas de segurança da (Lei Geral de Proteção de Dados Pessoais)",
 		"attributes": {
@@ -455,7 +455,39 @@ function gerarRodape() {
 		"selector": true,
 		"parent": document.querySelector("section#rodape > div:last-of-type"),
 		"tag": "a"
+	}); */
+	let div1 = document.createElement('div');
+	div1.style.textAlign = 'center';
+	div1.style.lineHeight = '1.5'; 
+	document.querySelector("section#rodape").appendChild(div1);
+	criarElement({
+		"id": false,
+		"textoHtml": "A First RH Group segue todas as diretrizes e medidas de segurança da (Lei Geral de Proteção de Dados Pessoais)",
+		"attributes": {
+			"target": "_blank",
+			"href": "/documentacao/LGPD-First.pdf",
+		},
+		"selector": true,
+		"parent": div1,
+		"tag": "a"
 	});
+
+	let div2 = document.createElement('div');
+	div2.style.textAlign = 'center';
+	div2.style.lineHeight = '1.5';
+	document.querySelector("section#rodape").appendChild(div2);
+	criarElement({
+		"id": false,
+		"textoHtml": "Declaração de Igualdade Salarial e de Critérios Remuneratórios",
+		"attributes": {
+			"target": "_blank",
+			"href": "/documentacao/declaracao_igualdade_salarial_1semestre2024.pdf",
+		},
+		"selector": true,
+		"parent": div2,
+		"tag": "a"
+	});
+	
 }
 function getRandomInt(min, max) {
 	min = Math.ceil(min);

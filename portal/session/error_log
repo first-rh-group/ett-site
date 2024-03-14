@@ -1,0 +1,151 @@
+[04-Mar-2024 06:57:51 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 06:58:03 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 06:58:18 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 07:03:03 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 08:17:24 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 08:17:24 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 08:17:24 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 08:17:25 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 08:17:25 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 08:17:25 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 09:04:45 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:04:47 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:17:40 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:19:25 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:20:09 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:20:58 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:59:03 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:59:03 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 09:59:03 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 09:59:04 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:59:04 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 09:59:04 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 09:59:05 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 09:59:05 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 09:59:05 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 10:21:58 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 10:40:10 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 10:58:46 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:23:45 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:24:12 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:38:51 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:38:55 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:39:33 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:49:55 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:49:55 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:49:55 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:50:39 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:50:39 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:50:39 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:50:40 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:50:40 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:50:40 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:50:40 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 11:50:40 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 11:50:40 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:00:33 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:00:34 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:00:39 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:15:59 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:15:59 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:15:59 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:00 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:00 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:00 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:00 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:34 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:35 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:36 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:39 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:16:40 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:17:44 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:17:48 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:18:24 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:30 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:30 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:45 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:45 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:45 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:46 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:46 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:46 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:48 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:48 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:48 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:50 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:50 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:50 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:52 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2
+[04-Mar-2024 12:23:52 America/Sao_Paulo] PHP Warning:  Undefined variable $retorno in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:52 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/session_global/global_functions.php on line 396
+[04-Mar-2024 12:23:56 America/Sao_Paulo] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 2

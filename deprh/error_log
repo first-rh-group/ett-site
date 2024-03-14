@@ -1,0 +1,6 @@
+[04-Mar-2024 10:08:53 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/deprh/session/local_functions.php on line 15
+[04-Mar-2024 10:08:53 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/deprh/session/local_functions.php on line 15
+[04-Mar-2024 10:08:53 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/deprh/session/local_functions.php on line 15
+[04-Mar-2024 10:08:53 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/deprh/session/local_functions.php on line 15
+[04-Mar-2024 12:13:37 America/Sao_Paulo] PHP Warning:  Undefined array key "gerarSenha" in /home/grupofirstrh/public_html/deprh/processadorAjax.php on line 98
+[04-Mar-2024 12:13:37 America/Sao_Paulo] PHP Warning:  Undefined array key "gerarSenha" in /home/grupofirstrh/public_html/deprh/processadorAjax.php on line 103

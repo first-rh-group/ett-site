@@ -1,0 +1,118 @@
+section#main > div.principal > div.buscaFolhasImpressas p {
+  min-height: 55px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+section#main > div.principal > div.buscaFolhasImpressas form {
+  display: flex;
+  flex-direction: column;
+}
+section#main > div.principal > div.buscaFolhasImpressas form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+section#main
+  > div.principal
+  > div.buscaFolhasImpressas
+  form
+  > div:first-of-type {
+  min-height: 55px;
+  font-size: 18px;
+}
+section#main > div.principal > div.buscaFolhasImpressas form input {
+  width: max-content;
+}
+
+section#main > div.principal > div.buscaFolhasImpressas form button {
+  margin-top: 15px;
+}
+
+div.contracheque,
+div.informeRendimento,
+div.folhaPonto,
+div.buscaFolhasImpressas {
+  border: 1px solid gray;
+  padding: 3vw;
+  border-radius: 5px;
+  background-color: var(--azulFirst);
+  color: white;
+  width: clamp(300px, 65vw, 85%);
+}
+div.contracheque form,
+div.informeRendimento form,
+div.folhaPonto form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+div.folhaPonto form select {
+  width: max-content;
+  min-width: 120px;
+}
+div.folhaPonto form label {
+  margin-bottom: 9px;
+  margin-left: 1px;
+}
+div.folhaPonto form label:last-of-type {
+  margin-top: 9px;
+}
+div.informeRendimento button,
+div.contracheque button,
+div.folhaPonto button,
+div.buscaFolhasImpressas button {
+  width: max-content;
+  margin-top: 10px;
+}
+div.folhasEnviadas {
+  display: flex;
+  width: 95%;
+  --tamanhoCPF: 125px;
+  --tamanhoEnvio: 145px;
+  --tamanhoArquivo: 85px;
+  min-height: 35px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 1px;
+}
+div.folhasEnviadas img {
+  height: 30px;
+}
+div.folhasEnviadas > div {
+  padding-left: 3px;
+  display: flex;
+  align-items: center;
+}
+div.folhasEnviadas > div.nome {
+  width: calc(
+    100% - var(--tamanhoCPF) - var(--tamanhoEnvio) - var(--tamanhoArquivo)
+  );
+}
+div.folhasEnviadas > div.cpf {
+  width: var(--tamanhoCPF);
+}
+div.folhasEnviadas > div.envio {
+  width: var(--tamanhoEnvio);
+}
+div.folhasEnviadas > div.arquivo {
+  width: var(--tamanhoArquivo);
+  justify-content: center;
+  cursor: pointer;
+}
+div.folhasEnviadas:nth-child(even) {
+  background-color: hsl(0deg 0% 90%);
+}
+div.folhasEnviadas:nth-child(odd) {
+  background-color: hsl(0deg 0% 80%);
+}
+div.folhasEnviadas:first-of-type {
+  margin-top: 15px;
+  min-height: 45px;
+  font-weight: 600;
+  background-color: gray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+div.folhasEnviadas:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

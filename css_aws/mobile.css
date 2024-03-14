@@ -1,0 +1,156 @@
+@media only screen and (max-width: 1440px) {
+  .ett_first {
+    background-position-y: calc(50% + 78px);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .ett_first {
+    background-position-y: calc(50% + 10px);
+  }
+}
+@media only screen and (max-width: 950px) {
+  .numeroFirstGroup > div:nth-of-type(2) {
+    grid-template-columns: repeat(2, var(--tamanhoNumero));
+  }
+}
+@media only screen and (max-width: 900px) {
+  #container {
+    scroll-snap-type: unset;
+  }
+  .header > div:nth-of-type(2) {
+    /* display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    z-index: 2;
+    color: white; */
+    display: none;
+  }
+  .header > div:nth-of-type(2) > a {
+    align-self: flex-start;
+    margin-left: 25px;
+  }
+  .header > div:nth-of-type(2) > div {
+    flex-direction: unset;
+    width: 150px;
+  }
+  .header > div:nth-of-type(2) > div > div,
+  .header > div:nth-of-type(2) > div > a > div {
+    min-height: 50px;
+    min-width: 50px;
+  }
+  .main {
+    min-height: calc(100vh - 96px - 24px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ett_first {
+    background-position-y: calc(50% - 55px);
+  }
+}
+@media only screen and (max-width: 650px) {
+  .rodape > div:nth-of-type(1),
+  .rodape > div:nth-of-type(2) {
+    flex-direction: column;
+    gap: 2vh;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .main {
+    padding: 35px 0 35px 20px;
+  }
+  .numeroFirstGroup > div:nth-of-type(2) {
+    grid-template-columns: var(--tamanhoNumero);
+  }
+  @keyframes subtitulos {
+    from {
+      letter-spacing: unset;
+      opacity: 0;
+      padding-left: 0;
+    }
+    to {
+      letter-spacing: 7px;
+      opacity: 1;
+      padding-left: 25px;
+    }
+  }
+}
+@media only screen and (max-width: 425px) {
+  .rodape {
+    justify-content: flex-start;
+  }
+  .geral,
+  .ett_first,
+  .shift,
+  .recruit {
+    padding: 20px;
+  }
+  .geral div:nth-of-type(3) {
+    flex-direction: column;
+  }
+  .geral div:nth-of-type(3) > div {
+    width: 100%;
+  }
+  .geral,
+  .ett_first {
+    background-position-y: 0;
+  }
+  .rodape > div:nth-of-type(1),
+  .rodape > div:nth-of-type(2) {
+    display: block;
+  }
+  .rodape > div:nth-of-type(1) > div,
+  .rodape > div:nth-of-type(2) > div {
+    width: unset;
+  }
+  .rodape > div:nth-of-type(2) > div:nth-of-type(2) {
+    margin-top: 35px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .oportunidadesCarrosel > div:nth-of-type(1) > div:nth-of-type(1) > div {
+    letter-spacing: 0px;
+    margin-left: 4vw;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .header > div:nth-of-type(1) {
+    margin-right: 0;
+  }
+  .header > div:nth-of-type(3) {
+    width: 40px;
+    min-width: 40px;
+  }
+  .header > div:nth-of-type(3) > div {
+    min-width: 40px;
+  }
+  .geral > div,
+  .ett_first > div,
+  .shit > div,
+  .recruit > div {
+    width: 100%;
+  }
+}
+@media only screen and (max-height: 570px) {
+  .rodape {
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-height: 400px) {
+  .rodape {
+    height: calc(100vh + 120px);
+  }
+}

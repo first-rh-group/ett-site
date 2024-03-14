@@ -1,0 +1,36 @@
+section#login {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontFamilyDiv);
+  background-image: url(https://grupofirstrh.com.br/controles_img/logo_portal_administrativo.webp);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 2vh 2vw;
+}
+section#login > div {
+  background-color: var(--azulFirst);
+  width: clamp(350px, 35vw, 600px);
+  padding: 5vw;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: whitesmoke;
+  font-size: var(--fontSizeDiv);
+  box-shadow: 4px 4px 16px black;
+}
+section#login form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+section#login form > div:not(div:last-of-type) {
+  margin-bottom: 3vh;
+}
+section#login form label {
+  font-size: 14px;
+}

@@ -1,0 +1,79 @@
+section#login {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontFamilyDiv);
+  background-image: url(https://grupofirstrh.com.br/controles_img/logo_portal_corporativo.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 2vh 2vw;
+}
+section#login > div {
+  background-color: var(--vermelhoFirst);
+  width: clamp(350px, 50vw, 600px);
+  padding: 5vw;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: whitesmoke;
+  font-size: var(--fontSizeDiv);
+  box-shadow: 4px 4px 16px black;
+  max-width: 95vw;
+}
+section#login form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+section#login form > div:not(div:last-of-type) {
+  margin-bottom: 3vh;
+}
+section#login form label {
+  font-size: 14px;
+}
+.primeiroAcesso {
+  transform: translate(50%, 50%);
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  padding: 5vh;
+  border-radius: 11px;
+  box-shadow: black 15px 15px 26px;
+  background-color: white;
+  font-family: var(--fontFamilyDiv);
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  width: clamp(280px, 648px, 85vw);
+}
+.primeiroAcesso > div:first-of-type {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: hsl(0deg 0% 75%);
+  font-family: system-ui;
+  cursor: pointer;
+}
+.primeiroAcesso > div:nth-of-type(2) {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.primeiroAcesso label {
+  font-weight: 700;
+}
+.primeiroAcesso input {
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+.primeiroAcesso form {
+  background-image: url(https://grupofirstrh.com.br/img_aws/Logo_FirstRH_Group_350x304.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+}

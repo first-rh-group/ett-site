@@ -1,0 +1,284 @@
+section#main > div.principal > div.buscaFolhasImpressas p {
+  min-height: 55px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+section#main > div.principal > div.buscaFolhasImpressas form {
+  display: flex;
+  flex-direction: column;
+}
+section#main > div.principal > div.buscaFolhasImpressas form label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+section#main
+  > div.principal
+  > div.buscaFolhasImpressas
+  form
+  > div:first-of-type {
+  min-height: 55px;
+  font-size: 18px;
+}
+section#main > div.principal > div.buscaFolhasImpressas form input {
+  width: max-content;
+}
+
+section#main > div.principal > div.buscaFolhasImpressas form button {
+  margin-top: 15px;
+}
+
+div.contracheque,
+div.informeRendimento,
+div.folhaPonto,
+div.buscaFolhasImpressas {
+  border: 1px solid gray;
+  padding: 3vw;
+  border-radius: 5px;
+  background-color: var(--azulFirst);
+  color: white;
+  width: clamp(300px, 65vw, 85%);
+}
+div.contracheque form,
+div.informeRendimento form,
+div.folhaPonto form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+div.folhaPonto form select {
+  width: max-content;
+  min-width: 120px;
+}
+div.folhaPonto form label {
+  margin-bottom: 9px;
+  margin-left: 1px;
+}
+div.folhaPonto form label:last-of-type {
+  margin-top: 9px;
+}
+div.informeRendimento button,
+div.contracheque button,
+div.folhaPonto button,
+div.buscaFolhasImpressas button {
+  width: max-content;
+  margin-top: 10px;
+}
+div.folhasEnviadas {
+  display: flex;
+  width: 95%;
+  --tamanhoCPF: 125px;
+  --tamanhoEnvio: 145px;
+  --tamanhoArquivo: 85px;
+  min-height: 35px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 1px;
+}
+div.folhasEnviadas img {
+  height: 30px;
+}
+div.folhasEnviadas > div {
+  padding-left: 3px;
+  display: flex;
+  align-items: center;
+}
+div.folhasEnviadas > div.nome {
+  width: calc(
+    100% - var(--tamanhoCPF) - var(--tamanhoEnvio) - var(--tamanhoArquivo)
+  );
+}
+div.folhasEnviadas > div.cpf {
+  width: var(--tamanhoCPF);
+}
+div.folhasEnviadas > div.envio {
+  width: var(--tamanhoEnvio);
+}
+div.folhasEnviadas > div.arquivo {
+  width: var(--tamanhoArquivo);
+  justify-content: center;
+  cursor: pointer;
+}
+div.folhasEnviadas:nth-child(even) {
+  background-color: hsl(0deg 0% 90%);
+}
+div.folhasEnviadas:nth-child(odd) {
+  background-color: hsl(0deg 0% 80%);
+}
+div.folhasEnviadas:first-of-type {
+  margin-top: 15px;
+  min-height: 45px;
+  font-weight: 600;
+  background-color: gray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+div.folhasEnviadas:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div.folhasEnviadas:first-of-type > div {
+}
+div.criacaoNovoUsuario h1 {
+  margin-bottom: 15px;
+}
+div.criacaoNovoUsuario > div:first-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+div.novaDicaForm > div:first-of-type {
+  font-size: 1.1rem;
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
+}
+div.novaDicaForm input[type="file"] {
+  background-color: var(--gray);
+  color: white;
+  line-height: 48px;
+  height: 60px;
+}
+div.novaDicaForm div.botoesOpcoes {
+  display: flex;
+  gap: 5px;
+}
+div.novaDicaForm input[type="text"] {
+  width: 100%;
+}
+div.novaDicaForm textarea {
+  resize: none;
+  width: 100%;
+  max-height: 300px;
+}
+fieldset.arquivosVinculados > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+}
+fieldset.arquivosVinculados > div:first-of-type button {
+  max-width: 380px;
+}
+fieldset.arquivosVinculados > div:first-of-type progress {
+  min-height: 40px;
+  min-width: 380px;
+}
+div.linksVinculados {
+  margin-top: 5px;
+}
+div.linksVinculados > div a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+div.linksVinculados > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 30px;
+}
+div.linksVinculados > div > div {
+  cursor: pointer;
+  --tamanhoSpan: 25px;
+  min-width: var(--tamanhoSpan);
+  min-height: var(--tamanhoSpan);
+  background-image: url("../img/delete_outline_black_24dp.svg");
+  background-size: cover;
+  /* background-color: red; */
+  aspect-ratio: 1;
+  width: var(--tamanhoSpan);
+  height: var(--tamanhoSpan);
+  background-repeat: no-repeat;
+  filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(7486%)
+    hue-rotate(3deg) brightness(94%) contrast(119%);
+}
+fieldset.linksDica button {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+div.buscaDicaForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+div.buscaDicaForm button {
+  max-width: max-content;
+}
+.resultsDicas > div {
+  display: flex;
+  min-height: 35px;
+  align-items: center;
+  padding: 3px;
+  --gap: 20px;
+  gap: var(--gap);
+  --coluna_id: 45px;
+  --coluna_grupo: 230px;
+  --coluna_data: 175px;
+  --coluna_anexos: 80px;
+  --coluna_titulo: calc(
+    100% -
+      calc(
+        var(--coluna_id) + var(--coluna_grupo) + calc(var(--coluna_data) * 2) +
+          var(--coluna_anexos) + calc(var(--gap) * 6)
+      ) / 2
+  );
+}
+.resultsDicas > div:nth-child(odd) {
+  background-color: hsl(222deg 48% 95%);
+}
+.resultsDicas > div:nth-child(even) {
+  background-color: hsl(222deg 48% 90%);
+}
+.resultsDicas > div + div {
+  margin-bottom: 5px;
+}
+.resultsDicas > div:first-of-type {
+  background-color: var(--azulFirst);
+  color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.resultsDicas > div:last-of-type {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.resultsDicas > div > div {
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.resultsDicas > div:nth-of-type(n + 2) {
+  align-items: flex-start;
+}
+.resultsDicas > div:nth-of-type(n + 2):hover {
+  cursor: pointer;
+  background-color: hsl(222deg 48% 80%);
+}
+.resultsDicas > div > div:nth-of-type(1) {
+  width: var(--coluna_id);
+  max-width: var(--coluna_id);
+}
+.resultsDicas > div > div:nth-of-type(2) {
+  width: var(--coluna_grupo);
+  max-width: var(--coluna_grupo);
+}
+.resultsDicas > div > div:nth-of-type(3) {
+  width: var(--coluna_titulo);
+  max-width: var(--coluna_titulo);
+}
+.resultsDicas > div > div:nth-of-type(4) {
+  width: var(--coluna_titulo);
+  max-width: var(--coluna_titulo);
+  max-height: 110px;
+}
+.resultsDicas > div > div:nth-of-type(5) {
+  width: var(--coluna_data);
+  max-width: var(--coluna_data);
+}
+.resultsDicas > div > div:nth-of-type(6) {
+  width: var(--coluna_data);
+  max-width: var(--coluna_data);
+}
+.resultsDicas > div > div:nth-of-type(7) {
+  width: var(--coluna_anexos);
+  max-width: var(--coluna_anexos);
+  text-align: center;
+}

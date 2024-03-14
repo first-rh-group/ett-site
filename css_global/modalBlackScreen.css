@@ -1,0 +1,186 @@
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.blackScreenModal {
+  position: fixed;
+  background-color: #141414a3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1001;
+  transition: opacity 600ms;
+  -webkit-transition: opacity 600ms;
+  -moz-transition: opacity 600ms;
+  -ms-transition: opacity 600ms;
+  -o-transition: opacity 600ms;
+}
+.fadeOutBlackScreen {
+  opacity: 0;
+}
+.modalFirst {
+  width: 90vw;
+  margin: auto;
+  margin-top: 4vh;
+  font-family: var(--fontFamilyDiv);
+}
+.modal_top .modal_close {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #212121;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  filter: contrast(0.5);
+  -webkit-filter: contrast(0.5);
+}
+
+.modal_top .modal_close:active {
+  text-shadow: unset;
+}
+.modal_top {
+  position: relative;
+  min-height: clamp(90px, 110px, 2vh);
+  padding: 10px;
+  background-color: var(--vividBlue);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: white;
+  font-size: clamp(1.8rem, 1.8vw, 4vw);
+  letter-spacing: 0.3vw;
+  word-spacing: 0.3vw;
+  display: flex;
+  align-items: center;
+}
+.modal_main {
+  background-color: white;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  min-height: 100px;
+  padding: 10px;
+  padding-bottom: 15px;
+  line-height: 32px;
+  font-size: clamp(1.2rem, 1vw, 1.5rem);
+}
+.loginModalFirst {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  position: absolute;
+  top: -20vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+}
+.login-box {
+  background-color: #051224;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  color: #fff;
+  outline: 0;
+  width: clamp(150px, 500px, 95vw);
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+.modal-header {
+  border-bottom: unset;
+}
+#loginForm > div:first-of-type {
+  display: flex;
+  justify-content: center;
+}
+#loginForm > button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+#recuperacaoSenha > div:nth-of-type(1) {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#recuperacaoSenha > div:nth-of-type(1):hover {
+  text-decoration: underline;
+}
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .loginModalFirst {
+    top: 2px;
+  }
+}

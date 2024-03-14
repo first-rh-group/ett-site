@@ -1,0 +1,21 @@
+@media only screen and (max-width: 767px) {
+  section#main {
+    display: block;
+  }
+  section#main > div.principal {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  section#header {
+    height: 150px;
+    display: block;
+    background-position: 7px 5px;
+    padding-top: 95px;
+    padding-left: 10px;
+  }
+  section#header > div {
+    height: 25px;
+  }
+}

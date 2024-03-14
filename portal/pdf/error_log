@@ -1,0 +1,686 @@
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 07:37:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 07:37:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 07:38:30 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined variable $pagamentos in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 313
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  foreach() argument must be of type array|object, null given in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 313
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 121
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 121
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 125
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 125
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 159
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 159
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 163
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 163
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 198
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 198
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 213
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 213
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 228
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 228
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 243
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 243
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 258
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 258
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 288
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 288
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 303
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 303
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 368
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 368
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 383
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 383
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 421
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 421
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 453
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 453
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 468
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 468
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 536
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 536
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 537
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 537
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 538
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 538
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 539
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 539
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 540
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 540
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 543
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 543
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 610
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 610
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 655
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 655
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 658
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 658
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php:288) in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(989): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined variable $pagamentos in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 313
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  foreach() argument must be of type array|object, null given in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 313
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 121
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 121
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 125
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 125
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 159
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 159
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 163
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 163
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 198
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 198
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 213
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 213
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 228
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 228
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 243
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 243
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 258
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 258
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 288
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 288
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 303
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 303
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 368
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 368
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 383
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 383
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 421
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 421
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 453
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 453
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 468
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 468
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 536
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 536
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 537
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 537
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 538
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 538
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 539
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 539
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 540
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 540
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 543
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 543
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 610
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 610
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 655
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 655
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 658
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 658
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:39:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php:288) in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(989): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined variable $pagamentos in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 313
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  foreach() argument must be of type array|object, null given in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 313
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 121
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 121
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 125
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 125
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 159
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 159
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 163
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 163
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 198
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 198
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 213
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 213
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 228
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 228
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 243
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 243
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 258
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 258
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 288
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 288
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 303
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 303
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 368
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 368
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 383
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 383
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 421
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 421
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 37
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 45
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 453
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 453
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 468
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 468
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 536
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 536
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 537
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 537
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 538
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 538
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 539
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 539
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 540
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 540
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 543
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 543
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 610
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 610
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 655
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 655
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 658
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 658
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 60
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 62
+[04-Mar-2024 07:44:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php:288) in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(989): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 08:52:37 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 580
+[04-Mar-2024 08:52:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 580
+[04-Mar-2024 08:52:37 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 582
+[04-Mar-2024 08:52:37 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 582
+[04-Mar-2024 08:52:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 08:53:11 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 580
+[04-Mar-2024 08:53:11 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 580
+[04-Mar-2024 08:53:11 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 582
+[04-Mar-2024 08:53:11 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php on line 582
+[04-Mar-2024 08:53:11 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined variable $pagamentos in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 255
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  foreach() argument must be of type array|object, null given in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 255
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 67
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 67
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 75
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 75
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 151
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 151
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 155
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 155
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 189
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 189
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 193
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 193
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 228
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 228
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 243
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 243
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 258
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 258
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 273
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 273
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 288
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 288
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 318
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 318
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 333
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 333
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 363
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 363
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 378
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 378
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 416
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 416
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 67
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 67
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 75
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 75
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 448
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 448
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 463
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 463
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 531
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 531
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 532
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 532
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 533
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 533
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 534
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 534
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 535
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 535
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 538
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 538
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 539
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 539
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 607
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 607
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 655
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 655
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 658
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 658
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 90
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Undefined array key "informeRendimento" in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 92
+[04-Mar-2024 08:55:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php:288) in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(989): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 08:59:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 08:59:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 08:59:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:10:20 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:10:20 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:10:52 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:10:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:15:23 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:15:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:16:08 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:16:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:17:18 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:17:18 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:19:21 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:19:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:21:32 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:21:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:22:13 America/Sao_Paulo] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'grupofir_firstrh3.informe_rendimentos_copy' doesn't exist in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php:23
+Stack trace:
+#0 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php(23): PDOStatement->execute()
+#1 {main}
+  thrown in /home/grupofirstrh/public_html/portal/pdf/informeRendimentos_TESTE.php on line 23
+[04-Mar-2024 09:22:58 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:22:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:41:56 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:41:56 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 09:50:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:50:37 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 09:50:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 10
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "CNPJFilial" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 70
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeCompleto" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "CPF" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 81
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 94
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 103
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 09:50:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 10:02:54 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 10:02:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 10:35:59 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 311
+[04-Mar-2024 10:35:59 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 10:37:05 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 312
+[04-Mar-2024 10:37:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 10:38:14 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 312
+[04-Mar-2024 10:38:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 10:38:21 America/Sao_Paulo] PHP Warning:  Undefined array key "Id" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 312
+[04-Mar-2024 10:38:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/informeRendimentos.php(673): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 10:38:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected string content "0353402" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 262
+[04-Mar-2024 11:29:21 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 11:29:21 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 88
+[04-Mar-2024 11:29:21 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type bool in /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php on line 110
+[04-Mar-2024 11:29:21 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(997): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/folhaPonto.php(207): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "printContraCheque" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 4
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 4
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "printContraCheque" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 4
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 4
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 1 in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 183
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 2 in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 183
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "printContraCheque" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 7
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 7
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 8
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 8
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "infoUser" in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/session/local_functions.php on line 34
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "printContraCheque" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 10
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 10
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 30
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 30
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "COD_FILIAL" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 31
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeFuncionario" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 50
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "cpf" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 50
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 55
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 55
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "tomador" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 60
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "nomeFuncao" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 70
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "departamentoNome" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 70
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 1 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 71
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 2 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 71
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "data_admissao" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 72
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "PIS" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 81
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "CTPS" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 82
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "chapa" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 83
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "BANCO" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 86
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "AGENCIA" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 87
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key "CONTA" in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 88
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 164
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 164
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 165
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 165
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 166
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 166
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 167
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 167
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Undefined array key 0 in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 168
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php on line 168
+[04-Mar-2024 12:37:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file (output started at /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php:71) in /home/grupofirstrh/public_html/fpdf185/fpdf.php:270
+Stack trace:
+#0 /home/grupofirstrh/public_html/fpdf185/fpdf.php(989): FPDF->Error()
+#1 /home/grupofirstrh/public_html/fpdf185/fpdf.php(948): FPDF->_checkoutput()
+#2 /home/grupofirstrh/public_html/portal/pdf/fichaFinanceira.php(170): FPDF->Output()
+#3 {main}
+  thrown in /home/grupofirstrh/public_html/fpdf185/fpdf.php on line 270

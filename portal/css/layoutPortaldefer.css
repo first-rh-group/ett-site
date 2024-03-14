@@ -1,0 +1,69 @@
+div.contracheque,
+div.informeRendimento,
+div.folhaPonto {
+  border: 1px solid gray;
+  padding: 3vw;
+  border-radius: 5px;
+  background-color: var(--azulFirst);
+  color: white;
+  width: max-content;
+  max-width: 100%;
+}
+div.contracheque form,
+div.informeRendimento form,
+div.folhaPonto form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+div.folhaPonto form select {
+  width: max-content;
+  min-width: 120px;
+}
+div.folhaPonto form label {
+  margin-bottom: 9px;
+  margin-left: 1px;
+}
+div.folhaPonto form label:last-of-type {
+  margin-top: 9px;
+}
+div.informeRendimento button,
+div.contracheque button,
+div.folhaPonto button {
+  width: max-content;
+  margin-top: 10px;
+}
+.documentacaoDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw;
+  justify-content: center;
+}
+.documentacaoDiv > div {
+  max-width: calc(25% - 3vw);
+  width: calc(25% - 3vw);
+  min-width: 130px;
+  min-height: 100px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: 3px solid;
+  justify-content: center;
+  color: var(--vividBlue);
+  box-shadow: #bdbdbd 4px 4px 4px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: box-shadow 350ms;
+  -webkit-transition: box-shadow 350ms;
+  -moz-transition: box-shadow 350ms;
+  -ms-transition: box-shadow 350ms;
+  -o-transition: box-shadow 350ms;
+}
+.documentacaoDiv > div:hover {
+  box-shadow: unset;
+}
