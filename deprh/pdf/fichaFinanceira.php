@@ -1,5 +1,6 @@
 <?php
-include('/home/grupofirstrh/public_html/portal/session/local_functions.php');
+/* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
+include('../session/local_functions.php');
 require('../../fpdf183/fpdf.php');
 $fichasFinanceiras = fichasFinanceirasPeriodo($_SESSION['printContraCheque']['login'], $_SESSION['printContraCheque']['periodo']);
 $infoUser = infoUser($_SESSION['printContraCheque']['login']);

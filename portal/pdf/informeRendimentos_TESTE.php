@@ -1,5 +1,6 @@
 <?php
-include('/home/grupofirstrh/public_html/portal/session/local_functions.php');
+/* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
+include('../../portal/session/local_functions.php');
 require('../../fpdf185/fpdf.php');
 
 $cnpj = '01721271000107';
@@ -15,7 +16,8 @@ if (isset($_GET['cnpj']) && $_GET['cnpj'] != '') {
 $infoUser = infoUser([
     'cpf' => $_GET['cpf'],
 ]);
-include('/home/grupofirstrh/data/connectionSuperUser.php');
+/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+include('../../data/connectionSuperUser.php');
 $query = "SELECT informe_rendimentos_copy.id AS idInforme FROM informe_rendimentos_copy WHERE informe_rendimentos_copy.CPF = :cpf AND  informe_rendimentos_copy.CNPJCOLIGADA = :cnpj AND informe_rendimentos_copy.ANO = '2023';";
 $stmt = $db->prepare($query);
 $stmt->execute([

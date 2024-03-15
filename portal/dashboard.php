@@ -1,6 +1,6 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php');
+include('../portal/session/local_functions.php');
 
 function infoUser_TESTE($arrayInfo)
 {
@@ -20,7 +20,7 @@ function infoUser_TESTE($arrayInfo)
     $busca = implode(' AND ', $busca);
     $dbname = "grupofir_departamentoRH";
     /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-    include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/data/connectionSuperUser.php');
+    include('../data/connectionSuperUser.php');
     $query = "SELECT grupofir_departamentoRH.usuariosCorp.cpf, grupofir_departamentoRH.usuariosCorp.nomeCompleto, grupofir_departamentoRH.usuariosCorp.email, grupofir_departamentoRH.usuariosCorp.telefones, grupofir_departamentoRH.usuariosCorp.status, grupofir_departamentoRH.usuariosCorp.sessionHash,
     grupofir_firstrh3.departamento.descricao as departamentoNome, grupofir_firstrh3.departamento.email as departamentoEmail
     FROM grupofir_departamentoRH.usuariosCorp 

@@ -1,5 +1,6 @@
 <?php
-include('/home/grupofirstrh/public_html/portal/session/local_functions.php');
+/* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
+include('../../portal/session/local_functions.php');
 require('../../fpdf183/fpdf.php');
 if (!isset($_SESSION['rendimentos']['cpf']) || !isset($_SESSION['rendimentos']['cnpj']) || $_SESSION['rendimentos']['cpf'] == '' || $_SESSION['rendimentos']['cnpj'] == '') {
     echo "NÃO FOI POSSÍVEL ATENDER A REQUISIÇÃO";

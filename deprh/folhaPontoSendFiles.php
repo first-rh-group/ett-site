@@ -1,6 +1,8 @@
 <?php
-include('/home/grupofirstrh/public_html/portal/session/local_functions.php');
-$enderecoRemoto = "/home/grupofirstrh/public_html/portal/documentacao/";
+/* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
+include('./session/local_functions.php');
+/* $enderecoRemoto = "/home/grupofirstrh/public_html/portal/documentacao/"; */
+$enderecoRemoto = "../portal/documentacao/";
 $nomeArquivoArray = explode('-', $_POST['periodo']);
 $nomeArquivo = $_SESSION['infoUser']['login'] . $nomeArquivoArray[0] . $nomeArquivoArray[1];
 $filesRetorno = '';

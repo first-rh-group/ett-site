@@ -376,7 +376,8 @@ function novaSenha($arrayInfo)
 	}
 	$executePDO['cpf'] = $arrayInfo['cpf'];
 	$dbname = "grupofir_departamentoRH";
-	include('/home/grupofirstrh/data/connectionSuperUser.php');
+	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+	include('./data/connectionSuperUser.php');
 	$query = "UPDATE usuariosCorp SET senha = PASSWORD(:senha) " . $alteraEmail . "WHERE cpf = :cpf";
 	// print_r2($query, __LINE__, __FILE__, __FUNCTION__);
 	$st = $db->prepare($query);
@@ -389,7 +390,8 @@ function novaSenha($arrayInfo)
 				'nome' => $usuario['nomeCompleto'],
 				'email' => $usuario['email']
 			]];
-			include('/home/grupofirstrh/public_html/includes/mailRecuperacaoSenha.php');
+			/* include('/home/grupofirstrh/public_html/includes/mailRecuperacaoSenha.php'); */
+			include('./includes/mailRecuperacaoSenha.php');
 		}
 		$arrayRetorno['email'] = (is_null($usuario['email']) || $usuario['email'] == '' ? '' : $usuario['email']);
 		$arrayRetorno['nomeCompleto'] = (is_null($usuario['nomeCompleto']) || $usuario['nomeCompleto'] == '' ? '' : $usuario['nomeCompleto']);
@@ -409,7 +411,8 @@ function infoEmpregado($arrayBusca)
 		$executePDO[] = apenasNumeros($arrayBusca['status']);
 	}
 	$dbname = "grupofir_departamentoRH";
-	include('/home/grupofirstrh/data/connectionSuperUser.php');
+	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+	include('./data/connectionSuperUser.php');
 	$query = "SELECT id, nomeCompleto, cpf, iniciais, email, telefones, DATE_FORMAT(lastLogin, '%d-%m-%Y') as lastLogin, sessionHash, ipLogin, diasAutorizados, horarioAutorizado FROM usuariosCorp WHERE " . implode(' AND ', $where) . " LIMIT 1";
 	$st = $db->prepare($query);
 	$st->execute($executePDO);
@@ -492,7 +495,8 @@ function infoColigada($codigos)
 	} else {
 		$busca = implode(' AND ', $busca);
 		$dbname = "grupofir_firstrh3";
-		include('/home/grupofirstrh/data/connectionSuperUser.php');
+		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+		include('./data/connectionSuperUser.php');
 		$query = "SELECT IF(COD_COLIGADA = 1,'E.T.T. First-RH-Assessoria Empresarial Ltda','Shift Gestão de Serviços Ltda') as matriz, NOME_FILIAL as filial, CNPJ, TELEFONE, ENDERECO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, CEP, ESTADO FROM filiais WHERE " . $busca . " LIMIT 1";
 		$st = $db->prepare($query);
 		$st->execute($executePDO);

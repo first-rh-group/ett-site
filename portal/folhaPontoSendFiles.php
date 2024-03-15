@@ -1,8 +1,8 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php');
+include('../portal/session/local_functions.php');
 /* $enderecoRemoto = "/home/grupofirstrh/public_html/deprh/documentacao/folhaPontoEnviadas/"; */
-$enderecoRemoto = "/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/deprh/documentacao/folhaPontoEnviadas/";
+$enderecoRemoto = "../deprh/documentacao/folhaPontoEnviadas/";
 $nomeArquivoArray = explode('-', $_POST['periodo']);
 $nomeArquivo = $_SESSION['infoUser']['login'] . $nomeArquivoArray[0] . $nomeArquivoArray[1];
 $filesRetorno = '';
@@ -12,7 +12,7 @@ if (count($_FILES) == 0 || $_FILES == null) {
     foreach ($_FILES as $key => $arquivo) {
         $nomeFinal = $nomeArquivo . '.' . explode('/', $arquivo['type'])[1];
         /* include('/home/grupofirstrh/data/connectionFull.php'); */
-        include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/data/connectionFull.php');
+        include('../data/connectionFull.php');
         $query = "SELECT id, nomeArquivo FROM folhaFisica WHERE cpf = ? AND referencia = ?;";
         $st = $db->prepare($query);
         $st->execute([

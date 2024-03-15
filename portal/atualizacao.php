@@ -1,6 +1,6 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php');
+include('../portal/session/local_functions.php');
 
 // ITENS A SEREM ATUALIZADOS
 // tabelas: ficha_financeira, funcionario, informe_rendimentos
@@ -18,7 +18,7 @@ $db = null;
 
 
 /* include('/home/grupofirstrh/data/connectionLocaWeb.php'); */
-include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/data/connectionLocaWeb.php');
+include('../data/connectionLocaWeb.php');
 $queryAtualizacao = " SELECT * FROM ficha_financeira WHERE 
 
 ANOCOMP >= (SELECT YEAR(DATE_SUB(CURRENT_DATE(), INTERVAL 45 DAY)))

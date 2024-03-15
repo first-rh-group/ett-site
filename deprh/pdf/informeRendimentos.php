@@ -1,5 +1,6 @@
 <?php
-include('/home/grupofirstrh/public_html/portal/session/local_functions.php');
+/* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
+include('./portal/session/local_functions.php');
 require('../../fpdf183/fpdf.php');
 $infoUser = infoUser($_SESSION['printInformeRendimentos']['login']);
 $infoRendimentos = informeRendimentos([

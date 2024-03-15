@@ -1,5 +1,6 @@
 <?php
-include('/home/grupofirstrh/public_html/admin/session/local_functions.php');
+/* include('/home/grupofirstrh/public_html/admin/session/local_functions.php'); */
+include('./admin/session/local_functions.php');
 if ($_POST['action'] == 'superCoringa') {
     if ($_POST['codigo'] == '1') {
         $infoUser = infoUser($_SESSION['infoUser']['login']);
@@ -15,7 +16,8 @@ if ($_POST['action'] == 'superCoringa') {
     } else if ($_POST['codigo'] == '4') {
         echo json_encode(infoUser($_POST['cpf']));
     } else if ($_POST['codigo'] == '5' && $_POST['tabela'] == 'admin') {
-        include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+        /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+        include('./data/connectionFull_departamentoRH.php');
         $arraySet[] = "usuariosAdmin.nomeCompleto = ?";
         $executePDO[] = ajustaNome(utf8_decode($_POST['nomeCompleto']));
         $arraySet[] = "usuariosAdmin.cpf = ?";
@@ -47,7 +49,8 @@ if ($_POST['action'] == 'superCoringa') {
         $db = null;
         echo json_encode(['return' => true]);
     } else if ($_POST['codigo'] == '5' && $_POST['tabela'] == 'deprh') {
-        include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+        /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+        include('./data/connectionFull_departamentoRH.php');
         $arraySet[] = "usuariosDeprh.nomeCompleto = ?";
         $executePDO[] = ajustaNome(utf8_decode($_POST['nomeCompleto']));
         $arraySet[] = "usuariosDeprh.cpf = ?";
@@ -81,7 +84,8 @@ if ($_POST['action'] == 'superCoringa') {
     } else if ($_POST['codigo'] == '7') {
         echo json_encode(infoUserRH($_POST['cpf']));
     } else if ($_POST['codigo'] == '9') {
-        include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+        /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+        include('./data/connectionFull_departamentoRH.php');
         $tabela = ($_POST['portal'] == 'admin' ? 'usuariosAdmin' : 'usuariosDeprh');
         $query = "DELETE FROM " . $tabela . " WHERE id != 1 AND id = ? LIMIT 1";
         $st = $db->prepare($query);
@@ -90,7 +94,8 @@ if ($_POST['action'] == 'superCoringa') {
         $db = null;
         echo json_encode(true);
     } else if ($_POST['codigo'] == '10') {
-        include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+        /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+        include('./data/connectionFull_departamentoRH.php');
         $executePDO = [
             utf8_decode(ajustaNome($_POST['nomeCompleto'])),
             apenasNumeros($_POST['cpf']),
@@ -129,7 +134,8 @@ if ($_POST['action'] == 'superCoringa') {
         }
     } else if ($_POST['codigo'] == '11') {
         $dbname = "grupofir_dicas";
-        include('/home/grupofirstrh/data/connectionSuperUser.php');
+        /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+        include('./data/connectionSuperUser.php');
         $executePDO = [
             apenasNumeros($_POST['grupo']),
             utf8_decode($_POST['titulo']),
@@ -166,7 +172,8 @@ if ($_POST['action'] == 'superCoringa') {
         ]);
     } else if ($_POST['codigo'] == '14') {
         $dbname = "grupofir_dicas";
-        include('/home/grupofirstrh/data/connectionSuperUser.php');
+        /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+        include('./data/connectionSuperUser.php');
         $executePDO = [];
         $where = [];
         if (isset($_POST['grupo']) && $_POST['grupo'] == 'Todos') {
@@ -208,7 +215,8 @@ if ($_POST['action'] == 'superCoringa') {
         ]);
     } else if ($_POST['codigo'] == '15') {
         $dbname = "grupofir_dicas";
-        include('/home/grupofirstrh/data/connectionSuperUser.php');
+        /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+        include('./data/connectionSuperUser.php');
         $executePDO = [
             apenasNumeros($_POST['grupo']),
             utf8_decode($_POST['titulo']),
@@ -253,7 +261,8 @@ if ($_POST['action'] == 'superCoringa') {
         ]);
     } else if ($_POST['codigo'] == '17') {
         $dbname = "grupofir_dicas";
-        include('/home/grupofirstrh/data/connectionSuperUser.php');
+        /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
+        include('./data/connectionSuperUser.php');
         $executePDO = [apenasNumeros($_POST['idDica'])];
         $query = "DELETE FROM dicas WHERE id = ? LIMIT 1";
         $st = $db->prepare($query);

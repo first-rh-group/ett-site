@@ -3,7 +3,8 @@ session_start();
 session_destroy();
 session_start();
 include('../../../data/connectionFull_departamentoRH.php');
-include('/home/grupofirstrh/public_html/session_global/global_functions.php');
+/* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
+include('./session_global/global_functions.php');
 $dadosEnviados = (array) json_decode($_POST['instrucoes']);
 $login = apenasNumeros($dadosEnviados['usuario']);
 $query = "SELECT id FROM usuariosDeprh WHERE usuariosDeprh.cpf = ? AND usuariosDeprh.senha = PASSWORD(?) AND usuariosDeprh.status = 0 AND SUBSTRING(diasAutorizados,(WEEKDAY(CURRENT_DATE()) + 1),1) = 0 AND CONCAT(SUBSTRING(CURTIME(),1,2),SUBSTRING(CURTIME(),4,2)) > SUBSTRING(horarioAutorizado,1,4) AND CONCAT(SUBSTRING(CURTIME(),1,2),SUBSTRING(CURTIME(),4,2)) < SUBSTRING(horarioAutorizado,5,4) LIMIT 1";

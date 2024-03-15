@@ -1,10 +1,12 @@
 <?php
-include('/home/grupofirstrh/public_html/portal/session/local_functions.php');
+/* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
+include('../session/local_functions.php');
 require('../../fpdf185/fpdf.php');
 $infoUser = infoUser([
     'cpf' => $_SESSION['printFolhaPonto']['login']
 ]);
-include('/home/grupofirstrh/data/connectionSelect.php');
+/* include('/home/grupofirstrh/data/connectionSelect.php'); */
+include('../../data/connectionSelect.php');
 $query = "SELECT * FROM tbl_ponto WHERE chapa = ? ORDER BY Id DESC LIMIT 1";
 $st = $db->prepare($query);
 $st->execute([$infoUser['chapa']]);

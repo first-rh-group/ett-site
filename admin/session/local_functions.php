@@ -1,6 +1,7 @@
 <?php
 session_start();
-include('/home/grupofirstrh/public_html/session_global/global_functions.php');
+/* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
+include('./session_global/global_functions.php');
 if (checkConnection() == false) {
     session_destroy();
     // header("Location: https://admin.grupofirstrh.com.br");
@@ -9,7 +10,8 @@ if (checkConnection() == false) {
 function checkConnection()
 {
     $resposta = false;
-    include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+    /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+    include('./data/connectionFull_departamentoRH.php');
     $query = "SELECT usuariosAdmin.id FROM usuariosAdmin WHERE usuariosAdmin.cpf = ? AND usuariosAdmin.sessionHash = ? AND usuariosAdmin.status = 0 LIMIT 1";
     $st = $db->prepare($query);
     $st->execute([$_SESSION['infoUser']['login'], $_SESSION['infoUser']['sessionHash']]);
@@ -23,7 +25,8 @@ function checkConnection()
 }
 function infoUser($userCpf)
 {
-    include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+    /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+    include('./data/connectionFull_departamentoRH.php');
     $query = "SELECT id, nomeCompleto, cpf, iniciais, email, telefones, DATE_FORMAT(lastLogin, '%d-%m-%Y') as lastLogin, sessionHash, ipLogin, diasAutorizados, horarioAutorizado, status, JSON_UNQUOTE(JSON_EXTRACT(permissoes, '$.criarAdmin')) as criarAdmin, JSON_UNQUOTE(JSON_EXTRACT(permissoes, '$.criarDeprh')) as criarDeprh
     FROM usuariosAdmin 
     WHERE usuariosAdmin.id != 1 AND usuariosAdmin.cpf = ? LIMIT 1";
@@ -39,7 +42,8 @@ function infoUser($userCpf)
 }
 function infoUserRH($userCpf)
 {
-    include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+    /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+    include('./data/connectionFull_departamentoRH.php');
     $query = "SELECT id, nomeCompleto, cpf, iniciais, email, telefones, DATE_FORMAT(lastLogin, '%d-%m-%Y') as lastLogin, sessionHash, ipLogin, diasAutorizados, horarioAutorizado, status
     FROM usuariosDeprh 
     WHERE usuariosDeprh.id != 1 AND usuariosDeprh.cpf = ? LIMIT 1";
@@ -55,7 +59,8 @@ function infoUserRH($userCpf)
 }
 function usuarios()
 {
-    include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+    /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+    include('./data/connectionFull_departamentoRH.php');
     $query = "SELECT id, usuariosAdmin.nomeCompleto, usuariosAdmin.cpf, usuariosAdmin.iniciais, usuariosAdmin.email, usuariosAdmin.telefones, DATE_FORMAT(usuariosAdmin.lastLogin, '%d-%m-%Y') as lastLogin, usuariosAdmin.sessionHash, usuariosAdmin.ipLogin, usuariosAdmin.diasAutorizados, usuariosAdmin.horarioAutorizado, usuariosAdmin.status
     FROM usuariosAdmin 
     WHERE usuariosAdmin.id != 1 ORDER BY usuariosAdmin.nomeCompleto ASC";
@@ -71,7 +76,8 @@ function usuarios()
 }
 function usuariosRH()
 {
-    include('/home/grupofirstrh/data/connectionFull_departamentoRH.php');
+    /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
+    include('./data/connectionFull_departamentoRH.php');
     $query = "SELECT id, usuariosDeprh.nomeCompleto, usuariosDeprh.cpf, usuariosDeprh.iniciais, usuariosDeprh.email, usuariosDeprh.telefones, DATE_FORMAT(usuariosDeprh.lastLogin, '%d-%m-%Y') as lastLogin, usuariosDeprh.sessionHash, usuariosDeprh.ipLogin, usuariosDeprh.diasAutorizados, usuariosDeprh.horarioAutorizado, usuariosDeprh.status
     FROM usuariosDeprh 
     WHERE usuariosDeprh.id != 1 ORDER BY usuariosDeprh.nomeCompleto ASC";
@@ -100,7 +106,8 @@ function folhasdePontoRecebidas($busca)
         $executePDO[] = $busca['dataEnvio'];
     }
     $buscaFinal = implode(' AND ', $where);
-    include('/home/grupofirstrh/data/connectionSelect.php');
+    /* include('/home/grupofirstrh/data/connectionSelect.php'); */
+    include('./data/connectionSelect.php');
     $query = "SELECT 
     funcionario.NOME as nomeEmpregado,
     folhaFisica.cpf, folhaFisica.referencia, folhaFisica.dataEnvio, folhaFisica.nomeArquivo

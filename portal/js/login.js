@@ -197,9 +197,13 @@ function login() {
         }
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                var resposta = xmlhttp.responseText;
+                var res = xmlhttp.responseText;
                 // document.getElementById('destino').innerHTML = resposta;
-                let res = JSON.parse(resposta);
+                try {
+                let res = JSON.parse(res);
+                } catch (e) {
+                    console.error("A resposta do servidor não é um JSON válido: ", res);
+                }
                 // console.log(res);
                 if(res == false) {
                     changeAttributes({
