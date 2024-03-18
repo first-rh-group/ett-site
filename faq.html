@@ -60,25 +60,30 @@
 				<div id="faqs"></div>
 				<script>
 					$(document).ready(function() {
-    $('.rectangle').click(function() {
-        var tipo = $(this).text() === 'Sou um candidato' ? 'candidato' : 'empresa';
-        $('#faqs').empty();
+    					$('.rectangle').click(function() {
+        				var tipo = $(this).text() === 'Sou um candidato' ? 'candidato' : 'empresa';
+        				$('#faqs').empty();
 
-        $.ajax({
-            url: '/projeto_ett/portal/api_faq/faq.php?tipo=' + tipo,
-            type: 'GET',
-            success: function(data) {
-                try {
-                    var faqs = JSON.parse(data);
-                    for (var i = 0; i < faqs.length; i++) {
-                        var faq = faqs[i];
-                        var posicaoFormatada = String(faq.posicao).padStart(2, '0');
-                        $('#faqs').append('<h2><span class="posicao">' + posicaoFormatada + '</span><span class="pergunta">' + faq.pergunta + '</span></h2>');
-                        $('#faqs').append('<p class="resposta">' + faq.resposta + '</p>');
-                    }
-                } catch (error) {
-                    console.error('Erro ao analisar JSON:', error);
-                }
+        				var isProduction = window.location.hostname === 'sitefirst.dtcx.com.br';
+        				var url = isProduction ? 
+						'https://sitefirst.dtcx.com.br/portal/api_faq/faq.php?tipo=' + tipo :
+						'/projeto_ett/portal/api_faq/faq.php?tipo=' + tipo;
+
+        			$.ajax({
+						url: url,
+						type: 'GET',
+						success: function(data) {
+							try {
+								var faqs = JSON.parse(data);
+								for (var i = 0; i < faqs.length; i++) {
+									var faq = faqs[i];
+									var posicaoFormatada = String(faq.posicao).padStart(2, '0');
+									$('#faqs').append('<h2><span class="posicao">' + posicaoFormatada + '</span><span class="pergunta">' + faq.pergunta + '</span></h2>');
+									$('#faqs').append('<p class="resposta">' + faq.resposta + '</p>');
+								}
+							} catch (error) {
+								console.error('Erro ao analisar JSON:', error);
+							}
             }
         });
     });
