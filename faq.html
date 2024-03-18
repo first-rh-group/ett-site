@@ -4,14 +4,15 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://grupofirstrh.com.br/js_global/global.js?version=11"></script>
-		<script defer charset="utf-8" src="/js/linguagem.js?version=11"></script>
-		<script defer charset="utf-8" src="/js/listener.js?version=11"></script>
+		<script defer charset="utf-8" src="./js/linguagem.js"></script>
+		<script defer charset="utf-8" src="./js/listener.js"></script>
 		<style> @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600&display=swap'); </style>
-		<link type="text/css" rel="stylesheet" href="/css/layout.css?version=11">
-		<link type="text/css" rel="stylesheet" href="/css/toogle.css?version=11">
-		<link type="text/css" rel="stylesheet" href="/css/mobile.css?version=11">
-		<link rel="icon" href="/img/icon_32x32.png" sizes="32x32" />
+		<link type="text/css" rel="stylesheet" href="./css/layout.css">
+		<link type="text/css" rel="stylesheet" href="./css/toogle.css">
+		<link type="text/css" rel="stylesheet" href="./css/mobile.css">
+		<link rel="icon" href="./img/icon_32x32.png" sizes="32x32" />
 		<title>:: First RH ::</title>
 	</head>
 
@@ -55,7 +56,34 @@
 					<div class="rectangle" tabindex="0">Sou um candidato</div>
 					<div class="rectangle" tabindex="0">Represento uma empresa</div>
 				</div>
-				<div class="faq"></div>
+				<!-- <div class="faq"></div> -->
+				<div id="faqs"></div>
+				<script>
+					$(document).ready(function() {
+    $('.rectangle').click(function() {
+        var tipo = $(this).text() === 'Sou um candidato' ? 'candidato' : 'empresa';
+        $('#faqs').empty();
+
+        $.ajax({
+            url: '/projeto_ett/portal/api_faq/faq.php?tipo=' + tipo,
+            type: 'GET',
+            success: function(data) {
+                try {
+                    var faqs = JSON.parse(data);
+                    for (var i = 0; i < faqs.length; i++) {
+                        var faq = faqs[i];
+                        var posicaoFormatada = String(faq.posicao).padStart(2, '0');
+                        $('#faqs').append('<h2><span class="posicao">' + posicaoFormatada + '</span><span class="pergunta">' + faq.pergunta + '</span></h2>');
+                        $('#faqs').append('<p class="resposta">' + faq.resposta + '</p>');
+                    }
+                } catch (error) {
+                    console.error('Erro ao analisar JSON:', error);
+                }
+            }
+        });
+    });
+});
+					</script>
 			</section>
 		</section>
 	</body>

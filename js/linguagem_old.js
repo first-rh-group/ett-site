@@ -155,7 +155,7 @@ const portugues = {
 		},
 		podemosAjudar:['Como podemos te ajudar?','Entre em contato']
 	},
-	faq:{
+	/* faq:{
 		titulos:['DÚVIDAS FREQUENTES','Dúvidas dos Candidatos','Dúvidas de Empresas'],
 		candidato: [
 			['Preciso pagar para participar do processo de recrutamento e seleção?','Não, nunca cobramos os candidatos por nossos serviços.'],
@@ -170,7 +170,7 @@ const portugues = {
 			['Quais são os benefícios de trabalhar com a First RH Group?','Ajudamos nossos clientes a montarem forças de trabalho produtivas e engajadas. Podemos contratar uma equipe remota ou presencial através de atendimento individualizado, ágil e eficiente. Contando com apoio jurídico, confiança e a certeza de uma equipe focada em aprendizagem e inovação contínua, que oferece as melhores práticas de mercado à sua empresa. Além de prestar consultoria aos nossos clientes, recomendando as melhores alternativas para a tomada de decisão compatível com aspectos legais e técnicos.'],
 			['Quais serviços a First RH Group oferece?','Somos um Grupo de empresas especializadas em Recursos Humanos, com atuação em Recrutamento e Seleção, RPO, Serviços Terceirizados e Mão-de-Obra Temporária (Lei n. 6019/74). Oferecemos serviços e recursos customizáveis para atender as demandas e necessidades de cada cliente, em suas situações específicas.'],
 		]
-	}
+	} */
 }
 var atualAno = new Date();
 if( (atualAno.getMonth() + 1) < 3 || ( (atualAno.getMonth() + 1) == 3) && atualAno.getDate() < 14 ) { atualAno = atualAno.getFullYear() - 1;

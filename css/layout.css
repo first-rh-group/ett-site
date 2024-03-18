@@ -1,18 +1,18 @@
 @font-face {
   font-family: fontProjeto;
-  src: url(/font/CodecPro-Regular.ttf) format("truetype");
+  src: url(../font/CodecPro-Regular.ttf) format("truetype");
   }
 @font-face {
   font-family: fontExtraBold;
-  src: url(/font/CodecCold-ExtraBold.ttf) format("truetype");
+  src: url(../font/CodecCold-ExtraBold.ttf) format("truetype");
   }
 @font-face {
   font-family: fontCodecRegular;
-  src: url(/font/codec-pro-light.ttf) format("truetype");
+  src: url(../font/codec-pro-light.ttf) format("truetype");
   }
   @font-face {
     font-family: fontCodecBold;
-    src: url(/font/codec-pro-bold.ttf) format("truetype");
+    src: url(../font/codec-pro-bold.ttf) format("truetype");
     }
 :root {
   --fontProjeto: fontProjeto;
@@ -91,7 +91,7 @@ section#faq {
   padding: 5vw;
 }
 #faq > div:nth-of-type(1) {
-  background-image: url(/img/faq.png);
+  background-image: url(../img/faq.png);
   background-repeat: no-repeat;
   background-size: 50px;
   min-height: 50px;
@@ -154,7 +154,7 @@ section#faq {
 .header > div:nth-of-type(1) {
   width: 100%;
   align-items: center;
-  background-image: url(/new_img/First\ RH\ Group\ LOGO\ SEM\ FUNDO.png);
+  background-image: url(../new_img/First\ RH\ Group\ LOGO\ SEM\ FUNDO.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 5vw center;
@@ -340,11 +340,11 @@ a {
   /* background-color: red; */
 }
 .whatsApp {
-  background-image: url(/img/whatsApp_1.png);
+  background-image: url(../img/whatsApp_1.png);
 }
 .whatsApp:hover,
 .whatsApp:active {
-  background-image: url(/img/whatsApp_invert.png);
+  background-image: url(../img/whatsApp_invert.png);
   position: relative;
   bottom: -1px;
 }
@@ -353,8 +353,8 @@ a {
   -webkit-filter: unset;
 }
 .main {
-  background-image: url(/img/image_1.png);
-  background-image: url(/img/image_1.webp);
+  background-image: url(../img/image_1.png);
+  background-image: url(../img/image_1.webp);
   background-repeat: no-repeat;
   background-position: left top;
   padding: 5vw;
@@ -522,7 +522,7 @@ a {
   background-color: lightgray;
 }
 #solucoesHumanas {
-  background-image: url(/new_img/PÁGINA\ PRINCIPAL\ 2.png);
+  background-image: url(../new_img/PÁGINA\ PRINCIPAL\ 2.png);
   background-position-x: right;
   background-attachment: fixed;
   background-color: #000000e3;
@@ -589,25 +589,25 @@ a {
   margin-bottom: 10px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) {
-  background-image: url(/new_img//ICON\ 1.png);
+  background-image: url(../new_img//ICON\ 1.png);
   margin-left: 40px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) {
-  background-image: url(/new_img/ICON\ 2.png);
+  background-image: url(../new_img/ICON\ 2.png);
   margin-left: 40px;
   margin-top: 45px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) {
-  background-image: url(/new_img/ICON\ 3.png);
+  background-image: url(../new_img/ICON\ 3.png);
   margin-left: 40px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) {
-  background-image: url(/new_img/ICON\ 4.png);
+  background-image: url(../new_img/ICON\ 4.png);
   margin-left: 40px;
   margin-top: 30px;
 }
 #pqFirst > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) {
-  background-image: url(/new_img/ICON\ 5.png);
+  background-image: url(../new_img/ICON\ 5.png);
   margin-left: 40px;
 }
 /* #pqFirst > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(1) {
@@ -622,8 +622,8 @@ a {
   row-gap: 2vh;
   flex-direction: column;
   justify-content: center;
-  background-image: url(/new_img/PÁGINA\ PRINCIPAL\ 3.png);
-  background-image: url(/new_img//PÁGINA\ PRINCIPAL\ 3.png);
+  background-image: url(../new_img/PÁGINA\ PRINCIPAL\ 3.png);
+  background-image: url(../new_img//PÁGINA\ PRINCIPAL\ 3.png);
   /* background-image: url(/img/image_3.png);
   background-image: url(/img/image_3.webp);*/
   background-position: top center;
@@ -772,7 +772,7 @@ a {
   text-align: center;
 }
 #rodape > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
-  background-image: url(/img/logo_rodape.png);
+  background-image: url(../img/logo_rodape.png);
   background-size: contain;
   background-repeat: no-repeat;
   min-height: 7vh;
@@ -797,21 +797,21 @@ a {
   > div:nth-of-type(1)
   > div:nth-of-type(2)
   > div:nth-of-type(1) {
-  background-image: url(/img/facebook.png);
+  background-image: url(../img/facebook.png);
 }
 #rodape
   > div:nth-of-type(1)
   > div:nth-of-type(1)
   > div:nth-of-type(2)
   > div:nth-of-type(2) {
-  background-image: url(/img/whatsapp_rodape.png);
+  background-image: url(../img/whatsapp_rodape.png);
 }
 #rodape
   > div:nth-of-type(1)
   > div:nth-of-type(1)
   > div:nth-of-type(2)
   > div:nth-of-type(3) {
-  background-image: url(/img/linkedin.png);
+  background-image: url(../img/linkedin.png);
 }
 
 #rodape > div:nth-of-type(1) > div:nth-of-type(2),
@@ -828,7 +828,7 @@ a {
 
 #rodape > div:nth-of-type(1) > div:nth-of-type(2) > div:last-of-type a,
 #rodape > div:nth-of-type(1) > div:nth-of-type(3) > div:last-of-type a {
-  background-image: url(/img/map.png);
+  background-image: url(../img/map.png);
   background-repeat: no-repeat;
   background-size: 18px;
   background-position-x: right;
@@ -855,7 +855,7 @@ a {
 }
 .curriculo {
   margin: 15px 0;
-  background-image: url(/img_aws/oportunidades/curriculo.png);
+  background-image: url(../img_aws/oportunidades/curriculo.png);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Arial;
@@ -1008,7 +1008,7 @@ a {
   height: 100vh;
 }
 #faq {
-  background-image: url('/new_img/PÁGINA\ DÚVIDAS.png'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('../new_img/PÁGINA\ DÚVIDAS.png'); /* Substitua pelo caminho da sua imagem */
   background-size: cover;
   color: black;
   font-weight: bold;
@@ -1036,6 +1036,25 @@ a {
 }
 #faq .rectangle:hover {
   border-color: var(--vermelhoFirst);
+}
+.pergunta {
+  font-family: var(--fontExtraBold);
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.resposta {
+  font-family: var(--fontCodecRegular);
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.posicao {
+  color: var(--vermelhoFirst);
+  display: inline-block;
+  margin-right: 10px;
 }
 @media only screen and (min-width: 1200px) {
   .container {
