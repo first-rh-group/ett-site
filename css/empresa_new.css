@@ -1,21 +1,27 @@
 @font-face {
     font-family: fontProjeto;
-    src: url(/font/codec-pro.regular.ttf) format("truetype");
+    src: url(../font/CodecPro-Regular.ttf) format("truetype");
     }
   @font-face {
     font-family: fontExtraBold;
-    src: url(/font/CodecCold-ExtraBold.ttf) format("truetype");
+    src: url(../font/CodecCold-ExtraBold.ttf) format("truetype");
     }
+    @font-face {
+        font-family: fontCodecBold;
+        src: url(../font/codec-pro-bold.ttf) format("truetype");
+      }
   @font-face {
     font-family: fontCodecRegular;
-    src: url(/font/codec-pro-light.ttf) format("truetype");
+    src: url(../font/codec-pro-light.ttf) format("truetype");
     }
 :root {
         --fontProjeto: fontProjeto;
         --fontExtraBold: fontExtraBold;
+        --fontCodecBold: fontCodecBold;
         --fontCodecRegular: fontCodecRegular;
         --fontSizeDiv: clamp(1.5em, 2vw, 30px);
         --fontSizeTitulos: clamp(28px, 4.5vw, 32px);
+        --fontSizePadrao: clamp(19px, 18px, 2vw);
 }
 .displayNone {
     display: none !important;
@@ -72,9 +78,9 @@ section.historia {
     display: block;
 }
 section.historia>div:nth-of-type(1) {
-    width: 750px;
+    width: 820px;
     grid-area: imagem;
-    background-image: url(/img/fusionLogo.png);
+    background-image: url(../img/fusionLogo.png);
     /* background-position: center; */
     background-repeat: no-repeat;
     background-size: contain;
@@ -166,7 +172,7 @@ section#shift ul li:before,
 section#recruit ul li:before {
     content: "";
     display: inline-block;
-    background-image: url(/img/check.png);
+    background-image: url(../img/check.png);
     height: 17px;
     width: 25px;
     background-repeat: no-repeat;
@@ -175,7 +181,7 @@ section#recruit ul li:before {
 }
 
 section#ettFirst {
-    background-image: url(/img/empresa_3.webp);
+    background-image: url(../img/empresa_3.webp);
 }
 
 section#ettFirst>div:nth-of-type(1) {
@@ -183,11 +189,11 @@ section#ettFirst>div:nth-of-type(1) {
 }
 
 section#ettFirst>div>div:nth-of-type(1) {
-    background-image: url(/img/logo_ett_new.png);
+    background-image: url(../img/logo_ett_new.png);
 }
 
 section#shift {
-    background-image: url(/img/empresa_4.webp);
+    background-image: url(../img/empresa_4.webp);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -195,7 +201,7 @@ section#shift {
 }
 
 section#shift>div>div:nth-of-type(1) {
-    background-image: url(/img/logo_shift_new.png);
+    background-image: url(../img/logo_shift_new.png);
     min-width: var(--larguraShift);
 }
 
@@ -204,11 +210,11 @@ section#shift>div>div:nth-of-type(2) {
 }
 
 section#recruit {
-    background-image: url(/img/empresa_5.webp);
+    background-image: url(../img/empresa_5.webp);
 }
 
 section#recruit>div>div:nth-of-type(1) {
-    background-image: url(/img/logo_connecting_new.png);
+    background-image: url(../img/logo_connecting_new.png);
 }
 
 section.empresas {
@@ -218,7 +224,7 @@ section.empresas {
 }
 
 section.empresas>div {
-    height: clamp(390px, 390px, 390px);
+   /* height: clamp(390px, 390px, 390px); */
     background-size: cover;
     overflow: hidden;
     padding: 30px 15px;
@@ -232,7 +238,7 @@ section.empresas div.logo {
 }
 
 section.empresas div[data-ett] {
-    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ ETT.webp);
+    background-image: url(../img_menor/PÁGINA\ SOLUÇÕES\ ETT.webp);
 }
 
 section.empresas>div>div.conteudo {
@@ -241,13 +247,13 @@ section.empresas>div>div.conteudo {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    transform: translateY(280px);
-    -webkit-transform: translateY(280px);
+    /* transform: translateY(280px); */
+    /* -webkit-transform: translateY(280px); */
     -moz-transform: translateY(280px);
     -ms-transform: translateY(280px);
     -o-transform: translateY(280px);
-    transition: transform 550ms;
-    -webkit-transition: transform 550ms;
+   /* transition: transform 550ms; */
+    /* -webkit-transition: transform 550ms; */
     -moz-transition: transform 550ms;
     -ms-transition: transform 550ms;
     -o-transition: transform 550ms;
@@ -396,27 +402,27 @@ section.empresas>div:hover>div.conteudo {
 }
 
 section.empresas div[data-ett] div.logo {
-    background-image: url(/new_img/ETT\ LOGO\ SEM\ FUNDO.png);
+    background-image: url(../new_img/ETT\ LOGO\ SEM\ FUNDO.png);
 }
 
 section.empresas div[data-shift] {
-    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ SHIFT.webp);
+    background-image: url(../img_menor/PÁGINA\ SOLUÇÕES\ SHIFT.webp);
 }
 
 section.empresas div[data-shift] div.logo {
-    background-image: url(/new_img/Shift\ LOGO\ SEM\ FUNDO.png);
+    background-image: url(../new_img/Shift\ LOGO\ SEM\ FUNDO.png);
 }
 
 section.empresas div[data-connecting] {
-    background-image: url(/img_menor/PÁGINA\ SOLUÇÕES\ CONNECTING.webp);
+    background-image: url(../img_menor/PÁGINA\ SOLUÇÕES\ CONNECTING.webp);
 }
 
 section.empresas div[data-connecting] div.logo {
-    background-image: url(/new_img/First\ Connecting\ LOGO\ SEM\ FUNDO.png);
+    background-image: url(../new_img/First\ Connecting\ LOGO\ SEM\ FUNDO.png);
 }
 
 section#valores {
-    background-image: url(/img_menor/PÁGINA\ O\ GRUPO\ 5.png);
+    background-image: url(../img_menor/PÁGINA\ O\ GRUPO\ 5.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
@@ -458,7 +464,10 @@ section#valores>div:nth-of-type(2)>div>div:first-of-type {
 }
 
 section#valores>div:nth-of-type(2)>div>div:last-of-type {
-    font-size: clamp(13px, 10vw, 15.5px);
+    font-family: var(--fontCodecRegular);
+    /* font-size: clamp(19px, 18px, 2vw); */
+    max-width: 550px;
+    line-height: 1.3;
 }
 section#valores>div>div>div>.titulo {
     position: relative;
@@ -479,10 +488,10 @@ section#consultores {
 }
 
 section#consultores>div:nth-of-type(1) {
-    font-size: clamp(22px, 10vw, 28px);
+    font-size: clamp(16px, 16vw, 24px);
     text-align: center;
-    min-height: 55px;
-    margin-bottom: 3vh;
+    min-height: 25px;
+    /* margin-bottom: 3vh; */
     font-family: var(--fontExtraBold);
 }
 
@@ -512,29 +521,37 @@ section#consultores > div:nth-of-type(2) > div {
     text-align: center;
 }
 
+
 section#consultores>div:nth-of-type(2)>div:nth-of-type(1) {
-    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO.png);
+    background-image: url(../img_menor/ÁREAS\ DE\ ATUAÇÃO.png);
     /*background-image: url(/img/consulores_1.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(2) {
-    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 2.png);
+    background-image: url(../img_menor/ÁREAS\ DE\ ATUAÇÃO\ 2.png);
     /*background-image: url(/img/consulores_2.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(3) {
-    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 3.png);
+    background-image: url(../img_menor/ÁREAS\ DE\ ATUAÇÃO\ 3.png);
     /* background-image: url(/img/consulores_3.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(4) {
-    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 4.png);
+    background-image: url(../img_menor/ÁREAS\ DE\ ATUAÇÃO\ 4.png);
     /* background-image: url(/img/consulores_4.webp); */
 }
 
 section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
-    background-image: url(/img_menor/ÁREAS\ DE\ ATUAÇÃO\ 5.png);
+    background-image: url(../img_menor/ÁREAS\ DE\ ATUAÇÃO\ 5.png);
    /* background-image: url(/img/consulores_5.webp); */
+}
+section#consultores>div:nth-of-type(2)>div:nth-of-type(1),
+section#consultores>div:nth-of-type(2)>div:nth-of-type(2),
+section#consultores>div:nth-of-type(2)>div:nth-of-type(3),
+section#consultores>div:nth-of-type(2)>div:nth-of-type(4),
+section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
+    background-size: cover;
 }
 #feedback {
     background-color: #333; /* Cinza mais forte */
@@ -542,13 +559,8 @@ section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
     padding: 50px 0;
 }
 .containerBalao {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-}
-.baloes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 .balao {
     background-color: #fff;
@@ -557,11 +569,18 @@ section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 60px;
-    max-width: calc(50% - 40px);
+    max-width: calc(33% - 40px); /* Alterado para 33% para acomodar 3 balões por linha */
     text-align: left;
     position: relative;
     margin-right: 20px;
     font-family: var(--fontExtraBold);
+    box-sizing: border-box; /* Faz com que o padding seja incluído no tamanho total do balão */
+    flex: 1 0 30%; /* Cresce para preencher o espaço, não encolhe, base de 30% */
+}
+.baloes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .balao::before {
     content: '';
@@ -573,6 +592,23 @@ section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
     border-style: solid;
     border-width: 20px 15px 0;
     border-color: #fff transparent transparent;
+}
+div.itens span {
+    font-family: var(--fontCodecBold);
+}
+#valores > div > div > div:first-child {
+    margin-bottom: -25px; /* Ajuste este valor para aproximar o texto do título */
+}
+#valores {
+    margin-bottom: -55px;
+}
+.balao p {
+    text-align: center;
+    line-height: 1.3;
+}
+section#consultores>div:nth-of-type(2)>div {
+    width: 300px; /* Ajuste o valor conforme necessário */
+    height: 300px; /* Ajuste o valor conforme necessário */
 }
 @media only screen and (max-width: 900px) {
     section.empresas {

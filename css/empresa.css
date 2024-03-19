@@ -1,6 +1,6 @@
   section.inicial {
   /* background-image: url(/img/empresa_1.webp); */
-  background-image: url(/img_menor/PÁGINA\ O\ GRUPO\ 7.webp);
+  background-image: url(../img_menor/PÁGINA\ O\ GRUPO\ 7.webp);
   /* background-image: url(/new_img/PÁGINA\ O\ GRUPO.png); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -90,7 +90,7 @@ section#shift ul li:before,
 section#recruit ul li:before {
   content: "";
   display: inline-block;
-  background-image: url(/img/check.png);
+  background-image: url(../img/check.png);
   height: 17px;
   width: 25px;
   background-repeat: no-repeat;
@@ -99,37 +99,37 @@ section#recruit ul li:before {
 }
 
 section#ettFirst {
-  background-image: url(/img/empresa_3.webp);
+  background-image: url(../img/empresa_3.webp);
 }
 section#ettFirst > div:nth-of-type(1) {
   width: clamp(30vw, 365px, 100%);
 }
 section#ettFirst > div > div:nth-of-type(1) {
-  background-image: url(/img/logo_ett.png);
+  background-image: url(../img/logo_ett.png);
 }
 section#shift {
-  background-image: url(/img/empresa_4.webp);
+  background-image: url(../img/empresa_4.webp);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   --larguraShift: 320px;
 }
 section#shift > div > div:nth-of-type(1) {
-  background-image: url(/img/logo_shift.png);
+  background-image: url(../img/logo_shift.png);
   min-width: var(--larguraShift);
 }
 section#shift > div > div:nth-of-type(2) {
   width: var(--larguraShift);
 }
 section#recruit {
-  background-image: url(/img/empresa_5.webp);
+  background-image: url(../img/empresa_5.webp);
 }
 section#recruit > div > div:nth-of-type(1) {
-  background-image: url(/img/logo_recruit.png);
+  background-image: url(../img/logo_recruit.png);
 }
 
 section#valores {
-  background-image: url(/img/empresa_6.webp);
+  background-image: url(../img/empresa_6.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left top;
@@ -200,24 +200,24 @@ section#consultores > div:nth-of-type(2) > div {
   text-align: center;
 }
 section#consultores > div:nth-of-type(2) > div:nth-of-type(1) {
-  background-image: url(/img/consulores_1.png);
-  background-image: url(/img/consulores_1.webp);
+  background-image: url(../img/consulores_1.png);
+  background-image: url(../img/consulores_1.webp);
 }
 section#consultores > div:nth-of-type(2) > div:nth-of-type(2) {
-  background-image: url(/img/consulores_2.png);
-  background-image: url(/img/consulores_2.webp);
+  background-image: url(../img/consulores_2.png);
+  background-image: url(../img/consulores_2.webp);
 }
 section#consultores > div:nth-of-type(2) > div:nth-of-type(3) {
-  background-image: url(/img/consulores_3.png);
-  background-image: url(/img/consulores_3.webp);
+  background-image: url(../img/consulores_3.png);
+  background-image: url(../img/consulores_3.webp);
 }
 section#consultores > div:nth-of-type(2) > div:nth-of-type(4) {
-  background-image: url(/img/consulores_4.png);
-  background-image: url(/img/consulores_4.webp);
+  background-image: url(../img/consulores_4.png);
+  background-image: url(../img/consulores_4.webp);
 }
 section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
-  background-image: url(/img/consulores_5.png);
-  background-image: url(/img/consulores_5.webp);
+  background-image: url(../img/consulores_5.png);
+  background-image: url(../img/consulores_5.webp);
 }
 @media only screen and (max-width: 812px) {
   section.historia {

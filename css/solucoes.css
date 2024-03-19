@@ -1,26 +1,26 @@
 @font-face {
   font-family: fontProjeto;
-  src: url(/font/CodecPro-Regular.ttf) format("truetype");
+  src: url(../font/CodecPro-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: fontExtraBold;
-  src: url(/font/CodecCold-ExtraBold.ttf) format("truetype");
+  src: url(../font/CodecCold-ExtraBold.ttf) format("truetype");
 }
 @font-face {
   font-family: fontCodecRegular;
-  src: url(/font/codec-pro-light.ttf) format("truetype");
+  src: url(../font/codec-pro-light.ttf) format("truetype");
 }
 @font-face {
   font-family: fontCodecBold;
-  src: url(/font/codec-pro-bold.ttf) format("truetype");
+  src: url(../font/codec-pro-bold.ttf) format("truetype");
 }
 @font-face {
   font-family: fontAceh;
-  src: url(/font/AcehSoft-Regular.ttf) format("truetype");
+  src: url(../font/AcehSoft-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: sonnyGotich;
-  src: url(/font/W\ Foundry\ -\ Sonny\ Gothic\ Condensed\ Bold.otf) format("opentype");
+  src: url(../font/W\ Foundry\ -\ Sonny\ Gothic\ Condensed\ Bold.otf) format("opentype");
 }
 :root {
   --fontProjeto: fontProjeto;
