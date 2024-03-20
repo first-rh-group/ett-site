@@ -84,7 +84,7 @@
             <section class="historia container">
                 <div id="inicial"> <img src="./new_img/PÁGINA O GRUPO 7.png" alt=""></div>
                 <div>A First RH Group é composta por três empresas, com <strong>mais de
-                    26 anos de atuação no<br>mercado nacional:</strong>
+                    27 anos de atuação no<br>mercado nacional:</strong>
                 </div>
                 <div>A <strong>ETT First RH</strong> é reconhecida pela contratação de <strong>mão de
                     obra temporária</strong> e a <strong>SHIFT Gestão de Serviços</strong> é especializada
@@ -233,6 +233,24 @@
         </section>
         
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function() {
+    // Adiciona a classe 'active' ao link correspondente na página atual
+    var path = window.location.pathname;
+    $('#menuSuspenso a, #menuSuspensoMobile a').each(function() {
+        if (path.endsWith($(this).attr('href'))) {
+            $(this).addClass('active');
+        }
+    });
+
+    // Adiciona a classe 'active' ao link clicado e remove dos outros
+    $('#menuSuspenso a, #menuSuspensoMobile a').on('click', function() {
+        $('#menuSuspenso a, #menuSuspensoMobile a').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+</script>
 </body>
 
 </html>

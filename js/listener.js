@@ -52,12 +52,27 @@ function gerarRodape() {
 		"parent": document.querySelector("section#container"),
 		"tag": "section"
 	});
+
+	let texto = "Como podemos te ajudar?";
+	if (window.location.href.endsWith('solucoes.html')) {
+		texto = "Procura apoio em alguma dessas áreas?";
+	}
+	if (window.location.href.endsWith('faq.html')) {
+        texto = "Tem alguma outra dúvida que não foi abordada aqui?";
+    }
 	criarElement({
+		"id": false,
+		"textoHtml": texto,
+		"parent": "podemosAjudar",
+		"tag": "div"
+	});
+
+	/* criarElement({
 		"id": false,
 		"textoHtml": "Como podemos te ajudar?",
 		"parent": "podemosAjudar",
 		"tag": "div"
-	});
+	}); */
 	criarElement({
 		"id": false,
 		"parent": "podemosAjudar",
@@ -86,24 +101,76 @@ function gerarRodape() {
 		  element.parentNode.style.gap = "15px";
 		}
 	  }
-	  criarElemento({
-		"id": false,
-		"textoHtml": "Conheça as nossas soluções!",
-		"selector": true,
-		"parent": document.querySelector("section#podemosAjudar a"),
-		"tag": "button"
-	  });
-	  
-	  criarElemento({
-		"id": false,
-		"textoHtml": "Saiba mais sobre nossas vagas!",
-		"selector": true,
-		"parent": document.querySelector("section#podemosAjudar a"),
-		"tag": "button"
-	  });
-	  document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
-		button.style.color = "black";
-	});
+criarElemento({
+    "id": false,
+    "textoHtml": "Conheça as nossas soluções!",
+    "selector": true,
+    "parent": document.querySelector("section#podemosAjudar a"),
+    "tag": "button"
+});
+
+criarElemento({
+    "id": false,
+    "textoHtml": "Saiba mais sobre nossas vagas!",
+    "selector": true,
+    "parent": document.querySelector("section#podemosAjudar a"),
+    "tag": "button"
+});
+if (window.location.href.endsWith('solucoes.html')) {
+    document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
+        button.remove();
+    });
+
+    criarElemento({
+        "id": false,
+        "textoHtml": "Entre em contato com o nosso especialista",
+        "selector": true,
+        "parent": document.querySelector("section#podemosAjudar a"),
+        "tag": "button"
+    });
+
+    let container = document.querySelector("section#podemosAjudar a");
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+}
+if (window.location.href.endsWith('candidato.html')) {
+    document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
+        button.remove();
+    });
+
+    criarElemento({
+        "id": false,
+        "textoHtml": "Entre em contato!",
+        "selector": true,
+        "parent": document.querySelector("section#podemosAjudar a"),
+        "tag": "button"
+    });
+
+    document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
+        button.style.color = "black";
+    });
+
+	let container = document.querySelector("section#podemosAjudar a");
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+}
+if (window.location.href.endsWith('faq.html')) {
+    document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
+        button.remove();
+    });
+
+    criarElemento({
+        "id": false,
+        "textoHtml": "Entre em contato!",
+        "selector": true,
+        "parent": document.querySelector("section#podemosAjudar a"),
+        "tag": "button"
+    });
+
+    let container = document.querySelector("section#podemosAjudar a");
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+}
 	criarElement({
 		"id": "rodape",
 		"attributes": {
@@ -384,7 +451,7 @@ function gerarRodape() {
 	});
 	criarElement({
 		"id": false,
-		"textoHtml": "Empresa",
+		"textoHtml": "O grupo",
 		"attributes": {
 			"empresa": "",
 		},
@@ -400,7 +467,23 @@ function gerarRodape() {
 	});
 	criarElement({
 		"id": false,
-		"textoHtml": "Candidato",
+		"textoHtml": "Soluções",
+		"attributes": {
+			"empresa": "",
+		},
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type > div:last-of-type"),
+		"tag": "a"
+	});
+	criarElement({
+		"id": false,
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+		"tag": "div"
+	});
+	criarElement({
+		"id": false,
+		"textoHtml": "Oportunidades",
 		"attributes": {
 			"candidato": "",
 		},

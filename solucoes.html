@@ -17,6 +17,7 @@
 	<link type="text/css" rel="stylesheet" href="./css/solucoes.css">
 	<link type="text/css" rel="stylesheet" href="./css/mobile.css">
 	<script defer src="./js/animations_candidato.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 	<link rel="icon" href="./img/icon_32x32.png" sizes="32x32" />
 	<title>:: First RH ::</title>
 </head>
@@ -35,7 +36,7 @@
 	<section id="container">
 		<section class="inicial" id="inicial">
 			<section class="header container">
-				<div> </div>
+				<div></div>
 				<div id="menuSuspenso">
 					<a empresa>O grupo</a>
 					<a href="./solucoes.html">Soluções</a>
@@ -54,7 +55,7 @@
 					<div class="toogleCross"></div>
 				</div>
 			</section>
-			<section class="imagem-texto">
+			<section class="imagem-texto" data-aos="fade-down">
 				<div>
 					<img src="./img_menor/PÁGINA O GRUPO 2.webp" alt="Imagem 1">
 					<button class="call-to-action">Fale com o nosso especialista!</button>
@@ -77,10 +78,11 @@
 							<img src="./new_img/MTE LOGO SEM FUNDO.png" alt="Certificado MTE" style="width: 100px; height: auto; margin-bottom: 27px;">
 						</a>
 					</div>
+					<hr style="position: absolute; left: 0; width: 100%; border: none; border-top: 2px solid var(--azulFirst); bottom: 0;">
 				  </div>
 			</section>
 			
-			<section class="texto-imagem">
+			<section class="texto-imagem" data-aos="fade-down">
 				<div>
 					<p><strong>Terceirização de serviços</strong></p>
 					<p class="terceirizacao-paragraph">Estratégia empresarial na qual uma organização opta por atribuir certas tarefas ou serviços a empresas especializadas, de forma determinada ou indeterminada.</p>
@@ -91,6 +93,7 @@
 					<img src="./img_menor/PÁGINA O GRUPO 3.webp" alt="Imagem 3">
 					<button id="botao-especialista">Fale com o nosso especialista!</button>
 				</div>
+				<hr style="position: absolute; left: 0; width: 100%; border: none; border-top: 2px solid var(--vermelhoFirst); bottom: 0;">
 			</section>
 			
 			<section class="imagem-texto">
@@ -104,9 +107,32 @@
 					<p>Acreditamos em serviços personalizados e buscamos parceiros com pensamento aliado ao nosso para formação de novos negócios.</p>
 					<p>Leader & Talent: Consultoria especializada em Recrutamento & Seleção estratégico, com foco nas necessidades de cada empresa e processos personalizados de RH.</p>
 					<p>Rio 123: Plataforma de Recursos Humanos, responsável pelo sistema de recrutamento (ATS), gestão de colaboradores e desenvolvimento das ferramentas tecnológicas.</p>
-					<p>Conheça nossos parceiros: <span><img id="logo-rio123" src="./new_img/RIO123 LOGO SEM FUNDO.png" alt="Logo Rio 123" style="width: 50px; height: auto;"></span></p>
+					<p class="move-up">Conheça nossos parceiros: <span><img id="logo-rio123" src="./new_img/RIO123 LOGO SEM FUNDO.png" alt="Logo Rio 123" style="width: 50px; height: auto; margin-top: -40;"> <img src="./new_img/LOGO BONECOS LEADER.png" alt="Logo Leader" style="width: 30px; height: auto; margin-top: -30; margin-right: -80px;"></span></p>
 				</div>
+				<hr style="position: absolute; left: 0; width: 100%; border: none; border-top: 2px solid var(--amareloFirst); bottom: -595;">
 			</section>
+			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+			<script>
+				AOS.init();
+			  </script>
+			  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+					  <script>
+$(document).ready(function() {
+    // Adiciona a classe 'active' ao link correspondente na página atual
+    var path = window.location.pathname;
+    $('#menuSuspenso a, #menuSuspensoMobile a').each(function() {
+        if (path.endsWith($(this).attr('href'))) {
+            $(this).addClass('active');
+        }
+    });
+
+    // Adiciona a classe 'active' ao link clicado e remove dos outros
+    $('#menuSuspenso a, #menuSuspensoMobile a').on('click', function() {
+        $('#menuSuspenso a, #menuSuspensoMobile a').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+				  </script>
 </body>
 
 </html>

@@ -62,7 +62,7 @@
 }
 .call-to-action {
   position: absolute; /* Posicionamento absoluto em relação ao contêiner pai */
-  bottom: 320px; /* Distância da parte inferior */
+  bottom: 50px; /* Distância da parte inferior */
   left: 12%; /* Alinha o botão no meio horizontalmente */
   transform: translateX(-50%); /* Move o botão para a esquerda metade da sua própria largura */
   padding: 10px 20px; /* Espaçamento interno */
@@ -141,15 +141,17 @@
 
 .texto-imagem div img {
     float: right; /* Imagem à direita */
+    margin-top: -20;
 }
 .imagem-texto p,
 .texto-imagem p {
+  line-height: 1.3;
   font-family: var(--fontProjeto);
   font-size: 19px;
 }
 .texto-imagem div button {
   position: absolute;
-  bottom: -120px;
+  bottom: 50px;
   left: 795px;
   z-index: 1;
   background-color: #91191e;
@@ -212,6 +214,49 @@
   }
   
 } */
+.move-up {
+  margin-top: -13px;
+}
+@media screen and (min-width: 1920px) {
+  :root {
+    --fontSizeDiv: clamp(1.8em, 2.5vw, 35px);
+    --fontSizeTitulos: clamp(32px, 5vw, 36px);
+    --buttonFont: clamp(25px, 30px, 3vw);
+    --paddingFaixas: clamp(60px, 6vw, 35%);
+  }
+
+  .text-container {
+    width: 60%;
+    padding: 40px;
+  }
+
+  .imagem-texto img,
+  .texto-imagem img {
+    max-width: 800px;
+  }
+
+  .imagem-texto div,
+  .texto-imagem div {
+    width: 75%;
+  }
+
+  .texto-imagem div {
+    margin-top: 30px;
+  }
+
+  .imagem-texto p,
+  .texto-imagem p {
+    font-size: 22px;
+  }
+
+  .text-container h2 {
+    font-size: 35px;
+  }
+
+  .text-container p {
+    font-size: 25px;
+  }
+}
 @media screen and (max-width: 768px) {
   #botao-especialista {
       position: relative;
@@ -226,6 +271,7 @@
   }
   .imagem-texto,
   .texto-imagem {
+    position: relative;
     flex-direction: column;
   }
 

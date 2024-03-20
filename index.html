@@ -142,5 +142,23 @@
 				</div>
 			</section>
 		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+$(document).ready(function() {
+    // Adiciona a classe 'active' ao link correspondente na página atual
+    var path = window.location.pathname;
+    $('#menuSuspenso a, #menuSuspensoMobile a').each(function() {
+        if (path.endsWith($(this).attr('href'))) {
+            $(this).addClass('active');
+        }
+    });
+
+    // Adiciona a classe 'active' ao link clicado e remove dos outros
+    $('#menuSuspenso a, #menuSuspensoMobile a').on('click', function() {
+        $('#menuSuspenso a, #menuSuspensoMobile a').removeClass('active');
+        $(this).addClass('active');
+    });
+});
+	</script>
 	</body>
 </html>
