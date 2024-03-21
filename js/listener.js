@@ -154,6 +154,22 @@ if (window.location.href.endsWith('candidato.html')) {
     container.style.display = "flex";
     container.style.justifyContent = "center";
 }
+if (window.location.href.endsWith('empresa.html')) {
+    let botoes = document.querySelectorAll("section#podemosAjudar a button");
+    botoes.forEach(botao => {
+        if (botao.innerText === 'Conheça as nossas soluções!' || botao.innerText === 'Saiba mais sobre nossas vagas!') {
+            botao.remove();
+        }
+    });
+}
+if (window.location.href.endsWith('empresa.html')) {
+    let divs = document.querySelectorAll("section#podemosAjudar div");
+    divs.forEach(div => {
+        if (div.innerText === 'Como podemos te ajudar?') {
+            div.remove();
+        }
+    });
+}
 if (window.location.href.endsWith('faq.html')) {
     document.querySelectorAll("section#podemosAjudar a button").forEach(button => {
         button.remove();
@@ -572,6 +588,68 @@ if (window.location.href.endsWith('faq.html')) {
 	});
 	
 }
+let divs = document.querySelectorAll("#podemosAjudar > div:nth-of-type(2) > div:nth-child(odd)");
+divs.forEach(div => {
+    let question = div.querySelector('.question');
+    let answer = div.querySelector('.answer');
+    div.addEventListener('mouseenter', () => {
+        question.style.display = 'none';
+        answer.style.display = 'block';
+    });
+    div.addEventListener('mouseleave', () => {
+        question.style.display = 'block';
+        answer.style.display = 'none';
+    });
+});
+/* document.addEventListener('DOMContentLoaded', (event) => {
+    const botaoEmpresa = document.getElementById('botaoEmpresa');
+    const botaoCandidato = document.getElementById('botaoCandidato');
+
+    const perguntaEmpresa = botaoEmpresa.querySelector('.question');
+    const respostaEmpresa = botaoEmpresa.querySelector('.answer');
+
+    const perguntaCandidato = botaoCandidato.querySelector('.question');
+    const respostaCandidato = botaoCandidato.querySelector('.answer');
+
+    botaoEmpresa.addEventListener('mouseover', () => {
+        perguntaEmpresa.style.display = 'none';
+        respostaEmpresa.style.display = 'block';
+    });
+
+    botaoEmpresa.addEventListener('mouseout', () => {
+        perguntaEmpresa.style.display = 'block';
+        respostaEmpresa.style.display = 'none';
+    });
+
+    botaoCandidato.addEventListener('mouseover', () => {
+        perguntaCandidato.style.display = 'none';
+        respostaCandidato.style.display = 'block';
+    });
+
+    botaoCandidato.addEventListener('mouseout', () => {
+        perguntaCandidato.style.display = 'block';
+        respostaCandidato.style.display = 'none';
+    });
+}); */
+    /* document.getElementById('botaoEmpresa').addEventListener('mouseover', function() {
+        this.querySelector('.question').style.display = 'none';
+        this.querySelector('.answer').style.display = 'block';
+    });
+
+    document.getElementById('botaoEmpresa').addEventListener('mouseout', function() {
+        this.querySelector('.question').style.display = 'block';
+        this.querySelector('.answer').style.display = 'none';
+    });
+
+    document.getElementById('botaoCandidato').addEventListener('mouseover', function() {
+        this.querySelector('.question').style.display = 'none';
+        this.querySelector('.answer').style.display = 'block';
+    });
+
+    document.getElementById('botaoCandidato').addEventListener('mouseout', function() {
+        this.querySelector('.question').style.display = 'block';
+        this.querySelector('.answer').style.display = 'none';
+    }); */
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);

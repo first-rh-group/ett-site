@@ -14,7 +14,7 @@ section#geral {
   background-position: left top;
   color: white;
   font-size: clamp(16px, 5vw, 18px);
-  background-image: url(../new_img/PÁGINA\ OPORTUNIDADES.png);
+  background-image: url(../new_img/PÁGINA\ OPORTUNIDADES.webp);
   display: flex;
   align-items: center;
   justify-content: flex-end;

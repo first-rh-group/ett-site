@@ -507,6 +507,14 @@ a {
   width: 100%;
   gap: 5vw;
 }
+#procuroVagas > div:nth-of-type(2) > div {
+  /* Outros estilos */
+  background-color: white; /* Defina a cor de fundo inicial */
+  transition: background-color 0.5s ease;
+}
+#procuroVagas > div:nth-of-type(2) > div:hover {
+  background-color: var(--amareloFirst);
+}
 #procuroVagas > div:nth-of-type(2) > div:nth-child(odd) {
   border: 3px solid black; /* Adiciona contorno preto */
   border-radius: 8px; /* Adiciona bordas arredondadas */
@@ -755,11 +763,11 @@ a {
 
 #podemosAjudar,
 #procuraApoio {
-  padding: 5vw;
+  padding: 3vw; /* aqui pode ser 3vw */
   background-color: hsl(0deg 8% 95%);
   display: flex;
   flex-direction: column;
-  gap: 3vw;
+  gap: 3vw; /* posso comentar essa linha */
   align-items: center;
 }
 #podemosAjudar > div:nth-of-type(2) {
@@ -781,6 +789,7 @@ a {
   text-align: center;
   font-size: var(--fontSizeTitulos);
   font-family: var(--fontExtraBold);
+  margin-top: 20px;
 }
 #rodape a {
   color: white;
@@ -1097,6 +1106,7 @@ a {
   white-space: pre-line; /* Preserva quebras de linha e espaços */
   font-family: var(--fontCodecBold);
   font-size: 21px;
+  line-height: 1.3;
 }
 @media only screen and (min-width: 1200px) {
   .container {

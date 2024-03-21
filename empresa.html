@@ -82,7 +82,7 @@
                 </div>
             </section>
             <section class="historia container">
-                <div id="inicial"> <img src="./new_img/PÁGINA O GRUPO 7.png" alt=""></div>
+                <div id="inicial"> <img src="./img/fusionLogo.png" alt=""></div>
                 <div>A First RH Group é composta por três empresas, com <strong>mais de
                     27 anos de atuação no<br>mercado nacional:</strong>
                 </div>
@@ -107,8 +107,8 @@
                     <!-- <div class="texto">Para serviços temporários, somos reconhecidos e capazes de trazer as melhores
                         soluções para a sua organização.</div> -->
                     <div class="itens">
-                        <span>• Demandas extras ou complementares de serviços.</span>
-                        <span>• Substituição de efetivos por férias ou licenças.</span>
+                        <span> Demandas extras ou complementares de serviços.</span>
+                        <span> Substituição de efetivos por férias ou licenças.</span>
                         <!--<span>Economia</span>-->
                     </div>
                     <div class="button">
@@ -133,8 +133,8 @@
                     <div class="logo"></div>
                     <!-- <div class="texto">Especializada em projetos de terceirização personalizados e confiáveis.</div> -->
                     <div class="itens">
-                        <span>• Foco na sua atividade principal.</span>
-                        <span>• Economia de tempo e de capital.</span>
+                        <span> Foco na sua atividade principal.</span>
+                        <span> Economia de tempo e de capital.</span>
                         <!--<span>Responsabilidade Operacional</span>-->
                     </div>
                     <div class="button">
@@ -151,8 +151,8 @@
                     <!-- <div class="texto">Garantindo desenvolvimento e evolução para nossos clientes, candidatos e
                         colaboradores.</div> -->
                     <div class="itens">
-                        <span>• Sistema de gestão de vagas (ATS).</span>
-                        <span>• Recrutamento & Seleção.</span>
+                        <span> Sistema de gestão de vagas (ATS).</span>
+                        <span> Recrutamento & Seleção.</span>
                         <!-- <span>Experiência</span> -->
                     </div>
                     <div class="button">
@@ -231,12 +231,24 @@
                 <p style="text-align: center; margin-top: 30px;">FONTE: Pesquisa Anual de Satisfação de Clientes</p>
             </div>
         </section>
-        
+        <section id="procuroVagas">
+            <div></div>
+            <div>
+                <div>
+                    <p class="question">Representa uma empresa?</p>
+                    <a href="./empresa.html" style="color: black;" class="answer">Conheça as nossas soluções!</a>
+                </div>
+                <div></div>
+                <div>
+                    <p class="question">Procura uma oportunidade?</p>
+                    <a href="./candidato.html" style="color: black;" class="answer">Saiba mais sobre nossas vagas!</a>
+                </div>
+            </div>
+        </section>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
 $(document).ready(function() {
-    // Adiciona a classe 'active' ao link correspondente na página atual
     var path = window.location.pathname;
     $('#menuSuspenso a, #menuSuspensoMobile a').each(function() {
         if (path.endsWith($(this).attr('href'))) {
@@ -244,11 +256,37 @@ $(document).ready(function() {
         }
     });
 
-    // Adiciona a classe 'active' ao link clicado e remove dos outros
     $('#menuSuspenso a, #menuSuspensoMobile a').on('click', function() {
         $('#menuSuspenso a, #menuSuspensoMobile a').removeClass('active');
         $(this).addClass('active');
     });
+
+    $(document).ready(function() {
+    $('[data-ett]').one('mouseover', function() {
+        $(this).find('.button').css({
+            'visibility': 'visible',
+            'opacity': '1'
+        });
+    });
+});
+
+$(document).ready(function() {
+    $('[data-ett], [data-shift]').one('mouseover', function() {
+        $(this).find('.button').css({
+            'visibility': 'visible',
+            'opacity': '1'
+        });
+    });
+});
+
+$(document).ready(function() {
+    $('[data-ett], [data-shift], [data-connecting]').one('mouseover', function() {
+        $(this).find('.button').css({
+            'visibility': 'visible',
+            'opacity': '1'
+        });
+    });
+});
 });
 </script>
 </body>

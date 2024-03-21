@@ -78,18 +78,17 @@ section.historia {
     display: block;
 }
 section.historia>div:nth-of-type(1) {
-    width: 820px;
+    /* width: 820px; */
     grid-area: imagem;
-    background-image: url(../img/fusionLogo.png);
+    /* background-image: url(../img/fusionLogo.png);
     /* background-position: center; */
-    background-repeat: no-repeat;
-    background-size: contain;
+    /* background-repeat: no-repeat;
+    /* background-size: contain;
 }
 @media screen and (max-width: 768px) {
     section.historia>div:nth-of-type(1) {
       width: 100%; /* Define a largura da imagem como 50% da largura da tela em dispositivos móveis */
     }
-  }
 section.historia>div:nth-of-type(2) {
     grid-area: p1;
 }
@@ -594,7 +593,7 @@ section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
     border-color: #fff transparent transparent;
 }
 div.itens span {
-    font-family: var(--fontCodecBold);
+    font-family: var(--fontExtraBold);
 }
 #valores > div > div > div:first-child {
     margin-bottom: -25px; /* Ajuste este valor para aproximar o texto do título */
@@ -608,6 +607,18 @@ div.itens span {
 }
 section#consultores>div:nth-of-type(2)>div {
     min-width: 170px;
+}
+/* Oculta o botão por padrão */
+[data-ett] .button, [data-shift] .button, [data-connecting] .button {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Mostra o botão quando o mouse passa sobre o elemento que contém a imagem */
+[data-ett]:hover .button, [data-shift]:hover .button, [data-connecting]:hover .button {
+    visibility: visible;
+    opacity: 1;
 }
 @media only screen and (max-width: 900px) {
     section.empresas {
