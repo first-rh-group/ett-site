@@ -152,9 +152,22 @@ cpfUsuario?.addEventListener('keyup', () => {
 	formatacaoEspecifica (cpfUsuario.value,'cpf','cpfUsuario');
 	if(soNumeros(cpfUsuario.value).length == 11) {
 	   if(valida_CPF(cpfUsuario.value)) {
+		function isJson(str) {
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				return false;
+			}
+			return true;
+		}
 			confereExistenciaColaborador(cpfUsuario.value).
 			then((retorno) => {
-				retorno = JSON.parse(retorno);
+				if (isJson(retorno)) {
+					retorno = JSON.parse(retorno);
+					// Resto do seu código aqui
+				} else {
+					console.error('A resposta não é um JSON válido:', retorno);
+				}
 				if(retorno.retorno == true) {
 					changeAttributes({
 						"selector": "button#loginButton",

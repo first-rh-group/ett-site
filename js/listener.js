@@ -186,7 +186,7 @@ if (window.location.href.endsWith('faq.html')) {
     let container = document.querySelector("section#podemosAjudar a");
     container.style.display = "flex";
     container.style.justifyContent = "center";
-}
+}	
 	criarElement({
 		"id": "rodape",
 		"attributes": {
@@ -207,6 +207,47 @@ if (window.location.href.endsWith('faq.html')) {
 		"parent": document.querySelector("section#rodape > div:last-of-type"),
 		"tag": "div"
 	});
+	criarElement({
+		"id": false,
+		"textoHtml": "ENTRE EM CONTATO!",
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+		"tag": "div",
+		"style": {
+			"fontWeight": "bold",
+			"fontSize": "clamp(17px, 10vw, 19px)",
+			"marginBottom": "clamp(10px, 2vh, 13px)"
+		}
+	});
+	criarElement({
+		"id": false,
+		"textoHtml": "contato@firstrh.com.br",
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+		"tag": "div"
+	});
+	criarElement({
+		"id": false,
+		"textoHtml": "+55 21 99796-9897",
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+		"tag": "div"
+	});
+	criarElement({
+		"id": false,
+		"textoHtml": "@FirstRHGroup",
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+		"tag": "div"
+	});
+	criarElement({
+		"id": false,
+		"textoHtml": "First RH Group",
+		"selector": true,
+		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+		"tag": "div"
+	});
+
 	criarElement({
 		"id": false,
 		"selector": true,
@@ -248,7 +289,7 @@ if (window.location.href.endsWith('faq.html')) {
 		"attributes": {
 			"href": "mailto:contato@firstrh.com.br"
 		},
-		"textoHtml": "contato@firstrh.com.br",
+		// "textoHtml": "contato@firstrh.com.br",
 		"selector": true,
 		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type > div:last-of-type"),
 		"tag": "a"
@@ -333,7 +374,7 @@ if (window.location.href.endsWith('faq.html')) {
 	});
 	criarElement({
 		"id": false,
-		"textoHtml": "FIRST RH GROUP &copy; 1997-2021.",
+		"textoHtml": "FIRST RH GROUP &copy; 1997-2024.",
 		"parent": "fechamento",
 		"tag": "div"
 	});
@@ -345,7 +386,7 @@ if (window.location.href.endsWith('faq.html')) {
 	});
 	criarElement({
 		"id": false,
-		"textoHtml": "Desenvolvido por BG Comunicação e Design",
+		"textoHtml": "Desenvolvido por XPTO",
 		"parent": "fechamento",
 		"tag": "div"
 	});
@@ -422,7 +463,7 @@ if (window.location.href.endsWith('faq.html')) {
 	});
 	criarElement({
 		"id": false,
-		"textoHtml": "Navegue no site",
+		"textoHtml": "NAVEGUE NO SITE",
 		"selector": true,
 		"parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
 		"tag": "div"
@@ -676,9 +717,17 @@ function trocaLingua(idioma) {
 	if (empresaTop != null) {
 		empresaTop.innerHTML = lingua.header.empresa;
 	}
+	var solucoesTop = document.querySelector("#menuSuspenso > a[href='./solucoes.html']");
+	if (solucoesTop != null) {
+		solucoesTop.innerHTML = lingua.header.solucoes;
+	}
 	var candidatoTop = document.querySelector("#menuSuspenso > a[candidato]");
 	if (candidatoTop != null) {
 		candidatoTop.innerHTML = lingua.header.candidato;
+	}
+	var faqTop = document.querySelector("#menuSuspenso > a[href='./faq.html']");
+	if (faqTop != null) {
+		faqTop.innerHTML = lingua.header.faq;
 	}
 	var contatoTop = document.querySelector("#menuSuspenso > a[contato]");
 	if (contatoTop != null) {
@@ -735,8 +784,14 @@ function trocaLingua(idioma) {
 		document.querySelector("#solucoesHumanas > div:nth-child(2)").innerHTML = lingua.solucoesHumanas[1];
 
 		document.querySelector('section#procuroVagas > div:nth-of-type(1)').innerHTML = lingua.procuroVagas[0];
-		document.querySelector('section#procuroVagas > div:nth-of-type(2) > div:nth-of-type(1) > a').innerHTML = lingua.procuroVagas[1];
-		document.querySelector('section#procuroVagas > div:nth-of-type(2) > div:nth-of-type(3) > a').innerHTML = lingua.procuroVagas[2];
+		document.querySelector('section#procuroVagas > div:nth-of-type(2) > div:nth-of-type(1) > p').innerHTML = lingua.procuroVagas[1];
+		document.querySelector('section#procuroVagas > div:nth-of-type(2) > div:nth-of-type(1) > a').innerHTML = "Conheça as nossas soluções!";
+		document.querySelector('section#procuroVagas > div:nth-of-type(2) > div:nth-of-type(3) > p').innerHTML = lingua.procuroVagas[2];
+		document.querySelector('section#procuroVagas > div:nth-of-type(2) > div:nth-of-type(3) > a').innerHTML = "Saiba mais sobre nossas vagas!";
+		var elemento = document.querySelector('section#procuroVagas > div:nth-of-type(1)');
+		console.log(elemento); // Deve mostrar o elemento no console
+		elemento.innerHTML = lingua.procuroVagas[0];
+		console.log(elemento.innerHTML); // Deve mostrar a tradução no console
 
 		document.querySelector('section#pqFirst > div:nth-of-type(1)').innerHTML = lingua.pqFirst[0];
 		document.querySelector('section#pqFirst > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)').innerHTML = lingua.pqFirst[1];

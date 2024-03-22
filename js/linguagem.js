@@ -1,14 +1,15 @@
 const english = {
     index: {
         header: {
-            empresa: 'Company',
+            empresa: 'The group',
+            solucoes: 'Solutions',
+            candidato: 'Opportunities',
             contato: 'Contact',
-            candidato: 'Candidate',
             portal: 'Portal',
-            faq: 'Frequent Asks and Questions',
+            faq: 'FAQ',
         },
-        main: ['Connecting people for 24 years', 'Human Resources', 'Temporary Labor', 'Outsourcing Projects', 'Recruitment Process Outsourcing', 'Talk to the expert'],
-        procuroVagas: ["We are known for bringing companies and candidates together, with the <b>customization and expertise</b> you need.", "I'm looking for solutions for my company", "I'm looking for jobs and opportunities"],
+        main: ['Connecting people for 27 years', 'Temporary labor rental', 'Service outsourcing projects', 'Recruitment & Selection', 'Recruitment Process Outsourcing'],
+        procuroVagas: ["We are a reference in connecting people to opportunities, with the <b>customization and expertise</b> you need.", "Do you represent a company?", "Looking for an opportunity?"],
         solucoesHumanas: ['More than resources.', 'Humanized solutions.'],
         pqFirst: [
             'Why choose the First RH Group?',
@@ -23,7 +24,7 @@ const english = {
         numeroFirstGroup: ['Our history in numbers', 'years in Brazil', 'multinational clients in different segments', 'satisfied customers', 'operating cities', 'outsourced and temporary employees in 2020/2021', 'jobs and opportunities opened in 2020/2021'],
         podemosAjudar: ['How can we help you?', 'Contact us'],
         rodape: ["HEADQUARTERS", "RESENDE'S OFFICE", "Browse the site"],
-        navegue: ['Top', 'Company', 'Candidate', 'Portal', 'Frequent Asks and Questions'],
+        navegue: ['Top', 'The Group', 'Opportunities', 'Portal', 'Frequent Asks and Questions'],
         lgpd: 'First RH Group follows all data protection legislation - LGPD',
     },
     empresa: {
@@ -88,14 +89,15 @@ const english = {
 const portugues = {
     index: {
         header: {
-            empresa: 'Empresa',
+            empresa: 'O grupo',
+            solucoes: 'Soluções',
+            candidato: 'Opportunities',
             contato: 'Contato',
-            candidato: 'Candidato',
             portal: 'Portal',
-            faq: 'Dúvidas Frequentes',
+            faq: 'Dúvidas',
         },
-        main: ['Há 24 anos conectando pessoas', 'Recursos Humanos', 'Trabalho Temporário', 'Projetos de Terceirização', 'Recruitment Process Outsourcing', 'Fale com o especialista'],
-        procuroVagas: ['Somos referência em conectar empresas e candidatos, com a <b>customização e expertise</b> que você precisa.', 'Procuro soluções para minha empresa', 'Procuro vagas e oportunidades'],
+        main: ['Há 27 anos conectando pessoas', 'Locação de mão de obra temporária', 'Projetos de terceirização de serviços', 'Recrutamento & Seleção', 'Recruitment Process Outsourcing'],
+        procuroVagas: ['Somos referência em conectar pessoas a oportunidades, com a <b>customização e expertise</b> que você precisa.', 'Representa uma empresa?', 'Procura uma oportunidade?'],
         solucoesHumanas: ['Mais do que recursos.', 'Soluções humanas.'],
         pqFirst: [
             'Por que a First RH Group?',

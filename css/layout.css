@@ -812,17 +812,27 @@ a {
 #rodape > div:nth-of-type(2) {
   text-align: center;
 }
-#rodape > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
+/* #rodape > div:nth-of-type(1) > div:nth-of-type(1) {
   background-image: url(../img/logo_rodape.png);
   background-size: contain;
   background-repeat: no-repeat;
   min-height: 7vh;
   margin-bottom: 2vh;
+}*/
+#rodape > div:nth-of-type(1) > div:nth-of-type(1) > div {
+  font-weight: bold;
+  font-size: clamp(17px, 10vw, 19px);
+  margin-bottom:clamp(10px, 2vh, 13px);
+}
+#rodape > div:nth-of-type(1) > div:nth-of-type(1) > div ~ div {
+  font-weight: normal;
+  font-size: clamp(12px, 5vw, 14px);
+  margin-bottom: 2px; /* Ajuste este valor conforme necessário */
 }
 #rodape > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) {
   display: flex;
   gap: 1vw;
-  margin-bottom: 2vh;
+  /* margin-bottom: 2vh; */
 }
 #rodape > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div {
   background-size: contain;
@@ -869,7 +879,7 @@ a {
 
 #rodape > div:nth-of-type(1) > div:nth-of-type(2) > div:last-of-type a,
 #rodape > div:nth-of-type(1) > div:nth-of-type(3) > div:last-of-type a {
-  background-image: url(../img/map.png);
+  /* background-image: url(../img/map.png); */
   background-repeat: no-repeat;
   background-size: 18px;
   background-position-x: right;

@@ -1,7 +1,7 @@
 <?php
 session_start();
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
-include('../session_global/global_functions.php');
+include('../../session_global/global_functions.php');
 // if (checkConnection() == false) {
 //     session_destroy();
 //     // header("Location: https://portal.grupofirstrh.com.br");
