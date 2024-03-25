@@ -164,7 +164,6 @@ cpfUsuario?.addEventListener('keyup', () => {
 			then((retorno) => {
 				if (isJson(retorno)) {
 					retorno = JSON.parse(retorno);
-					// Resto do seu código aqui
 				} else {
 					console.error('A resposta não é um JSON válido:', retorno);
 				}

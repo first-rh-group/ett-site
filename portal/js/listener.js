@@ -37,7 +37,12 @@ function informeRendimentosContent() {
     document.querySelector('section#main > div.principal').innerHTML = '<h3>Aguarde...</h3>';
     coringa('5', {}).then(retorno => {
         document.querySelector('section#main > div.principal').innerHTML = '';
-        retorno = JSON.parse(retorno)
+        try {
+            retorno = JSON.parse(retorno);
+        } catch (e) {
+            console.error("A resposta não é um JSON válido: ", retorno);
+            return;
+        }
         retorno.informes.sort((a, b) => {
             if (a.ANO === b.ANO) {
                 return a.nomeEmpresa.localeCompare(b.nomeEmpresa);
@@ -134,7 +139,12 @@ function contraChequeContent() {
     coringa('2', {})
         .then((retorno) => {
             document.querySelector('section#main > div.principal').innerHTML = '';
-            retorno = JSON.parse(retorno);
+            try {
+                retorno = JSON.parse(retorno);
+            } catch (e) {
+                console.error("A resposta não é um JSON válido: ", retorno);
+                return;
+            }
             var divPrincipal = criarElement({
                 attributes: {
                     class: "contracheque",

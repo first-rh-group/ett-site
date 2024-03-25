@@ -9,7 +9,8 @@
     <script defer src="js/listenerInicial.js?version=1.1"></script>
     <script defer charset="utf-8" src="https://grupofirstrh.com.br/js_global/formValidation.js?version=1"></script>
     <script defer charset="utf-8" src="js/login.js?version=1"></script>
-    <link type="text/css" rel="stylesheet" href="https://grupofirstrh.com.br/css_global/styles.css?version=1">
+    <!-- <link type="text/css" rel="stylesheet" href="https://grupofirstrh.com.br/css_global/styles.css?version=1"> -->
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
     <link defer type="text/css" rel="stylesheet" href="https://grupofirstrh.com.br/css_global/modalBlackScreen.css?version=1">
     <link type="text/css" rel="stylesheet" href="css/layoutRodape.css?version=1">
     <link type="text/css" rel="stylesheet" href="css/layout.css?version=1">
@@ -23,9 +24,9 @@
         <div>
             <form id="loginForm">
                 <div>
-                    <label>CPF do Usuário</label>
+                    <label>Usuário (CPF)</label>
                     <input class="form-control" type="tel" name="cpfUsuario" id="cpfUsuario"
-                        placeholder="CPF do Usuário" aria-label="CPF" form-control="cpf">
+                        placeholder="xxx.xxx.xxx-xx" aria-label="CPF" form-control="cpf">
                 </div>
                 <div>
                     <label>Senha</label>
@@ -33,10 +34,10 @@
                         form-control="notNull">
                 </div>
                 <div>
-                    <button id="loginButton" type="button" class="btn btn-secondary nohand">Login no sistema</button>
+                    <button id="loginButton" type="button" class="btn btn-secondary nohand" style="font-family: var(--fontCodecBold);">LOGIN NO SISTEMA</button>
                 </div>
                 <div>
-                    <button id="recuperarButton" type="button" class="btn btn-secondary nohand">Recuperar Senha</button>
+                    <button id="recuperarButton" type="button" class="btn btn-secondary nohand" style="font-family: var(--fontCodecBold);">PRIMEIRO ACESSO/ESQUECI MINHA SENHA</button>
                 </div>
             </form>
             <div id="destino"></div>
@@ -44,10 +45,10 @@
     </section>
     <section id="rodape" class="rodape">
         <div>
-            <a style="cursor: pointer;" target="_blank" href="https://firstrhgroup.com/documentacao/LGPD-First.pdf">A First RH
+            <a style="cursor: pointer; font-family: var(--fontExtraBold);" target="_blank" href="https://firstrhgroup.com/documentacao/LGPD-First.pdf">A First RH
                 Group segue todas as diretrizes e medidas de segurança da (Lei Geral de Proteção de Dados Pessoais)</a>
         </div>
-        <div> © 2021 FIRST RH GROUP</div>
+        <div style="color: black; font-family: var(--fontExtraBold);"> © 2024 FIRST RH GROUP</div>
     </section>
 </body>
 </html>

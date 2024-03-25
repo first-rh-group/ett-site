@@ -1,6 +1,6 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('./portal/session/local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
 require('../../fpdf185/fpdf.php');
 $infoUser = infoUser([
     'cpf' => $_SESSION['printInformeRendimentos']['login'],
@@ -35,7 +35,9 @@ class PDF extends FPDF
         $this->SetFont('Arial', 'B', 12);
         $this->Cell($largura, $altura, utf8_decode('Imposto sobre a Renda da Pessoa Física'), $bordas, 1, 'L');
         $this->SetFont('Arial', 'BI', 12);
-        $this->Cell($largura, $altura, utf8_decode('Exercício de ') . ($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'] + 1), $bordas, 1, 'C');
+        $ano = isset($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO']) ? $_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'] : 0;
+
+        $this->Cell($largura, $altura, utf8_decode('Exercício de ') . ($ano + 1), $bordas, 1, 'C');
         $this->SetY(10);
         $this->SetLeftMargin($largura + $padding_left + 10);
         // $bordas = 'TBLR';
@@ -43,7 +45,9 @@ class PDF extends FPDF
         $this->MultiCell(0, 7, utf8_decode('Comprovante de Rendimentos Pagos e de Imposto sobre a Renda Retido na Fonte'), $bordas, 'J');
         $this->Ln(4);
         $this->SetFont('Arial', 'B', 11);
-        $this->Cell(0, $altura, utf8_decode('Ano-calendário de ') . $_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'], $bordas, 1, 'C');
+        $ano = isset($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO']) ? $_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'] : 0;
+
+        $this->Cell(0, $altura, utf8_decode('Ano-calendário de ') . $ano, $bordas, 1, 'C');
         $this->SetLineWidth(0.2);
         $this->SetDrawColor(0, 0, 0);
         $this->Line(($largura + $padding_left + 7), 9, $largura + $padding_left + 7, 44);
@@ -58,9 +62,14 @@ class PDF extends FPDF
         $this->SetLeftMargin(11);
         $this->SetRightMargin(11);
         $this->SetFont('Arial', 'B', 9);
-        $this->Cell(0, 5, utf8_decode('Informe de Rendimentos - Exercício de ') . ($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'] + 1) . ' e ' . utf8_decode('Ano-Calendário de ') . $_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'], 0, 1, 'C');
+        $ano = isset($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO']) ? intval($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO']) : 0;
+
+        $this->Cell(0, 5, utf8_decode('Informe de Rendimentos - Exercício de ') . ($ano + 1) . ' e ' . utf8_decode('Ano-Calendário de ') . $ano, 0, 1, 'C');
         $this->SetFont('Arial', '', 9);
-        $this->Cell(0, 5, ajustaNome($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['NOMEFUNCIONARIO']) . ' - CPF n. ' . print_cpf($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['CPF']), 0, 1, 'C');
+        $cpfFuncionario = isset($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['CPF']) ? print_cpf($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['CPF']) : '';
+        $nomeFuncionario = isset($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['NOMEFUNCIONARIO']) ? ajustaNome($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['NOMEFUNCIONARIO']) : '';
+        
+        $this->Cell(0, 5, $nomeFuncionario . ' - CPF n. ' . $cpfFuncionario, 0, 1, 'C');
         $this->SetFont('Arial', '', 8);
         $this->Cell(0, 5, utf8_decode('Pág. ') . $this->PageNo() . ' de {nb}', 0, 1, 'C');
     }
@@ -119,11 +128,15 @@ $pdf->SetX(0);
 $pdf->SetLeftMargin($margins['left'] + 2);
 $pdf->SetFont('Arial', '', 10.5);
 $bordas = 'R';
-$pdf->Cell($larguraPrimeira, $altura, print_cnpj($infoRendimentos['informeRendimento']['CNPJCOLIGADA']), $bordas, 0, 'L');
+$cnpj = isset($infoRendimentos['informeRendimento']['CNPJCOLIGADA']) ? print_cnpj($infoRendimentos['informeRendimento']['CNPJCOLIGADA']) : '';
+
+$pdf->Cell($larguraPrimeira, $altura, $cnpj, $bordas, 0, 'L');
 $bordas = 0;
 $largura = 0;
 $pdf->SetLeftMargin($larguraPrimeira + 15);
-$pdf->Cell($largura, $altura, utf8_decode(ajustaNome($infoRendimentos['informeRendimento']['nomeColigada_2'])), $bordas, 1, 'L');
+$nomeColigada = isset($infoRendimentos['informeRendimento']['nomeColigada_2']) ? ajustaNome($infoRendimentos['informeRendimento']['nomeColigada_2']) : '';
+
+$pdf->Cell($largura, $altura, utf8_decode($nomeColigada), $bordas, 1, 'L');
 $pdf->SetLeftMargin($margins['left']);
 $pdf->Ln(1.5);
 $ordinate = $pdf->GetY();
@@ -157,11 +170,15 @@ $pdf->SetX(0);
 $pdf->SetLeftMargin($margins['left'] + 2);
 $pdf->SetFont('Arial', '', 10.5);
 $bordas = 'R';
-$pdf->Cell($larguraPrimeira, $altura, print_cpf($infoRendimentos['informeRendimento']['CPF']), $bordas, 0, 'L');
+$cnpj = isset($infoRendimentos['informeRendimento']['CNPJCOLIGADA']) ? print_cnpj($infoRendimentos['informeRendimento']['CNPJCOLIGADA']) : '';
+
+$pdf->Cell($larguraPrimeira, $altura, $cnpj, $bordas, 0, 'L');
 $bordas = 0;
 $largura = 0;
 $pdf->SetLeftMargin($larguraPrimeira + 15);
-$pdf->Cell($largura, $altura, utf8_decode(ajustaNome($infoRendimentos['informeRendimento']['NOMEFUNCIONARIO'])), $bordas, 1, 'L');
+$nomeFuncionario = isset($infoRendimentos['informeRendimento']['NOMEFUNCIONARIO']) ? ajustaNome($infoRendimentos['informeRendimento']['NOMEFUNCIONARIO']) : '';
+
+$pdf->Cell($largura, $altura, utf8_decode($nomeFuncionario), $bordas, 1, 'L');
 $pdf->SetX(0);
 $pdf->SetLeftMargin($margins['left']);
 
@@ -196,7 +213,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 'T';
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['TOTREND']), $bordas, 1, 'R');
+$totRend = isset($infoRendimentos['informeRendimento']['TOTREND']) ? printValor($infoRendimentos['informeRendimento']['TOTREND']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $totRend, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -211,7 +230,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['CPOFICIAL']), $bordas, 1, 'R');
+$valor = isset($infoRendimentos['informeRendimento']['algumaChave']) ? $infoRendimentos['informeRendimento']['algumaChave'] : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $valor, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -226,7 +247,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['CPPRIV']), $bordas, 1, 'R');
+$cppriv = isset($infoRendimentos['informeRendimento']['CPPRIV']) ? printValor($infoRendimentos['informeRendimento']['CPPRIV']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $cppriv, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -241,7 +264,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['PENSAO']), $bordas, 1, 'R');
+$pensao = isset($infoRendimentos['informeRendimento']['PENSAO']) ? printValor($infoRendimentos['informeRendimento']['PENSAO']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $pensao, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -256,7 +281,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['IRRFFOLHA']), $bordas, 1, 'R');
+$irrfFolha = isset($infoRendimentos['informeRendimento']['IRRFFOLHA']) ? printValor($infoRendimentos['informeRendimento']['IRRFFOLHA']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $irrfFolha, $bordas, 1, 'R');
 $ordinateFinal = $pdf->GetY();
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
@@ -286,7 +313,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 'T';
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['RIP65']), $bordas, 1, 'R');
+$rip65 = isset($infoRendimentos['informeRendimento']['RIP65']) ? printValor($infoRendimentos['informeRendimento']['RIP65']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $rip65, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -301,7 +330,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['RIDAC']), $bordas, 1, 'R');
+$ridac = isset($infoRendimentos['informeRendimento']['RIDAC']) ? printValor($infoRendimentos['informeRendimento']['RIDAC']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $ridac, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -366,7 +397,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['RIIRP']), $bordas, 1, 'R');
+$riirp = isset($infoRendimentos['informeRendimento']['RIIRP']) ? printValor($infoRendimentos['informeRendimento']['RIIRP']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $riirp, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -381,7 +414,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['RIAP']), $bordas, 1, 'R');
+$riap = isset($infoRendimentos['informeRendimento']['RIAP']) ? printValor($infoRendimentos['informeRendimento']['RIAP']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $riap, $bordas, 1, 'R');
 $ordinateFinal = $pdf->GetY();
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
@@ -419,7 +454,9 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['RIO']), $bordas, 1, 'R');
+$rio = isset($infoRendimentos['informeRendimento']['RIO']) ? printValor($infoRendimentos['informeRendimento']['RIO']) : '';
+
+$pdf->Cell(0, $altura, 'R$ ' . $rio, $bordas, 1, 'R');
 $ordinateFinal = $pdf->GetY();
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
@@ -451,7 +488,12 @@ $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 'T';
 $pdf->SetFont('Arial', '', 10);
 
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['D13SAL']), $bordas, 1, 'R');
+$valor = '';
+if (isset($infoRendimentos['informeRendimento']['D13SAL'])) {
+    $valor = printValor($infoRendimentos['informeRendimento']['D13SAL']);
+}
+
+$pdf->Cell(0, $altura, 'R$ ' . $valor, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -466,7 +508,12 @@ $pdf->SetY($ordinate_1);
 $pdf->SetX(($netWidth - $larguraValores + $margins['left']));
 $bordas = 0;
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, $altura, 'R$ ' . printValor($infoRendimentos['informeRendimento']['IRRFD13SAL']), $bordas, 1, 'R');
+$valor = '';
+if (isset($infoRendimentos['informeRendimento']['D13SAL'])) {
+    $valor = printValor($infoRendimentos['informeRendimento']['D13SAL']);
+}
+
+$pdf->Cell(0, $altura, 'R$ ' . $valor, $bordas, 1, 'R');
 $pdf->Line(($netWidth - $larguraValores + $margins['left']), $ordinate_2, ($netWidth + $margins['left']), $ordinate_2);
 $pdf->SetY($ordinate_2);
 
@@ -533,15 +580,18 @@ $pdf->SetY($ordinate);
 $pdf->Cell(0, $altura, '0,00', 0, 1, 'R');
 $pdf->Rect($abscissa, $ordinate, $netWidth, (($altura - 2) * 2));
 
-$totalIsento = array_sum([
-    $infoRendimentos['informeRendimento']['RIP65'],
-    $infoRendimentos['informeRendimento']['RIDAC'],
-    $infoRendimentos['informeRendimento']['RIIRP'],
-    $infoRendimentos['informeRendimento']['RIAP'],
-    $infoRendimentos['informeRendimento']['RIO'],
-]);
+$totalIsento = 0;
+if (isset($infoRendimentos['informeRendimento'])) {
+    $totalIsento = array_sum([
+        isset($infoRendimentos['informeRendimento']['RIP65']) ? $infoRendimentos['informeRendimento']['RIP65'] : 0,
+        isset($infoRendimentos['informeRendimento']['RIDAC']) ? $infoRendimentos['informeRendimento']['RIDAC'] : 0,
+        isset($infoRendimentos['informeRendimento']['RIIRP']) ? $infoRendimentos['informeRendimento']['RIIRP'] : 0,
+        isset($infoRendimentos['informeRendimento']['RIAP']) ? $infoRendimentos['informeRendimento']['RIAP'] : 0,
+        isset($infoRendimentos['informeRendimento']['RIO']) ? $infoRendimentos['informeRendimento']['RIO'] : 0,
+    ]);
+}
 
-$textoInfoComplementar = utf8_decode('Os rendimentos seguintes estão informados na linha 1, quadro 3 e/ou linha 3, quadro 5: Rendimentos do trabalho assalariado:') . ' R$ ' . printValor($infoRendimentos['informeRendimento']['TOTREND']) . '.' . ($totalIsento > 0 ? '
+$textoInfoComplementar = utf8_decode('Os rendimentos seguintes estão informados na linha 1, quadro 3 e/ou linha 3, quadro 5: Rendimentos do trabalho assalariado:') . ' R$ ' . (isset($infoRendimentos['informeRendimento']['TOTREND']) ? printValor($infoRendimentos['informeRendimento']['TOTREND']) : 0) . '.' . ($totalIsento > 0 ? '
 RENDIMENTOS ISENTOS ANUAIS: R$ ' . printValor($totalIsento) . '.' : '');
 // ! 7.Informações Complementares
 $pdf->SetX(0);
@@ -608,7 +658,7 @@ if (isset($infoRendimentos['pagamentosPlanosSaude']) && count($infoRendimentos['
     }
 }
 // ! 7.X. Pensão Alimentícia
-if ($infoRendimentos['informeRendimento']['PENSAO'] > 0) {
+if (isset($infoRendimentos['informeRendimento']['PENSAO']) && $infoRendimentos['informeRendimento']['PENSAO'] > 0) {
     $subitem++;
     $pdf->SetFont('Arial', 'B', 11);
     $pdf->SetLeftMargin($margins['left'] + $linhaPequena + 2);
@@ -653,10 +703,13 @@ $bordas = 'TR';
 $pdf->Cell(45, $altura, 'Assinatura', $bordas, 1, 'L');
 $pdf->SetFont('Arial', 'B', 10);
 $bordas = 'L';
-$pdf->Cell(($netWidth - 30 - 45), $altura, utf8_decode(ajustaNome($infoRendimentos['informeRendimento']['RESPONSAVEL'])), $bordas, 0, 'L');
+$valor = '';
+if (isset($infoRendimentos['informeRendimento']['SUA_CHAVE'])) {
+    $valor = printValor($infoRendimentos['informeRendimento']['SUA_CHAVE']);
+}
 $pdf->SetFont('Arial', '', 10);
 $bordas = 0;
-$pdf->Cell(30, $altura, '05/01/' . $_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'] + 1, $bordas, 0, 'L');
+$pdf->Cell(30, $altura, '05/01/' . (isset($_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO']) ? $_SESSION['printInformeRendimentos']['sumario']['informeRendimento']['ANO'] + 1 : ''), $bordas, 0, 'L');
 $bordas = 'R';
 $pdf->Cell(45, $altura, '', $bordas, 1, 'L');
 $bordas = 'LB';

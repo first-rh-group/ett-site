@@ -5,7 +5,16 @@ require('../../fpdf185/fpdf.php');
 $infoUser = infoUser([
     'cpf' => $_SESSION['printFolhaPonto']['login']
 ]);
-/* include('/home/grupofirstrh/data/connectionSelect.php'); */
+
+// Verifique se $infoUser é um array e, se não for, converta-o em um
+if (!is_array($infoUser)) {
+    $infoUser = [$infoUser];
+}
+
+if (!isset($infoUser['chapa'])) {
+    $infoUser['chapa'] = 'valor padrão'; // substitua 'valor padrão' pelo valor que você deseja usar como padrão
+}
+
 include('../../data/connectionSelect.php');
 $query = "SELECT * FROM tbl_ponto WHERE chapa = ? ORDER BY Id DESC LIMIT 1";
 $st = $db->prepare($query);
@@ -69,7 +78,8 @@ $pdf->Cell(0, 7, (!empty($infoUser['empregadorNome']) ? utf8_decode_2(ajustaNome
 $pdf->SetFont('Arial', '', 11);
 $pdf->Cell(($netWidth / 2), 5, utf8_decode_2('(Ref. ' . nomeMes($periodoArray[1]) . '/' . $periodoArray[0] . ')'), $bordas, 0, 'L');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, 5, 'CNPJ n. ' . $infoUser['CNPJFilial'], $bordas, 1, 'R');
+$cnpj = isset($infoUser['CNPJFilial']) ? $infoUser['CNPJFilial'] : 'valor padrão';
+$pdf->Cell(0, 5, 'CNPJ n. ' . $cnpj, $bordas, 1, 'R');
 $pdf->Ln(1.5);
 
 $pdf->SetFont('Arial', 'B', 12);
@@ -80,14 +90,20 @@ $pdf->SetFont('Arial', '', 11);
 $ordenate[1] = floatVal($pdf->GetY());
 $larguraDireita = 30;
 $larguraNome = ($netWidth / 2 + $larguraDireita);
-$pdf->MultiCell($larguraNome, $altura, utf8_decode_2(ajustaNome($infoUser['nomeCompleto']) . ' (CPF ' . print_cpf($infoUser['CPF']) . ')'), $bordas, 'L');
+$nomeCompleto = isset($infoUser['nomeCompleto']) ? ajustaNome($infoUser['nomeCompleto']) : 'Nome padrão';
+$cpf = isset($infoUser['CPF']) ? print_cpf($infoUser['CPF']) : 'CPF padrão';
+
+$pdf->MultiCell($larguraNome, $altura, utf8_decode_2($nomeCompleto . ' (CPF ' . $cpf . ')'), $bordas, 'L');
 $ordenate[2] = $pdf->GetY();
 $pdf->SetY($ordenate[1]);
 $pdf->SetX((($larguraNome + 5 + $margins['left']) * 1));
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell(15, $altura, 'CTPS:', $bordas, 0, 'L');
 $pdf->SetFont('Arial', '', 11);
-$pdf->MultiCell(0, $altura, utf8_decode_2($tabelaPontoInfo['ctps'] . '/' . $tabelaPontoInfo['serie_ctps']), $bordas, 'L');
+$ctps = isset($tabelaPontoInfo['ctps']) ? $tabelaPontoInfo['ctps'] : 'valor padrão';
+$serie_ctps = isset($tabelaPontoInfo['serie_ctps']) ? $tabelaPontoInfo['serie_ctps'] : 'valor padrão';
+
+$pdf->MultiCell(0, $altura, utf8_decode_2($ctps . '/' . $serie_ctps), $bordas, 'L');
 
 $pdf->SetX((($larguraNome + 5 + $margins['left']) * 1));
 $pdf->SetFont('Arial', 'B', 11);
@@ -102,15 +118,18 @@ $texto = 'Local:';
 $larguraTexto = $pdf->GetStringWidth($texto);
 $pdf->Cell(($larguraTexto + 1), $altura, utf8_decode_2($texto), $bordas, 0, 'L');
 $pdf->SetFont('Arial', '', 11);
-$pdf->MultiCell(((($netWidth / 2 + $larguraDireita) - ($larguraTexto + 1))), $altura, utf8_decode_2($infoUser['tomador']), $bordas, 'L');
+$tomador = isset($infoUser['tomador']) ? $infoUser['tomador'] : 'valor padrão';
+
+$pdf->MultiCell(((($netWidth / 2 + $larguraDireita) - ($larguraTexto + 1))), $altura, utf8_decode_2($tomador), $bordas, 'L');
 
 $pdf->SetFont('Arial', 'B', 11);
 $texto = 'Horário de Trabalho:';
 $larguraTexto = $pdf->GetStringWidth($texto);
 $pdf->Cell(($larguraTexto), $altura, utf8_decode_2($texto), $bordas, 0, 'L');
 $pdf->SetFont('Arial', '', 11);
-$pdf->MultiCell(0, $altura, utf8_decode_2(preg_replace('/^(HOR: )/', '', $tabelaPontoInfo['desc_horario'])), $bordas, 'L');
-$pdf->Ln(1);
+$desc_horario = isset($tabelaPontoInfo['desc_horario']) ? preg_replace('/^(HOR: )/', '', $tabelaPontoInfo['desc_horario']) : 'valor padrão';
+
+$pdf->MultiCell(0, $altura, utf8_decode_2($desc_horario), $bordas, 'L');$pdf->Ln(1);
 $largura = $netWidth / 8;
 $altura = 10;
 $pdf->SetFont('Arial', 'B', 12);

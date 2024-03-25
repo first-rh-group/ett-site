@@ -1,7 +1,7 @@
 <?php
 session_start();
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
-include('../../session_global/global_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 // if (checkConnection() == false) {
 //     session_destroy();
 //     // header("Location: https://portal.grupofirstrh.com.br");
@@ -27,13 +27,19 @@ function infoUser($arrayInfo)
 {
 	$busca = [];
 	$executePDO = [];
-	if (isset($arrayInfo['cpf']) && $arrayInfo['cpf'] != '') {
-		$busca[] = "grupofir_departamentoRH.usuariosCorp.cpf = ?";
-		$executePDO[] = apenasNumeros($arrayInfo['cpf']);
-	} else {
-		$busca[] = "grupofir_departamentoRH.usuariosCorp.cpf = ?";
-		$executePDO[] = apenasNumeros($_SESSION['infoUser']['login']);
-	}
+    if (isset($arrayInfo['cpf']) && $arrayInfo['cpf'] != '') {
+        $busca[] = "grupofir_departamentoRH.usuariosCorp.cpf = ?";
+        $executePDO[] = apenasNumeros($arrayInfo['cpf']);
+    } else {
+        if (isset($_SESSION['infoUser']['login'])) {
+            $busca[] = "grupofir_departamentoRH.usuariosCorp.cpf = ?";
+            $executePDO[] = apenasNumeros($_SESSION['infoUser']['login']);
+        } else {
+            // Trate o caso em que 'login' não está definido em $_SESSION['infoUser']
+            // Por exemplo, você pode lançar uma exceção ou retornar um erro
+            return 'Erro: Login não definido na sessão';
+        }
+    }
 	if (isset($arrayInfo['chapa']) && $arrayInfo['chapa'] != '') {
 		$busca[] = "grupofir_firstrh3.funcionario.CHAPA = ?";
 		$executePDO[] = $arrayInfo['chapa'];
@@ -162,9 +168,9 @@ function batidaEletronica($busca)
 }
 function fichasFinanceiras()
 {
-	/* include('/home/grupofirstrh/data/connectionSelect.php'); */
-	include('../../data/connectionSelect.php');
-	$query = "SELECT
+    /* include('/home/grupofirstrh/data/connectionSelect.php'); */
+    include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSelect.php');
+    $query = "SELECT
     funcionario.CHAPA,
     ficha_financeira.ANOCOMP,
     ficha_financeira.MESCOMP,
@@ -173,20 +179,35 @@ function fichasFinanceiras()
     FROM funcionario
     LEFT JOIN ficha_financeira ON ficha_financeira.CHAPA = funcionario.CHAPA
     WHERE funcionario.CPF = ? AND (ficha_financeira.ANOCOMP IS NOT NULL AND ficha_financeira.MESCOMP IS NOT NULL AND ficha_financeira.PERIODO IS NOT NULL) AND ANOCOMP >= EXTRACT(YEAR FROM DATE_SUB(CURRENT_DATE(), INTERVAL 2 YEAR)) ORDER BY ANOCOMP DESC, MESCOMP DESC, PERIODO DESC";
-	$st = $db->prepare($query);
-	$st->execute([$_SESSION['infoUser']['login']]);
-	$retorno = $st->fetchAll(PDO::FETCH_ASSOC);
-	$st = null;
-	$db = null;
-	$retorno = array_map("unserialize", array_unique(array_map("serialize", $retorno)));
-	return ($retorno);
+    $st = $db->prepare($query);
+
+    if (!isset($_SESSION['infoUser'])) {
+        // A chave "infoUser" não está definida na variável de sessão.
+        // Você pode definir um valor padrão para "login" aqui, ou retornar um erro.
+        $login = 'valor padrão';
+    } else {
+        $login = $_SESSION['infoUser']['login'];
+    }
+
+    $st->execute([$login]);
+
+    $retorno = $st->fetchAll(PDO::FETCH_ASSOC);
+    $st = null;
+    $db = null;
+    $retorno = array_map("unserialize", array_unique(array_map("serialize", $retorno)));
+    return ($retorno);
 }
 function fichasFinanceirasPeriodo($login, $periodo)
 {
 	$periodo = explode('_', $periodo);
 	/* include('/home/grupofirstrh/data/connectionSelect.php'); */
 	include('../../data/connectionSelect.php');
-	$executePDO = [$login, $periodo[0], $periodo[1], $periodo[2]];
+    $executePDO = [$login];
+
+    // Verifique se as chaves existem antes de tentar acessá-las
+    $executePDO[] = isset($periodo[0]) ? $periodo[0] : null;
+    $executePDO[] = isset($periodo[1]) ? $periodo[1] : null;
+    $executePDO[] = isset($periodo[2]) ? $periodo[2] : null;
 	// print_r2($executePDO, __LINE__, __FILE__, __FUNCTION__);
 	$query = "SELECT DISTINCT ficha_financeira.*
     FROM funcionario
@@ -311,20 +332,22 @@ function informeRendimentos($arrayBusca)
 		$pagamentos = array_merge($pagamentosTitular, $pagamentosDependentes);
 	}
 	$arrayRetorno['pagamentosPlanosSaude'] = [];
-	foreach ($pagamentos as $pagamento) {
-		$arrayRetorno['pagamentosPlanosSaude'][$pagamento['IDOPERADORA']][] = $pagamento;
-	}
-	foreach ($arrayRetorno['pagamentosPlanosSaude'] as $key_operadora => $operadora) {
-		foreach ($operadora as $key => $pagamento) {
-			if (isset($pagamento['Id'])) {
-				$arrayRetorno['pagamentosPlanosSaude'][$key_operadora][$pagamento['Id']] = $pagamento;
-			}
-			if (isset($pagamento['idDependente'])) {
-				$arrayRetorno['pagamentosPlanosSaude'][$key_operadora][$pagamento['idDependente']] = $pagamento;
-			}
-			unset($arrayRetorno['pagamentosPlanosSaude'][$key_operadora][$key]);
+	if (isset($pagamentos) && is_array($pagamentos)) {
+		foreach ($pagamentos as $pagamento) {
+			$arrayRetorno['pagamentosPlanosSaude'][$pagamento['IDOPERADORA']][] = $pagamento;
 		}
-		$arrayRetorno['pagamentosPlanosSaude'][$key_operadora] = array_values($arrayRetorno['pagamentosPlanosSaude'][$key_operadora]);
+		foreach ($arrayRetorno['pagamentosPlanosSaude'] as $key_operadora => $operadora) {
+			foreach ($operadora as $key => $pagamento) {
+				if (isset($pagamento['Id'])) {
+					$arrayRetorno['pagamentosPlanosSaude'][$key_operadora][$pagamento['Id']] = $pagamento;
+				}
+				if (isset($pagamento['idDependente'])) {
+					$arrayRetorno['pagamentosPlanosSaude'][$key_operadora][$pagamento['idDependente']] = $pagamento;
+				}
+				unset($arrayRetorno['pagamentosPlanosSaude'][$key_operadora][$key]);
+			}
+			$arrayRetorno['pagamentosPlanosSaude'][$key_operadora] = array_values($arrayRetorno['pagamentosPlanosSaude'][$key_operadora]);
+		}
 	}
 	$st = null;
 	$db = null;

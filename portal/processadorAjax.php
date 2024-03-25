@@ -32,10 +32,20 @@ if ($_POST['action'] == 'superCoringa') {
 		include('../data/connectionSelect.php');
 		$query = "SELECT ID as idInforme, NOMECOLIGADA as nomeEmpresa, ANO FROM informe_rendimentos WHERE CPF = ? AND ANO = ? ORDER BY CODCOLIGADA ASC, ANO DESC";
 		$st = $db->prepare($query);
+	
+		if (!isset($_SESSION['infoUser'])) {
+			// A chave "infoUser" não está definida na variável de sessão.
+			// Você pode definir um valor padrão para "login" aqui, ou retornar um erro.
+			$login = 'valor padrão';
+		} else {
+			$login = $_SESSION['infoUser']['login'];
+		}
+	
 		$st->execute([
-			$_SESSION['infoUser']['login'],
+			$login,
 			date('Y') - 1
 		]);
+	
 		$retorno = $st->fetchAll(PDO::FETCH_ASSOC);
 		if (count($retorno) > 0) {
 			$retornoStatus = true;

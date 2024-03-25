@@ -1,7 +1,7 @@
 section#rodape {
   position: absolute;
   bottom: 0;
-  background-color: var(--gray);
+  background-color: #193264;
   color: white;
   font-family: var(--fontFamilyDiv);
   left: 0;
@@ -20,5 +20,5 @@ section#rodape > div:first-of-type {
 }
 section#rodape > div:last-of-type {
   min-height: 50px;
-  background-color: var(--black);
+  background-color: white;
 }

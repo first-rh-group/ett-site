@@ -1,31 +1,84 @@
+@font-face {
+  font-family: fontProjeto;
+  src: url(../../font/CodecPro-Regular.ttf) format("truetype");
+  }
+@font-face {
+  font-family: fontExtraBold;
+  src: url(../../font//CodecCold-ExtraBold.ttf) format("truetype");
+  }
+@font-face {
+  font-family: fontCodecRegular;
+  src: url(../../font/codec-pro-light.ttf) format("truetype");
+  }
+@font-face {
+  font-family: fontCodecBold;
+  src: url(../../font/codec-pro-bold.ttf) format("truetype");
+  }
+@font-face {
+  font-family: sonnyGotich;
+  src: url(../../font/W\ Foundry\ -\ Sonny\ Gothic\ Condensed\ Bold.otf) format("opentype");
+  }
+:root {
+  --fontProjeto: fontProjeto;
+  --fontExtraBold: fontExtraBold;
+  --fontCodecRegular: fontCodecRegular;
+  --fontCodecBold: fontCodecBold;
+  --sonnyGotich : sonnyGotich;
+  --black: #313131;
+  --green: #334644;
+  --golden: #feb812;
+  --vividBlue: #007bff;
+  --azulFirst: hsl(222deg 48% 30%);
+  --amareloFirst: hsl(41deg 99% 58%);
+  --vermelhoFirst: hsl(358deg 51% 40%);
+  --gray: rgb(66, 66, 66);
+  --logoWidth: clamp(150px, 35vw, 300px);
+  --headerMinHeight: 65px;
+  --fontFamilyDiv: "Titillium Web", sans-serif;
+  --fontSizeDiv: clamp(1.5em, 2vw, 30px);
+  --textShadow: 1.5px 1.5px 0px #000000;
+  --container: 1240px;
+  --titillium: "Titillium Web", sans-serif;
+  --fontSizeTitulos: clamp(28px, 4.5vw, 32px);
+  --fontSizePadrao: clamp(19px, 18px, 2vw);
+  --buttonFont: clamp(20px, 25px, 2.5vw);
+  --paddingFaixas: clamp(50px, 5vw, 30%);
+  --tamanhoRetangulo: 200px;
+}
+
 section#login {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--fontFamilyDiv);
-  background-image: url(https://grupofirstrh.com.br/controles_img/logo_portal_corporativo.png);
+  /* font-family: var(--fontFamilyDiv); */
+  font-family: var(--fontExtraBold);
+  /* background-image: url(https://grupofirstrh.com.br/controles_img/logo_portal_corporativo.png); */
+  background-image: url(../../new_img/CORPORTAIVO.png);
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: 2vh 2vw;
+  background-position: 2vh -2vw;
 }
 section#login > div {
-  background-color: var(--vermelhoFirst);
-  width: clamp(350px, 50vw, 600px);
+  /* background-color: var(--vermelhoFirst); */
+  background-color: #91191e;
+  width: clamp(350px, 35vw, 600px);
+  height: 350px; /* Adicione esta linha */
+  box-sizing: border-box; /* Adicione esta linha */
   padding: 5vw;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 40px; /* Aumente o valor aqui */
+  -webkit-border-radius: 40px; /* E aqui */
+  -moz-border-radius: 40px; /* E aqui */
+  -ms-border-radius: 40px; /* E aqui */
+  -o-border-radius: 40px; /* E aqui */
   color: whitesmoke;
   font-size: var(--fontSizeDiv);
   box-shadow: 4px 4px 16px black;
   max-width: 95vw;
 }
 section#login form > div {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   gap: 10px;
 }
@@ -33,7 +86,8 @@ section#login form > div:not(div:last-of-type) {
   margin-bottom: 3vh;
 }
 section#login form label {
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: bold;
 }
 .primeiroAcesso {
   transform: translate(50%, 50%);
@@ -76,4 +130,7 @@ section#login form label {
   background-repeat: no-repeat;
   background-position: center right;
   background-size: contain;
+}
+#loginForm {
+  margin-top: -40px;
 }

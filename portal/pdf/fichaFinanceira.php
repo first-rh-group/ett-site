@@ -1,12 +1,12 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('./portal/session/local_functions.php');
+include('../session/local_functions.php');
 require('../../fpdf185/fpdf.php');
 $fichasFinanceiras = fichasFinanceirasPeriodo($_SESSION['printContraCheque']['login'], $_SESSION['printContraCheque']['periodo']);
 // print_r2($fichasFinanceiras, __LINE__, __FILE__, __FUNCTION__);
 $infoUser = infoUser([
     'cpf' => $_SESSION['printContraCheque']['login'],
-    'chapa' => $fichasFinanceiras[0]['CHAPA'],
+    'chapa' => isset($fichasFinanceiras[0]) ? $fichasFinanceiras[0]['CHAPA'] : null,
 ]);
 $periodoArray = explode('_', $_SESSION['printContraCheque']['periodo']);
 class PDF extends FPDF
@@ -27,9 +27,12 @@ class PDF extends FPDF
 }
 // print_r2($infoUser, __LINE__, __FILE__, '');
 
+$codColigada = isset($fichasFinanceiras[0]['COD_COLIGADA']) ? $fichasFinanceiras[0]['COD_COLIGADA'] : null;
+$codFilial = isset($infoUser['COD_FILIAL']) ? $infoUser['COD_FILIAL'] : null;
+
 $empregador = infoColigada([
-    'coligada' => $fichasFinanceiras[0]['COD_COLIGADA'],
-    'filial' => $infoUser['COD_FILIAL']
+    'coligada' => $codColigada,
+    'filial' => $codFilial
 ]);
 // print_r2($empregador, __LINE__, __FILE__, '');
 $pdf = new PDF();
@@ -44,23 +47,24 @@ $pdf->SetRightMargin(10);
 $pdf->SetFont('Arial', 'B', 18);
 $pdf->Cell(0, 10, 'CONTRA-CHEQUE ONLINE', 0, 1, 'C');
 $pdf->Ln(10);
-
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(28, 7, utf8_decode('Funcionário:'), 0, 0, 'L');
 $pdf->SetFont('Arial', '', 12);
-$pdf->MultiCell(0, 7, utf8_decode(ajustaNome($infoUser['nomeFuncionario']) . ' (CPF ' . print_cpf($infoUser['cpf']) . ')'), 0, 'L');
+$mes = isset($periodoArray[1]) ? nomeMes($periodoArray[1]) : '';
+$ano = isset($periodoArray[0]) ? $periodoArray[0] : '';
+$dia = isset($periodoArray[2]) ? $periodoArray[2] : '';
+$pdf->Cell(47, 8, utf8_decode($mes) . '/' . $ano . ' - (' . $dia . ')', 'BL', 0, 'L');
 $pdf->Ln(1);
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(28, 7, 'Empregador:', 0, 0, 'L');
 $pdf->SetFont('Arial', '', 12);
-$pdf->MultiCell(0, 7, utf8_decode(ajustaNome($empregador['matriz']) . ' (CNPJ ' . $empregador['CNPJ'] . ')'), 0, 'L');
+$pdf->MultiCell(0, 7, isset($empregador['matriz']) && isset($empregador['CNPJ']) ? utf8_decode(ajustaNome($empregador['matriz']) . ' (CNPJ ' . $empregador['CNPJ'] . ')') : '', 0, 'L');
 $pdf->Ln(1);
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(28, 7, 'Tomador:', 0, 0, 'L');
 $pdf->SetFont('Arial', '', 12);
-$pdf->MultiCell(0, 7, utf8_decode(ajustaNome($infoUser['tomador'])), 0, 'L');
+$pdf->MultiCell(0, 7, isset($infoUser['tomador']) ? utf8_decode(ajustaNome($infoUser['tomador'])) : '', 0, 'L');
 $pdf->Ln(3);
-
 $width = $pdf->GetPageWidth();
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->SetDrawColor(128, 128, 128);
@@ -68,9 +72,17 @@ $pdf->Cell(105, 8, 'Cargo | Departamento', 'TL', 0, 'L');
 $pdf->Cell(47, 8, utf8_decode('Mês/Ano de Referência'), 'TL', 0, 'L');
 $pdf->Cell(0, 8, utf8_decode('Data de Admissão'), 'TLR', 1, 'L');
 $pdf->SetFont('Arial', '', 11);
-$pdf->Cell(105, 8, utf8_decode(ajustaNome($infoUser['nomeFuncao']) . ' | ' . ajustaNome($infoUser['departamentoNome'])), 'BL', 0, 'L');
-$pdf->Cell(47, 8, utf8_decode(nomeMes($periodoArray[1])) . '/' . $periodoArray[0] . ' - (' . $periodoArray[2] . ')', 'BL', 0, 'L');
-$pdf->Cell(0, 8, $infoUser['data_admissao'], 'BLR', 1, 'L');
+$nomeFuncao = isset($infoUser['nomeFuncao']) ? ajustaNome($infoUser['nomeFuncao']) : '';
+$departamentoNome = isset($infoUser['departamentoNome']) ? ajustaNome($infoUser['departamentoNome']) : '';
+
+$pdf->Cell(105, 8, utf8_decode($nomeFuncao) . ' | ' . $departamentoNome, 'BL', 0, 'L');
+$mes = isset($periodoArray[1]) ? nomeMes($periodoArray[1]) : '';
+$ano = isset($periodoArray[0]) ? $periodoArray[0] : '';
+$dia = isset($periodoArray[2]) ? $periodoArray[2] : '';
+$dataAdmissao = isset($infoUser['data_admissao']) ? $infoUser['data_admissao'] : '';
+
+$pdf->Cell(47, 8, utf8_decode($mes) . '/' . $ano . ' - (' . $dia . ')', 'BL', 0, 'L');
+$pdf->Cell(0, 8, $dataAdmissao, 'BLR', 1, 'L');
 
 $pdf->Ln(2);
 $largura = $width / 3;
@@ -79,14 +91,20 @@ $pdf->Cell($largura, 8, 'PIS', 'TL', 0, 'L');
 $pdf->Cell($largura, 8, utf8_decode('CTPS/Série/UF'), 'T', 0, 'L');
 $pdf->Cell(0, 8, utf8_decode('Matrícula/Chapa'), 'TR', 1, 'L');
 $pdf->SetFont('Arial', '', 11);
-$pdf->Cell($largura, 8, utf8_decode($infoUser['PIS']), 'BL', 0, 'L');
-$pdf->Cell($largura, 8, utf8_decode($infoUser['CTPS']), 'B', 0, 'L');
-$pdf->Cell(0, 8, utf8_decode($infoUser['chapa']), 'BR', 1, 'L');
+$pis = isset($infoUser['PIS']) ? $infoUser['PIS'] : '';
+
+$pdf->Cell($largura, 8, utf8_decode($pis), 'BL', 0, 'L');
+$ctps = isset($infoUser['CTPS']) ? $infoUser['CTPS'] : '';
+
+$pdf->Cell($largura, 8, utf8_decode($ctps), 'B', 0, 'L');
+$chapa = isset($infoUser['chapa']) ? $infoUser['chapa'] : '';
+
+$pdf->Cell(0, 8, utf8_decode($chapa), 'BR', 1, 'L');
 
 $dadosBancarios = [
-    'banco' => ($infoUser['BANCO'] != '' && $infoUser['BANCO'] != 0 ? 'Banco ' . $infoUser['BANCO'] : ''),
-    'agencia' => ($infoUser['AGENCIA'] != '' && $infoUser['AGENCIA'] != 0 ? 'Agência ' . $infoUser['AGENCIA'] : ''),
-    'conta' => ($infoUser['CONTA'] != '' && $infoUser['CONTA'] != 0 ? 'Conta ' . $infoUser['CONTA'] : '')
+    'banco' => (isset($infoUser['BANCO']) && $infoUser['BANCO'] != '' && $infoUser['BANCO'] != 0 ? 'Banco ' . $infoUser['BANCO'] : ''),
+    'agencia' => (isset($infoUser['AGENCIA']) && $infoUser['AGENCIA'] != '' && $infoUser['AGENCIA'] != 0 ? 'Agência ' . $infoUser['AGENCIA'] : ''),
+    'conta' => (isset($infoUser['CONTA']) && $infoUser['CONTA'] != '' && $infoUser['CONTA'] != 0 ? 'Conta ' . $infoUser['CONTA'] : '')
 ];
 $dadosBancarios = array_filter($dadosBancarios);
 if (count($dadosBancarios) > 0) {
@@ -162,11 +180,21 @@ $pdf->Cell($largura, 8, 'Base IRRF', 'T', 0, 'L');
 $pdf->Cell($largura, 8, 'Base FGTS', 'T', 0, 'L');
 $pdf->Cell(0, 8, 'Dep. FGTS', 'TR', 1, 'L');
 $pdf->SetFont('Arial', '', 11);
-$pdf->Cell($largura, 8, 'R$ ' . printValor($fichasFinanceiras[0]['SALARIO_BASE']), 'BL', 0, 'L');
-$pdf->Cell($largura, 8, 'R$ ' . printValor($fichasFinanceiras[0]['BASE_INSS']), 'B', 0, 'L');
-$pdf->Cell($largura, 8, 'R$ ' . printValor($fichasFinanceiras[0]['BASE_IRRF']), 'B', 0, 'L');
-$pdf->Cell($largura, 8, 'R$ ' . printValor($fichasFinanceiras[0]['BASE_FGTS']), 'B', 0, 'L');
-$pdf->Cell(0, 8, 'R$ ' . printValor(($fichasFinanceiras[0]['FGTS'] / 100)), 'BR', 1, 'L');
+$salarioBase = isset($fichasFinanceiras[0]['SALARIO_BASE']) ? $fichasFinanceiras[0]['SALARIO_BASE'] : 0;
+
+$pdf->Cell($largura, 8, 'R$ ' . printValor($salarioBase), 'BL', 0, 'L');
+$baseInss = isset($fichasFinanceiras[0]['BASE_INSS']) ? $fichasFinanceiras[0]['BASE_INSS'] : 0;
+
+$pdf->Cell($largura, 8, 'R$ ' . printValor($baseInss), 'B', 0, 'L');
+$baseIrrf = isset($fichasFinanceiras[0]['BASE_IRRF']) ? $fichasFinanceiras[0]['BASE_IRRF'] : 0;
+
+$pdf->Cell($largura, 8, 'R$ ' . printValor($baseIrrf), 'B', 0, 'L');
+$baseFgts = isset($fichasFinanceiras[0]['BASE_FGTS']) ? $fichasFinanceiras[0]['BASE_FGTS'] : 0;
+
+$pdf->Cell($largura, 8, 'R$ ' . printValor($baseFgts), 'B', 0, 'L');
+$fgts = isset($fichasFinanceiras[0]['FGTS']) ? $fichasFinanceiras[0]['FGTS'] : 0;
+
+$pdf->Cell(0, 8, 'R$ ' . printValor($fgts / 100), 'BR', 1, 'L');
 
 $pdf->Output();
 // unset($_SESSION['printContraCheque']);
