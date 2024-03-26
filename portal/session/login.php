@@ -4,13 +4,13 @@ session_destroy();
 session_start();
 
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
-include('../../session_global/global_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 $dadosEnviados = (array) json_decode($_POST['instrucoes']);
 $login = apenasNumeros($dadosEnviados['usuario']);
 $dbname = 'grupofir_departamentoRH';
 /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-include('../../data/connectionSuperUser.php');
-$query = "SELECT * FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND usuariosCorp.senha = PASSWORD(?) AND usuariosCorp.status = 0 LIMIT 1";
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
+$query = "SELECT * FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND usuariosCorp.senha = PASSWORD(?)AND usuariosCorp.status = 0 LIMIT 1";
 $st = $db->prepare($query);
 $st->execute([$login, $dadosEnviados['senha']]);
 $retorno = $st->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@ if (count($retorno) > 0) {
     ];
     $dbname = 'grupofir_departamentoRH';
     /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-    include('../../data/connectionSuperUser.php');
+    include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
     $query = "UPDATE usuariosCorp SET usuariosCorp.sessionHash = :sessionHash, usuariosCorp.iniciais = :iniciais, usuariosCorp.lastLogin = '" . date('Y-m-d H:i:s') . "', usuariosCorp.ipLogin = '" . getUserIpAddr() . "' WHERE usuariosCorp.cpf = :cpf LIMIT 1";
     $st = $db->prepare($query);
     $st->execute($executePDO);

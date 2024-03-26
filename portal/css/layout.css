@@ -60,6 +60,12 @@ section#login {
   background-size: auto;
   background-position: 2vh -2vw;
 }
+#login > div {
+  background-color: #91191e;
+}
+#destino {
+    background-color: #91191e;
+}
 section#login > div {
   /* background-color: var(--vermelhoFirst); */
   background-color: #91191e;
@@ -76,6 +82,7 @@ section#login > div {
   font-size: var(--fontSizeDiv);
   box-shadow: 4px 4px 16px black;
   max-width: 95vw;
+  margin-bottom: 100px;
 }
 section#login form > div {
   /* display: flex; */
@@ -133,4 +140,12 @@ section#login form label {
 }
 #loginForm {
   margin-top: -40px;
+}
+@media screen and (min-width: 1920px) {
+  section#login {
+    background-image: url(../../new_img/corrigido\ L.png);
+  }
+  #recuperarButton {
+    bottom: 20px;
+  }
 }

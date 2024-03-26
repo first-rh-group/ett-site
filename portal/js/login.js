@@ -19,11 +19,11 @@ function recuperarSenha(cpf) {
     }
     xmlhttp.onreadystatechange=function() {
         if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            var resposta = xmlhttp.responseText;
-            let res = JSON.parse(resposta);
-            // console.log(res);
-            document.getElementById('destino').innerHTML = '';
-            if(res.email == null) {
+            try {
+                var resposta = xmlhttp.responseText;
+                let res = JSON.parse(resposta);
+                document.getElementById('destino').innerHTML = '';
+                if(res.email == null) {
                 criarElement({
                     "id":false,
                     "textoHtml":"Não localizamos um e-mail vinculado a esse CPF. Entre em contato com nosso setor de apoio ao empregado.",
@@ -95,8 +95,11 @@ function recuperarSenha(cpf) {
                 // });
                 // window.location = 'dashboard.html';
             }
-        }   
+        } catch (e) {
+            console.error("A resposta do servidor não é um JSON válido: ", resposta);
+        }
     }
+}
     xmlhttp.open("POST","session/recuperarSenha.php",true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send("instrucoes="+JSON.stringify(instrucoes));
@@ -172,7 +175,7 @@ function login() {
             },
             "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
             "addClass": ['btn-success'],
-            "htmlText": "Login no sistema",
+            "htmlText": "LOGIN NO SISTEMA",
             "selector": "section#login button",
         });
     } else {
@@ -198,12 +201,14 @@ function login() {
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 var res = xmlhttp.responseText;
-                // document.getElementById('destino').innerHTML = resposta;
-                try {
-                let res = JSON.parse(res);
+                if (res !== "false") {
+                 document.getElementById('destino').innerHTML = res;
+                    try {
+                        res = JSON.parse(res);
                 } catch (e) {
                     console.error("A resposta do servidor não é um JSON válido: ", res);
                 }
+            }
                 // console.log(res);
                 if(res == false) {
                     changeAttributes({
@@ -213,7 +218,7 @@ function login() {
                         },
                         "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
                         "addClass": ['btn-success'],
-                        "htmlText": "Login no sistema",
+                        "htmlText": "LOGIN NO SISTEMA",
                         "selector": "section#login button",
                     });
                     alertErros({
@@ -241,3 +246,7 @@ function login() {
     }
     return;
 }
+document.getElementById('recuperarButton').addEventListener('click', function() {
+    var loginDiv = document.querySelector('section#login > div');
+    loginDiv.style.height = 'auto'; // ou qualquer outro valor que você queira definir
+});

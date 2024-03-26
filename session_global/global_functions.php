@@ -496,7 +496,7 @@ function infoColigada($codigos)
 		$busca = implode(' AND ', $busca);
 		$dbname = "grupofir_firstrh3";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "SELECT IF(COD_COLIGADA = 1,'E.T.T. First-RH-Assessoria Empresarial Ltda','Shift Gestão de Serviços Ltda') as matriz, NOME_FILIAL as filial, CNPJ, TELEFONE, ENDERECO, NUMERO, COMPLEMENTO, BAIRRO, CIDADE, CEP, ESTADO FROM filiais WHERE " . $busca . " LIMIT 1";
 		$st = $db->prepare($query);
 		$st->execute($executePDO);

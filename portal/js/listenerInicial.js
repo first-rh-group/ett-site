@@ -172,7 +172,7 @@ cpfUsuario?.addEventListener('keyup', () => {
 						"selector": "button#loginButton",
 						"removeClass": ['nohand', 'btn-secondary', 'btn-danger'],
 						"addClass": ['btn-success'],
-						"htmlText": "Login no sistema",
+						"htmlText": "LOGIN NO SISTEMA",
 						"attributes": {
 							"onclick":"login();",
 							"type":"submit",
@@ -233,7 +233,7 @@ cpfUsuario?.addEventListener('keyup', () => {
 			"selector": "button#loginButton",
 			"removeClass": ['btn-success','btn-danger'],
 			"addClass": ['nohand', 'btn-secondary'],
-			"htmlText": "Login no sistema",
+			"htmlText": "LOGIN NO SISTEMA",
 			"attributes": {
 				"onclick":false,
 				"type":"button",
@@ -255,7 +255,7 @@ window.addEventListener("load", () => {
 			"selector": "button#loginButton",
 			"removeClass": ['nohand', 'btn-secondary', 'btn-danger'],
 			"addClass": ['btn-success'],
-			"htmlText": "Login no sistema",
+			"htmlText": "LOGIN NO SISTEMA",
 			"attributes": {
 				"onclick":"login();",
 				"type":"submit",
