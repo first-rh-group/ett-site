@@ -1,22 +1,89 @@
+@font-face {
+  font-family: fontProjeto;
+  src: url(../../font/CodecPro-Regular.ttf) format("truetype");
+  }
+@font-face {
+  font-family: fontExtraBold;
+  src: url(../../font/CodecCold-ExtraBold.ttf) format("truetype");
+  }
+@font-face {
+  font-family: fontCodecRegular;
+  src: url(../../font/codec-pro-light.ttf) format("truetype");
+  }
+@font-face {
+  font-family: fontCodecBold;
+  src: url(../../font/codec-pro-bold.ttf) format("truetype");
+  }
+@font-face {
+  font-family: sonnyGotich;
+  src: url(../../font/W\ Foundry\ -\ Sonny\ Gothic\ Condensed\ Bold.otf) format("opentype");
+  }
+:root {
+  --fontProjeto: fontProjeto;
+  --fontExtraBold: fontExtraBold;
+  --fontCodecRegular: fontCodecRegular;
+  --fontCodecBold: fontCodecBold;
+  --sonnyGotich : sonnyGotich;
+  --black: #313131;
+  --green: #334644;
+  --golden: #feb812;
+  --vividBlue: #007bff;
+  --azulFirst: hsl(222deg 48% 30%);
+  --amareloFirst: hsl(41deg 99% 58%);
+  --vermelhoFirst: hsl(358deg 51% 40%);
+  --gray: rgb(66, 66, 66);
+  --logoWidth: clamp(150px, 35vw, 300px);
+  --headerMinHeight: 65px;
+  --fontFamilyDiv: "Titillium Web", sans-serif;
+  --fontSizeDiv: clamp(1.5em, 2vw, 30px);
+  --textShadow: 1.5px 1.5px 0px #000000;
+  --container: 1240px;
+  --titillium: "Titillium Web", sans-serif;
+  --fontSizeTitulos: clamp(28px, 4.5vw, 32px);
+  --fontSizePadrao: clamp(19px, 18px, 2vw);
+  --buttonFont: clamp(20px, 25px, 2.5vw);
+  --paddingFaixas: clamp(50px, 5vw, 30%);
+  --tamanhoRetangulo: 200px;
+}
 section {
   font-family: var(--fontFamilyDiv);
 }
 section#rodape {
   position: sticky;
 }
-section#header {
-  background-color: var(--gray);
+header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
+.menu-item.selected {
+  border: 2px solid #feb710;
+  background-color: #feb710;
   color: white;
-  background-image: url(https://grupofirstrh.com.br/controles_img/firstrh_group_logo-en.webp);
+}
+.menu-item {
+  font-family: var(--fontExtraBold);
+}
+
+.menu-item > div {
+  font-family: var(--fontCodecRegular);
+}
+section#header {
+  /* background-color: var(--gray); */
+  background-image: url(../../new_img/PORTAL\ CORPORATIVO\ HEAD\ DIREITA.png);
+  color: white;
+  /* background-image: url(https://grupofirstrh.com.br/controles_img/firstrh_group_logo-en.webp); */
   background-repeat: no-repeat;
-  background-position: 10px center;
-  height: clamp(100px, 10vh, 6vw);
+  background-position: 0px center;
+  background-size: cover; /* ou use 100% se preferir */
+  height: clamp(79px, 10vh, 6vw);
   padding: 25px;
   letter-spacing: 0.15vw;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-end; */
 }
+
 section#header > div:nth-of-type(1) {
   min-height: 55px;
   margin-right: 35px;
@@ -52,17 +119,22 @@ section#main {
   display: flex;
   min-height: calc(100vh - 200px);
 }
-section#main > div.menu {
+section#main > div.menu.active {
   width: clamp(255px, 25vw, 300px);
-  background-color: var(--black);
-  padding: 2px 4px;
+  overflow: auto;
+}
+section#main > div.menu {
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  /* background-color: var(--black); */
+  padding: -1px 4px;
 }
 section#main > div.principal {
   flex: 1;
   padding: 1vw;
 }
 section#main > div.menu > div {
-  background-color: var(--gray);
+  /* background-color: var(--gray); */
   margin-top: 2px;
 }
 section#main > div.menu > div.userInfo {
@@ -74,9 +146,9 @@ section#main > div.menu > div.userInfo {
   color: white;
   margin-top: 0;
 }
-section#main > div.menu > div:hover {
+/* section#main > div.menu > div:hover {
   background-color: hsl(0deg 0% 17%);
-}
+} */
 section#main > div.menu > div > div:first-of-type {
   background-repeat: no-repeat;
   background-size: 10%;
@@ -121,11 +193,12 @@ section#main > div.menu > div > div:nth-of-type(n + 2) {
   -moz-transition: height 500ms;
   -ms-transition: height 500ms;
   -o-transition: height 500ms;
+  margin-left: 20px;
 }
 section#main > div.menu > div > div:nth-of-type(n + 2) > div {
   padding-left: 15px;
   /* margin-bottom: 1px; */
-  background-color: var(--golden);
+  /* background-color: var(--golden); */
   width: 100%;
   min-height: 35px;
   display: flex;
@@ -140,7 +213,8 @@ section#main > div.menu > div > div:nth-of-type(n + 2) > div > span {
   align-items: center;
   justify-content: center;
   margin-left: 5px;
-  background-color: var(--vividBlue);
+  /* background-color: var(--vividBlue); */
+  background-color: var(--vermelhoFirst);
   --tamanhoSpan: 23px;
   width: var(--tamanhoSpan);
   height: var(--tamanhoSpan);
@@ -255,4 +329,70 @@ div.principal div.dicas > .links > div > a:hover {
 }
 .bemvindo p {
   margin-bottom: 15px;
+}
+.dropdown-menu .dropdown-item {
+  display: block;
+}
+body {
+  overflow-x: hidden;
+}
+
+#sideMenu {
+  background-color: #0F2146;
+  position: absolute;
+  z-index: 10;
+  left: 0px; /* ou a largura que você preferir */
+  top: 0;
+  width: 200px; /* ou a largura que você preferir */
+  height: 100%;
+  overflow: auto;
+  transition: left 0.3s ease-in-out;
+}
+#sideMenu .menu-item.selected {
+  border: 2px solid #feb710;
+  background-color: #feb710;
+  color: white;
+}
+
+#dropdownMenuButton {
+  background-color: transparent; /* Remova a cor de fundo */
+  color: white; /* Cor dos ícones (traços) */
+  padding: 10px 16px;
+  float: left;
+  top: -10px;
+  border: 2px solid white; /* Contorno branco */
+  transition: background-color 0.3s ease; /* Transição suave ao mudar a cor de fundo */
+}
+
+#dropdownMenuButton:hover {
+  background-color: #feb710; /* Cor de fundo ao passar o mouse */
+}
+.content-with-menu {
+  width: calc(100% - 290px);
+}
+body.with-menu {
+  margin-left: 290px; /* Ajuste o valor de 300px para a largura do seu menu */
+  transition: margin-left 0.3s ease-in-out; /* Adiciona uma transição suave */
+  overflow-x: hidden; /* Evita a rolagem horizontal quando o menu está ativo */
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-greeting {
+  margin-top: 10px;
+}
+.menu-item:hover {
+  background-color: #feb710;
+  color: white;
 }

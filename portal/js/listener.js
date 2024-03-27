@@ -11,6 +11,35 @@ toogle?.addEventListener("click", (e) => {
     }
 });
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    // Adiciona a classe 'active' ao menu no carregamento da página
+    var menu = document.getElementById('sideMenu');
+    menu.classList.add('active');
+    document.body.classList.add('with-menu');
+});
+
+document.getElementById('dropdownMenuButton').addEventListener('click', function() {
+    var menu = document.getElementById('sideMenu');
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        document.body.classList.remove('with-menu');
+    } else {
+        menu.classList.add('active');
+        document.body.classList.add('with-menu');
+    }
+});
+var menuItems = document.querySelectorAll('.menu-item');
+menuItems.forEach(function(menuItem) {
+    menuItem.addEventListener('click', function() {
+        // Remova a classe 'selected' de todos os itens do menu
+        menuItems.forEach(function(item) {
+            item.classList.remove('selected');
+        });
+
+        // Adicione a classe 'selected' ao item do menu clicado
+        this.classList.add('selected');
+    });
+});
 // ! FINANCEIRO
 var menusFinanceiroMobile = document.querySelector('div#menuSuspensoMobile > div.financeiro > div:nth-of-type(1)');
 menusFinanceiroMobile?.addEventListener('click', () => {
