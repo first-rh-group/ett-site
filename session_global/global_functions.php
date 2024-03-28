@@ -377,7 +377,7 @@ function novaSenha($arrayInfo)
 	$executePDO['cpf'] = $arrayInfo['cpf'];
 	$dbname = "grupofir_departamentoRH";
 	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-	include('./data/connectionSuperUser.php');
+	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 	$query = "UPDATE usuariosCorp SET senha = PASSWORD(:senha) " . $alteraEmail . "WHERE cpf = :cpf";
 	// print_r2($query, __LINE__, __FILE__, __FUNCTION__);
 	$st = $db->prepare($query);
@@ -391,7 +391,7 @@ function novaSenha($arrayInfo)
 				'email' => $usuario['email']
 			]];
 			/* include('/home/grupofirstrh/public_html/includes/mailRecuperacaoSenha.php'); */
-			include('./includes/mailRecuperacaoSenha.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailRecuperacaoSenha.php');
 		}
 		$arrayRetorno['email'] = (is_null($usuario['email']) || $usuario['email'] == '' ? '' : $usuario['email']);
 		$arrayRetorno['nomeCompleto'] = (is_null($usuario['nomeCompleto']) || $usuario['nomeCompleto'] == '' ? '' : $usuario['nomeCompleto']);
@@ -412,7 +412,7 @@ function infoEmpregado($arrayBusca)
 	}
 	$dbname = "grupofir_departamentoRH";
 	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-	include('./data/connectionSuperUser.php');
+	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 	$query = "SELECT id, nomeCompleto, cpf, iniciais, email, telefones, DATE_FORMAT(lastLogin, '%d-%m-%Y') as lastLogin, sessionHash, ipLogin, diasAutorizados, horarioAutorizado FROM usuariosCorp WHERE " . implode(' AND ', $where) . " LIMIT 1";
 	$st = $db->prepare($query);
 	$st->execute($executePDO);

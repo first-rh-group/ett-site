@@ -201,7 +201,7 @@ function login() {
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 var res = xmlhttp.responseText;
-                if (res !== "false") {
+                if (res !== false) {
                  document.getElementById('destino').innerHTML = res;
                     try {
                         res = JSON.parse(res);

@@ -63,9 +63,9 @@ section#login {
 #login > div {
   background-color: #91191e;
 }
-#destino {
+/* #destino {
     background-color: #91191e;
-}
+} */
 section#login > div {
   /* background-color: var(--vermelhoFirst); */
   background-color: #91191e;

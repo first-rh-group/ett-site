@@ -3,8 +3,9 @@ session_start();
 session_destroy();
 session_start();
 
-include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
+include('../../session_global/global_functions.php');
 $dadosRecebidos = urldecode(urldecode($_REQUEST['instrucoes']));
+// file_put_contents('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\dadosRecebidos.txt', $dadosRecebidos);
 
 $dadosEnviados = json_decode($dadosRecebidos, true);
 
@@ -21,9 +22,11 @@ if (!isset($dadosEnviados['usuario']) || !isset($dadosEnviados['senha'])) {
 $login = apenasNumeros($dadosEnviados['usuario']);
 $dbname = 'grupofir_departamentoRH';
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-$query = "SELECT * FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND SHA2(usuariosCorp.senha, 256) = SHA2(?, 256) AND usuariosCorp.status = 0 LIMIT 1";
+$senha = $dadosEnviados['senha'];
+$senhaHash = hash('sha256', $senha);
+$query = "SELECT * FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND SHA2(usuariosCorp.senha, 256) = ? AND usuariosCorp.status = 0 LIMIT 1";
 $st = $db->prepare($query);
-$st->execute([$login, $dadosEnviados['senha']]);
+$st->execute([$login, $senhaHash]);
 $retorno = $st->fetchAll(PDO::FETCH_ASSOC);
 $st = null;
 $db = null;

@@ -3,12 +3,12 @@ session_start();
 session_destroy();
 session_start();
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
-include('./session_global/global_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 $dadosEnviados = (array) json_decode($_POST['instrucoes']);
 $executePDO[] = apenasNumeros($dadosEnviados['cpf']);
 $dbname = "grupofir_departamentoRH";
 /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-include('./data/connectionSuperUser.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 // $query = "SELECT id, email FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND usuariosCorp.email != '' AND usuariosCorp.status = 0 LIMIT 1";
 $query = "SELECT id, email FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND usuariosCorp.email != '' LIMIT 1";
 $st = $db->prepare($query);
