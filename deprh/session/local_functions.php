@@ -1,7 +1,7 @@
 <?php
 session_start();
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
-include('./session_global/global_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 if (checkConnection() == false) {
 	session_destroy();
 	header("Location: https://deprh.grupofirstrh.com.br");
@@ -11,7 +11,7 @@ function checkConnection()
 {
 	$resposta = false;
 	/* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
-	include('./data/connectionFull_departamentoRH.php');
+	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionFull_departamentoRH.php');
 	$query = "SELECT usuariosDeprh.id FROM usuariosDeprh WHERE usuariosDeprh.cpf = ? AND usuariosDeprh.sessionHash = ? AND usuariosDeprh.status = 0 AND SUBSTRING(diasAutorizados,(WEEKDAY(CURRENT_DATE()) + 1),1) = 0 AND CONCAT(SUBSTRING(CURTIME(),1,2),SUBSTRING(CURTIME(),4,2)) > SUBSTRING(horarioAutorizado,1,4) AND CONCAT(SUBSTRING(CURTIME(),1,2),SUBSTRING(CURTIME(),4,2)) < SUBSTRING(horarioAutorizado,5,4) LIMIT 1";
 	$st = $db->prepare($query);
 	$st->execute([$_SESSION['infoUser']['login'], $_SESSION['infoUser']['sessionHash']]);
@@ -26,7 +26,7 @@ function checkConnection()
 function infoUser()
 {
 	/* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
-	include('./data/connectionFull_departamentoRH.php');
+	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionFull_departamentoRH.php');
 	$query = "SELECT id, nomeCompleto, cpf, iniciais, email, telefones, DATE_FORMAT(lastLogin, '%d-%m-%Y') as lastLogin, sessionHash, ipLogin, diasAutorizados, horarioAutorizado 
     FROM usuariosDeprh 
     WHERE usuariosDeprh.cpf = ? AND usuariosDeprh.sessionHash = ? AND usuariosDeprh.status = 0 LIMIT 1";
@@ -54,7 +54,7 @@ function folhasdePontoRecebidas($busca)
 	}
 	$buscaFinal = implode(' AND ', $where);
 	/* include('/home/grupofirstrh/data/connectionSelect.php'); */
-	include('./data/connectionSelect.php');
+	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSelect.php');
 	$query = "SELECT funcionario.NOME as nomeEmpregado, folhaFisica.cpf, folhaFisica.referencia, folhaFisica.dataEnvio, folhaFisica.nomeArquivo FROM folhaFisica LEFT JOIN funcionario ON funcionario.CPF = folhaFisica.cpf WHERE $buscaFinal ORDER BY folhaFisica.referencia DESC, folhaFisica.dataEnvio DESC, nomeEmpregado ASC";
 	$st = $db->prepare($query);
 	$st->execute($executePDO);
@@ -79,7 +79,7 @@ function notificacoesGerais()
 	$notificacoes = [];
 	$dbname = 'grupofir_departamentoRH';
 	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-	include('./data/connectionSuperUser.php');
+	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 	$query = "SELECT id, nomeCompleto, cpf FROM usuariosCorp WHERE usuariosCorp.status = 3";
 	$st = $db->prepare($query);
 	$st->execute();

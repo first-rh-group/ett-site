@@ -1,7 +1,7 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
 /* include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php'); */
-include('../portal/session/local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\deprh\session\local_functions.php');
 /*if (!isset($_POST['action'])) {
     echo json_encode(['error' => 'No action specified']);
     exit();
@@ -29,7 +29,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '5') {
 		$retornoStatus = false;
 		/* include('/home/grupofirstrh/data/connectionSelect.php'); */
-		include('../data/connectionSelect.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSelect.php');
 		$query = "SELECT ID as idInforme, NOMECOLIGADA as nomeEmpresa, ANO FROM informe_rendimentos WHERE CPF = ? AND ANO = ? ORDER BY CODCOLIGADA ASC, ANO DESC";
 		$st = $db->prepare($query);
 	
@@ -81,7 +81,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '10') {
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('../data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$update = [];
 		$executePDO = [];
 		$erros = [];
@@ -112,7 +112,7 @@ if ($_POST['action'] == 'superCoringa') {
 		if (count($erros) == 0) {
 			$dbname = 'grupofir_departamentoRH';
 			/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-			include('../data/connectionSuperUser.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 			$query = "SELECT id FROM usuariosCorp WHERE email = ? AND cpf != ?";
 			$st = $db->prepare($query);
 			$st->execute([superTrim(strtolower($_POST['emailUsuario'])), $_SESSION['infoUser']['login']]);
@@ -158,7 +158,7 @@ if ($_POST['action'] == 'superCoringa') {
 		if (count($erros) == 0) {
 			$dbname = 'grupofir_departamentoRH';
 			/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-			include('../data/connectionSuperUser.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 			$query = "SELECT id,email,cpf FROM usuariosCorp WHERE email = ? OR cpf = ?";
 			$st = $db->prepare($query);
 			$st->execute([$arrayInsert['email'], $arrayInsert['cpf']]);
@@ -179,7 +179,7 @@ if ($_POST['action'] == 'superCoringa') {
 			$arrayInsert['senha'] = gerarHash('8');
 			$dbname = 'grupofir_departamentoRH';
 			/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-			include('../data/connectionSuperUser.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 			$query = "INSERT INTO usuariosCorp(nomeCompleto, cpf, email, telefones, iniciais, senha, status) VALUES (:nomeCompleto,:cpf,:email,:telefones,:iniciais,PASSWORD(:senha),3)";
 			$st = $db->prepare($query);
 			$st->execute($arrayInsert);
@@ -190,7 +190,7 @@ if ($_POST['action'] == 'superCoringa') {
 					'email' => $arrayInsert['email']
 				]];
 				/* include('/home/grupofirstrh/public_html/includes/mailPrimeiroAcesso.php'); */
-				include('../includes/mailPrimeiroAcesso.php');
+				include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailPrimeiroAcesso.php');
 				echo json_encode(['retorno' => true]);
 			} else {
 				echo json_encode(['retorno' => false, 'erros' => ['Não foi possível concluir o cadastro']]);
@@ -200,7 +200,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$usuarioExistente = false;
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('../data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "SELECT id FROM usuariosCorp WHERE cpf = ? AND cpf != ''";
 		$st = $db->prepare($query);
 		$st->execute([apenasNumeros($_POST['cpf'])]);
@@ -210,7 +210,7 @@ if ($_POST['action'] == 'superCoringa') {
 		} else {
 			$dbname = 'grupofir_firstrh3';
 			/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-			include('../data/connectionSuperUser.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 			$query = "SELECT NOME as nomeCompleto, CPF as cpf, EMAIL as email, COD_FILIAL as grupo_id, COD_COLIGADA as filial FROM funcionario WHERE cpf = ? AND cpf != '' LIMIT 1";
 			$st = $db->prepare($query);
 			$st->execute([apenasNumeros($_POST['cpf'])]);
@@ -219,7 +219,7 @@ if ($_POST['action'] == 'superCoringa') {
 				$usuarioExistente = true;
 				$dbname = 'grupofir_departamentoRH';
 				/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-				include('../data/connectionSuperUser.php');
+				include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 				$query = "INSERT INTO usuariosCorp(nomeCompleto, cpf, iniciais, email, filial, grupo_id) VALUES (?,?,?,?,?,?)";
 				$executePDO = [
 					ajustaNome($retornado[0]['nomeCompleto']),
@@ -237,7 +237,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '13') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('../data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade = '0000-00-00' OR validade >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
 		$st = $db->prepare($query);
 		$st->execute();
@@ -251,7 +251,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '14') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('../data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$executePDO = [];
 		$where = [];
 		if ($_POST['grupo'] == 'Todos') {

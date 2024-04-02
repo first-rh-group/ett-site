@@ -3,9 +3,8 @@ session_start();
 session_destroy();
 session_start();
 
-include('../../session_global/global_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 $dadosRecebidos = urldecode(urldecode($_REQUEST['instrucoes']));
-// file_put_contents('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\dadosRecebidos.txt', $dadosRecebidos);
 
 $dadosEnviados = json_decode($dadosRecebidos, true);
 
@@ -53,7 +52,9 @@ if (count($retorno) > 0) {
     $_SESSION['infoUser'] = [
         'login' => $login,
         'sessionHash' => $activationCode,
+        'grupo_id' => $retorno[0]['grupo_id'],
     ];
+    echo 'grupo_id: ' . $retorno[0]['grupo_id'] . "\n"; // Adicione a quebra de linha
     echo json_encode($activationCode);
 } else {
     echo json_encode(false);

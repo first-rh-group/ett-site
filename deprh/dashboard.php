@@ -1,6 +1,6 @@
 <?php
 /* include('/home/grupofirstrh/public_html/deprh/session/local_functions.php'); */
-include('./session/local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
 // echo '<br>';
 // print_r2($_SESSION);
 echo '<br>';
@@ -15,7 +15,7 @@ echo '<br>';
 
 $dbname = "grupofir_departamentoRH";
 /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-include ('./data/connectionSuperUser.php');
+include ('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 $query = "SELECT grupofir_firstrh3.sec_users.name, grupofir_firstrh3.sec_users.login, grupofir_firstrh3.sec_users.email, IF(grupofir_firstrh3.sec_users.active = 'Y',0,1) AS active, grupofir_firstrh3.sec_users.filial, grupofir_firstrh3.sec_users.grupo_id, grupofir_firstrh3.sec_users.cod_depto FROM grupofir_firstrh3.sec_users WHERE grupofir_firstrh3.sec_users.login NOT IN (SELECT cpf FROM grupofir_departamentoRH.usuariosCorp WHERE grupofir_departamentoRH.usuariosCorp.id > 0)";
 $st = $db->prepare($query);
 $st->execute();
@@ -35,7 +35,7 @@ $retorno = $st->fetchAll(PDO::FETCH_ASSOC);
 print_r2($retorno, __LINE__, __FILE__, __FUNCTION__);
 $dbname = "grupofir_departamentoRH";
 /* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-include('./data/connectionSuperUser.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 foreach ($retorno as $key => $novoEmpregado) {
     // print_r2($novoEmpregado, __LINE__, __FILE__, __FUNCTION__);
     $query = "INSERT INTO usuariosCorp

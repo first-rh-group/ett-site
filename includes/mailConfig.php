@@ -6,11 +6,11 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 /* require_once('/home/grupofirstrh/public_html/PHPMailer/src/PHPMailer.php'); */
-require_once('./PHPMailer/src/PHPMailer.php');
+require_once('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\PHPMailer\src\PHPMailer.php');
 /* require_once('/home/grupofirstrh/public_html/PHPMailer/src/SMTP.php'); */
-require_once('./PHPMailer/src/SMTP.php');
+require_once('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\PHPMailer\src\SMTP.php');
 /* require_once('/home/grupofirstrh/data/smtpInfo.php'); */
-require_once('./data/smtpInfo.php');
+require_once('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\smtpInfo.php');
 
 //Create an instance; passing `true` enables exceptions
 // ! $mail = new PHPMailer(true);

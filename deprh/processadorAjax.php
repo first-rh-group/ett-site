@@ -1,7 +1,8 @@
 <?php
 // ULTIMO 16
 /* include('/home/grupofirstrh/public_html/deprh/session/local_functions.php'); */
-include('./deprh/session/local_functions.php');
+header('Access-Control-Allow-Origin: http://localhost:8080');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\deprh\session\local_functions.php');
 if ($_POST['action'] == 'superCoringa') {
 	if ($_POST['codigo'] == '1') {
 		$infoUser = infoUser();
@@ -24,7 +25,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '9') {
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$update = [];
 		$executePDO = [];
 		if (isset($_POST['nomeUsuario']) && strlen(superTrim($_POST['nomeUsuario'])) > 7) {
@@ -54,7 +55,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '10') {
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "SELECT nomeCompleto, email, status FROM usuariosCorp WHERE cpf = ?";
 		$st = $db->prepare($query);
 		$st->execute([apenasNumeros($_POST['cpf'])]);
@@ -88,7 +89,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$executePDO['cpf'] = apenasNumeros($_POST['cpfEmpregado']);
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "UPDATE usuariosCorp SET " . implode(', ', $update) . " WHERE cpf = :cpf LIMIT 1";
 		$st = $db->prepare($query);
 		$st->execute($executePDO);
@@ -119,7 +120,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '14') {
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "DELETE FROM usuariosCorp WHERE id = ? LIMIT 1";
 		$st = $db->prepare($query);
 		$st->execute([$_POST['idUsuario']]);
@@ -128,7 +129,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$senha = gerarHash('8');
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "UPDATE usuariosCorp SET usuariosCorp.status = 0, usuariosCorp.senha = PASSWORD(:senha) WHERE usuariosCorp.id != 1 AND usuariosCorp.id = :idUsuario LIMIT 1";
 		$st = $db->prepare($query);
 		$st->execute([
@@ -146,7 +147,7 @@ if ($_POST['action'] == 'superCoringa') {
 				'email' => $retorno['email']
 			]];
 			/* include('/home/grupofirstrh/public_html/includes/mailAcessoLiberado.php'); */
-			include('./includes/mailAcessoLiberado.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailAcessoLiberado.php');
 			echo json_encode(['retorno' => true, 'idUsuario' => $_POST['idUsuario']]);
 		} else {
 			echo json_encode(['retorno' => false]);
@@ -155,7 +156,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$usuarioExistente = false;
 		$dbname = 'grupofir_departamentoRH';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "SELECT id FROM usuariosCorp WHERE cpf = ? AND cpf != ''";
 		$st = $db->prepare($query);
 		$st->execute([apenasNumeros($_POST['cpf'])]);
@@ -165,7 +166,7 @@ if ($_POST['action'] == 'superCoringa') {
 		} else {
 			$dbname = 'grupofir_firstrh3';
 			/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-			include('./data/connectionSuperUser.php');
+			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 			$query = "SELECT NOME as nomeCompleto, CPF as cpf, EMAIL as email, COD_FILIAL as grupo_id, COD_COLIGADA as filial FROM funcionario WHERE cpf = ? AND cpf != '' LIMIT 1";
 			$st = $db->prepare($query);
 			$st->execute([apenasNumeros($_POST['cpf'])]);
@@ -174,7 +175,7 @@ if ($_POST['action'] == 'superCoringa') {
 				$usuarioExistente = true;
 				$dbname = 'grupofir_departamentoRH';
 				/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-				include('./data/connectionSuperUser.php');
+				include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 				$query = "INSERT INTO usuariosCorp(nomeCompleto, cpf, iniciais, email, filial, grupo_id) VALUES (?,?,?,?,?,?)";
 				$executePDO = [
 					ajustaNome($retornado[0]['nomeCompleto']),
@@ -212,7 +213,7 @@ if ($_POST['action'] == 'superCoringa') {
 		}
 		$dbname = 'grupofir_firstrh3';
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-		include('./data/connectionSuperUser.php');
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$query = "SELECT
 		funcionario.NOME as NOME_COMPLETO
 		, funcionario.CHAPA
