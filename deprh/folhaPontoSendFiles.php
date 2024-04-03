@@ -1,6 +1,6 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('./session/local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
 /* $enderecoRemoto = "/home/grupofirstrh/public_html/portal/documentacao/"; */
 $enderecoRemoto = "../portal/documentacao/";
 $nomeArquivoArray = explode('-', $_POST['periodo']);

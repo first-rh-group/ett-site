@@ -1,5 +1,6 @@
 // ULTIMO - 12
 async function coringa(codigo, instrucoes) {
+    console.log(codigo, instrucoes);
     var instrucoesEnviadas = '';
     if(instrucoes != null) {
         for (const [key, value] of Object.entries(instrucoes)) {

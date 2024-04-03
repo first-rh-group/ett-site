@@ -1,7 +1,7 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
 /* include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php'); */
-include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\deprh\session\local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
 /*if (!isset($_POST['action'])) {
     echo json_encode(['error' => 'No action specified']);
     exit();

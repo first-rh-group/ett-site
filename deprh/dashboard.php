@@ -1,6 +1,6 @@
 <?php
 /* include('/home/grupofirstrh/public_html/deprh/session/local_functions.php'); */
-include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\deprh\session\local_functions.php');
 // echo '<br>';
 // print_r2($_SESSION);
 echo '<br>';

@@ -227,16 +227,19 @@ section#main > div.menu > div > div:nth-of-type(n + 2) > div > span {
 }
 
 section#main > div.menu > div.financeiro > div:first-of-type {
-  background-image: url(https://grupofirstrh.com.br/controles_img/paper-money.webp);
+  background-image: url(../../new_img/PORTAL\ FINANCEIRO.png);
+  background-size: 32px;
 }
 section#main > div.menu > div.livroPonto > div:first-of-type {
-  background-image: url(https://grupofirstrh.com.br/controles_img/pontoEletronico.webp);
+  background-image: url(../../new_img/PORTAL\ JORNADA\ DE\ TRABALHO.png);
+  background-size: 32px;
 }
 section#main > div.menu > div.documentacao > div:first-of-type {
-  background-image: url(https://grupofirstrh.com.br/controles_img/documentacao_icon.webp);
+  background-image: url(../../new_img/PORTAL\ INFORMAÇÕES\ GERAIS.png);
+  background-size: 32px;
 }
 section#main > div.menu > div.perfil > div:first-of-type {
-  background-image: url(https://grupofirstrh.com.br/controles_img/perfil_icon.webp);
+  background-image: url(../../new_img/avatar\ branco\ sem\ fundo.png);
   background-size: 32px;
 }
 section#main > div.menu > div.dicas > div:first-of-type {
@@ -395,4 +398,64 @@ body.with-menu {
 .menu-item:hover {
   background-color: #feb710;
   color: white;
+}
+.sair {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: var(--vermelhoFirst);
+}
+
+.sair svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sair svg path {
+  fill: #ffffff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.form-group label {
+  margin-bottom: 0.5em;
+}
+.input-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%; /* Ajuste este valor conforme necessário */
+}
+
+.input-edit input {
+  flex-grow: 1;
+  margin-right: 0.5em;
+}
+
+.input-edit button {
+  background-color: var(--vermelhoFirst);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+h1, label, button {
+  font-family: var(--fontExtraBold) !important;
+}
+input[type="submit"] {
+  background-color: var(--vermelhoFirst);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-family: var(--fontExtraBold);
 }

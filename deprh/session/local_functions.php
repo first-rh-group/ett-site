@@ -1,10 +1,10 @@
 <?php
 session_start();
+header("Location: https://deprh.grupofirstrh.com.br");
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 if (checkConnection() == false) {
 	session_destroy();
-	header("Location: https://deprh.grupofirstrh.com.br");
 	exit();
 }
 function checkConnection()
