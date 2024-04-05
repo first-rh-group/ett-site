@@ -13,7 +13,7 @@ if (isset($_SESSION['message'])) {
 
 $tipo = $_GET['tipo'] ?? 'candidato'; // Use 'candidato' como padrão
 
-$db = new PDO('mysql:host=10.0.0.96;dbname=grupofir_firstrh3', 'dtc_saga', '179856');
+$db = new PDO('mysql:host=10.0.0.86;dbname=grupofir_firstrh3', 'dtc_saga', '179856');
 $tabela = $tipo === 'candidato' ? 'faq_candidato' : 'faq_empresa';
 
 $query = $db->prepare("SELECT * FROM $tabela ORDER BY posicao ASC");

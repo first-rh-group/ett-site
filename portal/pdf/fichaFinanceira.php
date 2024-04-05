@@ -1,7 +1,7 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('../session/local_functions.php');
-require('../../fpdf185/fpdf.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
+require('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\fpdf183\fpdf.php');
 $fichasFinanceiras = fichasFinanceirasPeriodo($_SESSION['printContraCheque']['login'], $_SESSION['printContraCheque']['periodo']);
 // print_r2($fichasFinanceiras, __LINE__, __FILE__, __FUNCTION__);
 $infoUser = infoUser([

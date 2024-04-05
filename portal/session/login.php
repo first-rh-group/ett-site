@@ -4,14 +4,7 @@ session_destroy();
 session_start();
 
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
-
-// Verificar se os dados foram enviados a partir do formulário HTML
-if (isset($_POST['instrucoes'])) {
-    $dadosRecebidos = $_POST['instrucoes'];
-} else {
-    // Caso contrário, assumir que os dados foram enviados como JSON no corpo da solicitação
-    $dadosRecebidos = file_get_contents('php://input');
-}
+$dadosRecebidos = urldecode(urldecode($_REQUEST['instrucoes']));
 
 $dadosEnviados = json_decode($dadosRecebidos, true);
 
@@ -61,11 +54,8 @@ if (count($retorno) > 0) {
         'sessionHash' => $activationCode,
         'grupo_id' => $retorno[0]['grupo_id'],
     ];
-    $resposta = array(
-        'grupo_id' => $retorno[0]['grupo_id'],
-        'activationCode' => $activationCode
-    );
-    echo json_encode($resposta);
+    echo 'grupo_id: ' . $retorno[0]['grupo_id'] . "\n"; // Adicione a quebra de linha
+    echo json_encode($activationCode);
 } else {
     echo json_encode(false);
 }

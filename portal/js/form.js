@@ -41,32 +41,71 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     <label for="nome">Nome:</label>
                     <div class="input-edit">
                         <input type="text" id="nome" name="nome">
-                        <button type="button">Editar</button>
+                        <button type="button" id="editarNome">Editar</button>
                     </div>
                 </div>
                 <div class="form-group">
-                <label for="email">Endereço de email:</label>
-                <div class="input-edit">
-                    <input type="email" id="email" name="email">
-                    <button type="button">Editar</button>
+                    <label for="email">Endereço de email:</label>
+                    <div class="input-edit">
+                        <input type="email" id="email" name="email">
+                        <button type="button" id="editarEmail">Editar</button>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="form-group">
-                <label for="senha">Senha:</label>
-                <div class="input-edit">
-                    <input type="password" id="senha" name="senha">
-                    <button type="button">Editar</button>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <div class="input-edit">
+                        <input type="password" id="senha" name="senha">
+                        <button type="button" id="editarSenha">Editar</button>
+                    </div>
                 </div>
-            </div>
-            
-            <input type="submit" value="Salvar">
+                <input type="submit" value="Salvar">
             </form>
         `;
+    
+        // Adicione os ouvintes de eventos aqui
+        document.getElementById('editarNome').addEventListener('click', function() {
+            var nome = document.getElementById('nome').value;
+            console.log('Nome:', nome);
+            enviarDados('nome', nome);
+        });
+    
+        document.getElementById('editarEmail').addEventListener('click', function() {
+            var email = document.getElementById('email').value;
+            console.log('Email:', email);
+            enviarDados('email', email);
+        });
+    
+        document.getElementById('editarSenha').addEventListener('click', function() {
+            var senha = document.getElementById('senha').value;
+            console.log('Senha:', senha);
+            enviarDados('senha', senha);
+        });
     }
-
+    
+    function enviarDados(campo, valor) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/projeto_ett/portal/processadorAjax.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (this.status == 200 && this.responseText.trim() !== '') {
+                try {
+                    var response = JSON.parse(this.responseText);
+                    console.log('Resposta do servidor', response);
+                    if (response.success) {
+                        alert('Dados atualizados com sucesso!');
+                    } else {
+                        alert('Ocorreu um erro ao atualizar os dados.');
+                    }
+                } catch (e) {
+                    console.error('A resposta do servidor não é um JSON válido:', this.responseText);
+                }
+            }
+        };
+        xhr.send('action=superCoringa&codigo=6&' + campo + '=' + encodeURIComponent(valor));
+    }
+    
     mostrarBoasVindas();
-
+    
     document.body.addEventListener('click', (event) => {
         if (event.target.matches('#perfil-btn, #perfil-btn *')) {
             event.preventDefault();

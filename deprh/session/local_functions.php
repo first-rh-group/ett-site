@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Location: https://deprh.grupofirstrh.com.br");
+header("Location: http://localhost:8080/projeto_ett/deprh/");
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 if (checkConnection() == false) {

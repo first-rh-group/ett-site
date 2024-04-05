@@ -1,7 +1,7 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('../session/local_functions.php');
-require('../../fpdf185/fpdf.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
+require('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\fpdf185\fpdf.php');
 $infoUser = infoUser([
     'cpf' => $_SESSION['printFolhaPonto']['login']
 ]);
@@ -15,7 +15,7 @@ if (!isset($infoUser['chapa'])) {
     $infoUser['chapa'] = 'valor padrão'; // substitua 'valor padrão' pelo valor que você deseja usar como padrão
 }
 
-include('../../data/connectionSelect.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSelect.php');
 $query = "SELECT * FROM tbl_ponto WHERE chapa = ? ORDER BY Id DESC LIMIT 1";
 $st = $db->prepare($query);
 $st->execute([$infoUser['chapa']]);

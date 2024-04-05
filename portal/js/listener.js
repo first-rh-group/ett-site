@@ -893,7 +893,10 @@ window.addEventListener("load", () => {
                 if (elemento) {
                     elemento.innerHTML = UpperFirst(retorno.empregadorNome);
                 }
-                document.querySelector('section#header > div:nth-of-type(1) > div:nth-of-type(2)').innerHTML = UpperFirst(retorno.nomeFuncionario);
+                var segundoElemento = document.querySelector('section#header > div:nth-of-type(1) > div:nth-of-type(2)');
+                if (segundoElemento) {
+                    segundoElemento.innerHTML = UpperFirst(retorno.nomeFuncionario);
+                }
             }
         })
         .then((retorno) => {

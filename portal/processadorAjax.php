@@ -6,7 +6,7 @@ include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\loca
     echo json_encode(['error' => 'No action specified']);
     exit();
 }*/
-if ($_POST['action'] == 'superCoringa') {
+if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
 	if ($_POST['codigo'] == '1') {
 		$infoUser = infoUser([
 			'cpf' => $_SESSION['infoUser']['login'],
@@ -55,9 +55,15 @@ if ($_POST['action'] == 'superCoringa') {
 		}
 		echo json_encode(['return' => $retornoStatus, 'informes' => $retorno]);
 	} else if ($_POST['codigo'] == '6') {
+		if (isset($_POST['idInforme'])) {
+			$idInforme = $_POST['idInforme'];
+		} else {
+			$idInforme = null; // ou qualquer valor padrão que você queira definir
+		}
+	
 		$_SESSION['printInformeRendimentos'] = [
 			'login' => $_SESSION['infoUser']['login'],
-			'idInforme' => $_POST['idInforme'],
+			'idInforme' => $idInforme,
 		];
 	} else if ($_POST['codigo'] == '6.1') {
 		if (isset($_POST['empresa']) && $_POST['empresa'] != '') {
@@ -296,6 +302,20 @@ if ($_POST['action'] == 'superCoringa') {
 			'erros' => ($databaseErrors[0] == '00000' ? false : true),
 			'dicas' => $dicas,
 		]);
+	}
+	else if ($_POST['codigo'] == '6') {
+		// Atualizar os dados do usuário
+		$nomeCompleto = $_POST['nomeCompleto'];
+		$email = $_POST['email'];
+	
+		// Conecte-se ao banco de dados e atualize os dados do usuário
+		$dbname = 'grupofir_departamentoRH';
+		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
+		$query = "UPDATE usuariosCorp SET nomeCompleto = ?, email = ? WHERE cpf = ?";
+		$st = $db->prepare($query);
+		$st->execute([$nomeCompleto, $email, $_SESSION['infoUser']['login']]);
+	
+		echo json_encode(['success' => true]);
 	}
 }
 // ULTIMO - 14

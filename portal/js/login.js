@@ -162,7 +162,9 @@ function login() {
         "selector": "section#login button",
     });
     document.getElementsByClassName('alertaErros')[0]?.remove();
-   let erros = formControl('loginForm');
+    console.log('Iniciando o login...')
+    let erros = formControl('loginForm');
+    console.log('Erros', erros);
     if(erros.length > 0) {
         alertErros({
             "selectorTarget":"form#loginForm",
@@ -183,6 +185,7 @@ function login() {
             "usuario":form.querySelector('input[name=cpfUsuario]').value,
             "senha":form.querySelector('input[name=senha]').value,
         };
+        console.log('Instruções:', instrucoes); // log das instruções
         if (window.XMLHttpRequest) { // Mozilla, Safari, ...
             xmlhttp = new XMLHttpRequest();
         }
@@ -201,16 +204,17 @@ function login() {
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 var res = xmlhttp.responseText;
+                console.log('Resposta:', res); // log da resposta
                 if (res !== false) {
-                 document.getElementById('destino').innerHTML = res;
+                    document.getElementById('destino').innerHTML = res;
                     try {
                         res = JSON.parse(res);
-                } catch (e) {
-                    console.error("A resposta do servidor não é um JSON válido: ", res);
+                    } catch (e) {
+                        console.error("A resposta do servidor não é um JSON válido: ", res);
+                    }
                 }
-            }
-                // console.log(res);
-                if(res == false) {
+                if (res == false || typeof res !== 'object') {
+                    // Se a resposta for false ou não for um objeto, trate como um erro
                     changeAttributes({
                         "attributes": {
                             "type":"type",
@@ -226,6 +230,7 @@ function login() {
                         "erros":['Senha e/ou usuário incorretos'],
                     });
                 } else {
+                    // Se a resposta for um objeto, trate como um login bem-sucedido
                     changeAttributes({
                         "attributes": {
                             "type":"button",
@@ -236,6 +241,9 @@ function login() {
                         "htmlText": "Logado!",
                         "selector": "section#login button",
                     });
+                    localStorage.setItem('grupo_id', res.grupo_id);
+                    localStorage.setItem('activationCode', res.activationCode);
+
                     window.location = 'dashboard.html';
                 }
             }   

@@ -6,4 +6,4 @@ $arrayInfoEmail['Body'] = utf8_decode("<p><b>ATENÇÃO:</b> ESSA É UMA MENSAGEM
 $arrayInfoEmail['AltBody'] = utf8_decode("ATENÇÃO: ESSA É UMA MENSAGEM AUTOMÁTICA. Seu Acesso ao Portal Corporativo do Grupo First RH foi AUTORIZADO! Seja muito bem-vindo(a)! Sua senha de acesso ao Portal Corporativo do Grupo First RH é " . $senha . ". Mensagem enviada em " . date('d-m-Y') . " às " . date('H:i:s') . ".");
 
 /* include('/home/grupofirstrh/public_html/includes/mailConfig.php'); */
-include('./includes/mailConfig.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailConfig.php');

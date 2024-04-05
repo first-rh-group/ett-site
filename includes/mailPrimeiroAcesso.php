@@ -6,7 +6,7 @@ $arrayInfoEmail['Body'] = utf8_decode("<p><b>ATENÇÃO:</b> ESSA É UMA MENSAGEM
 $arrayInfoEmail['AltBody'] = utf8_decode("ATENÇÃO: ESSA É UMA MENSAGEM AUTOMÁTICA. Sua nova senha de acesso ao Portal Corporativo do Grupo First RH é " . $novaSenha . ". Nossa equipe irá examinar seu pedido de acesso e, uma vez aprovado, entraremos em contato para avisá-lo. Até a aprovação, seu acesso não está liberado. Mensagem enviada em " . date('d-m-Y') . " às " . date('H:i:s'));
 
 /* include('/home/grupofirstrh/public_html/includes/mailConfig.php'); */
-include('./includes/mailConfig.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailConfig.php');
 
 $nomeNovoUsuario = $arrayInfoEmail['destinatarios']['nome'];
 
@@ -21,4 +21,4 @@ $arrayInfoEmail['Body'] = utf8_decode("<p><b>ATENÇÃO:</b> ESSA É UMA MENSAGEM
 $arrayInfoEmail['AltBody'] = utf8_decode("ATENÇÃO: ESSA É UMA MENSAGEM AUTOMÁTICA. O usuário " . $nomeNovoUsuario . " pediu autorização de primeiro acesso ao Portal. VERIFIQUE se ele é de fato nosso empregado e, se for, autorize pelo Portal DepRH. Mensagem enviada em " . date('d-m-Y') . " às " . date('H:i:s'));
 
 /* include('/home/grupofirstrh/public_html/includes/mailConfig.php'); */
-include('./includes/mailConfig.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailConfig.php');
