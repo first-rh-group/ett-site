@@ -362,43 +362,37 @@ function esconderEmail($email)
 }
 function novaSenha($arrayInfo)
 {
-	// print_r2($arrayInfo, __LINE__, __FILE__, __FUNCTION__);
-	$novaSenha = gerarHash('8');
-	$executePDO['senha'] = $novaSenha;
-	$arrayRetorno = [
-		'novaSenha' => $novaSenha,
-		'senhaEnviada' => 'N',
-	];
-	$alteraEmail = '';
-	if (isset($arrayInfo['novoEmail']) && isValidEmail($arrayInfo['novoEmail'])) {
-		$alteraEmail = ", email = :email ";
-		$executePDO['email'] = $arrayInfo['novoEmail'];
-	}
-	$executePDO['cpf'] = $arrayInfo['cpf'];
-	$dbname = "grupofir_departamentoRH";
-	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
-	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-	$query = "UPDATE usuariosCorp SET senha = PASSWORD(:senha) " . $alteraEmail . "WHERE cpf = :cpf";
-	// print_r2($query, __LINE__, __FILE__, __FUNCTION__);
-	$st = $db->prepare($query);
-	$st->execute($executePDO);
-	if ($arrayInfo['enviarSenha'] == '1') {
-		$usuario = infoEmpregado(['cpf' => $arrayInfo['cpf']]);
-		// print_r2($usuario, __LINE__, __FILE__, __FUNCTION__);
-		if (count($usuario) > 0) {
-			$arrayInfoEmail['destinatarios'] = [[
-				'nome' => $usuario['nomeCompleto'],
-				'email' => $usuario['email']
-			]];
-			/* include('/home/grupofirstrh/public_html/includes/mailRecuperacaoSenha.php'); */
-			include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailRecuperacaoSenha.php');
-		}
-		$arrayRetorno['email'] = (is_null($usuario['email']) || $usuario['email'] == '' ? '' : $usuario['email']);
-		$arrayRetorno['nomeCompleto'] = (is_null($usuario['nomeCompleto']) || $usuario['nomeCompleto'] == '' ? '' : $usuario['nomeCompleto']);
-		$arrayRetorno['senhaEnviada'] = ($retorno['return'] == '1' ? 'S' : 'N');
-	}
-	// print_r2($arrayRetorno, __LINE__, __FILE__, __FUNCTION__);
-	return ($arrayRetorno);
+    $novaSenha = gerarHash('8');
+    $executePDO['senha'] = $novaSenha;
+    $arrayRetorno = [
+        'novaSenha' => $novaSenha,
+        'senhaEnviada' => 'N',
+    ];
+    $alteraEmail = '';
+    if (isset($arrayInfo['novoEmail']) && isValidEmail($arrayInfo['novoEmail'])) {
+        $alteraEmail = ", email = :email ";
+        $executePDO['email'] = $arrayInfo['novoEmail'];
+    }
+    $executePDO['cpf'] = $arrayInfo['cpf'];
+    $dbname = "grupofir_departamentoRH";
+    include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
+    $query = "UPDATE usuariosCorp SET senha_sha256 = SHA2(:senha, 256) " . $alteraEmail . " WHERE cpf = :cpf";
+    $st = $db->prepare($query);
+    $st->execute($executePDO);
+    if ($arrayInfo['enviarSenha'] == '1') {
+        $usuario = infoEmpregado(['cpf' => $arrayInfo['cpf']]);
+        if (count($usuario) > 0) {
+            $arrayInfoEmail['destinatarios'] = [[
+                'nome' => $usuario['nomeCompleto'],
+                'email' => $usuario['email']
+            ]];
+            include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\includes\mailRecuperacaoSenha.php');
+        }
+        $arrayRetorno['email'] = (is_null($usuario['email']) || $usuario['email'] == '' ? '' : $usuario['email']);
+        $arrayRetorno['nomeCompleto'] = (is_null($usuario['nomeCompleto']) || $usuario['nomeCompleto'] == '' ? '' : $usuario['nomeCompleto']);
+        $arrayRetorno['senhaEnviada'] = ($retorno['return'] == '1' ? 'S' : 'N');
+    }
+    return ($arrayRetorno);
 }
 function infoEmpregado($arrayBusca)
 {

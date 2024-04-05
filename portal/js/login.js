@@ -201,6 +201,23 @@ function login() {
                 }
             }
         }
+        function parseResponse(res) {
+            var lines = res.split('\n');
+            var result = {};
+            lines.forEach(line => {
+                var parts = line.split(':');
+                if (parts.length == 2) {
+                    var key = parts[0].trim();
+                    var value = parts[1].trim().replace(/"/g, '');
+                    if (key == 'grupo_id') {
+                        result.grupo_id = parseInt(value);
+                    } else {
+                        result.token = value;
+                    }
+                }
+            });
+            return result;
+        }
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 var res = xmlhttp.responseText;
@@ -208,7 +225,9 @@ function login() {
                 if (res !== false) {
                     document.getElementById('destino').innerHTML = res;
                     try {
-                        res = JSON.parse(res);
+                        var parsedRes = parseResponse(res);
+                        console.log('Resposta analisada:', parsedRes);
+                        res = parsedRes;
                     } catch (e) {
                         console.error("A resposta do servidor não é um JSON válido: ", res);
                     }

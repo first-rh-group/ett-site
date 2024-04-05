@@ -244,9 +244,16 @@ if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade = '0000-00-00' OR validade >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
+		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade IS NULL OR validade >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
 		$st = $db->prepare($query);
-		$st->execute();
+		try {
+			$st->execute();
+		} catch (PDOException $e) {
+			echo json_encode([
+				'error' => $e->getMessage(),
+			]);
+			exit;
+		}
 		$dicas = $st->fetchAll(PDO::FETCH_ASSOC);
 		if ($dicas == '') {
 			$dicas = [];

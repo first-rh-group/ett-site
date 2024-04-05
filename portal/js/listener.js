@@ -933,7 +933,12 @@ window.addEventListener("load", () => {
     })
     coringa('13', {}).
         then(result => {
-            result = JSON.parse(result)
+            try {  
+                result = JSON.parse(result)
+            } catch (e) {
+                console.error("A string 'result' não é um JSON válido:", result)
+                return
+            }
             result.dicas.forEach(quantasDicas => {
                 document.querySelector(`div.menu > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).innerHTML += `<span>${quantasDicas.quantos}</span>`;
                 document.querySelector(`#menuSuspensoMobile > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).innerHTML += `<span>${quantasDicas.quantos}</span>`;
