@@ -1,12 +1,12 @@
 <?php
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
 /* include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php'); */
-include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\deprh\session\local_functions.php');
 /*if (!isset($_POST['action'])) {
     echo json_encode(['error' => 'No action specified']);
     exit();
 }*/
-if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
+if ($_POST['action'] == 'superCoringa') {
 	if ($_POST['codigo'] == '1') {
 		$infoUser = infoUser([
 			'cpf' => $_SESSION['infoUser']['login'],
@@ -55,15 +55,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
 		}
 		echo json_encode(['return' => $retornoStatus, 'informes' => $retorno]);
 	} else if ($_POST['codigo'] == '6') {
-		if (isset($_POST['idInforme'])) {
-			$idInforme = $_POST['idInforme'];
-		} else {
-			$idInforme = null; // ou qualquer valor padrão que você queira definir
-		}
-	
 		$_SESSION['printInformeRendimentos'] = [
 			'login' => $_SESSION['infoUser']['login'],
-			'idInforme' => $idInforme,
+			'idInforme' => $_POST['idInforme'],
 		];
 	} else if ($_POST['codigo'] == '6.1') {
 		if (isset($_POST['empresa']) && $_POST['empresa'] != '') {
@@ -244,16 +238,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade IS NULL OR validade >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
+		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade = '0000-00-00' OR validade >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
 		$st = $db->prepare($query);
-		try {
-			$st->execute();
-		} catch (PDOException $e) {
-			echo json_encode([
-				'error' => $e->getMessage(),
-			]);
-			exit;
-		}
+		$st->execute();
 		$dicas = $st->fetchAll(PDO::FETCH_ASSOC);
 		if ($dicas == '') {
 			$dicas = [];
@@ -309,20 +296,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
 			'erros' => ($databaseErrors[0] == '00000' ? false : true),
 			'dicas' => $dicas,
 		]);
-	}
-	else if ($_POST['codigo'] == '6') {
-		// Atualizar os dados do usuário
-		$nomeCompleto = $_POST['nomeCompleto'];
-		$email = $_POST['email'];
-	
-		// Conecte-se ao banco de dados e atualize os dados do usuário
-		$dbname = 'grupofir_departamentoRH';
-		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-		$query = "UPDATE usuariosCorp SET nomeCompleto = ?, email = ? WHERE cpf = ?";
-		$st = $db->prepare($query);
-		$st->execute([$nomeCompleto, $email, $_SESSION['infoUser']['login']]);
-	
-		echo json_encode(['success' => true]);
 	}
 }
 // ULTIMO - 14

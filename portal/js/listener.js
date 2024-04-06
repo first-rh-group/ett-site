@@ -1,4 +1,3 @@
-// PUSH GIT HUB
 const tamanhoPadraoSubMenu = 35;
 const grupos = "Escolha, Políticas First RH Group, Documentação, Comunicados, Saúde, Cursos, Parcerias, Canal de Denúncias, Perguntas Frenquentes"
 const toogle = document.getElementById('toogle');
@@ -677,14 +676,12 @@ menuPerfilMobile?.addEventListener('click', () => {
 var menuPerfil = document.querySelector('section#main > div.menu > div.perfil > div:nth-of-type(1)');
 menuPerfil?.addEventListener('click', () => {
     var element = document.querySelector("section#main > div.menu > div.perfil > div:nth-of-type(2)");
-    if (element !== null) {
-        var NovoTamanho = ((element.childElementCount - 1) / 2) * tamanhoPadraoSubMenu;
-        var ComputedHeight = getComputedStyle(element).height;
-        if (ComputedHeight == '0px' || ComputedHeight == '' || ComputedHeight == undefined) {
-            element.style.height = NovoTamanho + 'px';
-        } else {
-            element.style.height = '0px';
-        }
+    var NovoTamanho = ((element.childElementCount - 1) / 2) * tamanhoPadraoSubMenu;
+    var ComputedHeight = getComputedStyle(element).height;
+    if (ComputedHeight == '0px' || ComputedHeight == '' || ComputedHeight == undefined) {
+        element.style.height = NovoTamanho + 'px';
+    } else {
+        element.style.height = '0px';
     }
 });
 var menuPerfilMobile = document.querySelector('div#menuSuspensoMobile > div.perfil > div:nth-of-type(1)');
@@ -890,14 +887,8 @@ window.addEventListener("load", () => {
         .then((retorno) => {
             if (retorno != '') {
                 retorno = JSON.parse(retorno);
-                var elemento = document.querySelector('section#header > div:nth-of-type(1) > div:nth-of-type(1)');
-                if (elemento) {
-                    elemento.innerHTML = UpperFirst(retorno.empregadorNome);
-                }
-                var segundoElemento = document.querySelector('section#header > div:nth-of-type(1) > div:nth-of-type(2)');
-                if (segundoElemento) {
-                    segundoElemento.innerHTML = UpperFirst(retorno.nomeFuncionario);
-                }
+                document.querySelector('section#header > div:nth-of-type(1) > div:nth-of-type(1)').innerHTML = UpperFirst(retorno.empregadorNome);
+                document.querySelector('section#header > div:nth-of-type(1) > div:nth-of-type(2)').innerHTML = UpperFirst(retorno.nomeFuncionario);
             }
         })
         .then((retorno) => {
@@ -934,12 +925,7 @@ window.addEventListener("load", () => {
     })
     coringa('13', {}).
         then(result => {
-            try {  
-                result = JSON.parse(result)
-            } catch (e) {
-                console.error("A string 'result' não é um JSON válido:", result)
-                return
-            }
+            result = JSON.parse(result)
             result.dicas.forEach(quantasDicas => {
                 document.querySelector(`div.menu > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).innerHTML += `<span>${quantasDicas.quantos}</span>`;
                 document.querySelector(`#menuSuspensoMobile > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).innerHTML += `<span>${quantasDicas.quantos}</span>`;
