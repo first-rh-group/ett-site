@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Logos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        #logoForm {
+            margin-bottom: 20px;
+        }
+        #logoForm button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #logoForm button:hover {
+            background-color: #45a049;
+        }
+        #logos img {
+            max-width: 200px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Título da página -->
+    <h1>Escolha a logo da empresa</h1>
+
+    <!-- Formulário para upload de arquivo -->
+    <form id="logoForm" onsubmit="addLogo(event)">
+        <input type="file" id="logoFile" accept="image/*" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Div onde as logos serão exibidas -->
+    <div id="logos"></div>
+
+    <script>
+function addLogo(event) {
+        event.preventDefault();
+        var file = document.getElementById('logoFile').files[0];
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            var img = document.createElement('img');
+            img.src = reader.result;
+
+            // Cria um botão de remoção para cada imagem
+            var removeButton = document.createElement('button');
+            removeButton.textContent = 'Remover';
+            removeButton.onclick = function() {
+                // Remove a imagem do DOM
+                img.remove();
+                removeButton.remove();
+
+                // Remove a imagem do armazenamento local
+                var storedLogos = JSON.parse(localStorage.getItem('logos')) || [];
+                var index = storedLogos.indexOf(reader.result);
+                if (index !== -1) {
+                    storedLogos.splice(index, 1);
+                    localStorage.setItem('logos', JSON.stringify(storedLogos));
+                }
+            };
+
+            document.getElementById('logos').appendChild(img);
+            document.getElementById('logos').appendChild(removeButton);
+
+            // Armazena a imagem no armazenamento local
+            var storedLogos = JSON.parse(localStorage.getItem('logos')) || [];
+            storedLogos.push(reader.result);
+            localStorage.setItem('logos', JSON.stringify(storedLogos));
+        }
+        reader.readAsDataURL(file);
+        document.getElementById('logoFile').value = '';
+    }
+    window.onload = function() {
+    // Recupera as imagens do armazenamento local
+    var storedLogos = JSON.parse(localStorage.getItem('logos')) || [];
+    var logosDiv = document.getElementById('logos');
+    storedLogos.forEach(function(logo) {
+        var img = document.createElement('img');
+        img.src = logo;
+        logosDiv.appendChild(img);
+
+        // Cria um botão de remoção para cada imagem
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remover';
+        removeButton.onclick = function() {
+            // Remove a imagem do DOM
+            img.remove();
+            removeButton.remove();
+
+            // Remove a imagem do armazenamento local
+            var storedLogos = JSON.parse(localStorage.getItem('logos')) || [];
+            var index = storedLogos.indexOf(logo);
+            if (index !== -1) {
+                storedLogos.splice(index, 1);
+                localStorage.setItem('logos', JSON.stringify(storedLogos));
+            }
+        };
+
+        logosDiv.appendChild(removeButton);
+    });
+}
+    </script>
+</body>
+</html>

@@ -930,14 +930,22 @@ window.addEventListener("load", () => {
     })
     coringa('13', {}).
         then(result => {
-            result = JSON.parse(result)
+            if (result.trim().startsWith('{')) {
+                result = JSON.parse(result)
+            } else {
+                console.error('A resposta não é um JSON válido:', result);
+            }
             result.dicas.forEach(quantasDicas => {
                 document.querySelector(`div.menu > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).innerHTML += `<span>${quantasDicas.quantos}</span>`;
                 document.querySelector(`#menuSuspensoMobile > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).innerHTML += `<span>${quantasDicas.quantos}</span>`;
                 document.querySelector(`div.menu > div.dicas > div:nth-of-type(2) > div:nth-of-type(${quantasDicas.grupo})`).addEventListener('click', e => {
                     coringa('14', { "grupo": e.target.getAttribute('grupo') }).
                         then(result => {
-                            result = JSON.parse(result)
+                            if (result.trim().startsWith('{')) {
+                            result = JSON.parse(result);
+                            } else {
+                                console.error('A resposta não é um JSON válido:', result);
+                            }
                             if (result.dicas.length > 0) {
                                 document.querySelector("#main > div.principal").innerHTML = '';
                                 criarElement({

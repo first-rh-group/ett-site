@@ -93,9 +93,7 @@
 			<div id="perfil-form" style="display: none;">
 			</div>
 			<div class="sair">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-					<path fill="#ffffff" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/>
-				</svg>
+				<a href="http://localhost:8080/projeto_ett/portal" style="color: #ffffff; text-decoration: none; font-family: var(--fontExtraBold); cursor: pointer;">SAIR</a>
 			</div>
 		</div>
 		<div class="principal">
@@ -128,7 +126,7 @@
 						</div>
 						
 						<input type="submit" value="Salvar">
-					</form>
+					</form> -->
 				<h2>Seja bem vindo(a) ao Portal Corporativo First RH Group!</h2>
 				<p>Este portal foi criado para proporcionar aos nossos colaboradores um <strong>acesso rápido<br>
 					e fácil</strong> a diversos recursos e informações.</p>
@@ -155,8 +153,13 @@
 					dúvida ou sugestão, não hesite em entrar em contato pelo e-mail
 					 <a
 						mailto="qualidade@firstrh.com.br">qualidade@firstrh.com.br</a></p>
-				 <p><b>Junte-se a nós e explore tudo o que nosso portal tem a oferecer!</b></p> -->
+				 <p><b>Junte-se a nós e explore tudo o que nosso portal tem a oferecer!</b></p>
 			</div>
+<div class="titulo-novidades">
+    <h2 style="font-family: var(--fontExtraBold); font-size: var(--fontSizePadrao);">Novidades:</h2>
+	<div class="logos"></div>
+	<p style="font-family: var(--fontExtraBold);">Acesse a área de Parceiros para saber mais!</p>
+</div>
 		</div>
 	</section>
 	<section id="rodape" class="rodape">
@@ -167,6 +170,18 @@
 		</div>
 		<div style="color: black;"> © 2024 FIRST RH GROUP</div>
 	</section>
+	<script>
+		window.onload = function() {
+    // Recupera as imagens do armazenamento local
+    var storedLogos = JSON.parse(localStorage.getItem('logos')) || [];
+    var logosDiv = document.querySelector('.logos');
+    storedLogos.forEach(function(logo) {
+        var img = document.createElement('img');
+        img.src = logo;
+        logosDiv.appendChild(img);
+    });
+}
+	</script>
 </body>
 
 </html>

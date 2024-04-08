@@ -4,7 +4,7 @@ $password = "179856";
 if (!isset($dbname) || $dbname == '' || $dbname == NULL) {
     $dbname = "grupofir_firstrh3";
 }
-$dsn = "mysql:host=10.0.0.96;dbname={$dbname}";
+$dsn = "mysql:host=10.0.0.96;port=3308;dbname={$dbname}";
 try {
     $db = new PDO($dsn, $usuario, $password);
 } catch (PDOException $e) {

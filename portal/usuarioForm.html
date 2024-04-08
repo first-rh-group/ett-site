@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Recupera os dados do localStorage
+            var data = JSON.parse(localStorage.getItem('userData'));
+
+            if (data) {
+                // Cria um formulário com as informações do usuário
+                var form = document.createElement('form');
+                form.innerHTML = `
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="${data.nomeCompleto}">
+                    <label for="email">Endereço de email:</label>
+                    <input type="email" id="email" name="email" value="${data.email}">
+                    <input type="submit" value="Salvar">
+                `;
+                document.body.appendChild(form);
+            } else {
+                console.error('Data is null');
+            }
+        });
+    </script>
+</body>
+</html>
