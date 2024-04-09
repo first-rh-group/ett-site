@@ -8,7 +8,9 @@ $dadosEnviados = (array) json_decode($_POST['instrucoes']);
 $login = apenasNumeros($dadosEnviados['usuario']);
 /* include('/home/grupofirstrh/data/connectionFull_departamentoRH.php'); */
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionFull_departamentoRH.php');
-$query = "SELECT id FROM usuariosAdmin WHERE usuariosAdmin.cpf = ? AND usuariosAdmin.senha = PASSWORD(?) AND usuariosAdmin.status = 0 LIMIT 1";
+// $query = "SELECT id FROM usuariosAdmin WHERE usuariosAdmin.cpf = ? AND usuariosAdmin.senha = PASSWORD(?) AND usuariosAdmin.status = 0 LIMIT 1";
+$query = "SELECT id FROM usuariosAdmin WHERE usuariosAdmin.cpf = ? AND
+usuariosAdmin.senha_sha256 = SHA2(?, 256) AND usuariosAdmin.status = 0 LIMIT 1";
 $st = $db->prepare($query);
 $st->execute([$login, $dadosEnviados['senha']]);
 $retorno = $st->fetchAll(PDO::FETCH_ASSOC);

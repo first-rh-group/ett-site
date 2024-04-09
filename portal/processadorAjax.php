@@ -238,7 +238,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade = '0000-00-00' OR validade >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
+		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE STR_TO_DATE(validade, '%Y-%m-%d') IS NULL OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
 		$st = $db->prepare($query);
 		$st->execute();
 		$dicas = $st->fetchAll(PDO::FETCH_ASSOC);
@@ -269,7 +269,7 @@ if ($_POST['action'] == 'superCoringa') {
 			$where[] = 'id > ?';
 			$executePDO[] = 0;
 		}
-		$query = "SELECT id as idDica, grupo, titulo, informacoes, links, inclusao, validade FROM dicas WHERE " . implode(' AND ', $where) . " AND (validade = '0000-00-00' OR validade >= CURRENT_DATE()) ORDER BY grupo ASC, inclusao DESC, validade DESC";
+		$query = "SELECT id as idDica, grupo, titulo, informacoes, links, inclusao, validade FROM dicas WHERE " . implode(' AND ', $where) . " AND (STR_TO_DATE(validade, '%Y-%m-%d') IS NULL OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE()) ORDER BY grupo ASC, inclusao DESC, validade DESC";
 		$st = $db->prepare($query);
 		$st->execute($executePDO);
 		$databaseErrors = $st->errorInfo();

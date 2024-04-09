@@ -459,3 +459,51 @@ input[type="submit"] {
   cursor: pointer;
   font-family: var(--fontExtraBold);
 }
+/* .principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bemvindo, .novidades {
+  flex: 1 1 0px;
+  margin: 10px;
+}
+
+.conteudo {
+display: flex;
+justify-content: space-between;
+}
+
+.titulo-novidades {
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.titulo-novidades h2 {
+  background-color: var(--azulFirst); 
+  color: white; 
+  padding: 10px;
+  border: 1px solid white; 
+  display: inline-block; 
+  margin-bottom: 20px;
+}
+
+.logos {
+  border: 7px solid var(--azulFirst);
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logos img {
+  width: calc(50% - 10px); 
+  margin-bottom: 20px; 
+}
+
+.bemvindo {
+  flex: 2;
+  margin-right: 20px;
+} */

@@ -54,35 +54,39 @@ function login() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 var resposta = xmlhttp.responseText;
                 // document.getElementById('destino').innerHTML = resposta;
-                let res = JSON.parse(resposta);
-                // console.log(res);
-                if(res == false) {
-                    changeAttributes({
-                        "attributes": {
-                            "type":"type",
-                            "onclick":"login();",
-                        },
-                        "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
-                        "addClass": ['btn-success'],
-                        "htmlText": "Login no sistema",
-                        "selector": "section#login button",
-                    });
-                    alertErros({
-                        "selectorTarget":"form#loginForm",
-                        "erros":['Senha e/ou usuário incorretos','Confira o dia e horário autorizados para o login'],
-                    });
-                } else {
-                    changeAttributes({
-                        "attributes": {
-                            "type":"button",
-                            "onclick":false,
-                        },
-                        "removeClass": ['btn-secondary', 'btn-danger', 'btn-success'],
-                        "addClass": ['nohand','btn-warning'],
-                        "htmlText": "Logado!",
-                        "selector": "section#login button",
-                    });
-                    window.location = 'dashboard.html';
+                try {
+                    let res = JSON.parse(resposta);
+                    // console.log(res);
+                    if(res == false) {
+                        changeAttributes({
+                            "attributes": {
+                                "type":"type",
+                                "onclick":"login();",
+                            },
+                            "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
+                            "addClass": ['btn-success'],
+                            "htmlText": "Login no sistema",
+                            "selector": "section#login button",
+                        });
+                        alertErros({
+                            "selectorTarget":"form#loginForm",
+                            "erros":['Senha e/ou usuário incorretos','Confira o dia e horário autorizados para o login'],
+                        });
+                    } else {
+                        changeAttributes({
+                            "attributes": {
+                                "type":"button",
+                                "onclick":false,
+                            },
+                            "removeClass": ['btn-secondary', 'btn-danger', 'btn-success'],
+                            "addClass": ['nohand','btn-warning'],
+                            "htmlText": "Logado!",
+                            "selector": "section#login button",
+                        });
+                        window.location = 'dashboard.html';
+                    }
+                } catch (e) {
+                    console.error("A resposta não é um JSON válido: ", resposta);
                 }
             }   
         }
