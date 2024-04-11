@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 /* include('/home/grupofirstrh/public_html/session_global/global_functions.php'); */
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\session_global\global_functions.php');
 // if (checkConnection() == false) {

@@ -364,7 +364,8 @@ function novaSenha($arrayInfo)
 {
 	// print_r2($arrayInfo, __LINE__, __FILE__, __FUNCTION__);
 	$novaSenha = gerarHash('8');
-	$executePDO['senha'] = $novaSenha;
+	$senhaHash = hash('sha256', $novaSenha);
+    $executePDO['senha'] = $senhaHash;
 	$arrayRetorno = [
 		'novaSenha' => $novaSenha,
 		'senhaEnviada' => 'N',
@@ -378,7 +379,8 @@ function novaSenha($arrayInfo)
 	$dbname = "grupofir_departamentoRH";
 	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-	$query = "UPDATE usuariosCorp SET senha = PASSWORD(:senha) " . $alteraEmail . "WHERE cpf = :cpf";
+	// $query = "UPDATE usuariosCorp SET senha = PASSWORD(:senha)" . ($alteraEmail ? " " . $alteraEmail : "") . " WHERE cpf = :cpf";
+	$query = "UPDATE usuariosCorp SET senha_sha256 = :senha" . ($alteraEmail ? " " . $alteraEmail : "") . " WHERE cpf = :cpf";
 	// print_r2($query, __LINE__, __FILE__, __FUNCTION__);
 	$st = $db->prepare($query);
 	$st->execute($executePDO);

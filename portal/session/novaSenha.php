@@ -3,7 +3,7 @@ session_start();
 session_destroy();
 session_start();
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
-include('../session/local_functions.php');
+include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
 $dadosEnviados = (array) json_decode($_POST['instrucoes']);
 $cpf = substr(base64_decode($dadosEnviados['codigo']), 4, 11);
 $novaSenha = novaSenha([

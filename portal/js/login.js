@@ -1,3 +1,52 @@
+function obterDadosDoUsuario(cpf, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/projeto_ett/portal/session/form.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function() {
+        if (this.status == 200 && this.responseText.trim() !== '') {
+            var response = this.responseText;
+            try {
+                response = JSON.parse(response);
+            } catch (e) {
+                console.error('A resposta do servidor não é um JSON válido:', this.responseText);
+                return;
+            }
+        }
+        console.log ('Dados do usuário', response);
+        callback(response);
+    };
+    xhr.send(JSON.stringify({ cpf: cpf }));
+}
+function ajustarMenuPorGroupId(cpf) {
+    obterDadosDoUsuario(cpf, function(usuario) {
+        var grupoId = usuario.grupo_id;
+
+        // Obtenha os elementos do menu pelo id
+        let adminMenu = document.getElementById('adminMenu');
+        let financeiroMenu = document.getElementById('financeiroMenu');
+        let siteMenu = document.getElementById('siteMenu');
+
+        // Se o grupo_id for 1, mostre todo o menu
+        if (grupoId == 1) {
+            adminMenu.style.display = 'block';
+            financeiroMenu.style.display = 'block';
+            siteMenu.style.display = 'block';
+        } else {
+            // Caso contrário, oculte os elementos do menu que não devem ser mostrados
+            adminMenu.style.display = 'none';
+            financeiroMenu.style.display = 'none';
+            siteMenu.style.display = 'none';
+        }
+    });
+}
+function isJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 function recuperarSenha(cpf) {
     var instrucoes = {
         "cpf":cpf,
@@ -201,13 +250,31 @@ function login() {
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 var res = xmlhttp.responseText;
+                console.log('Resposta do servidor (como texto):', res); // Adicionado esta linha
                 if (res !== false) {
-                 document.getElementById('destino').innerHTML = res;
+                    var cpf = form.querySelector('input[name=cpfUsuario]').value;
+                    cpf = cpf.replace(/\D/g, '');
+                    console.log(cpf);
+                    localStorage.setItem('cpf', cpf);
+                    document.getElementById('destino').innerHTML = res;
+                    console.log('Resposta do servidor:', res); // Adicionado esta linha
                     try {
-                        res = JSON.parse(res);
-                } catch (e) {
-                    console.error("A resposta do servidor não é um JSON válido: ", res);
-                }
+                        if (isJsonString(res)) {
+                            res = JSON.parse(res);
+                            console.log('Resposta do servidor (como objeto):', res);
+                            if (res.grupo_id) {
+                                localStorage.setItem('userData', JSON.stringify(res));
+                                ajustarMenuPorGroupId(cpf);
+                            } else {
+                                console.error("A resposta do servidor não contém um campo id: ", res);
+                            }
+                        } else {
+                            console.error("A resposta do servidor não é um JSON válido: ", res);
+                            // Trate res como uma string normal aqui
+                        }
+                    } catch (e) {
+                        console.error("Erro ao processar a resposta do servidor: ", e);
+                    }
             }
                 // console.log(res);
                 if(res == false) {
@@ -226,6 +293,7 @@ function login() {
                         "erros":['Senha e/ou usuário incorretos'],
                     });
                 } else {
+                    
                     changeAttributes({
                         "attributes": {
                             "type":"button",

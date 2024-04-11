@@ -8,6 +8,7 @@
 	<script src="https://grupofirstrh.com.br/js_global/global.js?versao=2023.2"></script>
 	<script src="js/coringa.js?versao=2023.2"></script>
 	<script defer src="js/listener.js?versao=2023.2"></script>
+	<!-- <script src="js/novolistener.js"></script> -->
 	<script defer charset="utf-8" src="js/defer.js?versao=2023.2"></script>
 	<script src="js/form.js"></script>
 	<script defer charset="utf-8" src="https://grupofirstrh.com.br/js_global/formValidation.js"></script>
@@ -64,7 +65,12 @@
 		<div class="menu" id="sideMenu">
 			<div class="user-info">
 				<img src="../new_img/avatar branco sem fundo.png" alt="Avatar do usuário" class="user-avatar">
-				<span class="user-greeting" style="color: white;">Olá, [nome do usuário]</span>
+				<span class="user-greeting" style="color: white; font-family: var(--fontExtraBold);">Olá, [nome do usuário]</span>
+			</div>
+			<div class="perfil">
+				<div id="perfil-btn" class="menu-item">Perfil</div>
+			</div>
+			<div id="perfil-form" style="display: none;">
 			</div>
 			<div class="financeiro">
 				<div class="menu-item">Financeiro</div>
@@ -87,10 +93,24 @@
 				<div class="menu-item">Informações Gerais</div>
 				<div></div>
 			</div>
-			<div class="perfil">
-				<div id="perfil-btn" class="menu-item">Perfil</div>
+			<div class="admin">
+				<div class="menu-item">Administração</div>
+				<div>
+					<div>Novo Documento ou dica</div>
+					<div>Pesquisar</div>
+				</div>
 			</div>
-			<div id="perfil-form" style="display: none;">
+			<div class="usuarios">
+				<div class="menu-item">Usuários</div>
+				<div>
+					<div>Usuários Portal Administrativo</div>
+					<div>Usuários Portal Dep. RH</div>
+					<div>Criar Novo Usuário</div>
+				</div>
+			</div>
+			<div class="site">
+				<div class="menu-item">Website</div>
+				<div> </div>
 			</div>
 			<div class="sair">
 				<a href="http://localhost:8080/projeto_ett/portal" style="color: #ffffff; text-decoration: none; font-family: var(--fontExtraBold); cursor: pointer;">SAIR</a>
@@ -126,7 +146,7 @@
 						</div>
 						
 						<input type="submit" value="Salvar">
-					</form> -->
+					</form>
 				<h2>Seja bem vindo(a) ao Portal Corporativo First RH Group!</h2>
 				<p>Este portal foi criado para proporcionar aos nossos colaboradores um <strong>acesso rápido<br>
 					e fácil</strong> a diversos recursos e informações.</p>
@@ -153,13 +173,14 @@
 					dúvida ou sugestão, não hesite em entrar em contato pelo e-mail
 					 <a
 						mailto="qualidade@firstrh.com.br">qualidade@firstrh.com.br</a></p>
-				 <p><b>Junte-se a nós e explore tudo o que nosso portal tem a oferecer!</b></p>
+				 <p><b>Junte-se a nós e explore tudo o que nosso portal tem a oferecer!</b></p> -->
 			</div>
-<div class="titulo-novidades">
+		</div>
+<!--<div class="titulo-novidades">
     <h2 style="font-family: var(--fontExtraBold); font-size: var(--fontSizePadrao);">Novidades:</h2>
 	<div class="logos"></div>
 	<p style="font-family: var(--fontExtraBold);">Acesse a área de Parceiros para saber mais!</p>
-</div>
+</div> -->
 		</div>
 	</section>
 	<section id="rodape" class="rodape">
@@ -180,6 +201,20 @@
         img.src = logo;
         logosDiv.appendChild(img);
     });
+
+	var cpf = localStorage.getItem('cpf');
+
+    fetch('session/get-user-name.php?cpf=' + cpf)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                var userGreeting = document.querySelector('.user-greeting');
+                userGreeting.textContent = 'Olá, ' + data.nomeCompleto;
+            } else {
+                console.error('Erro ao buscar o nome do usuário: ', data.message);
+            }
+        })
+        .catch(error => console.error('Erro ao fazer a solicitação: ', error));
 }
 	</script>
 </body>

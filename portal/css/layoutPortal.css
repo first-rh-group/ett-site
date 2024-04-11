@@ -230,6 +230,10 @@ section#main > div.menu > div.financeiro > div:first-of-type {
   background-image: url(../../new_img/PORTAL\ FINANCEIRO.png);
   background-size: 32px;
 }
+section#main > div.menu > div.usuarios > div:first-of-type {
+  background-image: url(../../new_img/PORTAL\ CORPORATIVO\ USUÁRIOS.png);
+  background-size: 32px;
+}
 section#main > div.menu > div.livroPonto > div:first-of-type {
   background-image: url(../../new_img/PORTAL\ JORNADA\ DE\ TRABALHO.png);
   background-size: 32px;
@@ -244,6 +248,10 @@ section#main > div.menu > div.perfil > div:first-of-type {
 }
 section#main > div.menu > div.dicas > div:first-of-type {
   background-image: url(https://grupofirstrh.com.br/controles_img/ideia_icon.webp);
+  background-size: 32px;
+}
+section#main > div.menu > div.admin > div:first-of-type {
+  background-image: url(../../new_img/PORTAL\ CORPORATIVO\ ADM.png);
   background-size: 32px;
 }
 section#main > div.menu > div.dicas {
@@ -463,7 +471,7 @@ input[type="submit"] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} 
 
 .bemvindo, .novidades {
   flex: 1 1 0px;
