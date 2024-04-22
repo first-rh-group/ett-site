@@ -595,6 +595,9 @@ section#consultores>div:nth-of-type(2)>div:nth-of-type(5) {
 div.itens span {
     font-family: var(--fontExtraBold);
 }
+#move-down {
+    margin-top: 130px; /* Ajuste este valor conforme necessário */
+}
 #valores > div > div > div:first-child {
     margin-bottom: -25px; /* Ajuste este valor para aproximar o texto do título */
 }

@@ -10,17 +10,23 @@ try {
     }
     $nomeCompleto = $data['nomeCompleto'];
     $email = $data['email'];
+    $cpf = $data['cpf'];
+    $id = $data['id'];
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-    $stmt = $db->prepare('UPDATE usuarioscorp SET nomeCompleto = :nomeCompleto, email = :email WHERE grupo_id = :id'); // Modificado esta linha
+    $stmt = $db->prepare('UPDATE usuarioscorp SET nomeCompleto = :nomeCompleto, email = :email WHERE id = :id AND cpf = :cpf');
     $stmt->bindParam(':nomeCompleto', $nomeCompleto);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':id', $data['grupo_id']); // Modificado esta linha
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':cpf', $cpf);
 
     if ($stmt->execute()) {
         if ($stmt->rowCount() > 0) {
             echo json_encode(['status' => 'success']);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Nenhuma linha foi atualizada. Verifique o ID do usuário.']);
+            echo json_encode(['status' => 'error', 'message' => 'Nenhuma linha foi atualizada. Verifique o ID e o CPF do usuário.']);
         }
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Não foi possível atualizar o usuário']);

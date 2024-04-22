@@ -22,7 +22,7 @@ if ($_POST['action'] == 'superCoringa') {
 	} else if ($_POST['codigo'] == '3') {
 		$_SESSION['printContraCheque'] = [
 			'login' => $_SESSION['infoUser']['login'],
-			'periodo' => $_POST['periodo'],
+			'periodo' => isset($_POST['periodo']) ? $_POST['periodo'] : null,
 		];
 	} else if ($_POST['codigo'] == '4') {
 		session_destroy();
@@ -55,9 +55,10 @@ if ($_POST['action'] == 'superCoringa') {
 		}
 		echo json_encode(['return' => $retornoStatus, 'informes' => $retorno]);
 	} else if ($_POST['codigo'] == '6') {
+		$idInforme = isset($_POST['idInforme']) ? $_POST['idInforme'] : null;
 		$_SESSION['printInformeRendimentos'] = [
 			'login' => $_SESSION['infoUser']['login'],
-			'idInforme' => $_POST['idInforme'],
+			'idInforme' => $idInforme,
 		];
 	} else if ($_POST['codigo'] == '6.1') {
 		if (isset($_POST['empresa']) && $_POST['empresa'] != '') {
@@ -252,6 +253,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
+		$db->exec("set names utf8mb4");
 		$executePDO = [];
 		$where = [];
 		if ($_POST['grupo'] == 'Todos') {

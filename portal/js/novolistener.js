@@ -1,10 +1,8 @@
-const tamanhoPadraoSubMenu = 35;
-const grupos = "Escolha, Políticas First RH Group, Documentação, Comunicados, Saúde, Cursos, Parcerias, Canal de Denúncias, Perguntas Frenquentes"
 function editDica(idDica) {
 	coringa('14', { idDica: idDica }).
 		then(result => {
 			dica = result.dicas[0]
-			document.querySelector('section#main > div.principal').innerHTML = '';
+			document.querySelector('section#main > div.principal').innerText = '';
 			var divPrincipal = criarElement({
 				attributes: {
 					class: "novaDicaForm",
@@ -617,7 +615,7 @@ function buscarDicas() {
 		coringa('14', { "grupo": document.querySelector('form#buscaDicaForm select').value }).
 			then((result) => {
 				// result = JSON.parse(result)
-				document.querySelector('div.resultsDicas').innerHTML = ''
+				document.querySelector('div.resultsDicas').innerText = ''
 				if (result.dicas.length > 0) {
 					// ! results TOPICS
 					criarElement({
@@ -966,7 +964,7 @@ menuUsuarios?.addEventListener('click', () => {
 			"parent": document.querySelector('div#' + divPrincipal.id + ' > div:nth-of-type(1)'),
 			"tag": "ul"
 		});
-		coringa('3', {})
+		/*coringa('3', {})
 			.then((retorno) => {
 				Object.entries(retorno).forEach(([key, value]) => {
 					var obj = JSON.stringify({ "cpf": value.cpf });
@@ -987,7 +985,7 @@ menuUsuarios?.addEventListener('click', () => {
 							})
 					})
 				});
-			})
+			}) */
 	})
 	var usuariosPortalDepRH = document.querySelector('section#main > div.menu > div.usuarios > div:nth-of-type(2) > div:nth-of-type(2)');
 	usuariosPortalDepRH?.addEventListener('click', () => {
@@ -1128,9 +1126,9 @@ menuWebsite?.addEventListener('click', () => {
 		"tag": "div"
 	});
 })
-var menuDicas = document.querySelector("#main > div.menu > div.dicas > div:nth-of-type(1)");
+var menuDicas = document.querySelector("#main > div.menu > div.admin > div:nth-of-type(1)");
 menuDicas?.addEventListener('click', () => {
-	var element = document.querySelector("section#main > div.menu > div.dicas > div:nth-of-type(2)");
+	var element = document.querySelector("section#main > div.menu > div.admin > div:nth-of-type(2)");
 	var NovoTamanho = ((element.childNodes.length - 1) / 2) * tamanhoPadraoSubMenu;
 	var ComputedHeight = getComputedStyle(element).height;
 	if (ComputedHeight == '0px' || ComputedHeight == '' || ComputedHeight == undefined) {
@@ -1139,7 +1137,7 @@ menuDicas?.addEventListener('click', () => {
 		element.style.height = '0px';
 	}
 })
-var novaDicaButton = document.querySelector("#main > div.menu > div.dicas > div:nth-of-type(2) > div:nth-of-type(1)");
+var novaDicaButton = document.querySelector("#main > div.menu > div.admin > div:nth-of-type(2) > div:nth-of-type(1)");
 novaDicaButton?.addEventListener('click', () => {
 	document.querySelector('section#main > div.principal').innerHTML = '';
 	var divPrincipal = criarElement({
@@ -1410,7 +1408,7 @@ novaDicaButton?.addEventListener('click', () => {
 		}
 	})
 })
-var pesquisarDicas = document.querySelector("#main > div.menu > div.dicas > div:nth-of-type(2) > div:nth-of-type(2)");
+var pesquisarDicas = document.querySelector("#main > div.menu > div.admin > div:nth-of-type(2) > div:nth-of-type(2)");
 pesquisarDicas?.addEventListener('click', () => {
 	buscarDicas()
 })
@@ -1420,7 +1418,7 @@ sair?.addEventListener('click', () => {
 		window.location = '../';
 	})
 })
-window.addEventListener("load", () => {
+/* window.addEventListener("load", () => {
 	coringa('1', {})
 		.then((nomeUsuario) => {
 			if (nomeUsuario == '' || !nomeUsuario) {
@@ -1438,4 +1436,4 @@ window.addEventListener("load", () => {
 				});
 			}
 		})
-})
+}) */

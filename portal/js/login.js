@@ -17,28 +17,6 @@ function obterDadosDoUsuario(cpf, callback) {
     };
     xhr.send(JSON.stringify({ cpf: cpf }));
 }
-function ajustarMenuPorGroupId(cpf) {
-    obterDadosDoUsuario(cpf, function(usuario) {
-        var grupoId = usuario.grupo_id;
-
-        // Obtenha os elementos do menu pelo id
-        let adminMenu = document.getElementById('adminMenu');
-        let financeiroMenu = document.getElementById('financeiroMenu');
-        let siteMenu = document.getElementById('siteMenu');
-
-        // Se o grupo_id for 1, mostre todo o menu
-        if (grupoId == 1) {
-            adminMenu.style.display = 'block';
-            financeiroMenu.style.display = 'block';
-            siteMenu.style.display = 'block';
-        } else {
-            // Caso contrário, oculte os elementos do menu que não devem ser mostrados
-            adminMenu.style.display = 'none';
-            financeiroMenu.style.display = 'none';
-            siteMenu.style.display = 'none';
-        }
-    });
-}
 function isJsonString(str) {
     try {
         JSON.parse(str);
@@ -195,6 +173,42 @@ function novaSenha(codigo) {
     xmlhttp.send("instrucoes="+JSON.stringify(instrucoes));
     return;
 }
+window.addEventListener('DOMContentLoaded', (event) => {
+    const observer = new MutationObserver((mutationsList, observer) => {
+        // Procura por mudanças na adição de nós
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                var menuAdmin = document.querySelector('.admin');
+                if (menuAdmin) {
+                    var userData = JSON.parse(localStorage.getItem('userData'));
+                    if (userData && userData.grupo_id) {
+                        ajustarMenuPorGroupId(userData.grupo_id);
+                        observer.disconnect(); // Desconecta o observador quando o elemento é encontrado
+                    }
+                }
+            }
+        }
+    });
+
+    // Inicia o observador com uma configuração que observa a adição de elementos ao DOM
+    observer.observe(document.body, { childList: true, subtree: true });
+});
+
+function ajustarMenuPorGroupId(grupo_id) {
+    var menuAdmin = document.querySelector('.admin');
+    if (menuAdmin) {
+        if (grupo_id !== 1) {
+            menuAdmin.style.display = 'none';
+        } else {
+            menuAdmin.style.display = 'block';
+        }
+    } else {
+        console.log('O elemento de menu de administração não existe! Tentando novamente em 1 segundo...');
+        setTimeout(function() {
+            ajustarMenuPorGroupId(grupo_id);
+        }, 1000);
+    }
+}
 function login() {
     var form = document.getElementById('loginForm');
     form.addEventListener('submit', (event) => {
@@ -264,7 +278,12 @@ function login() {
                             console.log('Resposta do servidor (como objeto):', res);
                             if (res.grupo_id) {
                                 localStorage.setItem('userData', JSON.stringify(res));
-                                ajustarMenuPorGroupId(cpf);
+                                localStorage.setItem('id', res.id);
+                                console.log('Chamando ajustarMenuPorGroupId');
+                                // Atrasar a chamada para ajustarMenuPorGroupId por 1 segundo
+                                setTimeout(function() {
+                                    ajustarMenuPorGroupId(res.grupo_id);
+                                }, 1000);
                             } else {
                                 console.error("A resposta do servidor não contém um campo id: ", res);
                             }
@@ -304,7 +323,7 @@ function login() {
                         "htmlText": "Logado!",
                         "selector": "section#login button",
                     });
-                    window.location = 'dashboard.html';
+                    window.location = 'dashboard.php';
                 }
             }   
         }

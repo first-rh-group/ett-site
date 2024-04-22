@@ -5,8 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Logos</title>
     <style>
+        @font-face {
+        font-family: fontProjeto;
+        src: url(../font/CodecPro-Regular.ttf) format("truetype");
+        }
+        @font-face {
+        font-family: fontExtraBold;
+        src: url(../font/CodecCold-ExtraBold.ttf) format("truetype");
+        }
+        @font-face {
+        font-family: fontCodecRegular;
+        src: url(../font/codec-pro-light.ttf) format("truetype");
+        }
+        @font-face {
+        font-family: fontCodecBold;
+        src: url(../font/codec-pro-bold.ttf) format("truetype");
+        }
+        @font-face {
+        font-family: sonnyGotich;
+        src: url(../font/W\ Foundry\ -\ Sonny\ Gothic\ Condensed\ Bold.otf) format("opentype");
+        }
+        :root {
+        --fontProjeto: fontProjeto;
+        --fontExtraBold: fontExtraBold;
+        --fontCodecRegular: fontCodecRegular;
+        --fontCodecBold: fontCodecBold;
+        --sonnyGotich : sonnyGotich;
+        --black: #313131;
+        --green: #334644;
+        --golden: #feb812;
+        --vividBlue: #007bff;
+        --azulFirst: hsl(222deg 48% 30%);
+        --amareloFirst: hsl(41deg 99% 58%);
+        --vermelhoFirst: hsl(358deg 51% 40%);
+        --gray: rgb(66, 66, 66);
+        --logoWidth: clamp(150px, 35vw, 300px);
+        --headerMinHeight: 65px;
+        --fontFamilyDiv: "Titillium Web", sans-serif;
+        --fontSizeDiv: clamp(1.5em, 2vw, 30px);
+        --textShadow: 1.5px 1.5px 0px #000000;
+        --container: 1240px;
+        --titillium: "Titillium Web", sans-serif;
+        --fontSizeTitulos: clamp(28px, 4.5vw, 32px);
+        --fontSizePadrao: clamp(19px, 18px, 2vw);
+        --buttonFont: clamp(20px, 25px, 2.5vw);
+        --paddingFaixas: clamp(50px, 5vw, 30%);
+        --tamanhoRetangulo: 200px;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--fontExtraBold);
             padding: 20px;
             background-color: #f0f0f0;
         }
@@ -38,7 +85,7 @@
     <!-- Formulário para upload de arquivo -->
     <form id="logoForm" onsubmit="addLogo(event)">
         <input type="file" id="logoFile" accept="image/*" required>
-        <button type="submit">Adicionar</button>
+        <button type="submit" style="font-family: var(--fontExtraBold);">Adicionar</button>
     </form>
 
     <!-- Div onde as logos serão exibidas -->

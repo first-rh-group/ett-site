@@ -63,6 +63,7 @@ if (count($retorno) > 0) {
         'grupo_id' => $retorno[0]['grupo_id'],
     ];
     $resposta = array(
+        'id' => $retorno[0]['id'],
         'grupo_id' => $retorno[0]['grupo_id'],
         'activationCode' => $activationCode
     );
