@@ -35,6 +35,14 @@ $query = "SELECT * FROM usuariosCorp WHERE usuariosCorp.cpf = ? AND usuariosCorp
 $st = $db->prepare($query);
 $st->execute([$login, $senhaHash]);
 $retorno = $st->fetchAll(PDO::FETCH_ASSOC);
+
+echo "Senha fornecida: " . $senha . "\n";
+echo "Hash da senha fornecida: " . $senhaHash . "\n";
+if (count($retorno) > 0) {
+    echo "Hash da senha no banco de dados: " . $retorno[0]['senha_sha256'] . "\n";
+} else {
+    echo "Nenhum usuário encontrado com o cpf fornecido e a senha hash.\n";
+}
 $st = null;
 $db = null;
 

@@ -1,6 +1,8 @@
-import i18next from 'i18next';
+"use strict";
 
-i18next.init({
+var _i18next = _interopRequireDefault(require("i18next"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+_i18next["default"].init({
   lng: 'pt',
   resources: {
     en: {
@@ -22,39 +24,34 @@ i18next.init({
       }
     }
   }
-}, function(err, t) {
+}, function (err, t) {
   if (err) {
     console.log('Erro ao inicializar i18next:', err);
     return;
   }
-
-  const menuItems = {
+  var menuItems = {
     group: document.querySelector('a[empresa]'),
     solutions: document.querySelector('a[href="./solucoes.html"]'),
     opportunities: document.querySelector('a[candidato]'),
     faq: document.querySelector('a[href="./faq.html"]'),
     contact: document.querySelector('a[contato]')
   };
-
-  Object.keys(menuItems).forEach(key => {
-    const item = menuItems[key];
+  Object.keys(menuItems).forEach(function (key) {
+    var item = menuItems[key];
     if (item) {
       item.textContent = t(key);
     }
   });
-const languageButton = document.querySelector('#flag');
-
-languageButton.addEventListener('click', () => {
-  const newLanguage = i18next.language === 'pt' ? 'en' : 'pt';
-  i18next.changeLanguage(newLanguage);
-
-  languageButton.textContent = newLanguage.toUpperCase();
-
-  Object.keys(menuItems).forEach(key => {
-    const item = menuItems[key];
-    if (item) {
-      item.textContent = i18next.t(key);
-    }
+  var languageButton = document.querySelector('#flag');
+  languageButton.addEventListener('click', function () {
+    var newLanguage = _i18next["default"].language === 'pt' ? 'en' : 'pt';
+    _i18next["default"].changeLanguage(newLanguage);
+    languageButton.textContent = newLanguage.toUpperCase();
+    Object.keys(menuItems).forEach(function (key) {
+      var item = menuItems[key];
+      if (item) {
+        item.textContent = _i18next["default"].t(key);
+      }
+    });
   });
-});
 });

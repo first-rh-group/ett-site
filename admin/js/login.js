@@ -1,98 +1,101 @@
+"use strict";
+
 function login() {
-    var form = document.getElementById('loginForm');
-    form.addEventListener('submit', (event) => {
-        if (event) { event.preventDefault(); }
-    }, false);
-    changeAttributes({
-        "attributes": {
-            "type":"button",
-            "onclick":false,
-        },
-        "removeClass": ['btn-secondary', 'btn-danger'],
-        "addClass": ['nohand'],
-        "htmlText": "<div class=\"spinner-border white\"></div> Logando ...",
-        "selector": "section#login button",
-    });
-    document.getElementsByClassName('alertaErros')[0]?.remove();
-   let erros = formControl('loginForm');
-    if(erros.length > 0) {
-        alertErros({
-            "selectorTarget":"form#loginForm",
-            "erros":erros,
-        });
-        changeAttributes({
-            "attributes": {
-                "type":"type",
-                "onclick":"login();",
-            },
-            "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
-            "addClass": ['btn-success'],
-            "htmlText": "Login no sistema",
-            "selector": "section#login button",
-        });
-    } else {
-        var instrucoes = {
-            "usuario":form.querySelector('input[name=cpfUsuario]').value,
-            "senha":form.querySelector('input[name=senha]').value,
-        };
-        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-            xmlhttp = new XMLHttpRequest();
-        }
-        else if (window.ActiveXObject) { // IE
-            try {
-                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-            }
-            catch (e) {
-                try {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                } 
-                catch (e) {
-                }
-            }
-        }
-        xmlhttp.onreadystatechange=function() {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                var resposta = xmlhttp.responseText;
-                // document.getElementById('destino').innerHTML = resposta;
-                try {
-                    let res = JSON.parse(resposta);
-                    // console.log(res);
-                    if(res == false) {
-                        changeAttributes({
-                            "attributes": {
-                                "type":"type",
-                                "onclick":"login();",
-                            },
-                            "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
-                            "addClass": ['btn-success'],
-                            "htmlText": "Login no sistema",
-                            "selector": "section#login button",
-                        });
-                        alertErros({
-                            "selectorTarget":"form#loginForm",
-                            "erros":['Senha e/ou usuário incorretos','Confira o dia e horário autorizados para o login'],
-                        });
-                    } else {
-                        changeAttributes({
-                            "attributes": {
-                                "type":"button",
-                                "onclick":false,
-                            },
-                            "removeClass": ['btn-secondary', 'btn-danger', 'btn-success'],
-                            "addClass": ['nohand','btn-warning'],
-                            "htmlText": "Logado!",
-                            "selector": "section#login button",
-                        });
-                        window.location = 'dashboard.html';
-                    }
-                } catch (e) {
-                    console.error("A resposta não é um JSON válido: ", resposta);
-                }
-            }   
-        }
-        xmlhttp.open("POST","session/login.php",true);
-        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlhttp.send("instrucoes="+JSON.stringify(instrucoes));
+  var _document$getElements;
+  var form = document.getElementById('loginForm');
+  form.addEventListener('submit', function (event) {
+    if (event) {
+      event.preventDefault();
     }
-    return;
+  }, false);
+  changeAttributes({
+    "attributes": {
+      "type": "button",
+      "onclick": false
+    },
+    "removeClass": ['btn-secondary', 'btn-danger'],
+    "addClass": ['nohand'],
+    "htmlText": "<div class=\"spinner-border white\"></div> Logando ...",
+    "selector": "section#login button"
+  });
+  (_document$getElements = document.getElementsByClassName('alertaErros')[0]) === null || _document$getElements === void 0 ? void 0 : _document$getElements.remove();
+  var erros = formControl('loginForm');
+  if (erros.length > 0) {
+    alertErros({
+      "selectorTarget": "form#loginForm",
+      "erros": erros
+    });
+    changeAttributes({
+      "attributes": {
+        "type": "type",
+        "onclick": "login();"
+      },
+      "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
+      "addClass": ['btn-success'],
+      "htmlText": "Login no sistema",
+      "selector": "section#login button"
+    });
+  } else {
+    var instrucoes = {
+      "usuario": form.querySelector('input[name=cpfUsuario]').value,
+      "senha": form.querySelector('input[name=senha]').value
+    };
+    if (window.XMLHttpRequest) {
+      // Mozilla, Safari, ...
+      xmlhttp = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+      // IE
+      try {
+        xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+        try {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e) {}
+      }
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var resposta = xmlhttp.responseText;
+        // document.getElementById('destino').innerHTML = resposta;
+        try {
+          var res = JSON.parse(resposta);
+          // console.log(res);
+          if (res == false) {
+            changeAttributes({
+              "attributes": {
+                "type": "type",
+                "onclick": "login();"
+              },
+              "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
+              "addClass": ['btn-success'],
+              "htmlText": "Login no sistema",
+              "selector": "section#login button"
+            });
+            alertErros({
+              "selectorTarget": "form#loginForm",
+              "erros": ['Senha e/ou usuário incorretos', 'Confira o dia e horário autorizados para o login']
+            });
+          } else {
+            changeAttributes({
+              "attributes": {
+                "type": "button",
+                "onclick": false
+              },
+              "removeClass": ['btn-secondary', 'btn-danger', 'btn-success'],
+              "addClass": ['nohand', 'btn-warning'],
+              "htmlText": "Logado!",
+              "selector": "section#login button"
+            });
+            window.location = 'dashboard.html';
+          }
+        } catch (e) {
+          console.error("A resposta não é um JSON válido: ", resposta);
+        }
+      }
+    };
+    xmlhttp.open("POST", "session/login.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("instrucoes=" + JSON.stringify(instrucoes));
+  }
+  return;
 }

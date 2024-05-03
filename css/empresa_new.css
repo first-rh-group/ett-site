@@ -612,17 +612,22 @@ section#consultores>div:nth-of-type(2)>div {
     min-width: 170px;
 }
 /* Oculta o botão por padrão */
-[data-ett] .button, [data-shift] .button, [data-connecting] .button {
+/*[data-ett] .button, [data-shift] .button, [data-connecting] .button {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
-}
+}*/
 
 /* Mostra o botão quando o mouse passa sobre o elemento que contém a imagem */
-[data-ett]:hover .button, [data-shift]:hover .button, [data-connecting]:hover .button {
+/*[data-ett]:hover .button, [data-shift]:hover .button, [data-connecting]:hover .button {
     visibility: visible;
     opacity: 1;
-}
+}*/
+@media screen and (min-width: 1920px) {
+    .baloes {
+        margin-left: 20px;
+    }
+  }
 @media only screen and (max-width: 900px) {
     section.empresas {
         display: block;

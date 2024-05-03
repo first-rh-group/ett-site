@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://grupofirstrh.com.br/js_global/global.js?version=11"></script>
 	<script defer charset="utf-8" src="./js/linguagem.js"></script>
 	<script defer charset="utf-8" src="./js/listener.js"></script>
@@ -22,7 +23,7 @@
 	<title>:: First RH ::</title>
 </head>
 
-<body>
+<body data-aos="fade-in">
 	<div id="menuSuspensoMobile" class="menuSuspensoMobile">
 		<a empresa>O grupo</a>
 		<a href="./solucoes.html">Soluções</a>
@@ -39,7 +40,7 @@
 				<div></div>
 				<div id="menuSuspenso">
 					<a empresa>O grupo</a>
-					<a href="./solucoes.html">Soluções</a>
+					<a href="./solucoes.html" class="active">Soluções</a>
 					<a candidato>Oportunidades</a>
 					<a href="./faq.html">Dúvidas</a>
 					<a contato>Contato</a>
@@ -55,68 +56,85 @@
 					<div class="toogleCross"></div>
 				</div>
 			</section>
-			<section class="imagem-texto" data-aos="fade-down">
-				<div>
-					<img src="./img_menor/PÁGINA O GRUPO 2.webp" alt="Imagem 1">
-					<button class="call-to-action">Fale com o nosso especialista!</button>
-				</div>
-				<div>
-					<p><strong>Contratação temporária</strong></p>
-				  
-					<p>Substituição eventual de seus empregados efetivos quando afastados por férias, licenças médicas e/ou outros, ou quando há demandas complementares e/ou extraordinárias de serviços.</p>
-				  
-					<p>Prazo de contratação: 180 dias, consecutivos ou não. Porém, quando necessário, pode ser prorrogado por, no máximo, 90 dias, totalizando 270 dias.</p>
-				  
-					<p>Somos reconhecidos e capazes de trazer as melhores soluções para demandas sazonais à sua organização, com agilidade, contratações assertivas e economia.</p>
-				  
-					<div style="display: flex; align-items: center;">
-						<p style="margin-right: 10px;">Veja nossos certificados:</p>
-						<a href="https://www.assertem.com.br/" target="_blank" style="margin-right: 10px; margin-bottom: 27px;">
-							<img src="./new_img/ASSERTTEM LOGO SEM FUNDO.png" alt="Certificado ASSERTTEM" style="width: 100px; height: auto;">
-						</a>
-						<a href="https://www.mte.gov.br/" target="_blank">
-							<img src="./new_img/MTE LOGO SEM FUNDO.png" alt="Certificado MTE" style="width: 100px; height: auto; margin-bottom: 27px;">
-						</a>
+			<section id="novo" class="row align-items-center">
+				<div class="col-md-6">
+					<div class="position-relative">
+						<img src="./img_menor/PÁGINA O GRUPO 2.webp" alt="Imagem 2" class="img-fluid">
+						<button id="botao-novo" class="btn btn-primary position-absolute" style="bottom: 10px; left: 10px;">Fale com o nosso especialista!</button>
 					</div>
-					<hr class="hr-especifico1">
-				  </div>
+				</div>
+				<div class="col-md-6">
+					<h2 style="font-family: var(--fontExtraBold);">Contratação temporária</h2>
+					<p>Substituição eventual de seus empregados efetivos quando afastados por férias, licenças médicas e/ou outros, ou quando há demandas complementares e/ou extraordinárias de serviços.</p>
+					<p>Prazo de contratação: 180 dias, consecutivos ou não. Porém, quando necessário, pode ser prorrogado por, no máximo, 90 dias, totalizando 270 dias.</p>
+					<p>Somos reconhecidos e capazes de trazer as melhores soluções para demandas sazonais à sua organização, com agilidade, contratações assertivas e economia.</p>
+					<p>Veja nossos certificados: 
+						<a href="https://firstrhgroup.com/documentacao/certificado_assertem.pdf" target="_blank">
+							<img src="./new_img/ASSERTTEM LOGO SEM FUNDO.png" alt="Logo 1" class="img-fluid logo">
+						</a>
+						<a href="https://firstrhgroup.com/documentacao/certificado_min_trabalho.pdf" target="_blank">
+							<img src="./new_img/MTE LOGO SEM FUNDO.png" alt="Logo 2" class="img-fluid logo">
+						</a>
+					</p>
+				</div>
 			</section>
-			
-			<section class="texto-imagem" data-aos="fade-down">
-				<div class="div-mover">
-					<p><strong>Terceirização de serviços</strong></p>
-					<p class="terceirizacao-paragraph">Estratégia empresarial na qual uma organização opta por atribuir certas tarefas ou serviços a empresas especializadas, de forma determinada ou indeterminada.</p>
-					<p class="terceirizacao-paragraph">Através da terceirização, sua empresa poderá direcionar seus recursos e foco integralmente aos seus objetivos. Além disso, há economia de tempo com atividades, como: gestão da folha de pagamento, encargos, compra e gestão de benefícios, gestão de pessoas, entre outras.</p>
-					<p class="terceirizacao-paragraph">Somos especializados em projetos de terceirização personalizados e confiáveis, promovendo à sua empresa dedicação ao core business, excelência, responsabilidade operacional e segurança jurídica.</p>
+			<!--<hr class="hr-especifico2">-->
+			<section id="vermelho" class="row align-items-center flex-md-row-reverse">
+				<div class="col-md-6">
+					<div class="position-relative">
+						<img src="./img_menor/PÁGINA O GRUPO 3.webp" alt="Imagem 3" class="img-fluid">
+						<button id="botao-especialista" class="btn btn-primary position-absolute" style="bottom: 10px; left: 10px;">Fale com o nosso especialista!</button>
+					</div>
 				</div>
-				<div>
-					<img src="./img_menor/PÁGINA O GRUPO 3.webp" alt="Imagem 3">
-					<button id="botao-especialista">Fale com o nosso especialista!</button>
+				<div class="col-md-6">
+					<h2 style="font-family: var(--fontExtraBold);">Terceirização de serviços</h2>
+					<p>Estratégia empresarial na qual uma organização opta por atribuir certas tarefas ou serviços a empresas especializadas, de forma determinada ou indeterminada.</p>
+					<p>Através da terceirização, sua empresa poderá direcionar seus recursos e foco integralmente aos seus objetivos. Além disso, há economia de tempo com atividades, como: gestão da folha de pagamento, encargos, compra e gestão de benefícios, gestão de pessoas, entre outras.</p>
+					<p>Somos especializados em projetos de terceirização personalizados e confiáveis, promovendo à sua empresa dedicação ao core business, excelência, responsabilidade operacional e segurança jurídica.</p>
 				</div>
-				<hr class="hr-especifico2">
 			</section>
-			
-			<section class="imagem-texto">
-				<div>
-					<img src="./img_menor/PÁGINA O GRUPO 4.webp" alt="Imagem 3">
-					<button id="botao-amarelo">Fale com o nosso especialista</button>
+			<!--<hr class="hr-especifico2">-->
+			<section id="amarelo" class="row align-items-center">
+				<div class="col-md-6">
+					<div class="position-relative">
+						<img src="./img_menor/PÁGINA O GRUPO 4.webp" alt="Imagem 4" class="img-fluid">
+						<button id="botao-amarelo" class="btn btn-primary position-absolute" style="bottom: 10px; left: 10px;">Fale com o nosso especialista!</button>
+					</div>
 				</div>
-				<div>
-					<p><strong>Nosso hub de parcerias</strong></p>
+				<div class="col-md-6">
+					<h2 style="font-family: var(--fontExtraBold);">Nosso hub de parcerias</h2>
 					<p>Responsável pelas parcerias com empresas que oferecem serviços complementares e experiências únicas em soluções de RH para todos os nossos stakeholders.</p>
 					<p>Acreditamos em serviços personalizados e buscamos parceiros com pensamento aliado ao nosso para formação de novos negócios.</p>
 					<p>Leader & Talent: Consultoria especializada em Recrutamento & Seleção estratégico, com foco nas necessidades de cada empresa e processos personalizados de RH.</p>
 					<p>Rio 123: Plataforma de Recursos Humanos, responsável pelo sistema de recrutamento (ATS), gestão de colaboradores e desenvolvimento das ferramentas tecnológicas.</p>
-					<p class="move-up">Conheça nossos parceiros: <span><img id="logo-rio123" src="./new_img/RIO123 LOGO SEM FUNDO.png" alt="Logo Rio 123" style="width: 50px; height: auto; margin-top: -40;"> <img src="./new_img/LOGO BONECOS LEADER.png" alt="Logo Leader" style="width: 30px; height: auto; margin-top: -30; margin-right: -80px;"></span></p>
+					<p>Conheça nossos parceiros: 
+						<a href="https://rio123.io/" target="_blank">
+							<img src="./new_img/RIO123 LOGO SEM FUNDO.png" alt="Logo Rio123" class="img-fluid logo" id="aumentarLogo">
+						</a>
+						<a href="https://leaderetalent.com.br/" target="_blank">
+							<img src="./new_img/LOGO BONECOS LEADER.png" alt="Logo Leader" class="img-fluid logo">
+						</a>
+					</p>
 				</div>
-				<hr class="hr-especifico3">
 			</section>
 			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 			<script>
-				AOS.init();
+				AOS.init({
+				  once: true,
+				});
 			  </script>
-			  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			  		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 					  <script>
+                        						document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.call-to-action, #botao-especialista, #botao-amarelo');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            window.location.href = 'https://api.whatsapp.com/send/?phone=5521997969897&text&type=phone_number&app_absent=0';
+        });
+    });
+});
 $(document).ready(function() {
     // Adiciona a classe 'active' ao link correspondente na página atual
     var path = window.location.pathname;
@@ -132,7 +150,7 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 });
-				  </script>
+				  </script> -->
 </body>
 
 </html>

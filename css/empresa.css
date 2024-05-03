@@ -170,6 +170,9 @@ section#consultores {
   min-height: 35vh;
   padding: 6vw;
 }
+#menuSuspenso > a.active, #menuSuspensoMobile > a.active {
+  color: var(--vermelhoFirst);
+}
 section#consultores > div:nth-of-type(1) {
   font-size: clamp(22px, 10vw, 28px);
   text-align: center;
@@ -219,6 +222,17 @@ section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
   background-image: url(../img/consulores_5.png);
   background-image: url(../img/consulores_5.webp);
 }
+.button {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition: opacity 2s, transform 2s;
+}
+
+.button.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 @media only screen and (max-width: 812px) {
   section.historia {
     grid-template-areas:
@@ -242,10 +256,42 @@ section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
     right: 0;
   }
 }
+
 @media screen and (max-width: 768px) {
-  section.historia > div:nth-of-type(1) img {
-    width: 50%; /* Define a largura da imagem como 50% da largura da tela em dispositivos móveis */
-  }
+  .button, .button.visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: none;
+}
+  /*section.historia > div:nth-of-type(1) img {
+    width: 50%; /* Define a largura da imagem como 50% da largura da tela em dispositivos móveis
+  }*/
+    section.historia > div:nth-of-type(1) img {
+        width: 100%;
+    }
+  .retangular-button {
+	    margin-top: -35px !important;
+	}
+  section.empresas>div>div.conteudo { 
+	height: 130% !important;
+}
+html, body {
+  overflow-x: hidden; /* Oculta a rolagem horizontal */
+}
+         .baloes {
+		flex-direction: column;
+        align-items: center;
+        width: 170%;
+        margin-left: -130px;
+    }
+
+    .baloes .balao {
+        margin-bottom: 20px; /* Adiciona uma margem na parte inferior para separar os balões */
+        width: 100%; /* Faz os balões ocuparem a largura total da tela */
+    }
+    /*.button {
+      transform: translate3d(0, -130px, 0);
+    }*/
 }
 @media only screen and (max-width: 660px) {
   section.historia {

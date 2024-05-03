@@ -57,6 +57,11 @@
   height: auto; /* Mantenha a proporção da imagem */
 }
 
+#botao-amarelo:hover {
+  background-color: yellow;
+}
+
+
 .image-container {
   position: relative; /* Para posicionar o botão em relação a este contêiner */
 }
@@ -84,7 +89,22 @@
   border-top: 2px solid var(--amareloFirst);
   bottom: -585;
 }
-.call-to-action {
+#botao-novo{
+  bottom: 10px;
+  left: 10px;
+  background-color: #193264;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--fontExtraBold);
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+#botao-novo:hover {
+  background-color: #007bff;
+}
+#call-to-action {
   position: absolute; /* Posicionamento absoluto em relação ao contêiner pai */
   bottom: 50px; /* Distância da parte inferior */
   left: 12%; /* Alinha o botão no meio horizontalmente */
@@ -172,6 +192,22 @@
   line-height: 1.3;
   font-family: var(--fontProjeto);
   font-size: 19px;
+}
+#botao-especialista{
+  bottom: 10px;
+  left: 10px;
+  background-color: #91191e;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: var(--fontExtraBold); /* Fonte do texto */
+  cursor: pointer;
+}
+#botao-especialista:hover {
+  background-color: red;
 }
 .texto-imagem div button {
   position: absolute;
@@ -298,6 +334,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  #aumentarLogo {
+    max-height: 3.5rem;
+  }
   #botao-especialista {
       position: relative;
       bottom: 90px;
@@ -339,6 +378,42 @@
     z-index: 1; /* Garante que o botão esteja sobreposto a outros elementos */
   }
 }
+.hr-especifico2 {
+  border: 1px solid #000;
+  width: 100%;
+  margin-top: 0px; /* Reduz a margem superior */
+}
+.logo {
+  max-height: 1.5rem; /* Ajuste conforme necessário */
+}
+
+@media screen and (max-width: 1366px) {
+  .hr-especifico1 {
+    bottom: 4px;
+    border-top: 3px solid var(--azulFirst);
+  }
+  .hr-especifico3 {
+    bottom: -599px;
+  }
+  .imagem-texto p:last-of-type img { 
+        margin-right: 390px;
+  }
+}
+.container {
+  max-width: 100%;
+}
+#novo {
+  border: 1px solid;
+}
+
+#vermelho {
+  border: 1px solid;
+}
+
+body, html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 @media screen and (min-width: 1920px) {
   .hr-especifico1 {
@@ -366,7 +441,7 @@
   z-index: 10; /* Garante que o botão esteja sobreposto a outros elementos */
 }
   .container {
-    max-width: 1920px;
+    max-width: 100%;
   }
 
   .imagem-texto img,

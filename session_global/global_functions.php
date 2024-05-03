@@ -376,7 +376,7 @@ function novaSenha($arrayInfo)
 		$executePDO['email'] = $arrayInfo['novoEmail'];
 	}
 	$executePDO['cpf'] = $arrayInfo['cpf'];
-	$dbname = "grupofir_departamentoRH";
+	$dbname = "grupofir_departamentorh";
 	/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 	include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 	// $query = "UPDATE usuariosCorp SET senha = PASSWORD(:senha)" . ($alteraEmail ? " " . $alteraEmail : "") . " WHERE cpf = :cpf";

@@ -24,6 +24,7 @@
 	<script charset="utf-8" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script charset="utf-8" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.tiny.cloud/1/i3h4t75csyitvovb5yvkpgzlxfweh6e0av6v2gupxbh24j88/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title>Portal Corporativo :: First RH</title>
 </head>
@@ -77,6 +78,10 @@
 				<img src="../new_img/avatar branco sem fundo.png" alt="Avatar do usuário" class="user-avatar">
 				<span class="user-greeting" style="color: white; font-family: var(--fontExtraBold);">Olá, [nome do usuário]</span>
 			</div>
+			<div>
+				<div class="menu-item" onclick="location.href='http://localhost:8080/projeto_ett/portal/dashboard.php';">Início</div>
+				<!--<div> </div>-->
+			</div>
 			<div class="perfil">
 				<div id="perfil-btn" class="menu-item">Perfil</div>
 			</div>
@@ -123,17 +128,13 @@
 					<div>Criar Novo Usuário</div>
 				</div>
 			</div> -->
-			<div class="site">	
-				<div class="menu-item">Website</div>
-				<div> </div>
-			</div>
 			<div class="sair">
 				<div class="novoSair">
 				<a href="http://localhost:8080/projeto_ett/portal" style="color: #ffffff; text-decoration: none; font-family: var(--fontExtraBold); cursor: pointer;">SAIR</a>
 				</div>
 			</div>
 		</div>
-		<div class="principal">
+		<div class="principal" style="font-family: var(--fontExtraBold);">
 			<div class="bemvindo">
 					<!-- <h3 style="font-family: var(--fontExtraBold);">Seu perfil</h3>
 					<br>
@@ -209,6 +210,24 @@
 		<div style="color: black;"> © 2024 FIRST RH GROUP</div>
 	</section>
 	<script>
+// Quando a página é carregada, oculte o '#sideMenu' e remova a classe 'with-menu' do 'body'
+window.onload = function() {
+  document.querySelector('#sideMenu').style.display = 'none';
+  document.body.classList.remove('with-menu');
+};
+
+document.querySelector('#dropdownMenuButton').addEventListener('click', function() {
+  var sideMenu = document.querySelector('#sideMenu');
+  if (sideMenu.style.display === 'none') {
+    sideMenu.style.display = 'block';
+    document.body.classList.add('with-menu'); // Adicione a classe 'with-menu' ao 'body'
+    document.body.style.marginLeft = '287px'; // Defina a margem esquerda do 'body' para 215px
+  } else {
+    sideMenu.style.display = 'none';
+    document.body.classList.remove('with-menu'); // Remova a classe 'with-menu' do 'body'
+    document.body.style.marginLeft = '0'; // Defina a margem esquerda do 'body' para 0
+  }
+});
 		window.onload = function() {
     // Recupera as imagens do armazenamento local
     var storedLogos = JSON.parse(localStorage.getItem('logos')) || [];

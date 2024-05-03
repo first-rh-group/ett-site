@@ -1,4 +1,18 @@
 <?php
+//$_POST = json_decode(file_get_contents('php://input'), true);
+// Ler o conteúdo do arquivo
+header('Content-Type: text/html; charset=utf-8');
+mb_internal_encoding('UTF-8');
+mb_http_output('UTF-8');
+mb_language('uni');
+mb_regex_encoding('UTF-8');
+ob_start('mb_output_handler');
+
+try {
+    // O resto do seu código vai aqui
+} catch (Exception $e) {
+    echo json_encode(['error' => $e->getMessage()]);
+}
 /* include('/home/grupofirstrh/public_html/portal/session/local_functions.php'); */
 /* include('/Data%20Campos%20Sistemas/Apache24/htdocs/projeto_ett/portal/session/local_functions.php'); */
 include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\local_functions.php');
@@ -250,6 +264,8 @@ if ($_POST['action'] == 'superCoringa') {
 			'dicas' => $dicas,
 		]);
 	} else if ($_POST['codigo'] == '14') {
+		//echo "Entrou no bloco de código 14";
+		//var_dump($_POST); // Adicione esta linha
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
@@ -267,18 +283,20 @@ if ($_POST['action'] == 'superCoringa') {
 			$executePDO[] = apenasNumeros($_POST['idDica']);
 			$where[] = 'id = ?';
 		}
+		//echo "Valor de grupo: " . $_POST['grupo'];
+		//echo "Valor de idDica: " . (isset($_POST['idDica']) ? $_POST['idDica'] : 'Não definido');
 		if (count($where) == 0) {
 			$where[] = 'id > ?';
 			$executePDO[] = 0;
 		}
 		$query = "SELECT id as idDica, grupo, titulo, informacoes, links, inclusao, validade FROM dicas WHERE " . implode(' AND ', $where) . " AND (STR_TO_DATE(validade, '%Y-%m-%d') IS NULL OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE()) ORDER BY grupo ASC, inclusao DESC, validade DESC";
+		//echo "Consulta SQL: " . $query;
 		$st = $db->prepare($query);
 		$st->execute($executePDO);
 		$databaseErrors = $st->errorInfo();
 		if ($databaseErrors[0] == '00000') {
 			$dicas = $st->fetchAll(PDO::FETCH_ASSOC);
 			foreach ($dicas as $key => $dica) {
-				$dicas[$key] = array_map('utf8_encode', $dica);
 				if (json_decode($dica['links'])[0] != '') {
 					$dicas[$key]['links'] = json_decode($dica['links']);
 				} else {

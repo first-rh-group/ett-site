@@ -57,7 +57,7 @@ section#login {
   /* background-image: url(https://grupofirstrh.com.br/controles_img/logo_portal_corporativo.png); */
   background-image: url(../../new_img/CORPORTAIVO.png);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: 2vh -2vw;
 }
 #login > div {
@@ -90,7 +90,7 @@ section#login form > div {
   gap: 10px;
 }
 section#login form > div:not(div:last-of-type) {
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
 }
 section#login form label {
   font-size: 17px;
@@ -138,6 +138,9 @@ section#login form label {
   background-position: center right;
   background-size: contain;
 }
+.hide-menu {
+  display: none;
+}
 #loginForm {
   margin-top: -40px;
 }
@@ -149,3 +152,18 @@ section#login form label {
     bottom: 20px;
   }
 }
+
+/* @media screen and (max-width: 768px) {
+  #loginForm {
+    margin-top: 0px;
+  }
+  section#login > div {
+    margin-bottom: 0px;
+  }
+  #sideMenu {
+    display: none;
+  }
+  section#main > div.menu.active {
+    width: 100%;
+  }
+} */
