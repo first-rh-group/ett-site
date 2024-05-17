@@ -222,16 +222,6 @@ section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
   background-image: url(../img/consulores_5.png);
   background-image: url(../img/consulores_5.webp);
 }
-.button {
-  opacity: 0;
-  transform: translate3d(0, 100px, 0);
-  transition: opacity 2s, transform 2s;
-}
-
-.button.visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
 
 @media only screen and (max-width: 812px) {
   section.historia {
@@ -256,7 +246,16 @@ section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
     right: 0;
   }
 }
+.button {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition: opacity 2s, transform 2s;
+}
 
+.button.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
 @media screen and (max-width: 768px) {
   .button, .button.visible {
     opacity: 1;
@@ -267,7 +266,9 @@ section#consultores > div:nth-of-type(2) > div:nth-of-type(5) {
     width: 50%; /* Define a largura da imagem como 50% da largura da tela em dispositivos móveis
   }*/
     section.historia > div:nth-of-type(1) img {
-        width: 100%;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   .retangular-button {
 	    margin-top: -35px !important;

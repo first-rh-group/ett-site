@@ -1,57 +1,47 @@
-"use strict";
+import {Translate} from '@google-cloud/translate';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-var _i18next = _interopRequireDefault(require("i18next"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-_i18next["default"].init({
-  lng: 'pt',
-  resources: {
-    en: {
-      translation: {
-        "group": "The Group",
-        "solutions": "Solutions",
-        "opportunities": "Opportunities",
-        "faq": "FAQ",
-        "contact": "Contact"
-      }
-    },
-    pt: {
-      translation: {
-        "group": "O grupo",
-        "solutions": "Soluções",
-        "opportunities": "Oportunidades",
-        "faq": "Dúvidas",
-        "contact": "Contato"
-      }
-    }
+// Obter o __dirname no contexto ES6
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Crie uma instância do cliente
+const translate = new Translate({
+  keyFilename: path.join(__dirname, 'traducao-423517-27bf62b94262.json')  // Caminho real para o arquivo JSON de credenciais
+});
+
+// Seu HTML em português
+const htmlContent = `
+<section class="historia container">
+  <div id="inicial"> 
+    <img src="./new_img/LOGO MENOR.png" alt="">
+  </div>
+  <div style="line-height: 1.3;">
+    A First RH Group é composta por três empresas, com <strong>mais de 27 anos de atuação no mercado nacional:</strong> <br><br>
+    A <strong>ETT First RH</strong> é reconhecida pela contratação de <strong>mão de obra temporária</strong> e a <strong>SHIFT Gestão de Serviços</strong> é especializada em soluções para projetos de <strong>terceirização de serviços.</strong> Já a <strong>First Connecting</strong> é responsável pela busca de experiências únicas em <strong>soluções de Recursos Humanos</strong> e seus subsistemas.
+  </div>
+  <div style="line-height: 1.1;">
+    Acreditamos no poder da interação e, por isso, <strong>conectamos <br> pessoas a oportunidades.</strong>
+  </div>
+  <div class="button-container">
+    <a target="_blank" href="./solucoes.html"><button class="retangular-button">Conheça as nossas soluções!</button></a>
+  </div>
+</section>
+`;
+
+// Função para traduzir HTML
+async function translateHtml(html) {
+  try {
+    const [translation] = await translate.translate(html, 'en');
+    return translation;
+  } catch (error) {
+    console.error('Erro ao traduzir:', error);
   }
-}, function (err, t) {
-  if (err) {
-    console.log('Erro ao inicializar i18next:', err);
-    return;
-  }
-  var menuItems = {
-    group: document.querySelector('a[empresa]'),
-    solutions: document.querySelector('a[href="./solucoes.html"]'),
-    opportunities: document.querySelector('a[candidato]'),
-    faq: document.querySelector('a[href="./faq.html"]'),
-    contact: document.querySelector('a[contato]')
-  };
-  Object.keys(menuItems).forEach(function (key) {
-    var item = menuItems[key];
-    if (item) {
-      item.textContent = t(key);
-    }
-  });
-  var languageButton = document.querySelector('#flag');
-  languageButton.addEventListener('click', function () {
-    var newLanguage = _i18next["default"].language === 'pt' ? 'en' : 'pt';
-    _i18next["default"].changeLanguage(newLanguage);
-    languageButton.textContent = newLanguage.toUpperCase();
-    Object.keys(menuItems).forEach(function (key) {
-      var item = menuItems[key];
-      if (item) {
-        item.textContent = _i18next["default"].t(key);
-      }
-    });
-  });
+}
+
+// Use a função de tradução
+translateHtml(htmlContent).then(translatedHtml => {
+  console.log(translatedHtml);
 });

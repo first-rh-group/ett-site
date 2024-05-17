@@ -55,7 +55,7 @@ function _coringa() {
           return _context.abrupt("return");
         case 12:
           extra = "&" + serialize(instrucoes.nomeFormulario);
-          // console.log(extra);
+          console.log(extra);
           _context.next = 22;
           break;
         case 15:
@@ -108,7 +108,7 @@ function _coringa() {
                 } catch (e) {}
               }
             }
-            // console.log(instrucoesEnviadas);
+            console.log(instrucoesEnviadas);
             xmlhttp.onreadystatechange = function () {
               if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 if (xmlhttp.responseText) {

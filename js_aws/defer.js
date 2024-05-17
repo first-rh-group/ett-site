@@ -215,7 +215,7 @@ window.addEventListener("load", () => {
     comunicadoFraude();
 });
 */
-function contagemNumerosFirst() {
+/*function contagemNumerosFirst() {
   $('.counter-value').each(function () {
     var $this = $(this),
       countTo = $this.attr('data-count');
@@ -234,7 +234,7 @@ function contagemNumerosFirst() {
       }
     });
   });
-}
+}*/
 function comunicadoFraude() {
   return _comunicadoFraude.apply(this, arguments);
 }

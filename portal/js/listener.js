@@ -670,7 +670,7 @@ menuDocumentacao === null || menuDocumentacao === void 0 ? void 0 : menuDocument
 });
 var menuPerfilMobile = document.querySelector('div#menuSuspensoMobile > div.documentacao > div:nth-of-type(1)');
 (_menuPerfilMobile = menuPerfilMobile) === null || _menuPerfilMobile === void 0 ? void 0 : _menuPerfilMobile.addEventListener('click', function () {
-  // console.log('show documentação');
+  console.log('show documentação');
 });
 
 // ! PERFIL
@@ -998,7 +998,7 @@ window.addEventListener("load", function () {
                 });
                 criarElement({
                   "id": false,
-                  "textoHtml": "links",
+                  "textoHtml": " ",
                   "selector": true,
                   "parent": document.querySelector("#main > div.principal > div:last-of-type > fieldset.links:last-of-type"),
                   "tag": "legend"

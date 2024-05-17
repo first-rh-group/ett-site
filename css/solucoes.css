@@ -334,6 +334,12 @@
   }
 }
 @media screen and (max-width: 768px) {
+  #novo > div:nth-child(2) {
+    padding-left: 30px;
+  }
+  #amarelo > div:nth-child(2) {
+    padding-left: 30px;
+  }
   #aumentarLogo {
     max-height: 3.5rem;
   }

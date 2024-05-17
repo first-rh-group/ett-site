@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dicas</title>
+    <style>
+        .dica {
+            border: 1px solid black;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .imagem {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <section id="main">
+        <div class="principal">
+            <!-- As dicas serão inseridas aqui -->
+        </div>
+    </section>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var response = JSON.parse(xmlhttp.responseText);
+                if(response.dicas) {
+                    var principalDiv = document.querySelector('div.principal');
+                    response.dicas.forEach((dica, index) => {
+                        var dicaDiv = document.createElement('div');
+                        dicaDiv.className = 'dica';
+
+                        var tituloP = document.createElement('p');
+                        tituloP.textContent = dica.titulo;
+                        dicaDiv.appendChild(tituloP);
+
+                        if(dica.imagem) {
+                            var img = document.createElement('img');
+                            img.src = dica.imagem;
+                            img.style.height = '80px';
+                            img.style.marginLeft = '-220px';
+                            img.style.marginTop = '180px';
+                            img.onerror = function() {
+                                console.error('Erro ao carregar a imagem: ' + dica.imagem);
+                            };
+
+                            var imagemDiv = document.createElement('div');
+                            imagemDiv.className = 'imagem';
+                            imagemDiv.appendChild(img);
+
+                            dicaDiv.appendChild(imagemDiv);
+                        }
+
+                        principalDiv.appendChild(dicaDiv);
+                    });
+                }
+            }
+        };
+        xmlhttp.open("POST", "processadorAjax.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("action=superCoringa&codigo=" + codigo + extra + instrucoesEnviadas);
+    </script>
+</body>
+</html>

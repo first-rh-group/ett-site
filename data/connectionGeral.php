@@ -5,6 +5,9 @@ $dbname = "grupofir_firstrh3";
 $dsn = "mysql:host=10.0.0.96;port=3308;dbname={$dbname}";
 try {
     $db = new PDO($dsn, $usuario, $password);
+    // echo 'conexao ok';
 } catch (PDOException $e) {
-    die('Estamos tendo problemas. Confira mais tarde');
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'Estamos tendo problemas. Confira mais tarde', 'details' => $e->getMessage()]);
+    exit;
 }

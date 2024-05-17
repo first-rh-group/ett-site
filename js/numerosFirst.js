@@ -4,7 +4,7 @@ function contagemNumerosFirst(tempoExpansao) {
   var contadores = document.querySelectorAll('.counter-value');
   contadores.forEach(function (elemento) {
     var valorInicial = 0;
-    var valorFinal = elemento.getAttribute('data-count');
+    //var valorFinal = elemento.getAttribute('data-count');
     var tipo = elemento.getAttribute('data-type');
     var intervalo = tempoExpansao / valorFinal;
     var contagem = setInterval(contador, intervalo);
@@ -57,7 +57,7 @@ var observatorio = new IntersectionObserver(function (entries) {
 });
 observatorio.observe(procuro);
 observatorio.observe(maisRecursosLinha);
-observerPorque = new IntersectionObserver(function (entries) {
+var observerPorque = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting == true) {
       var time = getRandomInt(0, 850);

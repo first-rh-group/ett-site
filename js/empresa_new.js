@@ -1,5 +1,23 @@
 "use strict";
 
+let imgElement = document.querySelector("div[data-go-first] > img");
+if (imgElement) {
+  imgElement.addEventListener('click', function () {
+    let sectionElement = document.querySelector("section[data-empresas]");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "start"
+      });
+    } else {
+      console.log('Elemento "section[data-empresas]" não encontrado');
+    }
+  });
+} else {
+  console.log('Elemento "div[data-go-first] > img" não encontrado');
+}
+
 document.querySelector("div[data-go-first] > img").addEventListener('click', function () {
   document.querySelector("section[data-empresas]").scrollIntoView({
     behavior: "smooth",

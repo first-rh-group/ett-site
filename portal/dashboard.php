@@ -67,10 +67,11 @@
 		</div>
 		<div>Sair</div>
 	</div>
-	<section id="header">
-		<button class="btn" type="button" id="dropdownMenuButton">
+	<button class="btn" type="button" id="dropdownMenuButton">
 			<i class="fas fa-bars"></i>
 		</button>
+	<section id="header">
+		
 	</section>
 	<section id="main">
 		<div class="menu" id="sideMenu">
@@ -128,6 +129,9 @@
 					<div>Criar Novo Usuário</div>
 				</div>
 			</div> -->
+			<div class="lgpd">
+				<a style="cursor: pointer; color: #ffffff;" target="_blank" href="https://firstrhgroup.com/documentacao/LGPD-First.pdf">LGPD</a>
+			</div>
 			<div class="sair">
 				<div class="novoSair">
 				<a href="http://localhost:8080/projeto_ett/portal" style="color: #ffffff; text-decoration: none; font-family: var(--fontExtraBold); cursor: pointer;">SAIR</a>
@@ -202,11 +206,11 @@
 		</div>
 	</section>
 	<section id="rodape" class="rodape">
-		<div>
+		<!--<div>
 			<a style="cursor: pointer;" target="_blank" href="https://firstrhgroup.com/documentacao/LGPD-First.pdf">A
 				First RH
 				Group segue todas as diretrizes e medidas de segurança da (Lei Geral de Proteção de Dados Pessoais)</a>
-		</div>
+		</div>>-->
 		<div style="color: black;"> © 2024 FIRST RH GROUP</div>
 	</section>
 	<script>
@@ -222,10 +226,13 @@ document.querySelector('#dropdownMenuButton').addEventListener('click', function
     sideMenu.style.display = 'block';
     document.body.classList.add('with-menu'); // Adicione a classe 'with-menu' ao 'body'
     document.body.style.marginLeft = '287px'; // Defina a margem esquerda do 'body' para 215px
+	document.body.style.paddingTop = '78px';
   } else {
     sideMenu.style.display = 'none';
     document.body.classList.remove('with-menu'); // Remova a classe 'with-menu' do 'body'
     document.body.style.marginLeft = '0'; // Defina a margem esquerda do 'body' para 0
+	document.body.style.paddingTop = '78px';
+
   }
 });
 		window.onload = function() {

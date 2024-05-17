@@ -190,7 +190,7 @@ cpfUsuario === null || cpfUsuario === void 0 ? void 0 : cpfUsuario.addEventListe
             "selector": "button#loginButton",
             "removeClass": ['nohand', 'btn-secondary', 'btn-danger'],
             "addClass": ['btn-success'],
-            "htmlText": "LOGIN NO SISTEMA",
+            "htmlText": "ENTRAR",
             "attributes": {
               "onclick": "login();",
               "type": "submit"
@@ -248,7 +248,7 @@ cpfUsuario === null || cpfUsuario === void 0 ? void 0 : cpfUsuario.addEventListe
       "selector": "button#loginButton",
       "removeClass": ['btn-success', 'btn-danger'],
       "addClass": ['nohand', 'btn-secondary'],
-      "htmlText": "LOGIN NO SISTEMA",
+      "htmlText": "ENTRAR",
       "attributes": {
         "onclick": false,
         "type": "button"
@@ -270,7 +270,7 @@ window.addEventListener("load", function () {
       "selector": "button#loginButton",
       "removeClass": ['nohand', 'btn-secondary', 'btn-danger'],
       "addClass": ['btn-success'],
-      "htmlText": "LOGIN NO SISTEMA",
+      "htmlText": "ENTRAR",
       "attributes": {
         "onclick": "login();",
         "type": "submit"

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tiny.cloud/1/i3h4t75csyitvovb5yvkpgzlxfweh6e0av6v2gupxbh24j88/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <title>Formulário de Dicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            /*width: 500px;*/
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <form action="processa_dicas.php" method="post" enctype="multipart/form-data">
+        <label for="grupo">Grupo:</label>
+        <select name="grupo" id="grupo">
+            <option value="1">Políticas First RH Group</option>
+            <option value="2">Documentação</option>
+            <option value="3">Comunicados</option>
+            <option value="4">Saúde</option>
+            <option value="5">Cursos</option>
+            <option value="6">Parcerias</option>
+            <option value="7">Canal de Denúncias</option>
+            <option value="8">Perguntas Frenquentes</option>
+        </select>
+
+        <label for="titulo">Título:</label>
+        <textarea id="titulo" name="titulo"></textarea>
+        <script>
+            tinymce.init({
+                selector: '#titulo'
+            });
+        </script>
+
+        <label for="informacoes">Informações Gerais:</label>
+        <textarea id="informacoes" name="informacoes"></textarea>
+        <script>
+            tinymce.init({
+                selector: '#informacoes'
+            });
+        </script>
+
+        <label for="posicao">Posição:</label>
+        <input type="number" id="posicao" name="posicao" min="1">
+
+        <label for="links">Links:</label>
+        <input type="text" id="links" name="links">
+
+        <label for="validade">Validade:</label>
+        <input type="date" id="validade" name="validade">
+
+        <label for="imagem">Imagem:</label>
+        <input type="file" id="imagem" name="imagem">
+
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            var linksInput = document.getElementById('links');
+            var links = linksInput.value.split(',');
+            linksInput.value = JSON.stringify(links);
+        });
+    </script>
+</body>
+</html>

@@ -47,7 +47,8 @@
 					<a portal href="https://portal.grupofirstrh.com.br">Portal</a>
 					<div>
 						<!-- <a target="_blank" href="https://wa.me/5521997969897"><div class="whatsApp"></div></a> -->
-						<div id="flag" class="us-flag">EN</div>
+						<div id="google_translate_element"></div>
+						<!--<div id="flag" class="us-flag">EN</div>-->
 					</div>
 				</div>
 				<div id="toogle">
@@ -59,10 +60,12 @@
 			<section id="novo" class="row align-items-center">
 				<div class="col-md-6">
 					<div class="position-relative">
-						<img src="./img_menor/PÁGINA O GRUPO 2.webp" alt="Imagem 2" class="img-fluid">
+					  <img src="./img_menor/PÁGINA O GRUPO 2.webp" alt="Imagem 2" class="img-fluid">
+					  <a href="https://wa.me/5521997969897">
 						<button id="botao-novo" class="btn btn-primary position-absolute" style="bottom: 10px; left: 10px;">Fale com o nosso especialista!</button>
+					  </a>
 					</div>
-				</div>
+				  </div>
 				<div class="col-md-6">
 					<h2 style="font-family: var(--fontExtraBold);">Contratação temporária</h2>
 					<p>Substituição eventual de seus empregados efetivos quando afastados por férias, licenças médicas e/ou outros, ou quando há demandas complementares e/ou extraordinárias de serviços.</p>
@@ -83,14 +86,20 @@
 				<div class="col-md-6">
 					<div class="position-relative">
 						<img src="./img_menor/PÁGINA O GRUPO 3.webp" alt="Imagem 3" class="img-fluid">
+						<a href="https://wa.me/5521997969897">
 						<button id="botao-especialista" class="btn btn-primary position-absolute" style="bottom: 10px; left: 10px;">Fale com o nosso especialista!</button>
+						</a>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6" style="padding-left: 30px;">
 					<h2 style="font-family: var(--fontExtraBold);">Terceirização de serviços</h2>
 					<p>Estratégia empresarial na qual uma organização opta por atribuir certas tarefas ou serviços a empresas especializadas, de forma determinada ou indeterminada.</p>
 					<p>Através da terceirização, sua empresa poderá direcionar seus recursos e foco integralmente aos seus objetivos. Além disso, há economia de tempo com atividades, como: gestão da folha de pagamento, encargos, compra e gestão de benefícios, gestão de pessoas, entre outras.</p>
 					<p>Somos especializados em projetos de terceirização personalizados e confiáveis, promovendo à sua empresa dedicação ao core business, excelência, responsabilidade operacional e segurança jurídica.</p>
+					
+					<p>
+						<img src="./new_img/logo-color-transparent.jpg" alt="Imagem do Parceiro" class="img-fluid" style="width: 85px; height: auto; display: inline;">
+					</p>
 				</div>
 			</section>
 			<!--<hr class="hr-especifico2">-->
@@ -98,7 +107,9 @@
 				<div class="col-md-6">
 					<div class="position-relative">
 						<img src="./img_menor/PÁGINA O GRUPO 4.webp" alt="Imagem 4" class="img-fluid">
+						<a href="https://wa.me/5521997969897">
 						<button id="botao-amarelo" class="btn btn-primary position-absolute" style="bottom: 10px; left: 10px;">Fale com o nosso especialista!</button>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -115,6 +126,9 @@
 							<img src="./new_img/LOGO BONECOS LEADER.png" alt="Logo Leader" class="img-fluid logo">
 						</a>
 					</p>
+					<a href="https://wa.me/5521997969897" class="whatsapp-button">
+						<img src="./new_img/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.png" alt="WhatsApp">
+					</a> 
 				</div>
 			</section>
 			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -151,6 +165,79 @@ $(document).ready(function() {
     });
 });
 				  </script> -->
+				  <script> 
+					var flagMobile = document.getElementById('flag-mobile');
+				 flagMobile.addEventListener('click', function () {
+				   if (flagMobile.classList.contains('us-flag')) {
+					 localStorage.setItem('idioma', 'us');
+					 trocaLingua('us');
+				   } else {
+					 localStorage.removeItem('idioma');
+					 trocaLingua('br');
+				   }
+				   menuMobile.classList.toggle("showMobileMenu");
+				   toogleButton.classList.toggle("toogleCross");
+				 });
+				 var flag = document.getElementById('flag');
+				 flag.addEventListener("click", function () {
+				   if (flag.classList.contains('us-flag')) {
+					 trocaLingua('us');
+					 localStorage.setItem('idioma', 'us');
+				   } else {
+					 localStorage.removeItem('idioma');
+					 trocaLingua('br');
+				   }
+				 });
+				 var idioma = localStorage.getItem('idioma');
+				 if (idioma != null) {
+				   trocaLingua('us');
+				 }
+				   </script>
+			   
+				   <script defer charset="utf-8" src="./js/traducao.js"></script>
+				   
+				   <!--<script type="text/javascript">
+					   function googleTranslateElementInit() {
+						 new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+					   }
+					   
+					   // Quando o botão "EN" for clicado, simule um clique no widget do Google Tradutor
+					   document.getElementById("flag").addEventListener("click", function() {
+						 var select = document.querySelector(".goog-te-combo");
+						 select.value = 'en';
+						 select.dispatchEvent(new Event('change'));
+					   });
+					   </script>
+					   
+					   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+					   <script>
+						   function googleTranslateElementInit() {
+							 new google.translate.TranslateElement({
+							   pageLanguage: 'auto',
+							   includedLanguages: 'en,pt',
+							   layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+							 }, 'google_translate_element');
+						   
+							 document.querySelector(".goog-te-gadget-simple").innerHTML="<div id='flag' class='us-flag'>EN</div>"
+						   }
+						   
+						   // Quando o DOM estiver totalmente carregado
+						   document.addEventListener('DOMContentLoaded', (event) => {
+							 // Verifique repetidamente se o widget do Google Tradutor foi carregado
+							 var checkExist = setInterval(function() {
+							   var select = document.querySelector("iframe.goog-te-menu-frame");
+							   if (select) {
+								 var doc = select.contentDocument;
+								 var element = doc.querySelector(".goog-te-menu2-item span.text:contains('Inglês')");
+								 if (element) {
+								   element.innerHTML = element.innerHTML.replace('Inglês', 'English');
+								   clearInterval(checkExist);
+								 }
+							   }
+							 }, 100); // Verifique a cada 100ms
+						   });
+						   </script>
+						   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

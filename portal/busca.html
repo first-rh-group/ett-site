@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Busca de Dicas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/busca.css">
+    <script src="https://cdn.tiny.cloud/1/i3h4t75csyitvovb5yvkpgzlxfweh6e0av6v2gupxbh24j88/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        #grupoSelect {
+            width: 200px;
+            height: 30px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .editButton {
+        background-color: #4CAF50; /* Verde */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .editButton:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <select id="grupoSelect">
+        <!-- As opções serão preenchidas dinamicamente pelo JavaScript -->
+    </select>
+
+    <table id="dicasTable">
+        <thead>
+            <tr>
+                <th>GRUPO</th>
+                <th>TITULO</th>
+                <th>INFORMAÇÕES</th>
+                <th>INCLUSÃO</th>
+                <th>VALIDADE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- As linhas da tabela serão adicionadas aqui pelo JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="editForm" method="post" enctype="multipart/form-data">
+            <label for="grupo">Grupo:</label>
+            <select name="grupo" id="grupo">
+                <option value="1">Políticas First RH Group</option>
+                <option value="2">Documentação</option>
+                <option value="3">Comunicados</option>
+                <option value="4">Saúde</option>
+                <option value="5">Cursos</option>
+                <option value="6">Parcerias</option>
+                <option value="7">Canal de Denúncias</option>
+                <option value="8">Perguntas Frenquentes</option>
+            </select>
+
+            <input type="hidden" id="id" name="id">
+
+            <label for="titulo">Título:</label>
+            <textarea id="titulo" name="titulo"></textarea>
+
+            <label for="informacoes">Informações Gerais:</label>
+            <textarea id="informacoes" name="informacoes"></textarea>
+
+            <label for="posicao">Posição:</label>
+            <input type="number" id="posicao" name="posicao" min="1">
+
+            <label for="links">Links:</label>
+            <input type="text" id="links" name="links">
+
+            <label for="validade">Validade:</label>
+            <input type="date" id="validade" name="validade">
+
+            <label for="imagem">Imagem:</label>
+            <input type="file" id="imagem" name="imagem">
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>
+
+    <script>
+        tinymce.init({
+        selector: '#titulo, #informacoes',
+        plugins: 'link image code',
+        toolbar: 'undo redo | link image | code',
+    });
+    $(document).ready(function() {
+    $('#editForm').on('submit', function(e) {
+        console.log('submit event triggered');
+        e.preventDefault(); // Evita o comportamento de submissão padrão do formulário
+
+        // Obtém o conteúdo do TinyMCE e define o valor dos campos de texto
+        document.getElementById('titulo').value = tinymce.get('titulo').getContent();
+        document.getElementById('informacoes').value = tinymce.get('informacoes').getContent();
+
+        console.log(document.getElementById('titulo').value);
+        console.log(document.getElementById('informacoes').value);
+        var formData = new FormData();
+        formData.append('titulo', document.getElementById('titulo').value);
+        formData.append('informacoes', document.getElementById('informacoes').value);
+        formData.append('id', document.getElementById('id').value);
+        formData.append('links', JSON.stringify(document.getElementById('links').value));
+        formData.append('validade', document.getElementById('validade').value);
+        formData.append('imagem', document.getElementById('imagem').files[0]);
+        formData.append('posicao', document.getElementById('posicao').value);
+
+        var imagem = document.getElementById('imagem').files[0];
+        if (imagem) {
+            formData.append('imagem', imagem);
+        }
+        
+        console.log(formData);
+    $.ajax({
+        url: 'session/atualiza_dica.php', // URL do script PHP que irá atualizar os dados no banco de dados
+        method: 'POST',
+        data: formData,
+        processData: false, // Necessário para enviar objetos FormData
+        contentType: false, // Necessário para enviar objetos FormData
+        success: function(data) {
+            console.log(data);
+            // Aqui você pode adicionar código para atualizar a interface do usuário após a atualização bem-sucedida dos dados
+            $('#editModal').hide(); // Esconde o modal
+            buscarDicas(null); // Atualiza a lista de dicas
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+});
+
+            // Busca os grupos do banco de dados
+            $.ajax({
+                url: 'session/busca_grupos.php',
+                method: 'GET',
+                success: function(data) {
+                    console.log(data);
+                    var grupos = JSON.parse(data);
+                    var select = $('#grupoSelect');
+                    // Adiciona a opção "Todos"
+                    select.append($('<option>').val('').text('Todos'));
+                    grupos.forEach(function(grupo) {
+                        var option = $('<option>');
+                        option.val(grupo.id_grupo);
+                        option.text(grupo.grupo);
+                        select.append(option);
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+    
+            $(document).on('click', '.editButton', function() {
+                var dica = $(this).data('dica');
+    // Define o valor do campo de entrada oculto para o ID da dica
+    $('#id').val(dica.id);
+    // Agora o formulário está disponível, então podemos preencher os campos
+    tinymce.get('titulo').setContent(dica.titulo);
+    tinymce.get('informacoes').setContent(dica.informacoes);
+    $('#posicao').val(dica.posicao);
+    $('#links').val(dica.links);
+    $('#validade').val(dica.validade);
+    // Para a imagem, você pode precisar fazer algo diferente dependendo de como ela é armazenada
+    // Se a imagem for armazenada como uma string base64, você pode fazer algo assim:
+    $('#imagem').attr('src', 'data:image/jpeg;base64,' + dica.imagem);
+    $('#editModal').show();
+        });
+
+        // Quando o usuário clica em qualquer lugar fora do modal, fecha o modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('editModal')) {
+                document.getElementById('editModal').style.display = "none";
+            }
+        }
+    
+            // Função para buscar e exibir as dicas
+            function buscarDicas(grupoId) {
+                $.ajax({
+                    url: 'session/busca_dicas.php',
+                    method: 'GET',
+                    data: { grupoId: grupoId },
+                    success: function(data) {
+                        console.log(data);
+                        var dicas = JSON.parse(data);
+                        var tbody = $('#dicasTable tbody');
+                        tbody.empty();
+                        dicas.forEach(function(dica) {
+                            var row = $('<tr>');
+                            row.append($('<td>').text(dica.nome_grupo));
+                            row.append($('<td>').html(dica.titulo));
+                            row.append($('<td>').html(dica.informacoes));
+                            row.append($('<td>').text(dica.inclusao));
+                            row.append($('<td>').text(dica.validade));
+                            var editButton = $('<button>').text('Editar').addClass('editButton');
+                            editButton.data('dica', dica);  // Armazene os dados da dica no botão
+                            row.append($('<td>').append(editButton));
+                            $('#dicasTable tbody').append(row);
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+    
+            // Quando a página é carregada, busca todas as dicas
+            buscarDicas(null);
+    
+            // Quando um grupo é selecionado, busca as dicas correspondentes
+            $('#grupoSelect').change(function() {
+                var grupoId = $(this).val();
+                buscarDicas(grupoId);
+            });
+            $('.close').click(function() {
+            $('#editModal').hide();
+        });
+        });
+    </script>
+</body>
+</html>

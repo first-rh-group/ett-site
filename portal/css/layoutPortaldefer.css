@@ -67,3 +67,82 @@ div.folhaPonto button {
 .documentacaoDiv > div:hover {
   box-shadow: unset;
 }
+.resultsDicas > div {
+  display: flex;
+  min-height: 35px;
+  align-items: center;
+  padding: 3px;
+  --gap: 20px;
+  gap: var(--gap);
+  --coluna_id: 45px;
+  --coluna_grupo: 230px;
+  --coluna_data: 175px;
+  --coluna_anexos: 80px;
+  --coluna_titulo: calc(
+    100% -
+      calc(
+        var(--coluna_id) + var(--coluna_grupo) + calc(var(--coluna_data) * 2) +
+          var(--coluna_anexos) + calc(var(--gap) * 6)
+      ) / 2
+  );
+}
+.resultsDicas > div:nth-child(odd) {
+  background-color: hsl(222deg 48% 95%);
+}
+.resultsDicas > div:nth-child(even) {
+  background-color: hsl(222deg 48% 90%);
+}
+.resultsDicas > div + div {
+  margin-bottom: 5px;
+}
+.resultsDicas > div:first-of-type {
+  background-color: var(--azulFirst);
+  color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.resultsDicas > div:last-of-type {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.resultsDicas > div > div {
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.resultsDicas > div:nth-of-type(n + 2) {
+  align-items: flex-start;
+}
+.resultsDicas > div:nth-of-type(n + 2):hover {
+  cursor: pointer;
+  background-color: hsl(222deg 48% 80%);
+}
+.resultsDicas > div > div:nth-of-type(1) {
+  width: var(--coluna_id);
+  max-width: var(--coluna_id);
+}
+.resultsDicas > div > div:nth-of-type(2) {
+  width: var(--coluna_grupo);
+  max-width: var(--coluna_grupo);
+}
+.resultsDicas > div > div:nth-of-type(3) {
+  width: var(--coluna_titulo);
+  max-width: var(--coluna_titulo);
+}
+.resultsDicas > div > div:nth-of-type(4) {
+  width: var(--coluna_titulo);
+  max-width: var(--coluna_titulo);
+  max-height: 110px;
+}
+.resultsDicas > div > div:nth-of-type(5) {
+  width: var(--coluna_data);
+  max-width: var(--coluna_data);
+}
+.resultsDicas > div > div:nth-of-type(6) {
+  width: var(--coluna_data);
+  max-width: var(--coluna_data);
+}
+.resultsDicas > div > div:nth-of-type(7) {
+  width: var(--coluna_anexos);
+  max-width: var(--coluna_anexos);
+  text-align: center;
+}

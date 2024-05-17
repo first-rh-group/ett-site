@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     console.log(editarNome);
     console.log(editarEmail);
-    // console.log(editarSenha);
+    console.log(editarSenha);
 
     if (editarNome) {
       editarNome.addEventListener('click', function () {
@@ -349,18 +349,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
   } else {
     console.error('Elemento adminDiv não encontrado');
   }
-  function loadFaqAdmin() {
+  function loadFaqAdmin(event) {
+    event.preventDefault();
     fetch('gerenciar_faq.php', {
-      method: 'GET',
-      // ou 'POST'
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-      // body: JSON.stringify(data), // se você estiver usando o método POST
+      method: 'GET'
     }).then(function (response) {
       return response.text();
     }).then(function (data) {
-      // Insira a resposta na div 'principal'
       bemvindoDiv.innerHTML = data;
     })["catch"](function (error) {
       console.error('Error:', error);
@@ -443,6 +438,235 @@ document.addEventListener('DOMContentLoaded', function (event) {
       });
     });
   }
+  function aplicarTinyMCE(id) {
+    tinymce.init({
+        selector: '#' + id
+    });
+}
+function loadUsuarioDicas(event) {
+  event.preventDefault();
+  fetch('usuariodicas.html', {
+    method: 'GET'
+  }).then(function (response) {
+    return response.text();
+  }).then(function (data) {
+    bemvindoDiv.innerHTML = data;
+
+    // Aplica o TinyMCE aos elementos de texto
+    aplicarTinyMCE('titulo');
+    aplicarTinyMCE('informacoes');
+
+    // Aplica o estilo diretamente ao elemento
+    var mainSection = document.querySelector('section#main');
+    if (mainSection) {
+      mainSection.style.minHeight = 'calc(113vh - 200px)';
+    } else {
+      console.error('Elemento não encontrado: section#main');
+    }
+  })["catch"](function (error) {
+    console.error('Error:', error);
+  });
+}
+
+var usuarioDicasElement = document.querySelector('#sideMenu > div.admin > div:nth-child(2) > div:nth-child(1)');
+if (usuarioDicasElement) {
+    usuarioDicasElement.addEventListener('click', loadUsuarioDicas);
+} else {
+    console.error('Elemento não encontrado: #sideMenu > div.admin > div:nth-child(2) > div:nth-child(1)');
+}
+
+function loadBusca(event) {
+  event.preventDefault();
+  fetch('busca.html', {
+      method: 'GET'
+  }).then(function (response) {
+      return response.text();
+  }).then(function (data) {
+      bemvindoDiv.innerHTML = data;
+
+      // Busca os grupos do banco de dados
+      $.ajax({
+        url: 'session/busca_grupos.php',
+        method: 'GET',
+        success: function(data) {
+            console.log(data);
+            var grupos = JSON.parse(data);
+            var select = $('#grupoSelect');
+            // Adiciona a opção "Todos"
+            select.append($('<option>').val('').text('Todos'));
+            grupos.forEach(function(grupo) {
+                var option = $('<option>');
+                option.val(grupo.id_grupo);
+                option.text(grupo.grupo);
+                select.append(option);
+            });
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+
+    // Função para buscar e exibir as dicas
+    function buscarDicas(grupoId) {
+        $.ajax({
+            url: 'session/busca_dicas.php',
+            method: 'GET',
+            data: { grupoId: grupoId },
+            success: function(data) {
+                console.log(data);
+                var dicas = JSON.parse(data);
+                var tbody = $('#dicasTable tbody');
+                tbody.empty();
+                dicas.forEach(function(dica) {
+                    var row = $('<tr>');
+                    row.append($('<td>').text(dica.nome_grupo));
+                    row.append($('<td>').html(dica.titulo));
+                    row.append($('<td>').html(dica.informacoes));
+                    row.append($('<td>').text(dica.inclusao));
+                    row.append($('<td>').text(dica.validade));
+                    var editButton = $('<button>').text('Editar').addClass('editButton');
+                    editButton.data('dica', dica);  // Armazene os dados da dica no botão
+                    row.append($('<td>').append(editButton));
+                    $('#dicasTable tbody').append(row);
+
+                    // Adicione um manipulador de eventos ao botão "Editar"
+                editButton.click(function() {
+                  // Abra o modal
+                  $('#editModal').show();
+
+                  // Preencha o formulário com os dados da dica
+                  $('#editForm #grupo').val(dica.grupo);
+                  $('#editForm #id').val(dica.id);
+                  $('#editForm #titulo').val(dica.titulo);
+                  $('#editForm #informacoes').val(dica.informacoes);
+                  $('#editForm #posicao').val(dica.posicao);
+                  $('#editForm #links').val(dica.links);
+                  $('#editForm #validade').val(dica.validade);
+
+                  tinymce.init({
+                    selector: '#editForm #titulo, #editForm #informacoes',
+                    plugins: 'link image code',
+                    toolbar: 'undo redo | link image | code',
+                });
+
+                // Adicione um botão de exclusão
+var deleteButton = $('<button>').text('Excluir').addClass('deleteButton').css('color', 'red');
+$('#editForm').append(deleteButton);
+
+// Adicione um manipulador de eventos ao botão "Excluir"
+deleteButton.click(function(event) {
+    event.preventDefault(); // Evita o comportamento de submissão padrão do botão
+
+    // Confirma se o usuário realmente deseja excluir a dica
+    if (!confirm('Tem certeza de que deseja excluir esta dica?')) {
+        return;
+    }
+
+    // Faça uma solicitação AJAX para excluir a dica
+    $.ajax({
+      url: 'session/atualiza_dica.php',
+      method: 'POST',
+      data: { id: dica.id, action: 'delete' },
+        success: function(data) {
+            console.log(data);
+
+            // Feche o modal
+            $('#editModal').hide();
+
+            // Busque as dicas novamente para atualizar a tabela
+            var grupoId = $('#grupoSelect').val();
+            buscarDicas(grupoId);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+});
+
+// Quando o formulário é enviado, atualiza as informações da dica
+$('#editForm').submit(function(event) {
+  console.log('submit event triggered');
+  event.preventDefault(); // Evita o comportamento de submissão padrão do formulário
+
+  // Obtém o conteúdo do TinyMCE e define o valor dos campos de texto
+  document.getElementById('titulo').value = tinymce.get('titulo').getContent();
+  document.getElementById('informacoes').value = tinymce.get('informacoes').getContent();
+
+  console.log(document.getElementById('titulo').value);
+  console.log(document.getElementById('informacoes').value);
+
+  // Cria um objeto FormData a partir do formulário
+  var formData = new FormData(this);
+
+  var imagem = document.getElementById('imagem').files[0];
+  if (imagem) {
+      formData.append('imagem', imagem);
+  }
+
+  // Imprime os conteúdos do objeto FormData
+  for (var pair of formData.entries()) {
+      console.log(pair[0]+ ', ' + pair[1]);
+  }
+
+  // Faça uma solicitação AJAX para atualizar a dica
+  $.ajax({
+      url: 'session/atualiza_dica.php',
+      method: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(data) {
+          console.log(data);
+
+          // Feche o modal
+          $('#editModal').hide();
+
+          // Busque as dicas novamente para atualizar a tabela
+          var grupoId = $('#grupoSelect').val();
+          buscarDicas(grupoId);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+      }
+  });
+});
+              });
+                });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+    }
+
+    // Quando a página é carregada, busca todas as dicas
+    buscarDicas(null);
+
+    // Quando um grupo é selecionado, busca as dicas correspondentes
+    $('#grupoSelect').change(function() {
+        var grupoId = $(this).val();
+        buscarDicas(grupoId);
+    });
+
+    $('.close').click(function() {
+        $('#editModal').hide();
+    });
+
+    // Coloque o restante do código JavaScript aqui
+    // ...
+
+}).catch(function (error) {
+    console.error('Error:', error);
+});
+}
+
+var buscaElement = document.querySelector('#sideMenu > div.admin > div:nth-child(2) > div:nth-child(2)');
+if (buscaElement) {
+  buscaElement.addEventListener('click', loadBusca);
+} else {
+  console.error('Elemento não encontrado: #sideMenu > div.admin > div:nth-child(2) > div:nth-child(2)');
+}
+
   mostrarBoasVindas();
 
   /* document.body.addEventListener('click', (event) => {

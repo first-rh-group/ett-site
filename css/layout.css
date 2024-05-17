@@ -45,6 +45,17 @@
   --paddingFaixas: clamp(50px, 5vw, 30%);
   --tamanhoRetangulo: 200px;
 }
+body .whatsapp-button {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 1000 !important;
+}
+
+.whatsapp-button img {
+  width: 90px !important;
+  height: 90px !important;
+}
 #container {
   scroll-behavior: smooth;
   position: relative;
@@ -53,6 +64,7 @@
   /*overflow: auto;*/
   margin: 0 auto;
   background-color: white;
+  padding-top: 80px; /* Ajuste isso para a altura do seu cabeçalho */
 }
 body {
   scroll-behavior: smooth;
@@ -73,10 +85,14 @@ body,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 15px; */
   padding: 10px 3vw 10px 0;
   min-height: var(--headerMinHeight);
   background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .header p {
   all: unset;
@@ -324,7 +340,7 @@ a {
 }
 .header > div:nth-of-type(2) > div > div,
 .header > div:nth-of-type(2) > div > a > div {
-  min-height: 30px;
+  min-height: 20px;
   min-width: 30px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -341,10 +357,22 @@ a {
   align-items: center;
   justify-content: center;
   color: rgba(107, 14, 14);
+  font-size: 20px;
+}
+.goog-te-gadget-simple { 
+  border-left: 0px !important;
+  border-top: 0px !important;
+  border-bottom:  0px !important;
+  border-right:  0px !important;
+
 }
 #flag:hover {
   color: black;
   font-weight: 700;
+}
+body > div:nth-child(1) {
+  display: none; 
+
 }
 .br-flag {
   /* filter: grayscale(1);
@@ -557,32 +585,6 @@ a {
   min-width: 1px;
   background-color: lightgray;
 }
-#solucoesHumanas {
-  background-image: url(../new_img/PÁGINA\ PRINCIPAL\ 2.png);
-  background-position-x: right;
-  background-attachment: fixed;
-  background-color: #000000e3;
-  background-size: cover;
-  height: 45vh;
-  background-repeat: no-repeat;
-  color: white;
-  font-size: clamp(28px, 5vw, 35px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4vw;
-}
-#solucoesHumanas > div {
-   flex: 1; /* Distribui o espaço igualmente entre as divs */
-   margin-top: 70px; /* Adiciona um espaço superior de 10 pixels */
-}
-
-#solucoesHumanas > div:nth-of-type(2) {
-  font-weight: bold;
-  opacity: 0;
-}
 
 #pqFirst {
   min-height: 40vh;
@@ -766,11 +768,36 @@ a {
   > div:first-of-type::after {
   content: "%";
 }
+/*@keyframes pulo {
+  0% {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}*/
+
 .counter-value {
+  /*opacity: 0;*/
+  transition: transform 0.3s ease-in-out;
   font-size: clamp(1.2rem, 8vw, 2rem);
   color: #91191e;
 }
 
+.counter-value:hover {
+  transform: scale(1.1);
+}
+
+/*.counter-value.visible {
+  opacity: 1;
+  animation: pulo 0.8s ease-out;
+}*/
+body {
+  top: 0px !important;
+}
 #podemosAjudar,
 #procuraApoio {
   padding: 3vw; /* aqui pode ser 3vw */
@@ -966,6 +993,10 @@ a {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+.icon-rodape {
+  height: 1.8em;
+  margin-right: 15px;
+}
 .ofertaTrabalho:first-of-type {
   margin-top: 0px;
 }
@@ -1085,11 +1116,15 @@ a {
   display: flex;
   justify-content: space-between;
 }
+#faq .rectangle:hover {
+  background-color: red; /* Muda a cor de fundo para vermelho quando o mouse passa por cima */
+}
 #faq .rectangle {
   font-family: var(--fontExtraBold);
-  background-color:#d9d9d9;
+  /*background-color:#d9d9d9;*/
+  background-color: #91191e;
   color: black;
-  border: 2px solid black;
+  border: 2px solid white;
   margin: 5px;
   padding: 25px;
   text-align: center;
@@ -1143,6 +1178,32 @@ a {
     background-position: left center;
   }
 }
+#solucoesHumanas {
+  background-image: url(../new_img/PÁGINA\ PRINCIPAL\ 2.png);
+  background-position-x: right;
+  background-attachment: fixed;
+  background-color: #000000e3;
+  background-size: cover;
+  height: 45vh;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: clamp(28px, 5vw, 35px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4vw;
+}
+#solucoesHumanas > div {
+   flex: 1; /* Distribui o espaço igualmente entre as divs */
+   margin-top: 70px; /* Adiciona um espaço superior de 10 pixels */
+}
+
+#solucoesHumanas > div:nth-of-type(2) {
+  font-weight: bold;
+  opacity: 0;
+}
 @media only screen and (max-width: 1050px) {
   #solucoesHumanas {
     background-position-x: -1200px;
@@ -1155,13 +1216,26 @@ a {
 }
 @media only screen and (max-width: 460px) {
   #solucoesHumanas {
-    background-position-x: -1300px;
+    background-attachment: scroll;
+    background-position-x: -540px;
+    background-size: cover;
   }
 }
 @media screen and (max-width: 768px) {
+  .icon-rodape {
+    margin-right: 22px;
+}
+  #container { 
+    padding-top: 90px;
+  }
   .numeroFirstGroup > div:nth-of-type(2) {
     grid-template-columns: repeat(1, 1fr);
     gap: 5vw; /* Ajuste o espaçamento vertical conforme necessário */
+  }
+}
+@media (max-width: 1366px) {
+  .icon-rodape {
+      margin-right: 15px;
   }
 }
 @media screen and (min-width: 1920px) {

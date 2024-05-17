@@ -70,7 +70,8 @@ section#login > div {
   /* background-color: var(--vermelhoFirst); */
   background-color: #91191e;
   width: clamp(350px, 35vw, 600px);
-  height: 350px; /* Adicione esta linha */
+  /*height: 350px; Adicione esta linha */
+  height: 310px;
   box-sizing: border-box; /* Adicione esta linha */
   padding: 5vw;
   border-radius: 40px; /* Aumente o valor aqui */
@@ -84,11 +85,37 @@ section#login > div {
   max-width: 95vw;
   margin-bottom: 100px;
 }
+.senha-e-botao #loginButton {
+  position: absolute;
+  right: 85px;
+  top: 72%;
+  transform: translateY(-50%);
+}
+.senha-e-botao #loginButton {
+  margin-left: auto;
+}
 section#login form > div {
-  /* display: flex; */
+  /*display: flex;*/
   flex-direction: column;
   gap: 10px;
+  /*margin-left: auto; /* Centraliza horizontalmente */
+  /*padding-right: 20px; /* Move um pouco para a direita */
 }
+/*section#login form > .button-container {
+  flex-direction: row;
+}
+/*.button-container {
+  display: flex;
+  gap: 10px; /* Espaço entre os botões
+}*/
+
+/*.button-container {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px; /* Espaço entre os botões
+}*/
+
+
 section#login form > div:not(div:last-of-type) {
   margin-bottom: 2vh;
 }
@@ -149,9 +176,16 @@ section#login form label {
     background-image: url(../../new_img/tentei.png);
   }
   #recuperarButton {
-    bottom: 20px;
+    bottom: 0px;
   }
 }
+
+@media (max-width: 1366px) {
+  .senha-e-botao #loginButton {
+    right: 20px;
+  }
+}
+
 
 /* @media screen and (max-width: 768px) {
   #loginForm {

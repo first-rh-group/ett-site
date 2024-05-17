@@ -559,7 +559,7 @@
     line-height: 23px;
     font-weight: 200;
     font-family: sans-serif;
-    background-color: whitesmoke;
+    /*background-color: whitesmoke;*/
     color: var(--black);
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -570,6 +570,7 @@
   .recuperarSenha > div:not(div:last-of-type) {
     margin-bottom: 5px;
   }
+  
   .editarPerfil {
     border: 1px solid gray;
     padding: 3vw;

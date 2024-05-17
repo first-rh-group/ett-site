@@ -36,6 +36,7 @@ function recuperarSenha(cpf) {
   var instrucoes = {
     "cpf": cpf
   };
+  var xmlhttp;
   if (window.XMLHttpRequest) {
     // Mozilla, Safari, ...
     xmlhttp = new XMLHttpRequest();
@@ -74,24 +75,28 @@ function recuperarSenha(cpf) {
           });
           var recuper2 = criarElement({
             "textoHtml": "Localizamos o seguinte e-mail: ",
+            "attributes": {
+              "style": "color: #fff;" // Adicione esta linha
+            },
             "parent": recuper.id,
             "tag": "div"
           });
           var recuper2 = criarElement({
             "id": false,
             "attributes": {
-              "style": "font-weight: bolder;"
+              "style": "font-weight: bolder; display: block; width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 3px solid #193264; border-radius: 0.25rem; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;",
+              "value": res.email,
+              "readonly": true
             },
-            "textoHtml": res.email,
             "parent": recuper2.id,
-            "tag": "span"
+            "tag": "input"
           });
-          criarElement({
+          /*criarElement({
             "id": false,
             "textoHtml": "Se ele estiver certo, clique em NOVA SENHA para receber a nova senha nesse e-mail.",
             "parent": recuper.id,
             "tag": "div"
-          });
+          });*/
           var recuper2 = criarElement({
             "attributes": {
               "style": "display:flex;justify-content: center;"
@@ -105,13 +110,16 @@ function recuperarSenha(cpf) {
               "class": "btn btn-info",
               "onClick": "novaSenha('" + res.codigo + "');"
             },
-            "textoHtml": "NOVA SENHA",
+            "textoHtml": "ENVIAR NOVA SENHA",
             "parent": recuper2.id,
             "tag": "button"
           });
           criarElement({
             "id": false,
-            "textoHtml": "Se ele estiver incorreto ou não for mais seu, entre em contato com nosso setor de apoio ao empregado para alterar o e-mail e a senha de acesso.",
+            "textoHtml": "Se o seu endereço de e-mail estiver incorreto, entre em contato com o seu ponto focal no setor de Relacionamento ou envie um e-mail para portal.corporativo@firstrh.com.br",
+            "attributes": {
+              "style": "color: #fff;" // Adicione esta linha
+            },
             "parent": recuper.id,
             "tag": "div"
           });
@@ -154,8 +162,8 @@ function novaSenha(codigo) {
       } catch (e) {}
     }
   }
-  // console.log(instrucoes)
-  // console.log(JSON.stringify(instrucoes))
+  console.log(instrucoes)
+  console.log(JSON.stringify(instrucoes))
 
   xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -256,7 +264,7 @@ function login() {
       },
       "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
       "addClass": ['btn-success'],
-      "htmlText": "LOGIN NO SISTEMA",
+      "htmlText": "ENTRAR",
       "selector": "section#login button"
     });
   } else {
@@ -312,7 +320,7 @@ function login() {
             console.error("Erro ao processar a resposta do servidor: ", e);
           }
         }
-        // console.log(res);
+        console.log(res);
         if (res == false) {
           changeAttributes({
             "attributes": {
@@ -321,7 +329,7 @@ function login() {
             },
             "removeClass": ['btn-secondary', 'btn-danger', 'nohand'],
             "addClass": ['btn-success'],
-            "htmlText": "LOGIN NO SISTEMA",
+            "htmlText": "ENTRAR",
             "selector": "section#login button"
           });
           alertErros({

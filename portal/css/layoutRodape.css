@@ -19,6 +19,6 @@ section#rodape > div:first-of-type {
   padding: 5px;
 }
 section#rodape > div:last-of-type {
-  min-height: 50px;
+  /*min-height: 200px;*/
   background-color: white;
 }

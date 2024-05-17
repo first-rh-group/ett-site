@@ -7,6 +7,9 @@ mb_http_output('UTF-8');
 mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 try {
     // O resto do seu código vai aqui
@@ -20,7 +23,7 @@ include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\portal\session\loca
     echo json_encode(['error' => 'No action specified']);
     exit();
 }*/
-if ($_POST['action'] == 'superCoringa') {
+if (isset($_POST['action']) && $_POST['action'] == 'superCoringa') {
 	if ($_POST['codigo'] == '1') {
 		$infoUser = infoUser([
 			'cpf' => $_SESSION['infoUser']['login'],
@@ -253,7 +256,7 @@ if ($_POST['action'] == 'superCoringa') {
 		$dbname = "grupofir_dicas";
 		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
-		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE STR_TO_DATE(validade, '%Y-%m-%d') IS NULL OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
+		$query = "SELECT grupo, COUNT(*) as quantos FROM dicas WHERE validade = '0000-00-00' OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE() GROUP BY grupo ORDER BY grupo ASC";
 		$st = $db->prepare($query);
 		$st->execute();
 		$dicas = $st->fetchAll(PDO::FETCH_ASSOC);
@@ -264,15 +267,12 @@ if ($_POST['action'] == 'superCoringa') {
 			'dicas' => $dicas,
 		]);
 	} else if ($_POST['codigo'] == '14') {
-		//echo "Entrou no bloco de código 14";
-		//var_dump($_POST); // Adicione esta linha
 		$dbname = "grupofir_dicas";
-		/* include('/home/grupofirstrh/data/connectionSuperUser.php'); */
 		include('C:\Data Campos Sistemas\Apache24\htdocs\projeto_ett\data\connectionSuperUser.php');
 		$db->exec("set names utf8mb4");
 		$executePDO = [];
 		$where = [];
-		if ($_POST['grupo'] == 'Todos') {
+		if (isset($_POST['grupo']) && $_POST['grupo'] == 'Todos') {
 			$executePDO[] = 0;
 			$where[] = 'id > ?';
 		} else if (isset($_POST['grupo']) && $_POST['grupo'] != 'Todos') {
@@ -283,22 +283,26 @@ if ($_POST['action'] == 'superCoringa') {
 			$executePDO[] = apenasNumeros($_POST['idDica']);
 			$where[] = 'id = ?';
 		}
-		//echo "Valor de grupo: " . $_POST['grupo'];
-		//echo "Valor de idDica: " . (isset($_POST['idDica']) ? $_POST['idDica'] : 'Não definido');
 		if (count($where) == 0) {
 			$where[] = 'id > ?';
 			$executePDO[] = 0;
 		}
-		$query = "SELECT id as idDica, grupo, titulo, informacoes, links, inclusao, validade FROM dicas WHERE " . implode(' AND ', $where) . " AND (STR_TO_DATE(validade, '%Y-%m-%d') IS NULL OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE()) ORDER BY grupo ASC, inclusao DESC, validade DESC";
-		//echo "Consulta SQL: " . $query;
+		$query = "SELECT id as idDica, grupo, titulo, informacoes, links, inclusao, validade, imagem FROM dicas WHERE " . implode(' AND ', $where) . " AND (validade = '0000-00-00' OR STR_TO_DATE(validade, '%Y-%m-%d') >= CURRENT_DATE()) ORDER BY grupo ASC, inclusao DESC, validade DESC";
 		$st = $db->prepare($query);
 		$st->execute($executePDO);
 		$databaseErrors = $st->errorInfo();
 		if ($databaseErrors[0] == '00000') {
 			$dicas = $st->fetchAll(PDO::FETCH_ASSOC);
 			foreach ($dicas as $key => $dica) {
-				if (json_decode($dica['links'])[0] != '') {
-					$dicas[$key]['links'] = json_decode($dica['links']);
+				if ($dica['imagem']) {
+					// Remove qualquer ocorrência do prefixo "data:image/jpeg;base64,"
+					$base64Image = str_replace("data:image/jpeg;base64,", "", $dica['imagem']);
+					// Adiciona o prefixo novamente
+					$dicas[$key]['imagem'] = "data:image/jpeg;base64," . $base64Image;
+				}
+				$links = json_decode($dica['links'], true);
+				if (is_array($links) && $links[0] != '') {
+					$dicas[$key]['links'] = $links;
 				} else {
 					$dicas[$key]['links'] = '';
 				}
@@ -312,10 +316,11 @@ if ($_POST['action'] == 'superCoringa') {
 		} else {
 			$dicas = [];
 		}
-		echo json_encode([
+		$response = json_encode([
 			'erros' => ($databaseErrors[0] == '00000' ? false : true),
 			'dicas' => $dicas,
 		]);
-	}
-}
-// ULTIMO - 14
+		echo $response;
+		}
+		}
+		// ULTIMO - 14

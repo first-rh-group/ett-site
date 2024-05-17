@@ -47,7 +47,8 @@
 						<!-- <a target="_blank" href="https://wa.me/5521997969897">
 							<div class="whatsApp"></div>
 						</a> -->
-						<div id="flag" class="us-flag">EN</div>
+						<div id="google_translate_element"></div>
+						<!--<div id="flag" class="us-flag">EN</div>-->
 					</div>
 				</div>
 				<div id="toogle">
@@ -62,8 +63,8 @@
 			<div>Aqui a sua <strong>busca por oportunidades</strong> encontra a certeza de um suporte <strong>comprometido, responsável e 100% gratuito</strong>.</div>
 			<div>Em conformidade com a Lei Geral de Proteção de Dados Pessoais, não podemos receber currículos por e-mail ou mensagem. Os currículos devem ser enviados apenas através de um cadastro online em nosso sistema:</div>
 			<div class="button-container">
-				<a href="https://rio123.io/" class="retangular-button">Quero cadastrar meu currículo!</a>
-				<a href="https://rio123.io/parceiros/first-rh-group/" class="retangular-button">Quero conhecer as vagas oferecidas!</a>
+				<a href="https://rio123.io/" class="retangular-button" style="color: #ffffff;">Quero cadastrar meu currículo!</a>
+				<a href="https://rio123.io/parceiros/first-rh-group/" class="retangular-button" style="color: #ffffff;">Quero conhecer as vagas oferecidas!</a>
 			</div>
 		</section>
 		<section id="emBreve" class="container">
@@ -78,8 +79,8 @@
 				<div style="font-size: 20px; line-height: 1.3;">Nossas oportunidades também estão disponíveis em nossas <strong>redes sociais!</strong> Acompanhe-nos no LinkedIn e no Facebook e
 					siga as instruções encontradas nas postagens das oportunidades compatíveis com o seu perfil:</div>
 				<div>
-					<div><a href="https://www.facebook.com/firstrhgroup" target="_blank">/@firstrhgroup</a></div>
-					<div><a href="https://www.linkedin.com/company/firstrhgroup/" target="_blank">/First RH Group</a>
+					<div><a href="https://www.facebook.com/firstrhgroup" target="_blank">@firstrhgroup</a></div>
+					<div><a href="https://www.linkedin.com/company/firstrhgroup/" target="_blank">First RH Group</a>
 					</div>
 				</div>
 			</div>
@@ -190,6 +191,9 @@
 				<p style="text-align: center; margin-top: 30px;">FONTE: Pesquisa Anual de Satisfação de colaboradores</p>
 			</div>
 		</section>
+		<a href="https://wa.me/5521997969897" class="whatsapp-button">
+			<img src="./new_img/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.png" alt="WhatsApp">
+		</a> 
 	</section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
@@ -209,6 +213,79 @@ $(document).ready(function() {
     });
 });
 </script>
+<script> 
+	var flagMobile = document.getElementById('flag-mobile');
+ flagMobile.addEventListener('click', function () {
+   if (flagMobile.classList.contains('us-flag')) {
+	 localStorage.setItem('idioma', 'us');
+	 trocaLingua('us');
+   } else {
+	 localStorage.removeItem('idioma');
+	 trocaLingua('br');
+   }
+   menuMobile.classList.toggle("showMobileMenu");
+   toogleButton.classList.toggle("toogleCross");
+ });
+ var flag = document.getElementById('flag');
+ flag.addEventListener("click", function () {
+   if (flag.classList.contains('us-flag')) {
+	 trocaLingua('us');
+	 localStorage.setItem('idioma', 'us');
+   } else {
+	 localStorage.removeItem('idioma');
+	 trocaLingua('br');
+   }
+ });
+ var idioma = localStorage.getItem('idioma');
+ if (idioma != null) {
+   trocaLingua('us');
+ }
+   </script>
+
+   <script defer charset="utf-8" src="./js/traducao.js"></script>
+   
+   <!--<script type="text/javascript">
+	   function googleTranslateElementInit() {
+		 new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+	   }
+	   
+	   // Quando o botão "EN" for clicado, simule um clique no widget do Google Tradutor
+	   document.getElementById("flag").addEventListener("click", function() {
+		 var select = document.querySelector(".goog-te-combo");
+		 select.value = 'en';
+		 select.dispatchEvent(new Event('change'));
+	   });
+	   </script>
+	   
+	   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+	   <script>
+		   function googleTranslateElementInit() {
+			 new google.translate.TranslateElement({
+			   pageLanguage: 'auto',
+			   includedLanguages: 'en,pt',
+			   layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+			 }, 'google_translate_element');
+		   
+			 document.querySelector(".goog-te-gadget-simple").innerHTML="<div id='flag' class='us-flag'>EN</div>"
+		   }
+		   
+		   // Quando o DOM estiver totalmente carregado
+		   document.addEventListener('DOMContentLoaded', (event) => {
+			 // Verifique repetidamente se o widget do Google Tradutor foi carregado
+			 var checkExist = setInterval(function() {
+			   var select = document.querySelector("iframe.goog-te-menu-frame");
+			   if (select) {
+				 var doc = select.contentDocument;
+				 var element = doc.querySelector(".goog-te-menu2-item span.text:contains('Inglês')");
+				 if (element) {
+				   element.innerHTML = element.innerHTML.replace('Inglês', 'English');
+				   clearInterval(checkExist);
+				 }
+			   }
+			 }, 100); // Verifique a cada 100ms
+		   });
+		   </script>
+		   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

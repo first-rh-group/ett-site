@@ -1,5 +1,5 @@
 "use strict";
-
+var lingua;
 function geradorShares() {
   var _document$querySelect;
   (_document$querySelect = document.querySelector("div[data-share-button]")) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.remove();
@@ -82,7 +82,7 @@ function gerarRodape() {
     "id": false,
     "attributes": {
       "target": "_blank",
-      "href": "https://wa.me/5521997969897"
+      //"href": "https://wa.me/5521997969897"
     },
     "selector": true,
     "parent": document.querySelector("section#podemosAjudar > div:last-of-type"),
@@ -95,26 +95,35 @@ function gerarRodape() {
     options.parent.appendChild(element);
     if (options.tag === "button") {
       element.style.margin = "0 15px";
+      element.style.color = "black";
       element.parentNode.style.display = "flex";
       element.parentNode.style.justifyContent = "space-between";
       element.parentNode.style.display = "grid";
       element.parentNode.style.gridTemplateColumns = "repeat(2, 1fr)";
       element.parentNode.style.gap = "15px";
+      if (options.href) {
+        element.addEventListener('click', function() {
+          window.location.href = options.href;
+        });
+      }
     }
   }
-  criarElemento({
+   criarElemento({
     "id": false,
     "textoHtml": "Conheça as nossas soluções!",
     "selector": true,
     "parent": document.querySelector("section#podemosAjudar a"),
-    "tag": "button"
+    "tag": "button",
+    "href": "https://sitefirst.dtcx.com.br/solucoes.html"
   });
+  
   criarElemento({
     "id": false,
     "textoHtml": "Saiba mais sobre nossas vagas!",
     "selector": true,
     "parent": document.querySelector("section#podemosAjudar a"),
-    "tag": "button"
+    "tag": "button",
+    "href": "https://sitefirst.dtcx.com.br/candidato.html"
   });
   if (window.location.href.endsWith('solucoes.html')) {
     document.querySelectorAll("section#podemosAjudar a button").forEach(function (button) {
@@ -125,11 +134,13 @@ function gerarRodape() {
       "textoHtml": "Entre em contato com o nosso especialista",
       "selector": true,
       "parent": document.querySelector("section#podemosAjudar a"),
-      "tag": "button"
+      "tag": "button",
+      "href": "https://wa.me/5521997969897"
     });
     var container = document.querySelector("section#podemosAjudar a");
     container.style.display = "flex";
     container.style.justifyContent = "center";
+    container.style.webkitTextFillColor = "black";
   }
   if (window.location.href.endsWith('candidato.html')) {
     document.querySelectorAll("section#podemosAjudar a button").forEach(function (button) {
@@ -140,14 +151,17 @@ function gerarRodape() {
       "textoHtml": "Entre em contato!",
       "selector": true,
       "parent": document.querySelector("section#podemosAjudar a"),
-      "tag": "button"
+      "tag": "button",
+      "href": "https://wa.me/5521997969897"
     });
     document.querySelectorAll("section#podemosAjudar a button").forEach(function (button) {
       button.style.color = "black";
+      button.style.webkitTextFillColor = "black";
     });
     var _container = document.querySelector("section#podemosAjudar a");
     _container.style.display = "flex";
     _container.style.justifyContent = "center";
+    _container.style.webkitTextFillColor = "black";
   }
   if (window.location.href.endsWith('empresa.html')) {
     var botoes = document.querySelectorAll("section#podemosAjudar a button");
@@ -174,7 +188,8 @@ function gerarRodape() {
       "textoHtml": "Entre em contato!",
       "selector": true,
       "parent": document.querySelector("section#podemosAjudar a"),
-      "tag": "button"
+      "tag": "button",
+      "href": "https://wa.me/5521997969897"
     });
     var _container2 = document.querySelector("section#podemosAjudar a");
     _container2.style.display = "flex";
@@ -222,12 +237,12 @@ function gerarRodape() {
   }
   
   criarElement({
-      "id": false,
-      "textoHtml": `<img src='/projeto_ett/new_img/ICON RODAPE 1.png' alt='Ícone' style='margin-right: 9px; height: 1em;'><span style='margin-left: ${marginLeft};'><a href='mailto:contato@firstrh.com.br'>contato@firstrh.com.br</a></span>`,
-      "selector": true,
-      "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
-      "tag": "div"
-  });
+    "id": false,
+    "textoHtml": `<img class="icon-rodape" src='/projeto_ett/new_img/ICON RODAPE 1.png' alt='Ícone' style='height: 1.4em;'><span style='margin-left: ${marginLeft}; font-size: 17px;'><a href='mailto:contato@firstrh.com.br'>contato@firstrh.com.br</a></span>`,
+    "selector": true,
+    "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+    "tag": "div"
+});
   let marginLeft2;
   if (window.innerWidth === 1920 || window.innerWidth === 1366) {
       marginLeft2 = "3px";
@@ -236,12 +251,12 @@ function gerarRodape() {
   }
   
   criarElement({
-      "id": false,
-      "textoHtml": `<img src='/projeto_ett/new_img/ICON RODAPE 2.png' alt='Ícone' style='margin-right: 4px; height: 1.3em;'><span style='margin-left: ${marginLeft2};'><a href='https://api.whatsapp.com/send/?phone=5521997969897&text&type=phone_number&app_absent=0'>+55 21 99796-9897</a></span>`,
-      "selector": true,
-      "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
-      "tag": "div"
-  });
+    "id": false,
+    "textoHtml": `<img src='/projeto_ett/new_img/ICON RODAPE 2.png' alt='Ícone' style='margin-right: 10px; height: 1.8em;'><span style='margin-left: ${marginLeft2}; font-size: 17px;'><a href='https://api.whatsapp.com/send/?phone=5521997969897&text&type=phone_number&app_absent=0'>+55 21 99796-9897</a></span>`,
+    "selector": true,
+    "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+    "tag": "div"
+});
   let marginLeft3;
   if (window.innerWidth === 1920) {
       marginLeft3 = "2px";
@@ -250,19 +265,19 @@ function gerarRodape() {
   }
   
   criarElement({
-      "id": false,
-      "textoHtml": `<img src='/projeto_ett/new_img/ICON RODAPE 3.png' alt='Ícone' style='margin-right: 10px; height: 1em;'><span style='margin-left: ${marginLeft3};'><a href='https://br.linkedin.com/company/firstrhgroup'>@FirstRHGroup</a></span>`,
-      "selector": true,
-      "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
-      "tag": "div"
-  });
-  criarElement({
     "id": false,
-    "textoHtml": "<img src='/projeto_ett/new_img/ICON RODAPE 4.png' alt='Ícone' style='margin-right: 10px; height: 1em;'><a href='https://www.facebook.com/firstrhgroup/?locale=pt_BR'>First RH Group</a>",
+    "textoHtml": `<img src='/projeto_ett/new_img/ICON RODAPE 3.png' alt='Ícone' style='margin-right: 10px; height: 1.8em;'><span style='margin-left: ${marginLeft3}; font-size: 17px;'><a href='https://br.linkedin.com/company/firstrhgroup'>@FirstRHGroup</a></span>`,
     "selector": true,
     "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
     "tag": "div"
-  });
+});
+criarElement({
+  "id": false,
+  "textoHtml": "<img src='/projeto_ett/new_img/ICON RODAPE 4.png' alt='Ícone' style='margin-right: 13px; height: 1.8em;'><a href='https://www.facebook.com/firstrhgroup/?locale=pt_BR' style='font-size: 17px;'>First RH Group</a>",
+  "selector": true,
+  "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type"),
+  "tag": "div"
+});
   criarElement({
     "id": false,
     "selector": true,
@@ -401,7 +416,7 @@ function gerarRodape() {
   });
   criarElement({
     "id": false,
-    "textoHtml": "Desenvolvido por XPTO",
+    "textoHtml": "Desenvolvido por Data Campos Sistemas",
     "parent": "fechamento",
     "tag": "div"
   });
@@ -541,7 +556,8 @@ function gerarRodape() {
     "id": false,
     "textoHtml": "Soluções",
     "attributes": {
-      "empresa": ""
+      "empresa": "",
+      "href": "http://localhost:8080/projeto_ett/solucoes.html"
     },
     "selector": true,
     "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type > div:last-of-type"),
@@ -557,7 +573,8 @@ function gerarRodape() {
     "id": false,
     "textoHtml": "Oportunidades",
     "attributes": {
-      "candidato": ""
+      "candidato": "",
+      "href": "http://localhost:8080/projeto_ett/candidato.html"
     },
     "selector": true,
     "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type > div:last-of-type"),
@@ -573,7 +590,8 @@ function gerarRodape() {
     "id": false,
     "textoHtml": "Dúvidas Frequentes",
     "attributes": {
-      "duvidas": ""
+      "duvidas": "",
+      "href": "http://localhost:8080/projeto_ett/faq.html"
     },
     "selector": true,
     "parent": document.querySelector("section#rodape > div:last-of-type > div:last-of-type > div:last-of-type"),
@@ -768,15 +786,228 @@ function trocaLingua(idioma) {
     portalTopMobile.innerHTML = lingua.header.portal;
   }
 
+// Aplique a tradução ao corpo do documento
+/*let corpo = document.querySelector('section #inicial > section.main.container');
+corpo.querySelectorAll('div').forEach((div, index) => {
+  // Certifique-se de que existe uma tradução para este elemento
+  if (index < lingua.main.length) {
+    div.textContent = lingua.main[index];
+  }
+});
+
+// Aplique a tradução ao botão
+let botao = document.querySelector('#inicial > section.main.container > a > button');
+botao.textContent = lingua.main[lingua.main.length - 1];
+
+// Aplique a tradução para a seção 'procuroVagas'
+let procuroVagas = document.querySelector('section #procuroVagas');
+
+// Traduzir o texto acima dos botões
+let textoAcima = procuroVagas.querySelector('div:nth-child(1)');
+if (typeof lingua.procuroVagas[0] === 'string') {
+  textoAcima.innerHTML = lingua.procuroVagas[0];
+}
+
+// Traduzir o texto dos botões
+let botoes2 = [procuroVagas.querySelector('div:nth-child(2) > div:nth-child(1)'), procuroVagas.querySelector('div:nth-child(2) > div:nth-child(3)')];
+botoes2.forEach((botao, index) => {
+  if (index < lingua.procuroVagas.length - 1 && typeof lingua.procuroVagas[index + 1] !== 'string') {
+    botao.textContent = lingua.procuroVagas[index + 1].fora;
+
+    botao.addEventListener('mouseover', () => {
+      botao.textContent = lingua.procuroVagas[index + 1].dentro;
+    });
+
+    botao.addEventListener('mouseout', () => {
+      botao.textContent = lingua.procuroVagas[index + 1].fora;
+    });
+  }
+});
+
+    // Aplique a tradução para a seção 'solucoesHumanas'
+    let solucoesHumanas = document.querySelector('#solucoesHumanas');
+    solucoesHumanas.querySelectorAll('div').forEach((div, index) => {
+      if (index < lingua.solucoesHumanas.length) {
+        div.innerHTML = lingua.solucoesHumanas[index];
+      }
+    });
+
+// Aplique a tradução para a seção 'pqFirst'
+let pqFirst = document.querySelector('#pqFirst');
+
+// Traduza o texto "Nossos diferenciais"
+let titulo1 = pqFirst.querySelector('div:nth-child(1)');
+if (titulo1 && lingua.pqFirst.length > 0) {
+  titulo1.innerText = lingua.pqFirst[0]; // Use o primeiro elemento da matriz para o título
+}
+
+let pqFirstDivs = document.querySelectorAll('#pqFirst > div:nth-child(2) > div > div:nth-child(2)');
+
+pqFirstDivs.forEach((div, index) => {
+  // Ajuste o índice para corresponder à matriz lingua.pqFirst
+  let adjustedIndex = index + 1; // Comece a partir do segundo elemento da matriz
+  if (adjustedIndex < lingua.pqFirst.length) {
+    // Aplique a tradução
+    div.innerText = lingua.pqFirst[adjustedIndex];
+  }
+});
+
+        // Aplique a tradução para a seção 'entendaMais'
+    let entendaMais = document.querySelector('#entendaMais');
+    entendaMais.querySelectorAll('div').forEach((div, index) => {
+      if (index < lingua.entendaMais.length) {
+        div.innerHTML = lingua.entendaMais[index];
+      }
+    });
+
+    // Aplique a tradução para o botão na seção 'entendaMais'
+    let entendaMaisButton = entendaMais.querySelector('button');
+    if (lingua.entendaMais.length > entendaMais.querySelectorAll('div').length) {
+      entendaMaisButton.innerHTML = lingua.entendaMais[entendaMais.querySelectorAll('div').length];
+    }
+
+// Aplique a tradução para a seção 'numeroFirstGroup'
+let numeroFirstGroup = document.querySelector('#numeroFirstGroup'); */
+
+// Traduza o texto "Nossa história em números"
+let titulo = numeroFirstGroup.querySelector('div:nth-child(1)');
+if (titulo && lingua.numeroFirstGroup.length > 0) {
+  titulo.innerText = lingua.numeroFirstGroup[0]; // Use o primeiro elemento da matriz para o título
+}
+
+let numeroFirstGroupDivs = document.querySelectorAll('#numeroFirstGroup > div:nth-child(2) > div > div:nth-child(2)');
+
+numeroFirstGroupDivs.forEach((div, index) => {
+  // Ajuste o índice para corresponder à matriz lingua.numeroFirstGroup
+  let adjustedIndex = index + 1; // Comece a partir do segundo elemento da matriz
+  if (adjustedIndex < lingua.numeroFirstGroup.length) {
+    // Aplique a tradução
+    div.innerText = lingua.numeroFirstGroup[adjustedIndex];
+  }
+});
+
+// Aplique a tradução para a seção 'podemosAjudar'
+let podemosAjudar = document.querySelector('#podemosAjudar');
+
+// Aplique a tradução para a seção 'rodape'
+let rodape = document.querySelector('#rodape');
+
+// Traduza os itens do menu 'navegue'
+let navegueItems = rodape.querySelectorAll('div:nth-child(1) > div:nth-child(4) > a');
+navegueItems.forEach((item, index) => {
+  // Ajuste o índice para corresponder à matriz lingua.navegue
+  let adjustedIndex = index;
+  if (adjustedIndex < lingua.navegue.length) {
+    // Aplique a tradução
+    item.innerText = lingua.navegue[adjustedIndex];
+  }
+});
+
+// Traduza o título
+let tituloPodemosAjudar = podemosAjudar.querySelector('div:nth-child(1)');
+if (tituloPodemosAjudar && lingua.podemosAjudar.length > 0) {
+  tituloPodemosAjudar.innerText = lingua.podemosAjudar[0]; // Use o primeiro elemento da matriz para o título
+}
+
+// Traduza os botões
+let botoes = podemosAjudar.querySelectorAll('button');
+botoes.forEach((botao, index) => {
+  // Ajuste o índice para corresponder à matriz lingua.podemosAjudar
+  let adjustedIndex = index + 1;
+  if (adjustedIndex < lingua.podemosAjudar.length) {
+    botao.innerText = lingua.podemosAjudar[adjustedIndex];
+  }
+});
+
+
+// Selecione os elementos que você deseja traduzir
+let divsHistoria = document.querySelectorAll('.historia > div');
+let botaoHistoria = document.querySelector('.historia button');
+
+// Aplique a tradução para cada div
+divsHistoria.forEach((div, index) => {
+  // Ajuste o índice para corresponder à matriz lingua.geral
+  let adjustedIndex = index;
+  if (adjustedIndex < lingua.geral.length) {
+    // Aplique a tradução
+    div.innerText = lingua.geral[adjustedIndex];
+  }
+});
+
+// Aplique a tradução para o botão
+if (lingua.geral.length > divsHistoria.length) {
+  botaoHistoria.innerText = lingua.geral[divsHistoria.length];
+} 
+
+// PÁGINA EMPRESA.HTML
+
+// Aplique a tradução para a seção 'empresa'
+let empresa = document.querySelector('#empresa');
+
+// Traduza a seção 'geral'
+let geral = empresa.querySelector('.geral');
+if (geral && lingua.empresa.geral.length > 0) {
+  geral.innerText = lingua.empresa.geral[0];
+}
+
+// Traduza a seção 'first'
+let first = empresa.querySelector('.first');
+if (first && lingua.empresa.first.length > 0) {
+  first.innerText = lingua.empresa.first.join(' ');
+}
+
+// Traduza a seção 'shift'
+let shift = empresa.querySelector('.shift');
+if (shift && lingua.empresa.shift.length > 0) {
+  shift.innerText = lingua.empresa.shift.join(' ');
+}
+
+// Traduza a seção 'recruit'
+let recruit = empresa.querySelector('.recruit');
+if (recruit && lingua.empresa.recruit.length > 0) {
+  recruit.innerText = lingua.empresa.recruit.join(' ');
+}
+
+// Traduza a seção 'procurandoApoio'
+let procurandoApoio = empresa.querySelector('.procurandoApoio');
+if (procurandoApoio && lingua.empresa.procurandoApoio.length > 0) {
+  procurandoApoio.innerText = lingua.empresa.procurandoApoio.join(' ');
+}
+
+// Traduza a seção 'valores'
+let valores = empresa.querySelector('.valores');
+if (valores && lingua.empresa.valores.length > 0) {
+  valores.innerText = lingua.empresa.valores.join(' ');
+}
+
+// Traduza a seção 'consultores'
+let consultores = empresa.querySelector('.consultores');
+if (consultores && lingua.empresa.consultores.length > 0) {
+  consultores.innerText = lingua.empresa.consultores.join(' ');
+}
+
+// Traduza a seção 'podemosAjudar'
+let podemosAjudarEmpresa = empresa.querySelector('.podemosAjudar');
+if (podemosAjudarEmpresa && lingua.empresa.podemosAjudarEmpresa.length > 0) {
+  podemosAjudar.innerText = lingua.empresa.podemosAjudarEmpresa.join(' ');
+}
   // RODAPE
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)').innerHTML = lingua.rodape[0];
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)').innerHTML = lingua.rodape[1];
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1)').innerHTML = lingua.rodape[2];
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) a').innerHTML = lingua.navegue[0];
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4) a').innerHTML = lingua.navegue[1];
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(5) a').innerHTML = lingua.navegue[2];
-  document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(6) a').innerHTML = lingua.navegue[4];
-  document.querySelector("#rodape > div:nth-child(2) > a").innerHTML = lingua.lgpd;
+  var elemento1 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)');
+  if (elemento1) elemento1.innerHTML = lingua.rodape[0];
+  var elemento2 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1)');
+  if (elemento2) elemento2.innerHTML = lingua.rodape[1];
+  var elemento3 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1)');
+  if (elemento3) elemento3.innerHTML = lingua.rodape[2];
+  var elemento4 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) a');
+  if (elemento4) elemento4.innerHTML = lingua.navegue[0];
+  var elemento5 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4) a');
+  if (elemento5) elemento5.innerHTML = lingua.navegue[1];
+  var elemento6 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(5) a');
+  if (elemento6) elemento6.innerHTML = lingua.navegue[2];
+  var elemento7 = document.querySelector('section#rodape > div:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(6) a');
+  if (elemento7) elemento7.innerHTML = lingua.navegue[4];
+  var elemento8 = document.querySelector("#rodape > div:nth-child(2) > a");
+  if (elemento8) elemento8.innerHTML = lingua.lgpd;
   if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
     if (idioma == 'us') {
       lingua = english.index;

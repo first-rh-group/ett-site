@@ -40,7 +40,8 @@
 						<a portal href="https://portal.grupofirstrh.com.br">Portal</a>
 						<div>
 							<!-- <a target="_blank" href="https://wa.me/5521997969897"><div class="whatsApp"></div></a> -->
-							<div id="flag" class="us-flag">EN</div>
+							<div id="google_translate_element"></div>
+							<!--<div id="flag" class="us-flag">EN</div>-->
 						</div>
 					</div>
 					<div id="toogle">
@@ -53,8 +54,8 @@
 			<section id="faq" class="container">
 				<div>Aqui você encontra as respostas para as dúvidas frequentes de candidatos e empresas!</div>
 				<div class="rectangle-container">
-					<div class="rectangle" tabindex="0">Sou um candidato</div>
-					<div class="rectangle" tabindex="0">Represento uma empresa</div>
+					<div class="rectangle" tabindex="0" style="color: white;">Sou um candidato</div>
+					<div class="rectangle" tabindex="0" style="color: white;">Represento uma empresa</div>
 				</div>
 				<!-- <div class="faq"></div> -->
 				<script>
@@ -97,6 +98,9 @@
 				</script>
 			</section>
 			<div id="faqs"></div>
+			<a href="https://wa.me/5521997969897" class="whatsapp-button">
+				<img src="./new_img/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.png" alt="WhatsApp">
+			</a> 
 		</section>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
@@ -116,5 +120,78 @@ $(document).ready(function() {
     });
 });
 	</script>
+	<script> 
+		var flagMobile = document.getElementById('flag-mobile');
+	 flagMobile.addEventListener('click', function () {
+	   if (flagMobile.classList.contains('us-flag')) {
+		 localStorage.setItem('idioma', 'us');
+		 trocaLingua('us');
+	   } else {
+		 localStorage.removeItem('idioma');
+		 trocaLingua('br');
+	   }
+	   menuMobile.classList.toggle("showMobileMenu");
+	   toogleButton.classList.toggle("toogleCross");
+	 });
+	 var flag = document.getElementById('flag');
+	 flag.addEventListener("click", function () {
+	   if (flag.classList.contains('us-flag')) {
+		 trocaLingua('us');
+		 localStorage.setItem('idioma', 'us');
+	   } else {
+		 localStorage.removeItem('idioma');
+		 trocaLingua('br');
+	   }
+	 });
+	 var idioma = localStorage.getItem('idioma');
+	 if (idioma != null) {
+	   trocaLingua('us');
+	 }
+	   </script>
+   
+	   <script defer charset="utf-8" src="./js/traducao.js"></script>
+	   
+	   <!--<script type="text/javascript">
+		   function googleTranslateElementInit() {
+			 new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		   }
+		   
+		   // Quando o botão "EN" for clicado, simule um clique no widget do Google Tradutor
+		   document.getElementById("flag").addEventListener("click", function() {
+			 var select = document.querySelector(".goog-te-combo");
+			 select.value = 'en';
+			 select.dispatchEvent(new Event('change'));
+		   });
+		   </script>
+		   
+		   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
+		   <script>
+			   function googleTranslateElementInit() {
+				 new google.translate.TranslateElement({
+				   pageLanguage: 'auto',
+				   includedLanguages: 'en,pt',
+				   layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+				 }, 'google_translate_element');
+			   
+				 document.querySelector(".goog-te-gadget-simple").innerHTML="<div id='flag' class='us-flag'>EN</div>"
+			   }
+			   
+			   // Quando o DOM estiver totalmente carregado
+			   document.addEventListener('DOMContentLoaded', (event) => {
+				 // Verifique repetidamente se o widget do Google Tradutor foi carregado
+				 var checkExist = setInterval(function() {
+				   var select = document.querySelector("iframe.goog-te-menu-frame");
+				   if (select) {
+					 var doc = select.contentDocument;
+					 var element = doc.querySelector(".goog-te-menu2-item span.text:contains('Inglês')");
+					 if (element) {
+					   element.innerHTML = element.innerHTML.replace('Inglês', 'English');
+					   clearInterval(checkExist);
+					 }
+				   }
+				 }, 100); // Verifique a cada 100ms
+			   });
+			   </script>
+			   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 	</body>
 </html>

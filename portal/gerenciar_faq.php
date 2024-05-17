@@ -65,6 +65,7 @@ $faqs = $query->fetchAll(PDO::FETCH_ASSOC)
 
 <a href="gerenciar_faq.php?tipo=candidato"><button type="button">Candidato</button></a>
 <a href="gerenciar_faq.php?tipo=empresa"><button type="button">Empresa</button></a>
+<a href="http://localhost:8080/projeto_ett/portal/dashboard.php"><button type="button">VOLTAR AO PORTAL</button></a>
 <form method="POST" action="../portal/api_faq/faq.php?tipo=<?php echo $tipo; ?>">
     <input type="hidden" name="csrf" value="<?php echo isset($_SESSION['csrf']) ? $_SESSION['csrf'] : 'default_csrf'; ?>">
 

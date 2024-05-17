@@ -11,9 +11,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function editDica(idDica) {
+  var dica;
   coringa('14', {
     idDica: idDica
-  }).then(function (result) {
+  }).then(function (response) {
+    var result = JSON.parse(response);
+    console.log(result);
     dica = result.dicas[0];
     document.querySelector('section#main > div.principal').innerText = '';
     var divPrincipal = criarElement({
@@ -452,9 +455,11 @@ function editDica(idDica) {
           "validade": document.querySelector('input[name=validadeDica]').value
         };
         coringa('15', instrucoes).then(function (result) {
+          console.log(result);
           if (result.erros == false) {
             informaSucesso('Dica alterada com sucesso', 2000);
           } else {
+            console.log(result);
             informaErro('Erro ao tentar editar a dica', 3000);
           }
         });
@@ -655,7 +660,8 @@ function buscarDicas() {
     coringa('14', {
       "grupo": document.querySelector('form#buscaDicaForm select').value
     }).then(function (result) {
-      // result = JSON.parse(result)
+      result = JSON.parse(result)
+      console.log (result);
       document.querySelector('div.resultsDicas').innerText = '';
       if (result.dicas && result.dicas.length > 0) {
         // ! results TOPICS

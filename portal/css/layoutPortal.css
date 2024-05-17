@@ -52,10 +52,12 @@ section#rodape {
   /* position: sticky; */
   position: relative;
 }
-header {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5; /* Isso garante que o header sempre fique no topo, mesmo que outros elementos tenham position: absolute ou relative */
 }
 .menu-item.selected {
   border: 2px solid #feb710;
@@ -119,7 +121,7 @@ section#header > div:nth-of-type(2) {
 }
 section#main {
   display: flex;
-  height: calc(86vh - 79px);
+  height: calc(92vh - 79px);
   min-height: calc(100vh - 200px);
   overflow-x: hidden; /* Evita a rolagem horizontal */
   overflow-y: auto; /* Permite a rolagem vertical */
@@ -129,6 +131,11 @@ section#main > div.menu.active {
   overflow: auto;
   display: grid !important;
   grid-template-rows: repeat(7, 1fr) 3fr;
+}
+.lgpd {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 section#main > div.menu {
   width: 0;
@@ -356,6 +363,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100vh; /* Adicione esta linha */
+  padding-top: 78px; 
 }
 #sideMenu {
   background-color: #0F2146;
@@ -379,9 +387,11 @@ body {
   color: white; /* Cor dos ícones (traços) */
   padding: 7px 16px;
   float: left;
-  top: -10px;
+  top: -65px;
+  margin-left: 22px;
   border: 2px solid white; /* Contorno branco */
   transition: background-color 0.3s ease; /* Transição suave ao mudar a cor de fundo */
+  z-index: 1000;
 }
 
 #dropdownMenuButton:hover {
@@ -558,6 +568,11 @@ justify-content: space-between;
   margin-right: 20px;
 }
 
+@media (max-width: 768px) {
+  #sideMenu {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 768px) {
   #sideMenu.inactive {
     display: none;
